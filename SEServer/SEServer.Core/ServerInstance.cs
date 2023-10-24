@@ -62,7 +62,7 @@ public class ServerInstance
 
             if (Time.CurFrame % (Time.MaxFps * 5) == 0)
             {
-                ServerContainer.Get<ILogger>().LogInfo($"服务器信息： Fps: {Time.Fps} 负载：{Time.LoadPercentage}%");
+                ServerContainer.Get<ILogger>().LogInfo($"服务器信息： Fps: {Time.Fps:D2} \t负载：{Time.LoadPercentage * 100:F}%");
             }
             
             // 自旋
@@ -186,16 +186,24 @@ public class ServerInstance
                 }
                 
                 // 发送快照信息
-                var snapshotMessage = new SnapshotMessage()
+                var sendSnapshotMessage = new SnapshotMessage()
                 {
                     Snapshot = bindWorld.NearestSnapshot
                 };
-                user.ClientConnect.SendMessage(snapshotMessage);
+                user.ClientConnect.SendMessage(sendSnapshotMessage);
                 
                 // 发送补偿信息
                 foreach (var worldMessage in bindWorld.IncrementalStateInfo)
                 {
-                    user.ClientConnect.SendMessage(worldMessage);
+                    switch (worldMessage)
+                    {
+                        case SubmitEntityMessage submitMessage:
+                            user.ClientConnect.SendMessage(submitMessage);
+                            break;
+                        default:
+                            ServerContainer.Get<ILogger>().LogError($"不支持的消息类型，Id = {user.Id} Type = {worldMessage.GetType()}");
+                            break;
+                    }
                 }
             }
         }
@@ -233,7 +241,7 @@ public class ServerInstance
         }
     }
 
-    private void TrySendWorldMessage(User user, IWorldMessage message)
+    private void TrySendWorldMessage<T>(User user, T message) where T : IWorldMessage
     {
         if(user.ClientConnect == null) 
             return;

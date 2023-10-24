@@ -7,6 +7,6 @@ namespace SEServer.Client
     {
         public Queue<IMessage> MessageQueue { get; }
         bool IsConnected { get; }
-        void SendMessage(IMessage message);
+        void SendMessage<T>(T message) where T : IMessage;
     }
 }

@@ -23,7 +23,7 @@ public class SimpleSerializer : IDataSerializer
 
     public byte[] Serialize<T>(T data)
     {
-        return MessagePackSerializer.Serialize(data.GetType() ,data);
+        return MessagePackSerializer.Serialize(data);
     }
 
     public int Serialize<T>(T data, byte[] bytes, int offset)
