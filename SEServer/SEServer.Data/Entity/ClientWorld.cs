@@ -27,8 +27,8 @@ public class ClientWorld : World
             ServerContainer.Get<ILogger>().LogError(e.ToString());
         }
     }
-    
-    public void EntitiesUpdate()
+
+    private void EntitiesUpdate()
     {
         var Entities = EntityManager.Entities;
         var Components = EntityManager.Components;
@@ -111,6 +111,8 @@ public class ClientWorld : World
         {
             EntityManager.RemoveEntity(entityId);
         }
+        
+        EntityManager.Entities.RemoveMarkEntities();
         
         // 更新组件
         var serializer = ServerContainer.Get<IComponentSerializer>();

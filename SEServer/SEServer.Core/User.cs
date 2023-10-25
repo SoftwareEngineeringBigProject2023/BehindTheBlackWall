@@ -5,6 +5,7 @@ namespace SEServer.Core;
 public class User
 {
     public UserId Id { get; set; }
+    public PlayerId PlayerId { get; set; }
     public ClientConnect? ClientConnect { get; set; }
     public WId BindWorld { get; set; } = WId.Invalid;
     public PlayerId BindPlayer { get; set; }

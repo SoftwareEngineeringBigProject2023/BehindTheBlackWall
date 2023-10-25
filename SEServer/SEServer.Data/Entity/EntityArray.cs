@@ -9,8 +9,10 @@ public class EntityArray
     public List<Entity> Entities { get; } = new();
     public Dictionary<EId, int> EntityToIndex { get; } = new();
     public HashSet<EId> DeleteEntities { get; } = new();
-    public World World { get; set; }
+    public World World { get; set; } = null!;
     public HashSet<EId> CreateEntities { get; set; } = new();
+    
+    private Entity SingletonEntity { get; set; } = null!;
 
     private EId CreateId()
     {
@@ -19,6 +21,12 @@ public class EntityArray
             Id = IdAutoIncrement++
         };
         return id;
+    }
+
+    public void Init()
+    {
+        // 创建单例实体
+        SingletonEntity = CreateEntity();
     }
     
     public Entity CreateEntity()
@@ -115,5 +123,10 @@ public class EntityArray
             }
         }
         return list;
+    }
+
+    public Entity GetSingletonEntity()
+    {
+        return SingletonEntity;
     }
 }

@@ -4,16 +4,16 @@ namespace SEServer.Data;
 
 public static class ComponentExtension
 {
-    public static List<NotifyMessage> TakeAllNotifyMessages(this INotifyComponent component)
+    public static List<NotifyData> TakeAllNotifyMessages(this INotifyComponent component)
     {
-        var messages = new List<NotifyMessage>();
+        var messages = new List<NotifyData>();
         messages.AddRange(component.NotifyMessages);
         component.NotifyMessages.Clear();
 
         return messages;
     }
     
-    public static void ReceiveNotifyMessages(this INotifyComponent component, List<NotifyMessage> messages)
+    public static void ReceiveNotifyMessages(this INotifyComponent component, List<NotifyData> messages)
     {
         foreach (var notifyMessage in messages)
         {
@@ -21,16 +21,16 @@ public static class ComponentExtension
         }
     }
     
-    public static List<SubmitMessage> TakeAllSubmitMessages(this ISubmitComponent component)
+    public static List<SubmitData> TakeAllSubmitMessages(this ISubmitComponent component)
     {
-        var messages = new List<SubmitMessage>();
+        var messages = new List<SubmitData>();
         messages.AddRange(component.SubmitMessages);
         component.SubmitMessages.Clear();
 
         return messages;
     }
     
-    public static void ReceiveSubmitMessages(this ISubmitComponent component, List<SubmitMessage> messages)
+    public static void ReceiveSubmitMessages(this ISubmitComponent component, List<SubmitData> messages)
     {
         foreach (var submitMessage in messages)
         {

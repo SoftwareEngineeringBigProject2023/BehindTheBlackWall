@@ -8,11 +8,11 @@ public class MoveSystem : ISystem
     public World World { get; set; }
     public void Update()
     {
-        var collection = World.GetComponentDataCollection<MoveInputComponent, PositionComponent>();
+        var collection = World.EntityManager.GetComponentDataCollection<MoveInputComponent, TransformComponent>();
         foreach (var valueTuple in collection)
         {
             var (moveInput, position) = valueTuple;
-            position.position += moveInput.input * World.Time.DeltaTime;
+            position.Position += moveInput.Input * World.Time.DeltaTime;
         }
     }
 }

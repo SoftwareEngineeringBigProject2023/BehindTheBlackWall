@@ -19,12 +19,8 @@ public class ServerInstance
         ServerContainer.Start();
         
         // TODO: 测试性添加一个世界，后续修改
-        var serverWorld = new ServerWorld()
-        {
-            ServerContainer = ServerContainer
-        };
-        serverWorld.EntityManager.CreateEntity();
-        Worlds.Add(serverWorld);
+        var serverWorld = new ServerWorld();
+        SetupWorld(serverWorld);
 
         MainLoop();
     }
@@ -68,6 +64,13 @@ public class ServerInstance
             // 自旋
             Time.EndFrame();
         }
+    }
+    
+    private void SetupWorld(ServerWorld world)
+    {
+        world.ServerContainer = ServerContainer;
+        world.Init();
+        Worlds.Add(world);
     }
 
     private void HandleReceiveClientMessages()
@@ -174,7 +177,6 @@ public class ServerInstance
                 if (user.BindWorld != WId.Invalid)
                 {
                     bindWorld = Worlds.FirstOrDefault(world => world.Id == user.BindWorld);
-                    
                 }
 
                 if (bindWorld == null)
@@ -183,6 +185,8 @@ public class ServerInstance
                     bindWorld = Worlds[0];
                     // 绑定世界
                     user.BindWorld = bindWorld.Id;
+                    var player = bindWorld.PlayerManager.CreatePlayer();
+                    user.BindPlayer = player.Id;
                 }
                 
                 // 发送快照信息

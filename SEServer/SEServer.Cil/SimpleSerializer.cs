@@ -6,9 +6,11 @@ namespace SEServer.Cil;
 public class SimpleSerializer : IDataSerializer
 {
     public ServerContainer ServerContainer { get; set; }
+    public MessagePackSerializerOptions Options { get; set; }
     public void Init()
     {
-        
+        Options = MessagePackSerializerOptions.Standard
+            .WithCompression(MessagePackCompression.Lz4BlockArray);
     }
 
     public void Start()
@@ -23,7 +25,7 @@ public class SimpleSerializer : IDataSerializer
 
     public byte[] Serialize<T>(T data)
     {
-        return MessagePackSerializer.Serialize(data);
+        return MessagePackSerializer.Serialize(data, Options);
     }
 
     public int Serialize<T>(T data, byte[] bytes, int offset)
@@ -36,7 +38,7 @@ public class SimpleSerializer : IDataSerializer
     public T Deserialize<T>(byte[] bytes, int offset, int size)
     {
         var readBytes = new ReadOnlyMemory<byte>(bytes, offset, size);
-        var obj = MessagePackSerializer.Deserialize<T>(readBytes, MessagePackSerializerOptions.Standard);
+        var obj = MessagePackSerializer.Deserialize<T>(readBytes, Options);
         return obj;
     }
 }

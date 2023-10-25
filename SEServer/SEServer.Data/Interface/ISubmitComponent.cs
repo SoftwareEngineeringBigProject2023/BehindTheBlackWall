@@ -9,5 +9,5 @@ namespace SEServer.Data;
 public interface ISubmitComponent : INetComponent
 {
     PlayerId Owner { get; set; }
-    Queue<SubmitMessage> SubmitMessages { get; set; }
+    Queue<SubmitData> SubmitMessages { get; set; }
 }

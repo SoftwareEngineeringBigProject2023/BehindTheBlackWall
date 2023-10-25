@@ -5,6 +5,7 @@ namespace SEServer.Client
 {
     public class ClientInstance
     {
+        public int UserId { get; set; } = -1;
         public ClientWorld World { get; set; } = new ClientWorld();
         public ServerContainer ServerContainer { get; set; } = new ServerContainer();
         public bool IsConnected => ServerContainer.Get<IClientNetworkService>().IsConnected;
@@ -39,6 +40,9 @@ namespace SEServer.Client
                 {
                     switch (message)
                     {
+                        case AuthorizationReplyMessage replyMessage:
+                            HandleAuthorizationReplyMessage(replyMessage);
+                            break;
                         case IWorldMessage worldMessage:
                             HandleWorldMessage(worldMessage);
                             break;
@@ -53,6 +57,11 @@ namespace SEServer.Client
                     ServerContainer.Get<ILogger>().LogError(e.ToString());
                 }
             }
+        }
+
+        private void HandleAuthorizationReplyMessage(AuthorizationReplyMessage replyMessage)
+        {
+            UserId = replyMessage.UserId;
         }
 
         private void HandleWorldMessage(IWorldMessage worldMessage)
