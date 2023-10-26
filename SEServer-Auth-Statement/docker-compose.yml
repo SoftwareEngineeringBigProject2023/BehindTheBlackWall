@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+
+  redis:
+    image: redis:latest
+    container_name: redis
+  
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+
+  zipkin:
+    image: openzipkin/zipkin-slim:latest
+    container_name: zipkin
+
+  seq:
+    image: datalust/seq:latest
+    container_name: seq
+
+  seserver-auth:
+    image: ${DOCKER_REGISTRY-}seserverauth
+    container_name: seserver-auth
+    build:
+      context: .
+      dockerfile: src/services/SEServer.Auth/SEServer.Auth/Dockerfile
+    depends_on:
+      - sqlserver
+      - seq
+
+  seserver-auth-dapr:
+    image: "daprio/daprd:latest"
+    container_name: seserver-auth-dapr
+    network_mode: "service:seserver-auth"
+    depends_on:
+      - seserver-auth

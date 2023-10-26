@@ -1,0 +1,53 @@
+version: '3.4'
+
+services:
+
+  redis:
+    ports:
+      - "5379:6379"
+
+  zipkin:
+    ports:
+      - "5411:9411"
+
+  sqlserver:
+    volumes:
+      - seserver-sqlserver:/var/opt/mssql
+    environment:
+      - SA_PASSWORD=JWmTjvNnRfKcjvLo0r
+      - ACCEPT_EULA=Y
+    ports:
+      - 1433:1433
+      
+  seq:
+    restart: unless-stopped
+    ports:
+      - "5341:80"
+    environment:
+      - ACCEPT_EULA=Y
+
+  seserver-auth:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5101:80"
+      - "50001:50001"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  seserver-auth-dapr:
+    command: ["./daprd",
+      "-app-id", "seserver-auth",
+      "-app-port", "80",
+      "-components-path", "/components",
+      "-config", "/configuration/seserver-config.yaml"
+      ]
+    volumes:
+      - "./dapr/components/:/components"
+      - "./dapr/configuration/:/configuration"
+      
+volumes:
+  seserver-sqlserver:
+    external: false    

@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>6a277b63-e781-4ec7-8399-a09ccc89d2b0</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.58.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+    <PackageReference Include="Rougamo.Fody" Version="1.4.1" />
+    <PackageReference Include="ZString" Version="2.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\modules\ModuleDistributor.Dapr.Configuration\ModuleDistributor.Dapr.Configuration.csproj" />
+    <ProjectReference Include="..\..\..\modules\ModuleDistributor.EntityFrameworkCore\ModuleDistributor.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\modules\ModuleDistributor.GrpcWebSocketBridge\ModuleDistributor.GrpcWebSocketBridge.csproj" />
+    <ProjectReference Include="..\..\..\modules\ModuleDistributor.HealthCheck.Dapr\ModuleDistributor.HealthCheck.Dapr.csproj" />
+    <ProjectReference Include="..\..\..\modules\ModuleDistributor.Logging\ModuleDistributor.Logging.csproj" />
+    <ProjectReference Include="..\..\..\modules\ModuleDistributor.Serilog\ModuleDistributor.Serilog.csproj" />
+    <ProjectReference Include="..\SEServer.Auth.Protos\SEServer.Auth.Protos.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "KZuT5f3WR03GJnWkrnNkptg24tcWMEtGE6n4QP1KIPaUJ2e3aESufMrMJAT0hHoGnp8Ohv1NRa79Mv4otD2n9A==",
+  "success": true,
+  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.HealthCheck\\ModuleDistributor.HealthCheck.csproj",
+  "expectedPackageFiles": [
+    "D:\\NuGet\\packages\\aspnetcore.healthchecks.ui.client\\7.1.0\\aspnetcore.healthchecks.ui.client.7.1.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\aspnetcore.healthchecks.ui.core\\7.0.0\\aspnetcore.healthchecks.ui.core.7.0.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\microsoft.extensions.diagnostics.healthchecks\\7.0.9\\microsoft.extensions.diagnostics.healthchecks.7.0.9.nupkg.sha512",
+    "D:\\NuGet\\packages\\microsoft.extensions.diagnostics.healthchecks.abstractions\\7.0.9\\microsoft.extensions.diagnostics.healthchecks.abstractions.7.0.9.nupkg.sha512",
+    "D:\\NuGet\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\microsoft.extensions.hosting.abstractions\\7.0.0\\microsoft.extensions.hosting.abstractions.7.0.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "D:\\NuGet\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "D:\\NuGet\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

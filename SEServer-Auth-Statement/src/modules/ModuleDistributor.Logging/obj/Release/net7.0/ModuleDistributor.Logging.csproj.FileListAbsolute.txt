@@ -1,0 +1,13 @@
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\bin\Release\net7.0\ModuleDistributor.Logging.deps.json
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\bin\Release\net7.0\ModuleDistributor.Logging.dll
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\bin\Release\net7.0\ModuleDistributor.Logging.pdb
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\obj\Release\net7.0\ModuleDistributor.Logging.csproj.AssemblyReference.cache
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\obj\Release\net7.0\ModuleDistributor.Logging.GeneratedMSBuildEditorConfig.editorconfig
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\obj\Release\net7.0\ModuleDistributor.Logging.AssemblyInfoInputs.cache
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\obj\Release\net7.0\ModuleDistributor.Logging.AssemblyInfo.cs
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\obj\Release\net7.0\ModuleDistributor.Logging.csproj.CoreCompileInputs.cache
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\obj\Release\net7.0\ModuleDistributor.Logging.csproj.Fody.CopyLocal.cache
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\obj\Release\net7.0\ModuleDistributor.Logging.dll
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\obj\Release\net7.0\refint\ModuleDistributor.Logging.dll
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\obj\Release\net7.0\ModuleDistributor.Logging.pdb
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Logging\obj\Release\net7.0\ref\ModuleDistributor.Logging.dll

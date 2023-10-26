@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "ModuleDistributor.DependencyInjection/1.0.0": {
+        "dependencies": {
+          "ModuleDistributor": "1.0.0"
+        },
+        "runtime": {
+          "ModuleDistributor.DependencyInjection.dll": {}
+        }
+      },
+      "ModuleDistributor/1.0.0": {
+        "runtime": {
+          "ModuleDistributor.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ModuleDistributor.DependencyInjection/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ModuleDistributor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

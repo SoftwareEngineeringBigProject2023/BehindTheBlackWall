@@ -1,0 +1,16 @@
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\bin\Release\net7.0\ModuleDistributor.Serilog.deps.json
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\bin\Release\net7.0\ModuleDistributor.Serilog.dll
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\bin\Release\net7.0\ModuleDistributor.Serilog.pdb
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\bin\Release\net7.0\ModuleDistributor.dll
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\bin\Release\net7.0\ModuleDistributor.pdb
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\ModuleDistributor.Serilog.csproj.AssemblyReference.cache
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\ModuleDistributor.Serilog.GeneratedMSBuildEditorConfig.editorconfig
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\ModuleDistributor.Serilog.AssemblyInfoInputs.cache
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\ModuleDistributor.Serilog.AssemblyInfo.cs
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\ModuleDistributor.Serilog.csproj.CoreCompileInputs.cache
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\ModuleDistributor.Serilog.csproj.Fody.CopyLocal.cache
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\ModuleDistributor.Serilog.csproj.CopyComplete
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\ModuleDistributor.Serilog.dll
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\refint\ModuleDistributor.Serilog.dll
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\ModuleDistributor.Serilog.pdb
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor.Serilog\obj\Release\net7.0\ref\ModuleDistributor.Serilog.dll

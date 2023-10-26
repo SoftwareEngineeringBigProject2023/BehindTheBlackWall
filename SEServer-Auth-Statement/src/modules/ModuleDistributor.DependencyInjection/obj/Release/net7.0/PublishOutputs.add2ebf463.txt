@@ -1,0 +1,5 @@
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.DependencyInjection.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.DependencyInjection.deps.json
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.DependencyInjection.pdb
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.pdb

@@ -1,0 +1,17 @@
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.Serilog.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.Serilog.deps.json
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.Serilog.pdb
+D:\aspdotnet\Lib\ModuleDistributorPublish\Microsoft.Extensions.DependencyModel.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Rougamo.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Serilog.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Serilog.AspNetCore.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Serilog.Extensions.Hosting.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Serilog.Extensions.Logging.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Serilog.Formatting.Compact.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Serilog.Settings.Configuration.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Serilog.Sinks.Async.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Serilog.Sinks.Console.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Serilog.Sinks.Debug.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Serilog.Sinks.File.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.pdb

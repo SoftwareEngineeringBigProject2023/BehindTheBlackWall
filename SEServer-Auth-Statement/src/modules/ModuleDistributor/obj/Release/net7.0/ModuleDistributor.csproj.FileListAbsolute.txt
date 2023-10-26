@@ -1,0 +1,11 @@
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\bin\Release\net7.0\ModuleDistributor.deps.json
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\bin\Release\net7.0\ModuleDistributor.dll
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\bin\Release\net7.0\ModuleDistributor.pdb
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\obj\Release\net7.0\ModuleDistributor.GeneratedMSBuildEditorConfig.editorconfig
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\obj\Release\net7.0\ModuleDistributor.AssemblyInfoInputs.cache
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\obj\Release\net7.0\ModuleDistributor.AssemblyInfo.cs
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\obj\Release\net7.0\ModuleDistributor.csproj.CoreCompileInputs.cache
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\obj\Release\net7.0\ModuleDistributor.dll
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\obj\Release\net7.0\refint\ModuleDistributor.dll
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\obj\Release\net7.0\ModuleDistributor.pdb
+D:\aspdotnet\Lib\ModuleDistributor\ModuleDistributor\obj\Release\net7.0\ref\ModuleDistributor.dll

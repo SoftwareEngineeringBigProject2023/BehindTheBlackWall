@@ -1,0 +1,12 @@
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\bin\Debug\net7.0\SEServer.Auth.Protos.deps.json
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\bin\Debug\net7.0\SEServer.Auth.Protos.dll
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\bin\Debug\net7.0\SEServer.Auth.Protos.pdb
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\obj\Debug\net7.0\SEServer.Auth.Protos.csproj.AssemblyReference.cache
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\obj\Debug\net7.0\SEServer.Auth.Protos.GeneratedMSBuildEditorConfig.editorconfig
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\obj\Debug\net7.0\SEServer.Auth.Protos.AssemblyInfoInputs.cache
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\obj\Debug\net7.0\SEServer.Auth.Protos.AssemblyInfo.cs
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\obj\Debug\net7.0\SEServer.Auth.Protos.csproj.CoreCompileInputs.cache
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\obj\Debug\net7.0\SEServer.Auth.Protos.dll
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\obj\Debug\net7.0\refint\SEServer.Auth.Protos.dll
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\obj\Debug\net7.0\SEServer.Auth.Protos.pdb
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth.Protos\obj\Debug\net7.0\ref\SEServer.Auth.Protos.dll
