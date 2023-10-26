@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "A5sv0Pab1HbH/A2E/nLsKf8594MytPLdMAV0CqbKPDniDzRX2EmZWF5za0bP88Aa2TdF2cI0SGX4JkdHoXAaYw==",
+  "success": true,
+  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
+  "expectedPackageFiles": [
+    "D:\\NuGet\\packages\\dapr.actors\\1.11.0\\dapr.actors.1.11.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\dapr.actors.aspnetcore\\1.11.0\\dapr.actors.aspnetcore.1.11.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\dapr.aspnetcore\\1.11.0\\dapr.aspnetcore.1.11.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\dapr.client\\1.11.0\\dapr.client.1.11.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\google.api.commonprotos\\2.2.0\\google.api.commonprotos.2.2.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\google.protobuf\\3.15.0\\google.protobuf.3.15.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\grpc.core.api\\2.47.0\\grpc.core.api.2.47.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\grpc.net.client\\2.47.0\\grpc.net.client.2.47.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\grpc.net.common\\2.47.0\\grpc.net.common.2.47.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\microsoft.extensions.logging.abstractions\\3.1.0\\microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\system.io.pipelines\\4.7.2\\system.io.pipelines.4.7.2.nupkg.sha512",
+    "D:\\NuGet\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "D:\\NuGet\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}

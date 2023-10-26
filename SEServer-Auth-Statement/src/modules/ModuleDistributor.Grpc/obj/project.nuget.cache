@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "kIsNuo0+LcOYjClThKDJfeEpW0lVoeH06dNoZfAm3RCqoJoXfzVkBexNmWGG0HuCMrs9O80yqfuDLk90xKfkmA==",
+  "success": true,
+  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj",
+  "expectedPackageFiles": [
+    "D:\\NuGet\\packages\\google.protobuf\\3.24.4\\google.protobuf.3.24.4.nupkg.sha512",
+    "D:\\NuGet\\packages\\grpc.aspnetcore.server\\2.58.0\\grpc.aspnetcore.server.2.58.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\grpc.core.api\\2.58.0\\grpc.core.api.2.58.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\grpc.net.common\\2.58.0\\grpc.net.common.2.58.0.nupkg.sha512",
+    "D:\\NuGet\\packages\\grpc.tools\\2.59.0\\grpc.tools.2.59.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,5 @@
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.Logging.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.Logging.deps.json
+D:\aspdotnet\Lib\ModuleDistributorPublish\ModuleDistributor.Logging.pdb
+D:\aspdotnet\Lib\ModuleDistributorPublish\Microsoft.Extensions.Logging.Abstractions.dll
+D:\aspdotnet\Lib\ModuleDistributorPublish\Rougamo.dll

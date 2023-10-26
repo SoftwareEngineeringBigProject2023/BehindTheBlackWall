@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "oA7Pdj1APLaYbSeIyuWExr/b+JTenFGfgHVVwLQ55gs=",
+  "Source": "SEServer.Auth",
+  "BasePath": "_content/SEServer.Auth",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
