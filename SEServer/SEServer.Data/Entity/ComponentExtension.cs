@@ -37,4 +37,19 @@ public static class ComponentExtension
             component.SubmitMessages.Enqueue(submitMessage);
         }
     }
+
+    public static void AddSubmitMessage(this ISubmitComponent submitComponent, SubmitData submitData)
+    {
+        submitComponent.SubmitMessages.Enqueue(submitData);
+    }
+    
+    public static void AddNotifyMessage(this INotifyComponent notifyComponent, NotifyData notifyData)
+    {
+        notifyComponent.NotifyMessages.Enqueue(notifyData);
+    }
+    
+    public static void ClearSubmitMessages(this ISubmitComponent submitComponent)
+    {
+        submitComponent.SubmitMessages.Clear();
+    }
 }

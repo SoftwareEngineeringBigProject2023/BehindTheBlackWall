@@ -18,9 +18,9 @@ public class ComponentSerializer : IComponentSerializer
         {
             foreach (var type in assembly.GetTypes())
             {
-                if (typeof(IComponent).IsAssignableFrom(type))
+                if (typeof(IComponent).IsAssignableFrom(type) && !type.IsInterface)
                 {
-                    RegisterComponentType(type);
+                    GetCodeByType(type);
                 }
             }
         }
@@ -41,12 +41,6 @@ public class ComponentSerializer : IComponentSerializer
     /// </summary>
     public Dictionary<int, Type> ComponentTypeMapper { get; set; } = new();
 
-    public void RegisterComponentType(Type type)
-    {
-        var code = GetCodeByType(type);
-        ComponentTypeMapper.Add(code, type);
-    }
-
     public Type GetTypeByCode(int code)
     {
         return ComponentTypeMapper[code];
@@ -59,6 +53,7 @@ public class ComponentSerializer : IComponentSerializer
         if (typeName != null)
         {
             var code = (int)Compute(typeName);
+            ComponentTypeMapper[code] = type;
             return code;
         }
         
@@ -120,19 +115,14 @@ public class ComponentSerializer : IComponentSerializer
     public ComponentArrayDataPack Serialize<T>(List<T> components) where T : IComponent
     {
         ComponentArrayDataPack dataPack = new();
+        dataPack.DebugName = typeof(T).FullName;
         dataPack.TypeCode = GetCodeByType(typeof(T));
         
-        var componentPacks = new List<ComponentDataPack<T>>();
         for (var index = 0; index < components.Count; index++)
         {
             var component = components[index];
-            var componentPack = new ComponentDataPack<T>();
-            componentPack.Id = component.Id;
-            componentPack.Component = component;
-            componentPacks.Add(componentPack);
+            dataPack.Data.Add(ServerContainer.Get<IDataSerializer>().Serialize(component));
         }
-
-        dataPack.Data = ServerContainer.Get<IDataSerializer>().Serialize(componentPacks);
 
         return dataPack;
     }
@@ -140,12 +130,11 @@ public class ComponentSerializer : IComponentSerializer
     public List<T> Deserialize<T>(ComponentArrayDataPack dataPack) where T : IComponent
     {
         var components = new List<T>();
-
-        var componentPacks = ServerContainer.Get<IDataSerializer>()
-            .Deserialize<List<ComponentDataPack<T>>>(dataPack.Data, 0, dataPack.Data.Length);
-        foreach (var componentPack in componentPacks)
+        
+        foreach (var componentPack in dataPack.Data)
         {
-            components.Add(componentPack.Component);
+            var component = ServerContainer.Get<IDataSerializer>().Deserialize<T>(componentPack, 0, componentPack.Length);
+            components.Add(component);
         }
         
         return components;

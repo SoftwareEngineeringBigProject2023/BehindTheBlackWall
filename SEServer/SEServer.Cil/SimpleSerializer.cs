@@ -1,4 +1,5 @@
 ﻿using MessagePack;
+using MessagePack.Resolvers;
 using SEServer.Data;
 
 namespace SEServer.Cil;
@@ -9,7 +10,12 @@ public class SimpleSerializer : IDataSerializer
     public MessagePackSerializerOptions Options { get; set; }
     public void Init()
     {
+        var resolver = MessagePack.Resolvers.CompositeResolver.Create(
+            StandardResolver.Instance
+        );
+        
         Options = MessagePackSerializerOptions.Standard
+            .WithResolver(resolver)
             .WithCompression(MessagePackCompression.Lz4BlockArray);
     }
 

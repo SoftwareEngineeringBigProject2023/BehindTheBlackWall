@@ -14,7 +14,9 @@ public class ComponentCollection
         var type = typeof(T);
         if (!Components.ContainsKey(type))
         {
-            Components.Add(type, new ComponentArray<T>());
+            var componentArray = new ComponentArray<T>();
+            componentArray.World = World;
+            Components.Add(type, componentArray);
         }
         return (ComponentArray<T>) Components[type];
     }
@@ -23,13 +25,14 @@ public class ComponentCollection
     {
         if (!Components.ContainsKey(type))
         {
-            var componentArray = Activator.CreateInstance(typeof(ComponentArray<>).MakeGenericType(type));
-            if (componentArray == null)
+            var obj = Activator.CreateInstance(typeof(ComponentArray<>).MakeGenericType(type));
+            if (obj is not IComponentArray componentArray)
             {
                 throw new Exception($"Create instance of {type.Name} failed.");
             }
             
-            Components.Add(type, (IComponentArray)componentArray);
+            componentArray.World = World;
+            Components.Add(type, componentArray);
         }
         return Components[type];
     }
@@ -56,6 +59,17 @@ public class ComponentCollection
         return componentArray.Get(eId);
     }
     
+    public IComponent? GetComponent(EId entityId, Type type)
+    {
+        var componentArray = GetComponentArray(type);
+        if (!componentArray.HasEntity(entityId))
+        {
+            return null!;
+        }
+        
+        return componentArray.GetI(entityId);
+    }
+
     /// <summary>
     /// 标记为待删除
     /// </summary>
@@ -119,7 +133,7 @@ public class ComponentCollection
             if(componentArray.ContainInterface(typeof(INetComponent)))
             {
                 var dataPack = componentArray.WriteToDataPack(World.ServerContainer.Get<IComponentSerializer>());
-                snapshot.AddDataPack(dataPack);
+                snapshot.ComponentArrayDataPacks.Add(dataPack);
             }
         }
     }
