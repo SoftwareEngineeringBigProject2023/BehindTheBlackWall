@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SEServer.Data;
+namespace SEServer.Data.Interface;
 
 public interface IComponentSerializer : IService
 {

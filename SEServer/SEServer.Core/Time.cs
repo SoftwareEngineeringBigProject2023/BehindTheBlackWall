@@ -38,7 +38,7 @@ public class Time
     private long _totalSleepTimeThisSecond;
     private long _totalSleepTimeLastSecond;
     
-    public int MaxFps { get; set; } = 15;
+    public int MaxFps { get; set; } = 30;
     public int Fps => _totalFpsLastSecond;
     public float FrameInterval => 1f / MaxFps;
 

@@ -1,5 +1,7 @@
 ﻿using System.Numerics;
 using SEServer.Data;
+using SEServer.Data.Interface;
+using SEServer.Data.Message;
 using SEServer.GameData;
 
 namespace SEServer.Game;
@@ -7,6 +9,7 @@ namespace SEServer.Game;
 /// <summary>
 /// 玩家系统，负责处理玩家与实体的绑定
 /// </summary>
+[Priority(50)]
 public class PlayerSystem : ISystem
 {
     public World World { get; set; }
@@ -40,19 +43,31 @@ public class PlayerSystem : ISystem
         var playerId = message.Arg0;
         
         var entity = World.EntityManager.CreateEntity();
-        var playerCom = World.EntityManager.AddComponent<PlayerComponent>(entity);
+        var playerCom = World.EntityManager.GetOrAddComponent<PlayerComponent>(entity);
         playerCom.PlayerId = playerId;
         
-        var inputCom = World.EntityManager.AddComponent<MoveInputComponent>(entity);
+        var inputCom = World.EntityManager.GetOrAddComponent<MoveInputComponent>(entity);
         inputCom.Owner = new PlayerId() { Id = playerId };
         inputCom.Input = Vector2.Zero.ToSVector2();
         
-        var transformCom = World.EntityManager.AddComponent<TransformComponent>(entity);
+        var transformCom = World.EntityManager.GetOrAddComponent<TransformComponent>(entity);
         transformCom.Position = Vector2.Zero.ToSVector2();
         
-        World.EntityManager.AddComponent<PlayerNotifyComponent>(entity);
+        // 刚体
+        var rigidbodyCom = World.EntityManager.GetOrAddComponent<RigidbodyComponent>(entity);
+        rigidbodyCom.BodyType = PhysicsBodyType.Dynamic;
+        rigidbodyCom.IsFixedRotation = true;
+        
+        // 图形
+        var shapeComponent = World.EntityManager.GetOrAddComponent<ShapeComponent>(entity);
+        shapeComponent.Shapes.Add(new CircleShapeData(0.5f));
+        
+        var propertyCom = World.EntityManager.GetOrAddComponent<PropertyComponent>(entity);
+        propertyCom.Speed = 5;
+        
+        World.EntityManager.GetOrAddComponent<PlayerNotifyComponent>(entity);
 
-        World.EntityManager.AddComponent<GraphComponent>(entity);
+        World.EntityManager.GetOrAddComponent<GraphComponent>(entity);
     }
     
     private void HandleDestroyPlayer(SubmitData message,

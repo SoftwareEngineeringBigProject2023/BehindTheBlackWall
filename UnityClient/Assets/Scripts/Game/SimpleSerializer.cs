@@ -2,7 +2,8 @@
 using MessagePack;
 using MessagePack.Resolvers;
 using SEServer.Data;
-using ILogger = SEServer.Data.ILogger;
+using SEServer.Data.Interface;
+using ILogger = SEServer.Data.Interface.ILogger;
 
 namespace Game
 {

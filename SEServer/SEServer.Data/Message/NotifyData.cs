@@ -1,7 +1,7 @@
 ﻿using System;
 using MessagePack;
 
-namespace SEServer.Data;
+namespace SEServer.Data.Message;
 
 [MessagePackObject]
 public class NotifyData

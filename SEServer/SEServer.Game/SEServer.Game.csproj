@@ -20,4 +20,8 @@
       <ProjectReference Include="..\SEServer.GameData\SEServer.GameData.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Aether.Physics2D" Version="2.0.0" />
+    </ItemGroup>
+
 </Project>

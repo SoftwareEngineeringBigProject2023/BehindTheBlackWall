@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SEServer.Data.Interface;
 
 namespace SEServer.Data;
 
@@ -16,7 +17,15 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
     private Dictionary<CId, int> ComponentToIndex { get; } = new();
     private HashSet<EId> DeleteEntities { get; } = new();
     private List<Type> Interfaces { get; } = new();
-    
+    /// <summary>
+    /// 脏标记组件，被标记的组件会通过网络进行同步
+    /// </summary>
+    private HashSet<CId> DirtyComponents { get; } = new();
+    /// <summary>
+    /// 有变动的组件，与Dirty不同，变动组件标记该组件需要被System更新
+    /// </summary>
+    private HashSet<CId> ChangedComponents { get; } = new();
+
     public List<T> Components { get; } = new();
 
     public ComponentArray()
@@ -129,13 +138,34 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         DeleteEntities.Add(eId);
     }
 
+    public void MarkAsDirty(INetComponent component)
+    {
+        DirtyComponents.Add(component.Id);
+    }
+
+    public bool IsDirty(INetComponent component)
+    {
+        return DirtyComponents.Contains(component.Id);
+    }
+    
     public void ClearDirty()
     {
-        foreach (var component in Components)
-        {
-            if(component is INetComponent netComponent)
-                netComponent.IsDirty = false;
-        }
+        DirtyComponents.Clear();
+    }
+    
+    public void MarkAsChanged(IComponent component)
+    {
+        ChangedComponents.Add(component.Id);
+    }
+    
+    public bool IsChanged(IComponent component)
+    {
+        return ChangedComponents.Contains(component.Id);
+    }
+    
+    public void ClearChanged()
+    {
+        ChangedComponents.Clear();
     }
     
     /// <summary>
@@ -176,6 +206,7 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
             }
             
             Components.Add(component);
+            MarkAsChanged(component);
         }
         
         // 重建索引
@@ -189,7 +220,7 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         foreach (var component in Components)
         {
             var netComponent = (INetComponent)component;
-            if (!netComponent.IsDirty && !includeEIds.Contains(component.EntityId))
+            if (!IsDirty(netComponent) && !includeEIds.Contains(component.EntityId))
             {
                 continue;
             }
@@ -238,9 +269,18 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
             {
                 AddComponent(component);
             }
+            
+            // 标记为已改变
+            MarkAsChanged(component);
         }
     }
     
+    /// <summary>
+    /// 写空提交给客户端作为提交模板
+    /// </summary>
+    /// <param name="serializer"></param>
+    /// <param name="allEntitiesChanged"></param>
+    /// <returns></returns>
     public ComponentArrayDataPack? WriteEmptySubmitToDataPack(IComponentSerializer serializer, List<EId> allEntitiesChanged)
     {
         var components = new List<T>();
@@ -248,7 +288,7 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         foreach (var component in Components)
         {
             var submitComponent = (ISubmitComponent)component;
-            if (!submitComponent.IsDirty && !allEntitiesChanged.Contains(component.EntityId))
+            if (!IsDirty(submitComponent) && !allEntitiesChanged.Contains(component.EntityId))
             {
                 continue;
             }
@@ -304,6 +344,7 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
             if (dataPack.NotifyMessages.TryGetValue(component.Id, out var notifyMessages))
             {
                 notifyComponent.ReceiveNotifyMessages(notifyMessages);
+                MarkAsChanged(notifyComponent);
             }
         }
     }
@@ -352,6 +393,7 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
             if (dataPack.SubmitMessages.TryGetValue(component.Id, out var notifyMessages))
             {
                 submitComponent.ReceiveSubmitMessages(notifyMessages);
+                MarkAsChanged(submitComponent);
             }
         }
     }

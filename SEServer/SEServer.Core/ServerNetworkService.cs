@@ -3,6 +3,7 @@ using System.Net.WebSockets;
 using System.Text;
 using Cysharp.Threading.Tasks;
 using SEServer.Data;
+using SEServer.Data.Interface;
 
 namespace SEServer.Core;
 

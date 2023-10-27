@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using SEServer.Data;
+using SEServer.Data.Interface;
+using SEServer.Data.Message;
 
 namespace SEServer.Core;
 
@@ -17,6 +19,8 @@ public class ServerInstance
         
         ServerContainer.Init();
         ServerContainer.Start();
+        
+        Time.MaxFps = ServerContainer.Get<IWorldConfig>().FramePerSecond;
         
         // TODO: 测试性添加一个世界，后续修改
         var serverWorld = new ServerWorld();

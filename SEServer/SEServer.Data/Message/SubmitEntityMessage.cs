@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using MessagePack;
+using SEServer.Data.Interface;
 
-namespace SEServer.Data;
+namespace SEServer.Data.Message;
 
 [MessagePackObject]
 public class SubmitEntityMessage : IWorldMessage

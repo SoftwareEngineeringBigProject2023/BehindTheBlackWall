@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using Game.GameSystem;
 using SEServer.Client;
 using SEServer.Data;
+using SEServer.Data.Interface;
+using SEServer.Data.Message;
 using SEServer.GameData;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using ILogger = SEServer.Data.ILogger;
+using ILogger = SEServer.Data.Interface.ILogger;
 
 namespace Game
 {
@@ -13,11 +16,11 @@ namespace Game
         public static ClientBehaviour Instance { get; private set; }
         public ClientInstance ClientInstance { get; set; }
         public EntityMapperManager EntityMapper { get; set; }
+        public List<IClientAttachBehaviour> attachBehaviours = new();
         /// <summary>
         /// 客户端网络实例帧率
         /// </summary>
-        public static int MAX_FRAME_RATE = 15;
-        public List<IClientAttachBehaviour> attachBehaviours = new();
+        public int MAX_FRAME_RATE { get; set; } = 30;
         private float _deltaTime;
         
         public void Start()
@@ -31,11 +34,15 @@ namespace Game
             Instance = this;
             CheckBehaviours();
             
+            var systemProvider = new SystemProvider();
+            systemProvider.AddSystem(new InputSystem());
+            
             ClientInstance = new ClientInstance();
             ClientInstance.ServerContainer.Add<ILogger>( new SimpleLogger());
             ClientInstance.ServerContainer.Add<IDataSerializer>( new SimpleSerializer());
             ClientInstance.ServerContainer.Add<IClientNetworkService>( new ClientNetworkService());
             ClientInstance.ServerContainer.Add<IComponentSerializer>( new ComponentSerializer());
+            ClientInstance.ServerContainer.Add<ISystemProvider>(systemProvider);
             ClientInstance.Start();
             
             EntityMapper = new EntityMapperManager();

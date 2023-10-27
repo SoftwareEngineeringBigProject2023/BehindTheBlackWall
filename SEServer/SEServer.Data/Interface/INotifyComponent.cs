@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using SEServer.Data.Message;
 
-namespace SEServer.Data;
+namespace SEServer.Data.Interface;
 
 /// <summary>
 /// 通知组件

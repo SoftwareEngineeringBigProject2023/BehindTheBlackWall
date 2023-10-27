@@ -1,7 +1,7 @@
 ﻿using System;
-using MessagePack;
+using SEServer.Data.Interface;
 
-namespace SEServer.Data;
+namespace SEServer.Data.Message;
 
 public class MessageHeader
 {

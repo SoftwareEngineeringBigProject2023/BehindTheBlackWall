@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SEServer.Data.Interface;
 
 namespace SEServer.Data;
 
@@ -37,15 +38,24 @@ public class ComponentCollection
         return Components[type];
     }
     
-    public T AddComponent<T>(EId eId) where T : IComponent, new()
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="eId"></param>
+    /// <param name="component"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns>是否是创建的组件</returns>
+    public bool GetOrAddComponent<T>(EId eId,out T component) where T : IComponent, new()
     {
         var componentArray = GetComponentArray<T>();
         if (componentArray.HasEntity(eId))
         {
-            return componentArray.Get(eId);
+            component = componentArray.Get(eId);
+            return false;
         }
-        
-        return componentArray.CreateComponent(eId);
+
+        component = componentArray.CreateComponent(eId);
+        return true;
     }
     
     public T? GetComponent<T>(EId eId) where T : IComponent, new()
@@ -117,6 +127,7 @@ public class ComponentCollection
         {
             var componentArray = pair.Value;
             componentArray.ClearDirty();
+            componentArray.ClearChanged();
         }
     }
 
@@ -150,5 +161,23 @@ public class ComponentCollection
             var componentArray = GetComponentArray(serializer.GetTypeByCode(dataPack.TypeCode));
             componentArray.ReadFromDataPack(serializer, dataPack);
         }
+    }
+
+    public void MarkAsDirty(INetComponent component)
+    {
+        var componentArray = GetComponentArray(component.GetType());
+        componentArray.MarkAsDirty(component);
+    }
+
+    public void MarkAsChanged(IComponent component)
+    {
+        var componentArray = GetComponentArray(component.GetType());
+        componentArray.MarkAsChanged(component);
+    }
+    
+    public bool IsChanged(IComponent component)
+    {
+        var componentArray = GetComponentArray(component.GetType());
+        return componentArray.IsChanged(component);
     }
 }

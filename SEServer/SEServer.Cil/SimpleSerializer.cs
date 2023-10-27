@@ -1,6 +1,7 @@
 ﻿using MessagePack;
 using MessagePack.Resolvers;
 using SEServer.Data;
+using SEServer.Data.Interface;
 
 namespace SEServer.Cil;
 

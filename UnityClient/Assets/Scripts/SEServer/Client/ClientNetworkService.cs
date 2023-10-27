@@ -5,8 +5,10 @@ using Cysharp.Threading.Tasks;
 using MessagePack;
 using SEServer.Data;
 using NativeWebSocket;
+using SEServer.Data.Interface;
+using SEServer.Data.Message;
 using UnityEngine;
-using ILogger = SEServer.Data.ILogger;
+using ILogger = SEServer.Data.Interface.ILogger;
 using Random = UnityEngine.Random;
 
 namespace SEServer.Client

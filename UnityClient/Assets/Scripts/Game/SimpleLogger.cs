@@ -1,6 +1,6 @@
 ﻿using SEServer.Data;
 using UnityEngine;
-using ILogger = SEServer.Data.ILogger;
+using ILogger = SEServer.Data.Interface.ILogger;
 
 namespace Game
 {

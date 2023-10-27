@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SEServer.Data.Interface;
 
 namespace SEServer.Data;
 
@@ -52,12 +53,16 @@ public class EntityManager
         return Entities.GetEntity(eId);
     }
     
-    public T AddComponent<T>(Entity entity) where T :IComponent, new()
+    public T GetOrAddComponent<T>(Entity entity) where T :IComponent, new()
     {
-        entity.IsDirty = true;
-        return Components.AddComponent<T>(entity.Id);
+        if (Components.GetOrAddComponent<T>(entity.Id, out var component))
+        {
+            MarkAsDirty(entity);
+        }
+
+        return component;
     }
-    
+
     public T? GetComponent<T>(Entity entity) where T :IComponent, new()
     {
         return Components.GetComponent<T>(entity.Id);
@@ -96,7 +101,7 @@ public class EntityManager
     
     public void RemoveComponent<T>(Entity entity) where T :IComponent, new()
     {
-        entity.IsDirty = true;
+        MarkAsDirty(entity);
         Components.MarkAsToBeDelete<T>(entity.Id);
     }
     
@@ -106,7 +111,7 @@ public class EntityManager
         var component = GetComponent<T>(entity);
         if (component == null)
         {
-            component = AddComponent<T>(entity);
+            component = GetOrAddComponent<T>(entity);
         }
         
         return component;
@@ -246,5 +251,26 @@ public class EntityManager
             }));
         
         return collection;
+    }
+
+    public void MarkAsDirty(Entity entity)
+    {
+        Entities.MarkAsDirty(entity);
+    }
+    
+    public void MarkAsDirty(INetComponent component)
+    {
+        Components.MarkAsDirty(component);
+        Components.MarkAsChanged(component);
+    }
+    
+    public void MarkAsChanged(IComponent component)
+    {
+        Components.MarkAsChanged(component);
+    }
+
+    public bool IsChanged(IComponent component)
+    {
+        return Components.IsChanged(component);
     }
 }

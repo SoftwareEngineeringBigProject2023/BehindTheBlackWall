@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SEServer.Data;
+namespace SEServer.Data.Message;
 
 public static class MessageHelper
 {

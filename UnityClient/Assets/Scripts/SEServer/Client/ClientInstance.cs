@@ -1,5 +1,7 @@
 using System;
 using SEServer.Data;
+using SEServer.Data.Interface;
+using SEServer.Data.Message;
 
 namespace SEServer.Client
 {
@@ -12,10 +14,11 @@ namespace SEServer.Client
         
         public void Start()
         {
-            World.ServerContainer = ServerContainer;
-            
             ServerContainer.Init();
             ServerContainer.Start();
+            
+            World.ServerContainer = ServerContainer;
+            World.Init();
         }
         
         public void Update(float deltaTime)

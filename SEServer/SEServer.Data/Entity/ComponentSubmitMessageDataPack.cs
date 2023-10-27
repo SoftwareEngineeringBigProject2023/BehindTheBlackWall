@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using MessagePack;
+using SEServer.Data.Message;
 
 namespace SEServer.Data;
 

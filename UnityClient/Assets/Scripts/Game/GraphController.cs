@@ -1,5 +1,6 @@
 ﻿using System;
 using SEServer.Data;
+using SEServer.Data.Interface;
 using SEServer.GameData;
 using UnityEngine;
 

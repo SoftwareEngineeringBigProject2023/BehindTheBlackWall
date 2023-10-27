@@ -1,5 +1,6 @@
 ﻿using MessagePack;
 using SEServer.Data;
+using SEServer.Data.Interface;
 
 namespace SEServer.GameData;
 
@@ -10,6 +11,5 @@ public class GraphComponent : IS2CComponent
     public CId Id { get; set; }
     [Key(1)]
     public EId EntityId { get; set; }
-    [IgnoreMember]
-    public bool IsDirty { get; set; }
+
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using SEServer.Data.Interface;
 
 namespace SEServer.Data;
 
@@ -32,4 +33,14 @@ public abstract class World
     /// </summary>
     /// <param name="deltaTime"></param>
     public abstract void Update(float deltaTime);
+    
+    public void MarkAsDirty(Entity entity)
+    {
+        EntityManager.MarkAsDirty(entity);
+    }
+    
+    public void MarkAsDirty(INetComponent component)
+    {
+        EntityManager.MarkAsDirty(component);
+    }
 }

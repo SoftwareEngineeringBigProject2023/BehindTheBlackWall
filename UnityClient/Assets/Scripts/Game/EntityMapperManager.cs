@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SEServer.Data;
+using SEServer.Data.Interface;
 using SEServer.GameData;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -37,8 +38,7 @@ namespace Game
             
             RegisterControllerBuilder(new TransformControllerBuilder());
             RegisterControllerBuilder(new GraphControllerBuilder());
-            RegisterControllerBuilder(new MoveInputControllerBuilder());
-            
+
             foreach (var controllerBuilder in ControllerBuilders)
             {
                 ComponentMappers.Add(controllerBuilder.Key, new List<ComponentMapper>());

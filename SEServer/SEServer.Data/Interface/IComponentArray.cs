@@ -1,14 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SEServer.Data;
+namespace SEServer.Data.Interface;
 
 public interface IComponentArray
 {
     World World { get; set; }
     void RemoveMarkComponents();
     void MarkAsToBeDelete(EId eId);
+    /// <summary>
+    /// 标记为脏，需要进行网络同步
+    /// </summary>
+    /// <param name="component"></param>
+    void MarkAsDirty(INetComponent component);
+    bool IsDirty(INetComponent component);
     void ClearDirty();
+    /// <summary>
+    /// 标记为改变，需要进行System处理
+    /// </summary>
+    /// <param name="component"></param>
+    void MarkAsChanged(IComponent component);
+    bool IsChanged(IComponent component);
+    void ClearChanged();
     bool ContainInterface(Type iType);
     Type GetDataType();
     bool HasEntity(EId entityId);

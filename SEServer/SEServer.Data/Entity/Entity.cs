@@ -12,6 +12,5 @@ public class Entity
     /// 实体的脏标记
     /// 只有当组件发生数量与类型变化时，才会被标记为脏
     /// </summary>
-    [IgnoreMember]
-    public bool IsDirty { get; set; }
+
 }

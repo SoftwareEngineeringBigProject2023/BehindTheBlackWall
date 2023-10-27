@@ -49,32 +49,32 @@ namespace MessagePack.SEServer.Data.Resolvers
         {
             lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(27)
             {
-                { typeof(global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.NotifyData>>), 0 },
-                { typeof(global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.SubmitData>>), 1 },
+                { typeof(global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.NotifyData>>), 0 },
+                { typeof(global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.SubmitData>>), 1 },
                 { typeof(global::System.Collections.Generic.List<byte[]>), 2 },
                 { typeof(global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>), 3 },
                 { typeof(global::System.Collections.Generic.List<global::SEServer.Data.ComponentNotifyMessageDataPack>), 4 },
                 { typeof(global::System.Collections.Generic.List<global::SEServer.Data.ComponentSubmitMessageDataPack>), 5 },
                 { typeof(global::System.Collections.Generic.List<global::SEServer.Data.EId>), 6 },
                 { typeof(global::System.Collections.Generic.List<global::SEServer.Data.Entity>), 7 },
-                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.NotifyData>), 8 },
-                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.SubmitData>), 9 },
-                { typeof(global::SEServer.Data.AuthorizationMessage), 10 },
-                { typeof(global::SEServer.Data.AuthorizationReplyMessage), 11 },
-                { typeof(global::SEServer.Data.CId), 12 },
-                { typeof(global::SEServer.Data.ComponentArrayDataPack), 13 },
-                { typeof(global::SEServer.Data.ComponentNotifyMessageDataPack), 14 },
-                { typeof(global::SEServer.Data.ComponentSubmitMessageDataPack), 15 },
-                { typeof(global::SEServer.Data.EId), 16 },
-                { typeof(global::SEServer.Data.Entity), 17 },
-                { typeof(global::SEServer.Data.NotifyData), 18 },
-                { typeof(global::SEServer.Data.PlayerId), 19 },
-                { typeof(global::SEServer.Data.Snapshot), 20 },
-                { typeof(global::SEServer.Data.SnapshotMessage), 21 },
-                { typeof(global::SEServer.Data.SubmitData), 22 },
-                { typeof(global::SEServer.Data.SubmitEntityMessage), 23 },
-                { typeof(global::SEServer.Data.SVector2), 24 },
-                { typeof(global::SEServer.Data.SyncEntityMessage), 25 },
+                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.Message.NotifyData>), 8 },
+                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.Message.SubmitData>), 9 },
+                { typeof(global::SEServer.Data.CId), 10 },
+                { typeof(global::SEServer.Data.ComponentArrayDataPack), 11 },
+                { typeof(global::SEServer.Data.ComponentNotifyMessageDataPack), 12 },
+                { typeof(global::SEServer.Data.ComponentSubmitMessageDataPack), 13 },
+                { typeof(global::SEServer.Data.EId), 14 },
+                { typeof(global::SEServer.Data.Entity), 15 },
+                { typeof(global::SEServer.Data.Message.AuthorizationMessage), 16 },
+                { typeof(global::SEServer.Data.Message.AuthorizationReplyMessage), 17 },
+                { typeof(global::SEServer.Data.Message.NotifyData), 18 },
+                { typeof(global::SEServer.Data.Message.SnapshotMessage), 19 },
+                { typeof(global::SEServer.Data.Message.SubmitData), 20 },
+                { typeof(global::SEServer.Data.Message.SubmitEntityMessage), 21 },
+                { typeof(global::SEServer.Data.Message.SyncEntityMessage), 22 },
+                { typeof(global::SEServer.Data.PlayerId), 23 },
+                { typeof(global::SEServer.Data.Snapshot), 24 },
+                { typeof(global::SEServer.Data.SVector2), 25 },
                 { typeof(global::SEServer.Data.WId), 26 },
             };
         }
@@ -89,32 +89,32 @@ namespace MessagePack.SEServer.Data.Resolvers
 
             switch (key)
             {
-                case 0: return new global::MessagePack.Formatters.DictionaryFormatter<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.NotifyData>>();
-                case 1: return new global::MessagePack.Formatters.DictionaryFormatter<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.SubmitData>>();
+                case 0: return new global::MessagePack.Formatters.DictionaryFormatter<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.NotifyData>>();
+                case 1: return new global::MessagePack.Formatters.DictionaryFormatter<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.SubmitData>>();
                 case 2: return new global::MessagePack.Formatters.ListFormatter<byte[]>();
                 case 3: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.ComponentArrayDataPack>();
                 case 4: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.ComponentNotifyMessageDataPack>();
                 case 5: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.ComponentSubmitMessageDataPack>();
                 case 6: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.EId>();
                 case 7: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.Entity>();
-                case 8: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.NotifyData>();
-                case 9: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.SubmitData>();
-                case 10: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.AuthorizationMessageFormatter();
-                case 11: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.AuthorizationReplyMessageFormatter();
-                case 12: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.CIdFormatter();
-                case 13: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentArrayDataPackFormatter();
-                case 14: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentNotifyMessageDataPackFormatter();
-                case 15: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentSubmitMessageDataPackFormatter();
-                case 16: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.EIdFormatter();
-                case 17: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.EntityFormatter();
-                case 18: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.NotifyDataFormatter();
-                case 19: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.PlayerIdFormatter();
-                case 20: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SnapshotFormatter();
-                case 21: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SnapshotMessageFormatter();
-                case 22: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SubmitDataFormatter();
-                case 23: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SubmitEntityMessageFormatter();
-                case 24: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SVector2Formatter();
-                case 25: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SyncEntityMessageFormatter();
+                case 8: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.Message.NotifyData>();
+                case 9: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.Message.SubmitData>();
+                case 10: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.CIdFormatter();
+                case 11: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentArrayDataPackFormatter();
+                case 12: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentNotifyMessageDataPackFormatter();
+                case 13: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentSubmitMessageDataPackFormatter();
+                case 14: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.EIdFormatter();
+                case 15: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.EntityFormatter();
+                case 16: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.AuthorizationMessageFormatter();
+                case 17: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.AuthorizationReplyMessageFormatter();
+                case 18: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.NotifyDataFormatter();
+                case 19: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SnapshotMessageFormatter();
+                case 20: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SubmitDataFormatter();
+                case 21: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SubmitEntityMessageFormatter();
+                case 22: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SyncEntityMessageFormatter();
+                case 23: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.PlayerIdFormatter();
+                case 24: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SnapshotFormatter();
+                case 25: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SVector2Formatter();
                 case 26: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.WIdFormatter();
                 default: return null;
             }
@@ -151,94 +151,6 @@ namespace MessagePack.SEServer.Data.Resolvers
 
 namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
 {
-    public sealed class AuthorizationMessageFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.AuthorizationMessage>
-    {
-
-        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.AuthorizationMessage value, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (value == null)
-            {
-                writer.WriteNil();
-                return;
-            }
-
-            writer.WriteArrayHeader(1);
-            writer.Write(value.UserId);
-        }
-
-        public global::SEServer.Data.AuthorizationMessage Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (reader.TryReadNil())
-            {
-                return null;
-            }
-
-            options.Security.DepthStep(ref reader);
-            var length = reader.ReadArrayHeader();
-            var ____result = new global::SEServer.Data.AuthorizationMessage();
-
-            for (int i = 0; i < length; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        ____result.UserId = reader.ReadInt32();
-                        break;
-                    default:
-                        reader.Skip();
-                        break;
-                }
-            }
-
-            reader.Depth--;
-            return ____result;
-        }
-    }
-
-    public sealed class AuthorizationReplyMessageFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.AuthorizationReplyMessage>
-    {
-
-        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.AuthorizationReplyMessage value, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (value == null)
-            {
-                writer.WriteNil();
-                return;
-            }
-
-            writer.WriteArrayHeader(1);
-            writer.Write(value.UserId);
-        }
-
-        public global::SEServer.Data.AuthorizationReplyMessage Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (reader.TryReadNil())
-            {
-                return null;
-            }
-
-            options.Security.DepthStep(ref reader);
-            var length = reader.ReadArrayHeader();
-            var ____result = new global::SEServer.Data.AuthorizationReplyMessage();
-
-            for (int i = 0; i < length; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        ____result.UserId = reader.ReadInt32();
-                        break;
-                    default:
-                        reader.Skip();
-                        break;
-                }
-            }
-
-            reader.Depth--;
-            return ____result;
-        }
-    }
-
     public sealed class CIdFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.CId>
     {
 
@@ -341,7 +253,7 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
             global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
             writer.WriteArrayHeader(2);
             writer.Write(value.TypeCode);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.NotifyData>>>(formatterResolver).Serialize(ref writer, value.NotifyMessages, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.NotifyData>>>(formatterResolver).Serialize(ref writer, value.NotifyMessages, options);
         }
 
         public global::SEServer.Data.ComponentNotifyMessageDataPack Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
@@ -364,7 +276,7 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
                         ____result.TypeCode = reader.ReadInt32();
                         break;
                     case 1:
-                        ____result.NotifyMessages = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.NotifyData>>>(formatterResolver).Deserialize(ref reader, options);
+                        ____result.NotifyMessages = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.NotifyData>>>(formatterResolver).Deserialize(ref reader, options);
                         break;
                     default:
                         reader.Skip();
@@ -391,7 +303,7 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
             global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
             writer.WriteArrayHeader(2);
             writer.Write(value.TypeCode);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.SubmitData>>>(formatterResolver).Serialize(ref writer, value.SubmitMessages, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.SubmitData>>>(formatterResolver).Serialize(ref writer, value.SubmitMessages, options);
         }
 
         public global::SEServer.Data.ComponentSubmitMessageDataPack Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
@@ -414,7 +326,7 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
                         ____result.TypeCode = reader.ReadInt32();
                         break;
                     case 1:
-                        ____result.SubmitMessages = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.SubmitData>>>(formatterResolver).Deserialize(ref reader, options);
+                        ____result.SubmitMessages = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.SubmitData>>>(formatterResolver).Deserialize(ref reader, options);
                         break;
                     default:
                         reader.Skip();
@@ -499,76 +411,6 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
                 {
                     case 0:
                         ____result.Id = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    default:
-                        reader.Skip();
-                        break;
-                }
-            }
-
-            reader.Depth--;
-            return ____result;
-        }
-    }
-
-    public sealed class NotifyDataFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.NotifyData>
-    {
-
-        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.NotifyData value, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (value == null)
-            {
-                writer.WriteNil();
-                return;
-            }
-
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(7);
-            writer.Write(value.Type);
-            writer.Write(value.Arg0);
-            writer.Write(value.Arg1);
-            writer.Write(value.Arg2);
-            writer.Write(value.Arg3);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.Info, options);
-            writer.Write(value.Data);
-        }
-
-        public global::SEServer.Data.NotifyData Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (reader.TryReadNil())
-            {
-                return null;
-            }
-
-            options.Security.DepthStep(ref reader);
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            var length = reader.ReadArrayHeader();
-            var ____result = new global::SEServer.Data.NotifyData();
-
-            for (int i = 0; i < length; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        ____result.Type = reader.ReadInt32();
-                        break;
-                    case 1:
-                        ____result.Arg0 = reader.ReadInt32();
-                        break;
-                    case 2:
-                        ____result.Arg1 = reader.ReadInt32();
-                        break;
-                    case 3:
-                        ____result.Arg2 = reader.ReadInt32();
-                        break;
-                    case 4:
-                        ____result.Arg3 = reader.ReadInt32();
-                        break;
-                    case 5:
-                        ____result.Info = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    case 6:
-                        ____result.Data = global::MessagePack.Internal.CodeGenHelpers.GetArrayFromNullableSequence(reader.ReadBytes());
                         break;
                     default:
                         reader.Skip();
@@ -677,176 +519,6 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
         }
     }
 
-    public sealed class SnapshotMessageFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.SnapshotMessage>
-    {
-
-        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.SnapshotMessage value, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (value == null)
-            {
-                writer.WriteNil();
-                return;
-            }
-
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(2);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.Snapshot>(formatterResolver).Serialize(ref writer, value.Snapshot, options);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.PlayerId>(formatterResolver).Serialize(ref writer, value.PlayerId, options);
-        }
-
-        public global::SEServer.Data.SnapshotMessage Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (reader.TryReadNil())
-            {
-                return null;
-            }
-
-            options.Security.DepthStep(ref reader);
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            var length = reader.ReadArrayHeader();
-            var ____result = new global::SEServer.Data.SnapshotMessage();
-
-            for (int i = 0; i < length; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        ____result.Snapshot = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.Snapshot>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    case 1:
-                        ____result.PlayerId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.PlayerId>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    default:
-                        reader.Skip();
-                        break;
-                }
-            }
-
-            reader.Depth--;
-            return ____result;
-        }
-    }
-
-    public sealed class SubmitDataFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.SubmitData>
-    {
-
-        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.SubmitData value, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (value == null)
-            {
-                writer.WriteNil();
-                return;
-            }
-
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(7);
-            writer.Write(value.Type);
-            writer.Write(value.Arg0);
-            writer.Write(value.Arg1);
-            writer.Write(value.Arg2);
-            writer.Write(value.Arg3);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.Info, options);
-            writer.Write(value.Data);
-        }
-
-        public global::SEServer.Data.SubmitData Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (reader.TryReadNil())
-            {
-                return null;
-            }
-
-            options.Security.DepthStep(ref reader);
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            var length = reader.ReadArrayHeader();
-            var ____result = new global::SEServer.Data.SubmitData();
-
-            for (int i = 0; i < length; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        ____result.Type = reader.ReadInt32();
-                        break;
-                    case 1:
-                        ____result.Arg0 = reader.ReadInt32();
-                        break;
-                    case 2:
-                        ____result.Arg1 = reader.ReadInt32();
-                        break;
-                    case 3:
-                        ____result.Arg2 = reader.ReadInt32();
-                        break;
-                    case 4:
-                        ____result.Arg3 = reader.ReadInt32();
-                        break;
-                    case 5:
-                        ____result.Info = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    case 6:
-                        ____result.Data = global::MessagePack.Internal.CodeGenHelpers.GetArrayFromNullableSequence(reader.ReadBytes());
-                        break;
-                    default:
-                        reader.Skip();
-                        break;
-                }
-            }
-
-            reader.Depth--;
-            return ____result;
-        }
-    }
-
-    public sealed class SubmitEntityMessageFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.SubmitEntityMessage>
-    {
-
-        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.SubmitEntityMessage value, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (value == null)
-            {
-                writer.WriteNil();
-                return;
-            }
-
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(2);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>>(formatterResolver).Serialize(ref writer, value.ComponentArrayDataPacks, options);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentSubmitMessageDataPack>>(formatterResolver).Serialize(ref writer, value.ComponentSubmitDataPacks, options);
-        }
-
-        public global::SEServer.Data.SubmitEntityMessage Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (reader.TryReadNil())
-            {
-                return null;
-            }
-
-            options.Security.DepthStep(ref reader);
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            var length = reader.ReadArrayHeader();
-            var ____result = new global::SEServer.Data.SubmitEntityMessage();
-
-            for (int i = 0; i < length; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        ____result.ComponentArrayDataPacks = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    case 1:
-                        ____result.ComponentSubmitDataPacks = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentSubmitMessageDataPack>>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    default:
-                        reader.Skip();
-                        break;
-                }
-            }
-
-            reader.Depth--;
-            return ____result;
-        }
-    }
-
     public sealed class SVector2Formatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.SVector2>
     {
 
@@ -891,64 +563,6 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
         }
     }
 
-    public sealed class SyncEntityMessageFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.SyncEntityMessage>
-    {
-
-        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.SyncEntityMessage value, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (value == null)
-            {
-                writer.WriteNil();
-                return;
-            }
-
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(4);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.EId>>(formatterResolver).Serialize(ref writer, value.EntitiesToDelete, options);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.EId>>(formatterResolver).Serialize(ref writer, value.EntitiesToCreate, options);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>>(formatterResolver).Serialize(ref writer, value.ComponentArrayDataPacks, options);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentNotifyMessageDataPack>>(formatterResolver).Serialize(ref writer, value.ComponentNotifyDataPacks, options);
-        }
-
-        public global::SEServer.Data.SyncEntityMessage Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
-        {
-            if (reader.TryReadNil())
-            {
-                return null;
-            }
-
-            options.Security.DepthStep(ref reader);
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            var length = reader.ReadArrayHeader();
-            var ____result = new global::SEServer.Data.SyncEntityMessage();
-
-            for (int i = 0; i < length; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        ____result.EntitiesToDelete = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.EId>>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    case 1:
-                        ____result.EntitiesToCreate = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.EId>>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    case 2:
-                        ____result.ComponentArrayDataPacks = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    case 3:
-                        ____result.ComponentNotifyDataPacks = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentNotifyMessageDataPack>>(formatterResolver).Deserialize(ref reader, options);
-                        break;
-                    default:
-                        reader.Skip();
-                        break;
-                }
-            }
-
-            reader.Depth--;
-            return ____result;
-        }
-    }
-
     public sealed class WIdFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.WId>
     {
 
@@ -975,6 +589,423 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
                 {
                     case 0:
                         ____result.Id = reader.ReadInt32();
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+}
+
+#pragma warning restore 168
+#pragma warning restore 414
+#pragma warning restore 618
+#pragma warning restore 612
+
+#pragma warning restore SA1129 // Do not use default value type constructor
+#pragma warning restore SA1309 // Field names should not begin with underscore
+#pragma warning restore SA1312 // Variable names should begin with lower-case letter
+#pragma warning restore SA1403 // File may only contain a single namespace
+#pragma warning restore SA1649 // File name should match first type name
+
+// <auto-generated>
+// THIS (.cs) FILE IS GENERATED BY MPC(MessagePack-CSharp). DO NOT CHANGE IT.
+// </auto-generated>
+
+#pragma warning disable 618
+#pragma warning disable 612
+#pragma warning disable 414
+#pragma warning disable 168
+#pragma warning disable CS1591 // document public APIs
+
+#pragma warning disable SA1129 // Do not use default value type constructor
+#pragma warning disable SA1309 // Field names should not begin with underscore
+#pragma warning disable SA1312 // Variable names should begin with lower-case letter
+#pragma warning disable SA1403 // File may only contain a single namespace
+#pragma warning disable SA1649 // File name should match first type name
+
+namespace MessagePack.SEServer.Data.Formatters.SEServer.Data.Message
+{
+    public sealed class AuthorizationMessageFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.Message.AuthorizationMessage>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.Message.AuthorizationMessage value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            writer.WriteArrayHeader(1);
+            writer.Write(value.UserId);
+        }
+
+        public global::SEServer.Data.Message.AuthorizationMessage Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.Data.Message.AuthorizationMessage();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.UserId = reader.ReadInt32();
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class AuthorizationReplyMessageFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.Message.AuthorizationReplyMessage>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.Message.AuthorizationReplyMessage value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            writer.WriteArrayHeader(1);
+            writer.Write(value.UserId);
+        }
+
+        public global::SEServer.Data.Message.AuthorizationReplyMessage Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.Data.Message.AuthorizationReplyMessage();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.UserId = reader.ReadInt32();
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class NotifyDataFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.Message.NotifyData>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.Message.NotifyData value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(7);
+            writer.Write(value.Type);
+            writer.Write(value.Arg0);
+            writer.Write(value.Arg1);
+            writer.Write(value.Arg2);
+            writer.Write(value.Arg3);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.Info, options);
+            writer.Write(value.Data);
+        }
+
+        public global::SEServer.Data.Message.NotifyData Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.Data.Message.NotifyData();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.Type = reader.ReadInt32();
+                        break;
+                    case 1:
+                        ____result.Arg0 = reader.ReadInt32();
+                        break;
+                    case 2:
+                        ____result.Arg1 = reader.ReadInt32();
+                        break;
+                    case 3:
+                        ____result.Arg2 = reader.ReadInt32();
+                        break;
+                    case 4:
+                        ____result.Arg3 = reader.ReadInt32();
+                        break;
+                    case 5:
+                        ____result.Info = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 6:
+                        ____result.Data = global::MessagePack.Internal.CodeGenHelpers.GetArrayFromNullableSequence(reader.ReadBytes());
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class SnapshotMessageFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.Message.SnapshotMessage>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.Message.SnapshotMessage value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(2);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.Snapshot>(formatterResolver).Serialize(ref writer, value.Snapshot, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.PlayerId>(formatterResolver).Serialize(ref writer, value.PlayerId, options);
+        }
+
+        public global::SEServer.Data.Message.SnapshotMessage Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.Data.Message.SnapshotMessage();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.Snapshot = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.Snapshot>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 1:
+                        ____result.PlayerId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.PlayerId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class SubmitDataFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.Message.SubmitData>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.Message.SubmitData value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(7);
+            writer.Write(value.Type);
+            writer.Write(value.Arg0);
+            writer.Write(value.Arg1);
+            writer.Write(value.Arg2);
+            writer.Write(value.Arg3);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.Info, options);
+            writer.Write(value.Data);
+        }
+
+        public global::SEServer.Data.Message.SubmitData Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.Data.Message.SubmitData();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.Type = reader.ReadInt32();
+                        break;
+                    case 1:
+                        ____result.Arg0 = reader.ReadInt32();
+                        break;
+                    case 2:
+                        ____result.Arg1 = reader.ReadInt32();
+                        break;
+                    case 3:
+                        ____result.Arg2 = reader.ReadInt32();
+                        break;
+                    case 4:
+                        ____result.Arg3 = reader.ReadInt32();
+                        break;
+                    case 5:
+                        ____result.Info = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 6:
+                        ____result.Data = global::MessagePack.Internal.CodeGenHelpers.GetArrayFromNullableSequence(reader.ReadBytes());
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class SubmitEntityMessageFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.Message.SubmitEntityMessage>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.Message.SubmitEntityMessage value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(2);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>>(formatterResolver).Serialize(ref writer, value.ComponentArrayDataPacks, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentSubmitMessageDataPack>>(formatterResolver).Serialize(ref writer, value.ComponentSubmitDataPacks, options);
+        }
+
+        public global::SEServer.Data.Message.SubmitEntityMessage Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.Data.Message.SubmitEntityMessage();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.ComponentArrayDataPacks = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 1:
+                        ____result.ComponentSubmitDataPacks = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentSubmitMessageDataPack>>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class SyncEntityMessageFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.Message.SyncEntityMessage>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.Message.SyncEntityMessage value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(4);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.EId>>(formatterResolver).Serialize(ref writer, value.EntitiesToDelete, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.EId>>(formatterResolver).Serialize(ref writer, value.EntitiesToCreate, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>>(formatterResolver).Serialize(ref writer, value.ComponentArrayDataPacks, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentNotifyMessageDataPack>>(formatterResolver).Serialize(ref writer, value.ComponentNotifyDataPacks, options);
+        }
+
+        public global::SEServer.Data.Message.SyncEntityMessage Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.Data.Message.SyncEntityMessage();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.EntitiesToDelete = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.EId>>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 1:
+                        ____result.EntitiesToCreate = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.EId>>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 2:
+                        ____result.ComponentArrayDataPacks = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 3:
+                        ____result.ComponentNotifyDataPacks = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.Data.ComponentNotifyMessageDataPack>>(formatterResolver).Deserialize(ref reader, options);
                         break;
                     default:
                         reader.Skip();

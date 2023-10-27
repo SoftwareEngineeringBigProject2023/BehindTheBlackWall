@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using SEServer.Core;
+﻿using SEServer.Data.Interface;
 
-namespace SEServer.Data;
+namespace SEServer.Core;
 
 public interface IServerNetworkService : IService
 {

@@ -12,7 +12,8 @@ public class EntityArray
     public HashSet<EId> DeleteEntities { get; } = new();
     public World World { get; set; } = null!;
     public HashSet<EId> CreateEntities { get; set; } = new();
-    
+    private HashSet<EId> DirtyEntities { get; set; } = new();
+
     private Entity SingletonEntity { get; set; } = null!;
 
     private EId CreateId()
@@ -39,7 +40,7 @@ public class EntityArray
     public Entity CreateEntity(EId eId)
     {
         var entity = new Entity {Id = eId};
-        entity.IsDirty = true;
+        MarkAsDirty(entity);
         Entities.Add(entity);
         EntityToIndex.Add(entity.Id, Entities.Count - 1);
         CreateEntities.Add(entity.Id);
@@ -79,14 +80,20 @@ public class EntityArray
             EntityToIndex.Add(Entities[i].Id, i);
         }
     }
+    
+    public void MarkAsDirty(Entity entity)
+    {
+        DirtyEntities.Add(entity.Id);
+    }
+    
+    private bool IsDirty(Entity entity)
+    {
+        return DirtyEntities.Contains(entity.Id);
+    }
 
     public void ClearDirty()
     {
-        foreach (var entity in Entities)
-        {
-            entity.IsDirty = false;
-        }
-        
+        DirtyEntities.Clear();
         DeleteEntities.Clear();
         CreateEntities.Clear();
     }
@@ -125,7 +132,7 @@ public class EntityArray
         var list = new List<EId>();
         foreach (var entity in Entities)
         {
-            if (entity.IsDirty)
+            if (IsDirty(entity))
             {
                 list.Add(entity.Id);
             }

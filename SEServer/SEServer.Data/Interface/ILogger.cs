@@ -1,4 +1,4 @@
-﻿namespace SEServer.Data;
+﻿namespace SEServer.Data.Interface;
 
 /// <summary>
 /// 日志接口

@@ -1,6 +1,7 @@
 ﻿using System.Numerics;
 using MessagePack;
 using SEServer.Data;
+using SEServer.Data.Interface;
 
 namespace SEServer.GameData;
 
@@ -14,8 +15,7 @@ public class MoveInputComponent : IC2SComponent
     public CId Id { get; set; }
     [Key(1)]
     public EId EntityId { get; set; }
-    [IgnoreMember]
-    public bool IsDirty { get; set; }
+
     [Key(2)]
     public PlayerId Owner { get; set; }
     /// <summary>

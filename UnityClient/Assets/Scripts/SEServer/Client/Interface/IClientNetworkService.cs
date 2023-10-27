@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using SEServer.Data;
+using SEServer.Data.Interface;
 
 namespace SEServer.Client
 {
