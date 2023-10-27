@@ -201,6 +201,10 @@ public class ClientConnect
         if(State != ClientConnectState.Disconnected)
         {
             State = ClientConnectState.Authorized;
+            SendMessage(new AuthorizationReplyMessage()
+            {
+                UserId = User.Id.Id,
+            });
         }
     }
 }

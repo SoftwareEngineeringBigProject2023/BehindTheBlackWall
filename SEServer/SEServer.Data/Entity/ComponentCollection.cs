@@ -6,7 +6,7 @@ namespace SEServer.Data;
 
 public class ComponentCollection
 {
-    public World World { get; set; }
+    public World World { get; set; } = null!;
     public Dictionary<Type, IComponentArray> Components { get; } = new();
 
     public ComponentArray<T> GetComponentArray<T>() where T : IComponent, new()
@@ -23,12 +23,18 @@ public class ComponentCollection
     {
         if (!Components.ContainsKey(type))
         {
-            Components.Add(type, (IComponentArray) Activator.CreateInstance(typeof(ComponentArray<>).MakeGenericType(type)));
+            var componentArray = Activator.CreateInstance(typeof(ComponentArray<>).MakeGenericType(type));
+            if (componentArray == null)
+            {
+                throw new Exception($"Create instance of {type.Name} failed.");
+            }
+            
+            Components.Add(type, (IComponentArray)componentArray);
         }
         return Components[type];
     }
     
-    public T AddComponent<T>(EId eId) where T : struct, IComponent
+    public T AddComponent<T>(EId eId) where T : IComponent, new()
     {
         var componentArray = GetComponentArray<T>();
         if (componentArray.HasEntity(eId))
@@ -39,12 +45,12 @@ public class ComponentCollection
         return componentArray.CreateComponent(eId);
     }
     
-    public T GetComponent<T>(EId eId) where T : struct, IComponent
+    public T? GetComponent<T>(EId eId) where T : IComponent, new()
     {
         var componentArray = GetComponentArray<T>();
         if (!componentArray.HasEntity(eId))
         {
-            throw new ArgumentException($"Component of type {typeof(T).Name} not found.");
+            return default;
         }
         
         return componentArray.Get(eId);
@@ -56,7 +62,7 @@ public class ComponentCollection
     /// <param name="eId"></param>
     /// <typeparam name="T"></typeparam>
     /// <exception cref="ArgumentException"></exception>
-    public void MarkAsToBeDelete<T>(EId eId) where T : struct, IComponent
+    public void MarkAsToBeDelete<T>(EId eId) where T : IComponent, new()
     {
         var componentArray = GetComponentArray<T>();
         if (!componentArray.HasEntity(eId))

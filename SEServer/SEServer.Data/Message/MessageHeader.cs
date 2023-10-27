@@ -17,9 +17,10 @@ public class MessageHeader
     public const int MESSAGE_HEADER_SIZE = 9;
     
     public const int DATA_TYPE_AUTHORIZATION = 1;
-    public const int DATA_TYPE_SNAPSHOT = 2;
-    public const int DATA_TYPE_SYNC = 3;
-    public const int DATA_TYPE_SUBMIT = 4;
+    public const int DATA_TYPE_AUTHORIZATION_REPLY = 2;
+    public const int DATA_TYPE_SNAPSHOT = 3;
+    public const int DATA_TYPE_SYNC = 4;
+    public const int DATA_TYPE_SUBMIT = 5;
     
     public int DateLength { get; set; }
     public int DataType { get; set; }
@@ -31,6 +32,8 @@ public class MessageHeader
         {
             case AuthorizationMessage:
                 return DATA_TYPE_AUTHORIZATION;
+            case AuthorizationReplyMessage:
+                return DATA_TYPE_AUTHORIZATION_REPLY;
             case SnapshotMessage:
                 return DATA_TYPE_SNAPSHOT;
             case SyncEntityMessage:
@@ -48,6 +51,8 @@ public class MessageHeader
         {
             case DATA_TYPE_AUTHORIZATION:
                 return serializer.Deserialize<AuthorizationMessage>(bytes, offset, totalLength);
+            case DATA_TYPE_AUTHORIZATION_REPLY:
+                return serializer.Deserialize<AuthorizationReplyMessage>(bytes, offset, totalLength);
             case DATA_TYPE_SNAPSHOT:
                 return serializer.Deserialize<SnapshotMessage>(bytes, offset, totalLength);
             case DATA_TYPE_SYNC:

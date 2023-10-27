@@ -48,9 +48,13 @@ public static class MessagePackTools
             var outputDir = Path.GetFullPath(Path.Combine(rootPath, "MessagePackGen"));
             if (!Directory.Exists(outputDir))
                 Directory.CreateDirectory(outputDir);
-            var outputDataPath = Path.GetFullPath(Path.Combine(outputDir, "MessagePackGenerated.cs"));
+            var outputDataPath = Path.GetFullPath(Path.Combine(outputDir, "MessagePack.SEServer.Data.Generated.cs"));
+            var outputGameDataPath = Path.GetFullPath(Path.Combine(outputDir, "MessagePack.SEServer.GameData.Generated.cs"));
             
-            sb.AppendLine($"dotnet mpc -i \"{projDataPath}\" \"{projGameDataPath}\" -o \"{outputDataPath}\"");
+            sb.AppendLine($"dotnet mpc -i \"{projDataPath}\" -o \"{outputDataPath}\" -r \"GeneratedDataResolver\" -n \"MessagePack.SEServer.Data\"");
+            sb.AppendLine($"dotnet mpc -i \"{projGameDataPath}\" -o \"{outputGameDataPath}\" -r \"GeneratedGameDataResolver\"  -n \"MessagePack.SEServer.GameData\"");
+            
+            EditorGUITools.SetProgress(0.5f);
             ShellTools.RunShellOnDisk(sb.ToString());
             EditorGUITools.Set100Progress();
             

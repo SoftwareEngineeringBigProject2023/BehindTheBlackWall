@@ -13,7 +13,7 @@ public class ServerWorld : World
         this.Id = wId;
     }
     
-    public Snapshot NearestSnapshot { get; set; }
+    public Snapshot NearestSnapshot { get; set; } = null!;
     public Queue<IWorldMessage> SendMessageQueue { get; } = new Queue<IWorldMessage>();
     public Queue<IWorldMessage> ReceiveMessageQueue { get; } = new Queue<IWorldMessage>();
     public PlayerManager PlayerManager { get; } = new PlayerManager();
@@ -43,7 +43,7 @@ public class ServerWorld : World
         }
     }
 
-    public void EntitiesUpdate()
+    private void EntitiesUpdate()
     {
         var Entities = EntityManager.Entities;
         var Components = EntityManager.Components;
@@ -87,7 +87,7 @@ public class ServerWorld : World
         }
     }
 
-    public void CollectChangedInfo()
+    private void CollectChangedInfo()
     {
         var Entities = EntityManager.Entities;
         var allEntitiesChanged = Entities.GetChangedEntityIds();

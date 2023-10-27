@@ -4,39 +4,47 @@ namespace SEServer.Data;
 
 public class PlayerManager
 {
-    public List<PlayerData> Users { get; set; } = new();
+    public List<PlayerData> Players { get; set; } = new();
     public List<PlayerId> JoinedPlayers { get; set; } = new();
     public List<PlayerId> LeftPlayers { get; set; } = new();
-
-    public PlayerData CreateOrGetPlayer(PlayerId id)
+    private int IdAutoIncrement { get; set; } = 1;
+    
+    private PlayerId CreateId()
     {
-        var player = Users.Find(x => x.Id == id);
-        if (player == null)
+        PlayerId id = new PlayerId()
         {
-            player = new PlayerData
-            {
-                Id = id
-            };
-            Users.Add(player);
-            JoinedPlayers.Add(id);
-        }
-        
-        return player;
+            Id = IdAutoIncrement++
+        };
+        return id;
+    }
+
+    public PlayerData CreatePlayer()
+    {
+        var id = CreateId();
+        return new PlayerData()
+        {
+            Id = id
+        };
+    }
+
+    public PlayerData GetPlayer(PlayerId id)
+    {
+        return Players.Find(x => x.Id == id);
     }
     
     public void RemovePlayer(PlayerId id)
     {
-        var player = Users.Find(x => x.Id == id);
+        var player = Players.Find(x => x.Id == id);
         if (player != null)
         {
-            Users.Remove(player);
+            Players.Remove(player);
             LeftPlayers.Add(id);
         }
     }
     
     public void Clear()
     {
-        Users.Clear();
+        Players.Clear();
         JoinedPlayers.Clear();
         LeftPlayers.Clear();
     }

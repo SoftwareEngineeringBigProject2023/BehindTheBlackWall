@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace SEServer.Core;
 
@@ -10,6 +11,11 @@ public class Time
     [DllImport("winmm.dll")]
     internal static extern uint timeEndPeriod(uint period);
 
+    /// <summary>
+    /// 计时器
+    /// </summary>
+    private Stopwatch _stopwatch = new Stopwatch();
+    
     /// <summary>
     /// 游戏启动的时间，单位毫秒
     /// </summary>
@@ -32,7 +38,7 @@ public class Time
     private long _totalSleepTimeThisSecond;
     private long _totalSleepTimeLastSecond;
     
-    public int MaxFps { get; set; } = 30;
+    public int MaxFps { get; set; } = 15;
     public int Fps => _totalFpsLastSecond;
     public float FrameInterval => 1f / MaxFps;
 
@@ -49,6 +55,7 @@ public class Time
 
     public void Init()
     {
+        _stopwatch = Stopwatch.StartNew();
         _startTime = GetCurTime();
         _lastFrameStartTime = _startTime;
         _curFrameStartTime = _startTime;
@@ -63,12 +70,18 @@ public class Time
 
         if (_totalPassTimeOneSecond > 1000)
         {
-            _totalPassTimeOneSecond = 0;
+            _totalPassTimeOneSecond -= 1000;
             _totalFpsLastSecond = _totalFpsThisSecond;
             _totalFpsThisSecond = 0;
             
             _totalSleepTimeLastSecond = _totalSleepTimeThisSecond;
             _totalSleepTimeThisSecond = 0;
+        }
+
+        if (_totalPassTimeOneSecond > 10000)
+        {
+            // 丢帧
+            _totalPassTimeOneSecond = 0;
         }
 
         _totalFpsThisSecond += 1;
@@ -78,6 +91,7 @@ public class Time
     {
         CurFrame += 1;
         long sleepTime = (long) (FrameInterval * 1000 - (GetCurTime() - _curFrameStartTime));
+        sleepTime = Math.Max(0L, sleepTime);
         _totalSleepTimeThisSecond += sleepTime;
         if (sleepTime > 0)
         {
@@ -87,5 +101,5 @@ public class Time
         }
     }
 
-    private long GetCurTime() => DateTime.Now.Ticks / 10000L;
+    private long GetCurTime() => _stopwatch.ElapsedTicks / 10000L;
 }

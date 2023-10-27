@@ -9,7 +9,7 @@ namespace SEServer.Data;
 /// </summary>
 public class ComponentSerializer : IComponentSerializer
 {
-    public ServerContainer ServerContainer { get; set; }
+    public ServerContainer ServerContainer { get; set; } = null!;
     
     public void Init()
     {
@@ -56,10 +56,20 @@ public class ComponentSerializer : IComponentSerializer
     {
         // 根据类型计算唯一标识
         var typeName = type.FullName;
-        var code = (int)Compute(typeName);
-        return code;
+        if (typeName != null)
+        {
+            var code = (int)Compute(typeName);
+            return code;
+        }
+        
+        throw new Exception("无法计算类型的唯一标识");
     }
     
+    /// <summary>
+    /// 根据字符串计算唯一标识
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
     public static uint Compute(string input)
     {
         byte[] data = Encoding.UTF8.GetBytes(input);

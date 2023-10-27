@@ -1,7 +1,11 @@
-﻿namespace SEServer.Data;
+﻿using MessagePack;
 
+namespace SEServer.Data;
+
+[MessagePackObject]
 public struct PlayerId
 {
+    [Key(0)]
     public int Id { get; set; }
     public static PlayerId Invalid { get; } = new PlayerId { Id = -1 };
 
