@@ -157,7 +157,7 @@ public class ClientConnect
         WebSocket.SendAsync(bytes, WebSocketMessageType.Binary, true, CancellationToken.None);
     }
     
-    public void SendMessage(IMessage message)
+    public void SendMessage<T>(T message) where T : IMessage
     {
         var bytes = ServerContainer.Get<IDataSerializer>().Serialize(message);
         if(bytes.Length > MessageHeader.MAX_MESSAGE_SIZE)

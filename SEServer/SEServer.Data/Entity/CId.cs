@@ -1,7 +1,11 @@
-﻿namespace SEServer.Data;
+﻿using MessagePack;
 
+namespace SEServer.Data;
+
+[MessagePackObject]
 public struct CId
 {
+    [Key(0)]
     public int Id { get; set; }
     public override bool Equals(object? obj)
     {

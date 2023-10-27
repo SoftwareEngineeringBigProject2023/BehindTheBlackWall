@@ -8,5 +8,5 @@ namespace SEServer.Data;
 /// </summary>
 public interface INotifyComponent : INetComponent
 {
-    public Queue<INotifyMessage> NotifyMessages { get; set; }
+    public Queue<NotifyMessage> NotifyMessages { get; set; }
 }

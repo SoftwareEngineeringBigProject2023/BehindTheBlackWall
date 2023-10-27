@@ -1,6 +1,9 @@
 ﻿using System;
 using MessagePack;
+using MessagePack.Resolvers;
 using SEServer.Data;
+using UnityEngine;
+using ILogger = SEServer.Data.ILogger;
 
 namespace SEServer.Client
 {
@@ -24,7 +27,16 @@ namespace SEServer.Client
 
         public byte[] Serialize<T>(T data)
         {
-            return MessagePackSerializer.Serialize(data.GetType() ,data);
+            try
+            {
+                return MessagePackSerializer.Serialize(data);
+            }
+            catch (Exception e)
+            {
+                ServerContainer.Get<ILogger>().LogError(e.Message);
+                ServerContainer.Get<ILogger>().LogError(e.StackTrace);
+                throw;
+            }
         }
 
         public int Serialize<T>(T data, byte[] bytes, int offset)
@@ -37,8 +49,39 @@ namespace SEServer.Client
         public T Deserialize<T>(byte[] bytes, int offset, int size)
         {
             var readBytes = new ReadOnlyMemory<byte>(bytes, offset, size);
-            var obj = MessagePackSerializer.Deserialize<T>(readBytes, MessagePackSerializerOptions.Standard);
+            var obj = MessagePackSerializer.Deserialize<T>(readBytes, MessagePackSerializer.DefaultOptions);
             return obj;
         }
+        
+        // 序列化注册部分
+        private static bool serializerRegistered = false;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void Initialize()
+        {
+            if (!serializerRegistered)
+            {
+                StaticCompositeResolver.Instance.Register(
+                    GeneratedResolver.Instance,
+                    StandardResolver.Instance
+                );
+
+                var option = MessagePackSerializerOptions.Standard.WithResolver(StaticCompositeResolver.Instance);
+
+                MessagePackSerializer.DefaultOptions = option;
+                serializerRegistered = true;
+            }
+        }
+
+#if UNITY_EDITOR
+
+
+        [UnityEditor.InitializeOnLoadMethod]
+        private static void EditorInitialize()
+        {
+            Initialize();
+        }
+
+#endif
     }
 }

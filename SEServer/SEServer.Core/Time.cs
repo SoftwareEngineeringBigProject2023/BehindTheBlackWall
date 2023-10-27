@@ -44,7 +44,9 @@ public class Time
     public int CurFrame { get; set; } = 0;
     
     // 当前负载，根据休眠时间与帧总时间的倒数计算，休眠时间月底负载越高
-    public float LoadPercentage => (1000 - _totalSleepTimeLastSecond) / 1000f;
+    public float LoadPercentage => 1 - Math.Clamp(_totalSleepTimeLastSecond / 1000f, 0f, 1f);
+    public float TotalSleepTimeLastSecond => _totalSleepTimeLastSecond;
+
     public void Init()
     {
         _startTime = GetCurTime();

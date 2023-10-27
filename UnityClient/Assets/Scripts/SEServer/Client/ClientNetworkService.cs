@@ -55,6 +55,8 @@ namespace SEServer.Client
             await WebSocket.Connect();
         }
 
+
+#if !UNITY_WEBGL || UNITY_EDITOR
         private async void DispatchMessageQueue()
         {
             while (true)
@@ -68,7 +70,8 @@ namespace SEServer.Client
                 await UniTask.DelayFrame(1);
             }
         }
-
+#endif
+        
         private void OnOpen()
         {
 #if !UNITY_WEBGL || UNITY_EDITOR
@@ -180,7 +183,7 @@ namespace SEServer.Client
             WebSocket.Send(bytes);
         }
     
-        public void SendMessage(IMessage message)
+        public void SendMessage<T>(T message) where T : IMessage
         {
             var bytes = ServerContainer.Get<IDataSerializer>().Serialize(message);
             // LogToJson
