@@ -11,6 +11,11 @@ public class PlayerSystem : ISystem
 {
     public World World { get; set; }
     public ServerWorld ServerWorld => (ServerWorld)World;
+    public void Init()
+    {
+        ServerWorld.EntityManager.GetSingleton<PlayerMessageComponent>();
+    }
+
     public void Update()
     {
         var playerMessages = ServerWorld.EntityManager.GetSingleton<PlayerMessageComponent>();
@@ -39,10 +44,11 @@ public class PlayerSystem : ISystem
         playerCom.PlayerId = playerId;
         
         var inputCom = World.EntityManager.AddComponent<MoveInputComponent>(entity);
-        inputCom.Input = Vector2.Zero;
+        inputCom.Owner = new PlayerId() { Id = playerId };
+        inputCom.Input = Vector2.Zero.ToSVector2();
         
         var transformCom = World.EntityManager.AddComponent<TransformComponent>(entity);
-        transformCom.Position = Vector2.Zero;
+        transformCom.Position = Vector2.Zero.ToSVector2();
         
         World.EntityManager.AddComponent<PlayerNotifyComponent>(entity);
 

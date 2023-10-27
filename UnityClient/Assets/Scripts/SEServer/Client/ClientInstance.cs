@@ -74,7 +74,12 @@ namespace SEServer.Client
             var network = ServerContainer.Get<IClientNetworkService>();
             while (World.SendMessageQueue.TryDequeue(out var message))
             {
-                network.SendMessage(message);
+                switch (message)
+                {
+                    case SubmitEntityMessage replyMessage:
+                        network.SendMessage(replyMessage);
+                        break;
+                }
             }
         }
     }

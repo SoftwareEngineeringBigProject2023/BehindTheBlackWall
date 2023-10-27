@@ -24,7 +24,7 @@ public class SystemProvider : ISystemProvider
 
     public void AddSystem(ISystem system)
     {
-        
+        Systems.Add(system);
     }
 
     public List<ISystem> GetAllSystems()

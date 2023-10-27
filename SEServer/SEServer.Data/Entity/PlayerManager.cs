@@ -27,7 +27,7 @@ public class PlayerManager
         };
     }
 
-    public PlayerData GetPlayer(PlayerId id)
+    public PlayerData? GetPlayer(PlayerId id)
     {
         return Players.Find(x => x.Id == id);
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace SEServer.Data;
@@ -98,6 +99,7 @@ public class EntityArray
             newEntity.Id = entity.Id;
             snapshot.Entities.Add(newEntity);
         }
+        snapshot.SingletonEntityId = SingletonEntity.Id;
     }
 
     public void ReadFromSnapshot(Snapshot snapshot)
@@ -108,6 +110,12 @@ public class EntityArray
         {
             Entities.Add(entity);
         }
+
+        var singleton = Entities.Find(e => e.Id == snapshot.SingletonEntityId);
+        if(singleton == null)
+            throw new Exception("Singleton entity not found !");
+        
+        SingletonEntity = singleton;
         RebuildIndex();
         ClearDirty();
     }

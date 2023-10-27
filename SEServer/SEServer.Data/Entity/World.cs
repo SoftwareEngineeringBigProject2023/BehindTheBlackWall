@@ -22,6 +22,9 @@ public abstract class World
         // 注入系统
         var systems = ServerContainer.Get<ISystemProvider>();
         EntityManager.Systems.AddSystems(systems.GetAllSystems());
+        
+        // 初始化系统
+        EntityManager.Systems.InitAll();
     }
 
     /// <summary>

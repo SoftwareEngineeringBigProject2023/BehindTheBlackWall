@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using SEServer.Client;
 using SEServer.Data;
+using SEServer.GameData;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using ILogger = SEServer.Data.ILogger;
 
@@ -10,6 +12,7 @@ namespace Game
     {
         public static ClientBehaviour Instance { get; private set; }
         public ClientInstance ClientInstance { get; set; }
+        public EntityMapperManager EntityMapper { get; set; }
         /// <summary>
         /// 客户端网络实例帧率
         /// </summary>
@@ -26,15 +29,17 @@ namespace Game
             }
             
             Instance = this;
-            
             CheckBehaviours();
             
-            ClientInstance = new ClientInstance();  
+            ClientInstance = new ClientInstance();
             ClientInstance.ServerContainer.Add<ILogger>( new SimpleLogger());
             ClientInstance.ServerContainer.Add<IDataSerializer>( new SimpleSerializer());
             ClientInstance.ServerContainer.Add<IClientNetworkService>( new ClientNetworkService());
             ClientInstance.ServerContainer.Add<IComponentSerializer>( new ComponentSerializer());
             ClientInstance.Start();
+            
+            EntityMapper = new EntityMapperManager();
+            EntityMapper.Init(ClientInstance.World);
         }
 
         private void CheckBehaviours()
@@ -51,6 +56,7 @@ namespace Game
         {
             UpdateClient();
             UpdateBehaviours();
+            EntityMapper.UpdateEntities();
         }
 
         /// <summary>
@@ -72,6 +78,19 @@ namespace Game
             {
                 behaviour.UpdateBehaviour();
             }
+        }
+
+        [Button]
+        public void TestAddPlayer()
+        {
+            var clientPlayer = ClientInstance.World.EntityManager.GetSingleton<PlayerMessageComponent>();
+            var message = new SubmitData()
+            {
+                Type = PlayerSubmitMessageType.CREATE_PLAYER,
+                Arg0 = ClientInstance.World.PlayerId.Id
+            };
+
+            clientPlayer.AddSubmitMessage(message);
         }
     }
 }

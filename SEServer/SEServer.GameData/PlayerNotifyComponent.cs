@@ -14,5 +14,5 @@ public class PlayerNotifyComponent : INotifyComponent
     [Key(2)]
     public bool IsDirty { get; set; }
     [Key(3)]
-    public Queue<NotifyData> NotifyMessages { get; set; }
+    public Queue<NotifyData> NotifyMessages { get; set; } = new();
 }

@@ -17,11 +17,18 @@ namespace SEServer.Client.Editor
             process.StartInfo.Arguments = $"/c {tempShellPath}";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
             process.Start();
             
             var output = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
             Debug.Log($"Shell执行结果：{output}");
+            // 报错
+            if (process.ExitCode != 0)
+            {
+                var error = process.StandardError.ReadToEnd();
+                throw new Exception($"Shell执行出错：{error}");
+            }
             
             File.Delete(tempShellPath);
         }

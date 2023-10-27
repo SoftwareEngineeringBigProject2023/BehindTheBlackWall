@@ -7,6 +7,7 @@ using SEServer.Data;
 using NativeWebSocket;
 using UnityEngine;
 using ILogger = SEServer.Data.ILogger;
+using Random = UnityEngine.Random;
 
 namespace SEServer.Client
 {
@@ -18,7 +19,6 @@ namespace SEServer.Client
         public WebSocket WebSocket { get; set; }
         private byte[] ReceiveBuffer { get; set; } = new byte[MessageHeader.BUFFER_SIZE];
         private int ReceiveBufferSize { get; set; } = 0;
-        private byte[] _tmpBuffer = new byte[MessageHeader.BUFFER_SIZE];
         /// <summary>
         /// 未合并的消息分片
         /// </summary>
@@ -80,8 +80,7 @@ namespace SEServer.Client
             ServerContainer.Get<ILogger>().LogInfo("Connection open!");
             var authMessage = new AuthorizationMessage()
             {
-                // TODO: 临时测试用
-                UserId = 1
+                UserId = Random.Range(0, 1000000),
             };
             SendMessage(authMessage);
         }
@@ -108,7 +107,7 @@ namespace SEServer.Client
                 return;
             }
             
-            Array.Copy(_tmpBuffer, 0, ReceiveBuffer, ReceiveBufferSize, receiveSize);
+            Array.Copy(data, 0, ReceiveBuffer, ReceiveBufferSize, receiveSize);
             ReceiveBufferSize += receiveSize;
             
             if (ReceiveBufferSize < MessageHeader.MESSAGE_HEADER_SIZE)
@@ -171,6 +170,7 @@ namespace SEServer.Client
             {
                 Array.Copy(ReceiveBuffer, headAndBodySize, ReceiveBuffer, 0, remainSize);
             }
+            ReceiveBufferSize = remainSize;
         }
         
         private void ClearBuffer()

@@ -14,5 +14,5 @@ public class TransformComponent : IS2CComponent
     [IgnoreMember]
     public bool IsDirty { get; set; }
     [Key(2)]
-    public Vector2 Position { get; set; }
+    public SVector2 Position { get; set; }
 }

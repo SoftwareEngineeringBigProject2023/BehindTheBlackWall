@@ -47,7 +47,7 @@ namespace MessagePack.SEServer.GameData.Resolvers
 
         static GeneratedGameDataResolverGetFormatterHelper()
         {
-            lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(13)
+            lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(14)
             {
                 { typeof(global::System.Collections.Generic.Queue<global::SEServer.Data.NotifyData>), 0 },
                 { typeof(global::System.Collections.Generic.Queue<global::SEServer.Data.SubmitData>), 1 },
@@ -56,12 +56,13 @@ namespace MessagePack.SEServer.GameData.Resolvers
                 { typeof(global::SEServer.Data.NotifyData), 4 },
                 { typeof(global::SEServer.Data.PlayerId), 5 },
                 { typeof(global::SEServer.Data.SubmitData), 6 },
-                { typeof(global::SEServer.GameData.GraphComponent), 7 },
-                { typeof(global::SEServer.GameData.MoveInputComponent), 8 },
-                { typeof(global::SEServer.GameData.PlayerComponent), 9 },
-                { typeof(global::SEServer.GameData.PlayerMessageComponent), 10 },
-                { typeof(global::SEServer.GameData.PlayerNotifyComponent), 11 },
-                { typeof(global::SEServer.GameData.TransformComponent), 12 },
+                { typeof(global::SEServer.Data.SVector2), 7 },
+                { typeof(global::SEServer.GameData.GraphComponent), 8 },
+                { typeof(global::SEServer.GameData.MoveInputComponent), 9 },
+                { typeof(global::SEServer.GameData.PlayerComponent), 10 },
+                { typeof(global::SEServer.GameData.PlayerMessageComponent), 11 },
+                { typeof(global::SEServer.GameData.PlayerNotifyComponent), 12 },
+                { typeof(global::SEServer.GameData.TransformComponent), 13 },
             };
         }
 
@@ -82,12 +83,13 @@ namespace MessagePack.SEServer.GameData.Resolvers
                 case 4: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.NotifyDataFormatter();
                 case 5: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.PlayerIdFormatter();
                 case 6: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.SubmitDataFormatter();
-                case 7: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.GraphComponentFormatter();
-                case 8: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.MoveInputComponentFormatter();
-                case 9: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.PlayerComponentFormatter();
-                case 10: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.PlayerMessageComponentFormatter();
-                case 11: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.PlayerNotifyComponentFormatter();
-                case 12: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.TransformComponentFormatter();
+                case 7: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.SVector2Formatter();
+                case 8: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.GraphComponentFormatter();
+                case 9: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.MoveInputComponentFormatter();
+                case 10: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.PlayerComponentFormatter();
+                case 11: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.PlayerMessageComponentFormatter();
+                case 12: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.PlayerNotifyComponentFormatter();
+                case 13: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.TransformComponentFormatter();
                 default: return null;
             }
         }
@@ -377,6 +379,50 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.Data
         }
     }
 
+    public sealed class SVector2Formatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.Data.SVector2>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.Data.SVector2 value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            writer.WriteArrayHeader(2);
+            writer.Write(value.X);
+            writer.Write(value.Y);
+        }
+
+        public global::SEServer.Data.SVector2 Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                throw new global::System.InvalidOperationException("typecode is null, struct not supported");
+            }
+
+            options.Security.DepthStep(ref reader);
+            var length = reader.ReadArrayHeader();
+            var __X__ = default(float);
+            var __Y__ = default(float);
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        __X__ = reader.ReadSingle();
+                        break;
+                    case 1:
+                        __Y__ = reader.ReadSingle();
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            var ____result = new global::SEServer.Data.SVector2(__X__, __Y__);
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
 }
 
 #pragma warning restore 168
@@ -470,12 +516,11 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData
             }
 
             global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(5);
+            writer.WriteArrayHeader(4);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Serialize(ref writer, value.Id, options);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Serialize(ref writer, value.EntityId, options);
-            writer.Write(value.IsDirty);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.PlayerId>(formatterResolver).Serialize(ref writer, value.Owner, options);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Numerics.Vector2>(formatterResolver).Serialize(ref writer, value.Input, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.SVector2>(formatterResolver).Serialize(ref writer, value.Input, options);
         }
 
         public global::SEServer.GameData.MoveInputComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
@@ -501,13 +546,10 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData
                         ____result.EntityId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Deserialize(ref reader, options);
                         break;
                     case 2:
-                        ____result.IsDirty = reader.ReadBoolean();
-                        break;
-                    case 3:
                         ____result.Owner = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.PlayerId>(formatterResolver).Deserialize(ref reader, options);
                         break;
-                    case 4:
-                        ____result.Input = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Numerics.Vector2>(formatterResolver).Deserialize(ref reader, options);
+                    case 3:
+                        ____result.Input = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.SVector2>(formatterResolver).Deserialize(ref reader, options);
                         break;
                     default:
                         reader.Skip();
@@ -709,7 +751,7 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData
             writer.WriteArrayHeader(3);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Serialize(ref writer, value.Id, options);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Serialize(ref writer, value.EntityId, options);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Numerics.Vector2>(formatterResolver).Serialize(ref writer, value.Position, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.SVector2>(formatterResolver).Serialize(ref writer, value.Position, options);
         }
 
         public global::SEServer.GameData.TransformComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
@@ -735,7 +777,7 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData
                         ____result.EntityId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Deserialize(ref reader, options);
                         break;
                     case 2:
-                        ____result.Position = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Numerics.Vector2>(formatterResolver).Deserialize(ref reader, options);
+                        ____result.Position = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.SVector2>(formatterResolver).Deserialize(ref reader, options);
                         break;
                     default:
                         reader.Skip();

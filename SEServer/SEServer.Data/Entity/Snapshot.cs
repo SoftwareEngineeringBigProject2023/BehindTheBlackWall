@@ -16,15 +16,6 @@ public class Snapshot
     public List<Entity> Entities { get; set; } = new();
     [Key(2)]
     public List<ComponentArrayDataPack> ComponentArrayDataPacks { get; set; } = new();
-
-
-    public void AddDataPack(ComponentArrayDataPack dataPack)
-    {
-        ComponentArrayDataPacks.Add(dataPack);
-    }
-
-    public ComponentArrayDataPack? GetDataPack(int code)
-    {
-        return ComponentArrayDataPacks.FirstOrDefault(dataPack => dataPack.TypeCode == code);
-    }
+    [Key(3)]
+    public EId SingletonEntityId { get; set; }
 }

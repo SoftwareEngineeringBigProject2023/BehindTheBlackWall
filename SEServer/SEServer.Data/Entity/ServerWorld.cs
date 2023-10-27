@@ -104,12 +104,27 @@ public class ServerWorld : World
             if (componentArray.ContainInterface(typeof(INotifyComponent)))
             {
                 var componentNotifyDataPack = componentArray.WriteChangedToNotifyDataPack(serializer, allEntitiesChanged);
-                syncEntityMessage.ComponentNotifyDataPacks.Add(componentNotifyDataPack);
+                if (componentNotifyDataPack != null)
+                {
+                    syncEntityMessage.ComponentNotifyDataPacks.Add(componentNotifyDataPack);
+                }
             }
-            else if (componentArray.ContainInterface(typeof(IS2CComponent)))
+            else if (componentArray.ContainInterface(typeof(IS2CComponent)) || componentArray.ContainInterface(typeof(IC2SComponent)))
             {
                 var componentArrayDataPack = componentArray.WriteChangedToDataPack(serializer, allEntitiesChanged, PlayerId.Invalid);
-                syncEntityMessage.ComponentArrayDataPacks.Add(componentArrayDataPack);
+                if (componentArrayDataPack != null)
+                {
+                    syncEntityMessage.ComponentArrayDataPacks.Add(componentArrayDataPack);
+                }
+            }
+            else if (componentArray.ContainInterface(typeof(ISubmitComponent)))
+            {
+                // 给客户端的空提交组件
+                var componentArrayDataPack = componentArray.WriteEmptySubmitToDataPack(serializer, allEntitiesChanged);
+                if (componentArrayDataPack != null)
+                {
+                    syncEntityMessage.ComponentArrayDataPacks.Add(componentArrayDataPack);
+                }
             }
         }
         // 收集完毕，传入消息队列

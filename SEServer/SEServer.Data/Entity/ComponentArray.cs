@@ -9,6 +9,7 @@ namespace SEServer.Data;
 /// </summary>
 public class ComponentArray<T> : IComponentArray where T : IComponent, new()
 {
+    public World World { get; set; } = null!;
     private int IdAutoIncrement { get; set; } = 1;
     private Dictionary<EId, CId> EntityToComponents { get; } = new();
     private Dictionary<CId, EId> ComponentToEntity { get; } = new();
@@ -55,7 +56,8 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
     {
         T component = new();
         component.Id = CreateId();
-        
+        component.EntityId = eId;
+        AddComponent(component);
 
         return component;
     }
@@ -107,6 +109,16 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
     {
         return Components[ComponentToIndex[EntityToComponents[eId]]];
     }
+    
+    public IComponent GetI(EId eId)
+    {
+        return Components[ComponentToIndex[EntityToComponents[eId]]];
+    }
+
+    public IEnumerable<IComponent> GetAllComponents()
+    {
+        return Components.Cast<IComponent>();
+    }
 
     /// <summary>
     /// 将实体的组件标记为删除
@@ -126,6 +138,11 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         }
     }
     
+    /// <summary>
+    /// 写入快照
+    /// </summary>
+    /// <param name="serializer"></param>
+    /// <returns></returns>
     public ComponentArrayDataPack WriteToDataPack(IComponentSerializer serializer)
     {
         var components = new List<T>();
@@ -134,6 +151,11 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         return dataPack;
     }
 
+    /// <summary>
+    /// 从快照中读取组件列表
+    /// </summary>
+    /// <param name="serializer"></param>
+    /// <param name="dataPack"></param>
     public void ReadFromDataPack(IComponentSerializer serializer, ComponentArrayDataPack dataPack)
     {
         Components.Clear();
@@ -144,6 +166,15 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         for (var index = 0; index < components.Count; index++)
         {
             var component = components[index];
+            // 如果拥有者不是自己或全体玩家，则不添加
+            if (component is IC2SComponent c2SComponent && World is ClientWorld clientWorld)
+            {
+                if(c2SComponent.Owner != PlayerId.Invalid && c2SComponent.Owner != clientWorld.PlayerId)
+                {
+                    continue;
+                }
+            }
+            
             Components.Add(component);
         }
         
@@ -151,19 +182,14 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         RebuildIndex();
     }
 
-    public ComponentArrayDataPack WriteChangedToDataPack(IComponentSerializer serializer, List<EId> includeEIds, PlayerId player)
+    public ComponentArrayDataPack? WriteChangedToDataPack(IComponentSerializer serializer, List<EId> includeEIds, PlayerId player)
     {
         var components = new List<T>();
         
         foreach (var component in Components)
         {
             var netComponent = (INetComponent)component;
-            if (!netComponent.IsDirty)
-            {
-                continue;
-            }
-            
-            if (!includeEIds.Contains(component.EntityId))
+            if (!netComponent.IsDirty && !includeEIds.Contains(component.EntityId))
             {
                 continue;
             }
@@ -177,8 +203,11 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
                 }
             }
             
-            Components.Add(component);
+            components.Add(component);
         }
+
+        if (components.Count == 0)
+            return null;
         
         var dataPack = serializer.Serialize(components);
         return dataPack;
@@ -190,6 +219,16 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         for (var index = 0; index < components.Count; index++)
         {
             var component = components[index];
+            
+            // 如果拥有者不是自己或全体玩家，则不添加
+            if (component is IC2SComponent c2SComponent && World is ClientWorld clientWorld)
+            {
+                if(c2SComponent.Owner != PlayerId.Invalid && c2SComponent.Owner != clientWorld.PlayerId)
+                {
+                    continue;
+                }
+            }
+            
             var hasComponent = ComponentToIndex.ContainsKey(component.Id);
             if (hasComponent)
             {
@@ -201,20 +240,59 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
             }
         }
     }
-
-    public ComponentNotifyMessageDataPack WriteChangedToNotifyDataPack(IComponentSerializer serializer, List<EId> includeEIds)
+    
+    public ComponentArrayDataPack? WriteEmptySubmitToDataPack(IComponentSerializer serializer, List<EId> allEntitiesChanged)
     {
-        var componentNotifyDataPack = new ComponentNotifyMessageDataPack();
-        componentNotifyDataPack.TypeCode = serializer.GetCodeByType(typeof(T));
+        var components = new List<T>();
+        
+        foreach (var component in Components)
+        {
+            var submitComponent = (ISubmitComponent)component;
+            if (!submitComponent.IsDirty && !allEntitiesChanged.Contains(component.EntityId))
+            {
+                continue;
+            }
+
+            var emptySubmitComponent = (ISubmitComponent)new T();
+            emptySubmitComponent.Id = component.Id;
+            emptySubmitComponent.EntityId = component.EntityId;
+            emptySubmitComponent.Owner = submitComponent.Owner;
+            components.Add((T)emptySubmitComponent);
+        }
+
+        if (components.Count == 0)
+            return null;
+        
+        var dataPack = serializer.Serialize(components);
+        return dataPack;
+    }
+
+    private List<INotifyComponent> _tmpNotifyComList = new();
+    public ComponentNotifyMessageDataPack? WriteChangedToNotifyDataPack(IComponentSerializer serializer, List<EId> includeEIds)
+    {
+        _tmpNotifyComList.Clear();
         foreach (var component in Components)
         {
             var notifyComponent = (INotifyComponent)component;
-            if (notifyComponent.IsDirty || includeEIds.Contains(component.EntityId))
+            if (notifyComponent.NotifyMessages.Count == 0)
             {
-                componentNotifyDataPack.AddNotifyMessage(notifyComponent.Id, notifyComponent.TakeAllNotifyMessages());
+                continue;
             }
+            
+            _tmpNotifyComList.Add(notifyComponent);
+        }
+
+        if (_tmpNotifyComList.Count == 0)
+        {
+            return null;
         }
         
+        var componentNotifyDataPack = new ComponentNotifyMessageDataPack();
+        componentNotifyDataPack.TypeCode = serializer.GetCodeByType(typeof(T));
+        foreach (var notifyComponent in _tmpNotifyComList)
+        {
+            componentNotifyDataPack.AddNotifyMessage(notifyComponent.Id, notifyComponent.TakeAllNotifyMessages());
+        }
         return componentNotifyDataPack;
     }
 
@@ -230,31 +308,39 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         }
     }
 
-    public ComponentSubmitMessageDataPack WriteChangedToSubmitDataPack(IComponentSerializer serializer, List<EId> includeEIds, PlayerId player)
+    List<ISubmitComponent> _tmpSubmitComList = new();
+    public ComponentSubmitMessageDataPack? WriteChangedToSubmitDataPack(IComponentSerializer serializer, List<EId> includeEIds, PlayerId player)
     {
-        var componentNotifyDataPack = new ComponentSubmitMessageDataPack();
-        componentNotifyDataPack.TypeCode = serializer.GetCodeByType(typeof(T));
+        _tmpSubmitComList.Clear();
+        
         foreach (var component in Components)
         {
             var submitComponent = (ISubmitComponent)component;
-            if (!submitComponent.IsDirty)
+            if (submitComponent.SubmitMessages.Count == 0)
             {
                 continue;
             }
-            
-            if (!includeEIds.Contains(component.EntityId))
-            {
-                continue;
-            }
-            
+
             if(submitComponent.Owner != PlayerId.Invalid && player != PlayerId.Invalid && submitComponent.Owner != player )
             {
                 continue;
             }
             
-            componentNotifyDataPack.AddSubmitMessage(submitComponent.Id, submitComponent.TakeAllSubmitMessages());
+            _tmpSubmitComList.Add(submitComponent);
+        }
+
+        if (_tmpSubmitComList.Count == 0)
+        {
+            return null;
         }
         
+        var componentNotifyDataPack = new ComponentSubmitMessageDataPack();
+        componentNotifyDataPack.TypeCode = serializer.GetCodeByType(typeof(T));
+        foreach (var submitComponent in _tmpSubmitComList)
+        {
+            componentNotifyDataPack.AddSubmitMessage(submitComponent.Id, submitComponent.TakeAllSubmitMessages());
+            submitComponent.ClearSubmitMessages();
+        }
         return componentNotifyDataPack;
     }
 

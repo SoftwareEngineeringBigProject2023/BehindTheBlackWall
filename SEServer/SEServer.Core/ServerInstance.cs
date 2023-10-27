@@ -192,7 +192,8 @@ public class ServerInstance
                 // 发送快照信息
                 var sendSnapshotMessage = new SnapshotMessage()
                 {
-                    Snapshot = bindWorld.NearestSnapshot
+                    Snapshot = bindWorld.NearestSnapshot,
+                    PlayerId = user.BindPlayer
                 };
                 user.ClientConnect.SendMessage(sendSnapshotMessage);
                 
@@ -239,7 +240,19 @@ public class ServerInstance
                 for (var index = 0; index < allUser.Length; index++)
                 {
                     var user = allUser[index];
-                    TrySendWorldMessage(user, message);
+                    // 类型信息
+                    switch (message)
+                    {
+                        case SyncEntityMessage syncEntityMessage:
+                            TrySendWorldMessage(user, syncEntityMessage);
+                            break;
+                        case SnapshotMessage snapshotMessage:
+                            TrySendWorldMessage(user, snapshotMessage);
+                            break;
+                        default:
+                            ServerContainer.Get<ILogger>().LogError($"不支持的消息类型，Id = {user.Id} Type = {message.GetType()}");
+                            break;
+                    }
                 }
             }
         }

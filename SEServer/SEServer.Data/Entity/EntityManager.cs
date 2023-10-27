@@ -63,6 +63,37 @@ public class EntityManager
         return Components.GetComponent<T>(entity.Id);
     }
     
+    public IComponent? GetComponent(Entity entity, Type type)
+    {
+        return Components.GetComponent(entity.Id, type);
+    }
+    
+    public bool TryGetComponent<T>(Entity entity, out T component) where T :IComponent, new()
+    {
+        var c = Components.GetComponent<T>(entity.Id);
+        if (c != null)
+        {
+            component = c;
+            return true;
+        }
+        
+        component = default!;
+        return false;
+    }
+    
+    public bool TryGetComponent(Entity entity, Type type, out IComponent component)
+    {
+        var c = Components.GetComponent(entity.Id, type);
+        if (c != null)
+        {
+            component = c;
+            return true;
+        }
+        
+        component = default!;
+        return false;
+    }
+    
     public void RemoveComponent<T>(Entity entity) where T :IComponent, new()
     {
         entity.IsDirty = true;

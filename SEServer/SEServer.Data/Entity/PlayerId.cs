@@ -11,10 +11,10 @@ public struct PlayerId
 
     public override bool Equals(object? obj)
     {
-        return obj is WId other && Equals(other);
+        return obj is PlayerId other && Equals(other);
     }
 
-    public bool Equals(WId other)
+    public bool Equals(PlayerId other)
     {
         return Id == other.Id;
     }

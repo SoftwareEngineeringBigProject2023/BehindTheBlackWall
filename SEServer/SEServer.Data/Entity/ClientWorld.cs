@@ -58,13 +58,16 @@ public class ClientWorld : World
                 case SyncEntityMessage syncEntityMessage:
                     ApplySyncEntityMessage(syncEntityMessage);
                     break;
+                case SnapshotMessage snapshotMessage:
+                    ApplySnapshotMessage(snapshotMessage);
+                    break;
                 default:
                     ServerContainer.Get<ILogger>().LogError($"未知消息类型：{message.GetType()}");
                     break;
             }
         }
     }
-    
+
     private void CollectChangedInfo()
     {
         var submitEntityMessage = new SubmitEntityMessage();
@@ -80,12 +83,19 @@ public class ClientWorld : World
             if (componentArray.ContainInterface(typeof(ISubmitComponent)))
             {
                 var componentNotifyDataPack = componentArray.WriteChangedToSubmitDataPack(serializer, allEntitiesChanged, PlayerId);
-                submitEntityMessage.ComponentSubmitDataPacks.Add(componentNotifyDataPack);
+                // 如果有提交的消息，才添加到消息队列
+                if(componentNotifyDataPack != null)
+                {
+                    submitEntityMessage.ComponentSubmitDataPacks.Add(componentNotifyDataPack);
+                }
             }
             else if (componentArray.ContainInterface(typeof(IC2SComponent)))
             {
                 var componentArrayDataPack = componentArray.WriteChangedToDataPack(serializer, allEntitiesChanged, PlayerId);
-                submitEntityMessage.ComponentArrayDataPacks.Add(componentArrayDataPack);
+                if (componentArrayDataPack != null)
+                {
+                    submitEntityMessage.ComponentArrayDataPacks.Add(componentArrayDataPack);
+                }
             }
         }
         
@@ -96,6 +106,12 @@ public class ClientWorld : World
         }
     }
 
+    private void ApplySnapshotMessage(SnapshotMessage snapshotMessage)
+    {
+        PlayerId = snapshotMessage.PlayerId;
+        EntityManager.ApplySnapshot(snapshotMessage.Snapshot);
+    }
+    
     private void ApplySyncEntityMessage(SyncEntityMessage syncEntityMessage)
     {
         var components = EntityManager.Components;

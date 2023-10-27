@@ -5,6 +5,7 @@ using SEServer.Game;
 
 var systemProvider = new SystemProvider();
 systemProvider.AddSystem(new MoveSystem());
+systemProvider.AddSystem(new PlayerSystem());
 
 var serverInstance = new ServerInstance();
 serverInstance.ServerContainer.Add<ILogger>(new SimpleLogger());
