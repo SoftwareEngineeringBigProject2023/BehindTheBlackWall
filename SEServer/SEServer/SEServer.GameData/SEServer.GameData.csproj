@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+        <TargetFrameworks>net7.0;net48</TargetFrameworks>
+        <LangVersion>11</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SEServer.Data\SEServer.Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MessagePack" Version="2.5.129" />
+    </ItemGroup>
+
+</Project>

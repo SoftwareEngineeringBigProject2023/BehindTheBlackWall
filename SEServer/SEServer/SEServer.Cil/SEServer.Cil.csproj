@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SEServer.Core\SEServer.Core.csproj" />
+      <ProjectReference Include="..\SEServer.Data\SEServer.Data.csproj" />
+      <ProjectReference Include="..\SEServer.GameData\SEServer.GameData.csproj" />
+      <ProjectReference Include="..\SEServer.Game\SEServer.Game.csproj" />
+    </ItemGroup>
+
+</Project>
