@@ -4,7 +4,7 @@ namespace SEServer.Data;
 
 public class WorldConfig : IWorldConfig
 {
-    public ServerContainer ServerContainer { get; set; }
+    public ServerContainer ServerContainer { get; set; } = null!;
     public int FramePerSecond { get; set; } = 30;
 
     public void Init()

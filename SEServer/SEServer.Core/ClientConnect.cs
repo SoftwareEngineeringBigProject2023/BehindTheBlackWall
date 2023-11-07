@@ -35,7 +35,7 @@ public class ClientConnect
     /// </summary>
     public User User { get; set; }
 
-    public async UniTask ProcessWebSocketRequest()
+    private async UniTask ProcessWebSocketRequest()
     {
         HttpListenerWebSocketContext webSocketContext = await Context.AcceptWebSocketAsync(subProtocol: null);
         
@@ -156,6 +156,7 @@ public class ClientConnect
 
     public void Send(byte[] bytes)
     {
+        ServerContainer.Get<IServerStatistics>().AddUploadBandwidth(bytes.Length);
         WebSocket.SendAsync(bytes, WebSocketMessageType.Binary, true, CancellationToken.None);
     }
     
@@ -198,8 +199,9 @@ public class ClientConnect
         }
     }
 
-    public void SetAuthorized()
+    public void SetAuthorized(User user)
     {
+        User = user;
         if(State != ClientConnectState.Disconnected)
         {
             State = ClientConnectState.Authorized;

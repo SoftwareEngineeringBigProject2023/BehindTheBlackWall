@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ModuleDistributor.Serilog
-build_property.ProjectDir = D:\aspdotnet\SEServer\src\modules\ModuleDistributor.Serilog\
+build_property.ProjectDir = D:\Project\BehindTheBlackWall\SEServer-Auth-Statement\src\modules\ModuleDistributor.Serilog\

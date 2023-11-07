@@ -7,7 +7,7 @@ public struct EId
 {
     [Key(0)]
     public int Id { get; set; }
-    public static EId Empty { get; } = new EId { Id = -1 };
+    public static EId Invalid { get; } = new EId { Id = -1 };
 
     public override bool Equals(object? obj)
     {

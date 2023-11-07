@@ -62,7 +62,9 @@ public class ServerInstance
 
             if (Time.CurFrame % (Time.MaxFps * 5) == 0)
             {
-                ServerContainer.Get<ILogger>().LogInfo($"服务器信息： Fps: {Time.Fps:D2} \t负载：{Time.LoadPercentage * 100:F}%");
+                var uploadBandwidth = ServerContainer.Get<IServerStatistics>().GetUploadBandwidthAndReset();
+                ServerContainer.Get<ILogger>().LogInfo($"服务器信息： Fps: {Time.Fps:D2} \t负载：{Time.LoadPercentage * 100:F}%" +
+                                                       $" \t上传带宽：{uploadBandwidth / 1024f / 5:F}KB/s");
             }
             
             // 自旋
@@ -158,8 +160,7 @@ public class ServerInstance
 
         ServerContainer.Get<ILogger>().LogInfo($"用户认证，Id = {user.Id}");
         
-        clientConnect.User = user;
-        clientConnect.SetAuthorized();
+        clientConnect.SetAuthorized(user);
     }
     
     /// <summary>

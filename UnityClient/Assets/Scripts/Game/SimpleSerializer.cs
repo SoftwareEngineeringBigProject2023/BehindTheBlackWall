@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.IO.Compression;
 using MessagePack;
 using MessagePack.Resolvers;
 using SEServer.Data;
@@ -10,7 +12,7 @@ namespace Game
     public class SimpleSerializer : IDataSerializer
     {
         public ServerContainer ServerContainer { get; set; }
-        private MessagePackSerializerOptions Option { get; set; }
+        private MessagePackSerializerOptions Options { get; set; }
         public void Init()
         {
             StaticCompositeResolver.Instance.Register(
@@ -20,7 +22,7 @@ namespace Game
             );
 
             
-            Option = MessagePackSerializerOptions.Standard
+            Options = MessagePackSerializerOptions.Standard
                 .WithResolver(StaticCompositeResolver.Instance)
                 .WithCompression(MessagePackCompression.Lz4BlockArray);
         }
@@ -37,16 +39,8 @@ namespace Game
 
         public byte[] Serialize<T>(T data)
         {
-            try
-            {
-                return MessagePackSerializer.Serialize(data, Option);
-            }
-            catch (Exception e)
-            {
-                ServerContainer.Get<ILogger>().LogError(e.Message);
-                ServerContainer.Get<ILogger>().LogError(e.StackTrace);
-                throw;
-            }
+            var bytes = MessagePackSerializer.Serialize(data, Options);
+            return bytes;
         }
 
         public int Serialize<T>(T data, byte[] bytes, int offset)
@@ -59,7 +53,7 @@ namespace Game
         public T Deserialize<T>(byte[] bytes, int offset, int size)
         {
             var readBytes = new ReadOnlyMemory<byte>(bytes, offset, size);
-            var obj = MessagePackSerializer.Deserialize<T>(readBytes, Option);
+            var obj = MessagePackSerializer.Deserialize<T>(readBytes, Options);
             return obj;
         }
     }

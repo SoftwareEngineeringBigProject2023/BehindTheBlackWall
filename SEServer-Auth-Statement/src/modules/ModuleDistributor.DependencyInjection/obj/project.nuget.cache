@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PmFlkxVW0dffOB1FfWsZF19iae/KqLq1hmMLyfcFhdQzhs7+nQabhw1FwA3Xr12/hv+ruVpP95x32ynquFtntA==",
+  "dgSpecHash": "WPjX6H7FLINpLUMgB7UIYkA2Wvd2kof/GU0FSw2x1AbRTpri4F6/cB3EDvEDE3nGhtXI467aWEw7TzxQfCRoqw==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj",
+  "projectFilePath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

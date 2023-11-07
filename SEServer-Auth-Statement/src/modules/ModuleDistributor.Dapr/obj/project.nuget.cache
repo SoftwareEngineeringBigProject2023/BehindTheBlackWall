@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "F4Lau4XOKMyBcrHqxNX7bPahhMRU0CB9H3/O274aaepBnp5eY3bSatH7jcHjTlzToBHjn2mywOoUq11cIL0Mxg==",
+  "dgSpecHash": "il8QCSQFK8Twy+k/HNXpqOAiI5qDir7eeA7mrnMJgkr4olHCqmz6U2IUH9cwgytn98keICLM3whweeHLlgx+Ig==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
+  "projectFilePath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
   "expectedPackageFiles": [
-    "D:\\NuGet\\packages\\dapr.aspnetcore\\1.11.0\\dapr.aspnetcore.1.11.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\dapr.client\\1.11.0\\dapr.client.1.11.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\google.api.commonprotos\\2.2.0\\google.api.commonprotos.2.2.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\google.protobuf\\3.15.0\\google.protobuf.3.15.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\grpc.core.api\\2.47.0\\grpc.core.api.2.47.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\grpc.net.client\\2.47.0\\grpc.net.client.2.47.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\grpc.net.common\\2.47.0\\grpc.net.common.2.47.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
-    "D:\\NuGet\\packages\\system.io.pipelines\\4.7.2\\system.io.pipelines.4.7.2.nupkg.sha512",
-    "D:\\NuGet\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
-    "D:\\NuGet\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+    "C:\\Users\\Windows11\\.nuget\\packages\\dapr.aspnetcore\\1.11.0\\dapr.aspnetcore.1.11.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\dapr.client\\1.11.0\\dapr.client.1.11.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\google.api.commonprotos\\2.2.0\\google.api.commonprotos.2.2.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\google.protobuf\\3.15.0\\google.protobuf.3.15.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\grpc.core.api\\2.47.0\\grpc.core.api.2.47.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\grpc.net.client\\2.47.0\\grpc.net.client.2.47.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\grpc.net.common\\2.47.0\\grpc.net.common.2.47.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\system.io.pipelines\\4.7.2\\system.io.pipelines.4.7.2.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
   ],
   "logs": []
 }

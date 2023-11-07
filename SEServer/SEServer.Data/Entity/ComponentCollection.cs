@@ -58,6 +58,12 @@ public class ComponentCollection
         return true;
     }
     
+    public bool HasComponent<T>(EId eId) where T : IComponent, new()
+    {
+        var componentArray = GetComponentArray<T>();
+        return componentArray.HasEntity(eId);
+    }
+    
     public T? GetComponent<T>(EId eId) where T : IComponent, new()
     {
         var componentArray = GetComponentArray<T>();

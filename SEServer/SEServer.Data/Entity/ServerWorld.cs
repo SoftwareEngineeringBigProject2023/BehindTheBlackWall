@@ -34,8 +34,7 @@ public class ServerWorld : World
             if(Time.FrameCount % SNAPSHOT_INTERVAL == 0)
             {
                 // 生成快照
-                var snapshot = EntityManager.GetSnapshot();
-                NearestSnapshot = snapshot;
+                NearestSnapshot = EntityManager.GetSnapshot();
                 IncrementalStateInfo.Clear();
             }
         }

@@ -47,35 +47,34 @@ namespace MessagePack.SEServer.Data.Resolvers
 
         static GeneratedDataResolverGetFormatterHelper()
         {
-            lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(27)
+            lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(26)
             {
                 { typeof(global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.NotifyData>>), 0 },
                 { typeof(global::System.Collections.Generic.Dictionary<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.SubmitData>>), 1 },
-                { typeof(global::System.Collections.Generic.List<byte[]>), 2 },
-                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>), 3 },
-                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.ComponentNotifyMessageDataPack>), 4 },
-                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.ComponentSubmitMessageDataPack>), 5 },
-                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.EId>), 6 },
-                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.Entity>), 7 },
-                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.Message.NotifyData>), 8 },
-                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.Message.SubmitData>), 9 },
-                { typeof(global::SEServer.Data.CId), 10 },
-                { typeof(global::SEServer.Data.ComponentArrayDataPack), 11 },
-                { typeof(global::SEServer.Data.ComponentNotifyMessageDataPack), 12 },
-                { typeof(global::SEServer.Data.ComponentSubmitMessageDataPack), 13 },
-                { typeof(global::SEServer.Data.EId), 14 },
-                { typeof(global::SEServer.Data.Entity), 15 },
-                { typeof(global::SEServer.Data.Message.AuthorizationMessage), 16 },
-                { typeof(global::SEServer.Data.Message.AuthorizationReplyMessage), 17 },
-                { typeof(global::SEServer.Data.Message.NotifyData), 18 },
-                { typeof(global::SEServer.Data.Message.SnapshotMessage), 19 },
-                { typeof(global::SEServer.Data.Message.SubmitData), 20 },
-                { typeof(global::SEServer.Data.Message.SubmitEntityMessage), 21 },
-                { typeof(global::SEServer.Data.Message.SyncEntityMessage), 22 },
-                { typeof(global::SEServer.Data.PlayerId), 23 },
-                { typeof(global::SEServer.Data.Snapshot), 24 },
-                { typeof(global::SEServer.Data.SVector2), 25 },
-                { typeof(global::SEServer.Data.WId), 26 },
+                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.ComponentArrayDataPack>), 2 },
+                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.ComponentNotifyMessageDataPack>), 3 },
+                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.ComponentSubmitMessageDataPack>), 4 },
+                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.EId>), 5 },
+                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.Entity>), 6 },
+                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.Message.NotifyData>), 7 },
+                { typeof(global::System.Collections.Generic.List<global::SEServer.Data.Message.SubmitData>), 8 },
+                { typeof(global::SEServer.Data.CId), 9 },
+                { typeof(global::SEServer.Data.ComponentArrayDataPack), 10 },
+                { typeof(global::SEServer.Data.ComponentNotifyMessageDataPack), 11 },
+                { typeof(global::SEServer.Data.ComponentSubmitMessageDataPack), 12 },
+                { typeof(global::SEServer.Data.EId), 13 },
+                { typeof(global::SEServer.Data.Entity), 14 },
+                { typeof(global::SEServer.Data.Message.AuthorizationMessage), 15 },
+                { typeof(global::SEServer.Data.Message.AuthorizationReplyMessage), 16 },
+                { typeof(global::SEServer.Data.Message.NotifyData), 17 },
+                { typeof(global::SEServer.Data.Message.SnapshotMessage), 18 },
+                { typeof(global::SEServer.Data.Message.SubmitData), 19 },
+                { typeof(global::SEServer.Data.Message.SubmitEntityMessage), 20 },
+                { typeof(global::SEServer.Data.Message.SyncEntityMessage), 21 },
+                { typeof(global::SEServer.Data.PlayerId), 22 },
+                { typeof(global::SEServer.Data.Snapshot), 23 },
+                { typeof(global::SEServer.Data.SVector2), 24 },
+                { typeof(global::SEServer.Data.WId), 25 },
             };
         }
 
@@ -91,31 +90,30 @@ namespace MessagePack.SEServer.Data.Resolvers
             {
                 case 0: return new global::MessagePack.Formatters.DictionaryFormatter<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.NotifyData>>();
                 case 1: return new global::MessagePack.Formatters.DictionaryFormatter<global::SEServer.Data.CId, global::System.Collections.Generic.List<global::SEServer.Data.Message.SubmitData>>();
-                case 2: return new global::MessagePack.Formatters.ListFormatter<byte[]>();
-                case 3: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.ComponentArrayDataPack>();
-                case 4: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.ComponentNotifyMessageDataPack>();
-                case 5: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.ComponentSubmitMessageDataPack>();
-                case 6: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.EId>();
-                case 7: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.Entity>();
-                case 8: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.Message.NotifyData>();
-                case 9: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.Message.SubmitData>();
-                case 10: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.CIdFormatter();
-                case 11: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentArrayDataPackFormatter();
-                case 12: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentNotifyMessageDataPackFormatter();
-                case 13: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentSubmitMessageDataPackFormatter();
-                case 14: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.EIdFormatter();
-                case 15: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.EntityFormatter();
-                case 16: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.AuthorizationMessageFormatter();
-                case 17: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.AuthorizationReplyMessageFormatter();
-                case 18: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.NotifyDataFormatter();
-                case 19: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SnapshotMessageFormatter();
-                case 20: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SubmitDataFormatter();
-                case 21: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SubmitEntityMessageFormatter();
-                case 22: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SyncEntityMessageFormatter();
-                case 23: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.PlayerIdFormatter();
-                case 24: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SnapshotFormatter();
-                case 25: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SVector2Formatter();
-                case 26: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.WIdFormatter();
+                case 2: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.ComponentArrayDataPack>();
+                case 3: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.ComponentNotifyMessageDataPack>();
+                case 4: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.ComponentSubmitMessageDataPack>();
+                case 5: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.EId>();
+                case 6: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.Entity>();
+                case 7: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.Message.NotifyData>();
+                case 8: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.Data.Message.SubmitData>();
+                case 9: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.CIdFormatter();
+                case 10: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentArrayDataPackFormatter();
+                case 11: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentNotifyMessageDataPackFormatter();
+                case 12: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.ComponentSubmitMessageDataPackFormatter();
+                case 13: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.EIdFormatter();
+                case 14: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.EntityFormatter();
+                case 15: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.AuthorizationMessageFormatter();
+                case 16: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.AuthorizationReplyMessageFormatter();
+                case 17: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.NotifyDataFormatter();
+                case 18: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SnapshotMessageFormatter();
+                case 19: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SubmitDataFormatter();
+                case 20: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SubmitEntityMessageFormatter();
+                case 21: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.Message.SyncEntityMessageFormatter();
+                case 22: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.PlayerIdFormatter();
+                case 23: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SnapshotFormatter();
+                case 24: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.SVector2Formatter();
+                case 25: return new MessagePack.SEServer.Data.Formatters.SEServer.Data.WIdFormatter();
                 default: return null;
             }
         }
@@ -200,10 +198,9 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
                 return;
             }
 
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
             writer.WriteArrayHeader(2);
             writer.Write(value.TypeCode);
-            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<byte[]>>(formatterResolver).Serialize(ref writer, value.Data, options);
+            writer.Write(value.Data);
         }
 
         public global::SEServer.Data.ComponentArrayDataPack Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
@@ -214,7 +211,6 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
             }
 
             options.Security.DepthStep(ref reader);
-            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
             var length = reader.ReadArrayHeader();
             var ____result = new global::SEServer.Data.ComponentArrayDataPack();
 
@@ -226,7 +222,7 @@ namespace MessagePack.SEServer.Data.Formatters.SEServer.Data
                         ____result.TypeCode = reader.ReadInt32();
                         break;
                     case 1:
-                        ____result.Data = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<byte[]>>(formatterResolver).Deserialize(ref reader, options);
+                        ____result.Data = global::MessagePack.Internal.CodeGenHelpers.GetArrayFromNullableSequence(reader.ReadBytes());
                         break;
                     default:
                         reader.Skip();

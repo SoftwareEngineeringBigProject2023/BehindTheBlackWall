@@ -118,26 +118,16 @@ public class ComponentSerializer : IComponentSerializer
         ComponentArrayDataPack dataPack = new();
         dataPack.DebugName = typeof(T).FullName;
         dataPack.TypeCode = GetCodeByType(typeof(T));
-        
-        for (var index = 0; index < components.Count; index++)
-        {
-            var component = components[index];
-            dataPack.Data.Add(ServerContainer.Get<IDataSerializer>().Serialize(component));
-        }
+
+        dataPack.Data = ServerContainer.Get<IDataSerializer>().Serialize(components);
 
         return dataPack;
     }
     
     public List<T> Deserialize<T>(ComponentArrayDataPack dataPack) where T : IComponent
     {
-        var components = new List<T>();
-        
-        foreach (var componentPack in dataPack.Data)
-        {
-            var component = ServerContainer.Get<IDataSerializer>().Deserialize<T>(componentPack, 0, componentPack.Length);
-            components.Add(component);
-        }
-        
+        var components = ServerContainer.Get<IDataSerializer>().Deserialize<List<T>>(dataPack.Data, 0, dataPack.Data.Length);
+
         return components;
     }
 }

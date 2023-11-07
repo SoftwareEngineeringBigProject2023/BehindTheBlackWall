@@ -4846,23 +4846,26 @@
     ]
   },
   "packageFolders": {
-    "D:\\NuGet\\packages": {},
+    "C:\\Users\\Windows11\\.nuget\\packages\\": {},
+    "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth\\SEServer.Auth.csproj",
+      "projectUniqueName": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth\\SEServer.Auth.csproj",
       "projectName": "SEServer.Auth",
-      "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth\\SEServer.Auth.csproj",
-      "packagesPath": "D:\\NuGet\\packages",
-      "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth\\obj\\",
+      "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth\\SEServer.Auth.csproj",
+      "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
+      "outputPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4878,26 +4881,26 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj"
+            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj": {
+              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj"
+            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj": {
+              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj"
+            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj": {
+              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.HealthCheck.Dapr\\ModuleDistributor.HealthCheck.Dapr.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.HealthCheck.Dapr\\ModuleDistributor.HealthCheck.Dapr.csproj"
+            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.HealthCheck.Dapr\\ModuleDistributor.HealthCheck.Dapr.csproj": {
+              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.HealthCheck.Dapr\\ModuleDistributor.HealthCheck.Dapr.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
+            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
+              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj"
+            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj": {
+              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj"
+            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj": {
+              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj"
             }
           }
         }
@@ -4962,7 +4965,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

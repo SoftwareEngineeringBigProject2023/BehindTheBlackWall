@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj": {}
+    "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj": {}
   },
   "projects": {
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj": {
+    "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
+        "projectUniqueName": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
         "projectName": "ModuleDistributor.Dapr.Actors",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
-        "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\obj\\",
+        "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
+        "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +35,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
+              "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
+                "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
               }
             }
           }
@@ -70,24 +72,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
+    "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
+        "projectUniqueName": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
         "projectName": "ModuleDistributor.Dapr",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
-        "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\obj\\",
+        "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
+        "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -103,8 +107,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
+              "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+                "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
               }
             }
           }
@@ -140,24 +144,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+    "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
+        "projectUniqueName": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
         "projectName": "ModuleDistributor",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
-        "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\obj\\",
+        "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
+        "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -203,7 +209,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

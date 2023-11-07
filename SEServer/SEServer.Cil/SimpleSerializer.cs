@@ -1,4 +1,5 @@
-﻿using MessagePack;
+﻿using System.IO.Compression;
+using MessagePack;
 using MessagePack.Resolvers;
 using SEServer.Data;
 using SEServer.Data.Interface;
@@ -32,7 +33,8 @@ public class SimpleSerializer : IDataSerializer
 
     public byte[] Serialize<T>(T data)
     {
-        return MessagePackSerializer.Serialize(data, Options);
+        var bytes = MessagePackSerializer.Serialize(data, Options);
+        return bytes;
     }
 
     public int Serialize<T>(T data, byte[] bytes, int offset)

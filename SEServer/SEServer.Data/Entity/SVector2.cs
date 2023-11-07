@@ -39,7 +39,16 @@ public struct SVector2
 
     public override int GetHashCode()
     {
-        return X.GetHashCode() ^ Y.GetHashCode();
+        unchecked
+        {
+            int hash = 17; // 选择一个初始哈希值，通常是一个质数
+
+            // 将 X 和 Y 转换为整数并组合它们的哈希码
+            hash = hash * 23 + X.GetHashCode();
+            hash = hash * 23 + Y.GetHashCode();
+
+            return hash;
+        }
     }
     
     public static bool operator ==(SVector2 left, SVector2 right)

@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "B5YmTooWkIWw+IH17EkbMSVNtVwsiCBrELzTID9zGkDx1jF2i8+JrS6ao1xlVcma/j0nM7FvhdGIj8VlmHuEmw==",
+  "dgSpecHash": "b3YN868Oz7QyPiO5NLGNvTof3N/ybUohT7ntKM9z0mLVE+A6MW+PWoEk88O7jJrKqTHqPA9lEPwMYIdko7gFxg==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj",
+  "projectFilePath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj",
   "expectedPackageFiles": [
-    "D:\\NuGet\\packages\\google.protobuf\\3.24.4\\google.protobuf.3.24.4.nupkg.sha512",
-    "D:\\NuGet\\packages\\grpc.aspnetcore.server\\2.58.0\\grpc.aspnetcore.server.2.58.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\grpc.core.api\\2.58.0\\grpc.core.api.2.58.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\grpc.net.common\\2.58.0\\grpc.net.common.2.58.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\grpcwebsocketbridge.aspnetcore\\1.2.2\\grpcwebsocketbridge.aspnetcore.1.2.2.nupkg.sha512"
+    "C:\\Users\\Windows11\\.nuget\\packages\\google.protobuf\\3.24.4\\google.protobuf.3.24.4.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\grpc.aspnetcore.server\\2.58.0\\grpc.aspnetcore.server.2.58.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\grpc.core.api\\2.58.0\\grpc.core.api.2.58.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\grpc.net.common\\2.58.0\\grpc.net.common.2.58.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\grpcwebsocketbridge.aspnetcore\\1.2.2\\grpcwebsocketbridge.aspnetcore.1.2.2.nupkg.sha512"
   ],
   "logs": []
 }

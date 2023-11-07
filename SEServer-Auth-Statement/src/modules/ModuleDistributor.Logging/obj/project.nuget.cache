@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "OAnUdZ5PFwz1nLlWaQeUh+aBdJgTPJz6gqLlhfZantI04fsL8w4c8yt9dY6MDuWHndY/N9EISALMjJ9XD4eKfQ==",
+  "dgSpecHash": "wriYres2ma7e4yD0A654huijJcPJc6VRalZEpNAg/mNAc8KS2i9CNslrWOG/3pFXiQzCSjaM2/MLAyScZT17Vg==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
+  "projectFilePath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
   "expectedPackageFiles": [
-    "D:\\NuGet\\packages\\fody\\6.2.5\\fody.6.2.5.nupkg.sha512",
-    "D:\\NuGet\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
-    "D:\\NuGet\\packages\\rougamo.fody\\1.4.1\\rougamo.fody.1.4.1.nupkg.sha512",
-    "D:\\NuGet\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    "C:\\Users\\Windows11\\.nuget\\packages\\fody\\6.2.5\\fody.6.2.5.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\rougamo.fody\\1.4.1\\rougamo.fody.1.4.1.nupkg.sha512",
+    "C:\\Users\\Windows11\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }

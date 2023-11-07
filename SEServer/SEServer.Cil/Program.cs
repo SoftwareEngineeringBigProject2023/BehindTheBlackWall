@@ -11,6 +11,7 @@ serverInstance.ServerContainer.Add<ILogger>(new SimpleLogger());
 serverInstance.ServerContainer.Add<IComponentSerializer>(new ComponentSerializer());
 serverInstance.ServerContainer.Add<IServerNetworkService>(new ServerNetworkService());
 serverInstance.ServerContainer.Add<IDataSerializer>(new SimpleSerializer());
+serverInstance.ServerContainer.Add<IServerStatistics>(new ServerStatistics());
 
 var systemProvider = new SystemProvider();
 systemProvider.AddSystem(new MoveSystem());
