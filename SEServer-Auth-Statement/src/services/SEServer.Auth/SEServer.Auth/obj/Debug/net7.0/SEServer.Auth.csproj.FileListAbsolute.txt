@@ -5,8 +5,6 @@ D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\SEServer.Auth.runtimeconfig.json
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\SEServer.Auth.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\SEServer.Auth.pdb
-D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\HealthChecks.UI.Client.dll
-D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\HealthChecks.UI.Core.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Azure.Core.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Azure.Identity.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Dapr.AspNetCore.dll
@@ -31,10 +29,7 @@ D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
-D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
-D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Microsoft.Identity.Client.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
@@ -84,17 +79,13 @@ D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.EntityFrameworkCore.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.Grpc.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.GrpcWebSocketBridge.dll
-D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.HealthCheck.Dapr.dll
-D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.HealthCheck.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.Serilog.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.Dapr.Configuration.pdb
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.EntityFrameworkCore.pdb
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.GrpcWebSocketBridge.pdb
-D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.HealthCheck.Dapr.pdb
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.pdb
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.Dapr.pdb
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.Grpc.pdb
-D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.HealthCheck.pdb
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\ModuleDistributor.Serilog.pdb
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\obj\Debug\net7.0\SEServer.Auth.csproj.AssemblyReference.cache
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\obj\Debug\net7.0\SEServer.Auth.GeneratedMSBuildEditorConfig.editorconfig
@@ -127,3 +118,9 @@ D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Serilog.Sinks.Http.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Serilog.Sinks.PeriodicBatching.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\Serilog.Sinks.Seq.dll
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\SEServer.Statements.Domain.dll
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\SEServer.Statements.Domain.Shared.dll
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\SEServer.Statements.EntityFrameworkCore.dll
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\SEServer.Statements.EntityFrameworkCore.pdb
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\SEServer.Statements.Domain.pdb
+D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth\bin\Debug\net7.0\SEServer.Statements.Domain.Shared.pdb

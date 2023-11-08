@@ -15,15 +15,15 @@
           "ModuleDistributor.Dapr.Configuration.dll": {}
         }
       },
-      "Dapr.AspNetCore/1.11.0": {
+      "Dapr.AspNetCore/1.12.0": {
         "dependencies": {
           "Dapr.Client": "1.12.0",
           "System.IO.Pipelines": "4.7.2"
         },
         "runtime": {
-          "lib/netcoreapp3.1/Dapr.AspNetCore.dll": {
+          "lib/net6.0/Dapr.AspNetCore.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.11.0.0"
+            "fileVersion": "1.12.0.0"
           }
         }
       },
@@ -133,7 +133,7 @@
       },
       "ModuleDistributor.Dapr/1.0.0": {
         "dependencies": {
-          "Dapr.AspNetCore": "1.11.0",
+          "Dapr.AspNetCore": "1.12.0",
           "ModuleDistributor": "1.0.0"
         },
         "runtime": {
@@ -148,12 +148,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Dapr.AspNetCore/1.11.0": {
+    "Dapr.AspNetCore/1.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3afB7TjSGuG/fehzQ2TjbziWOTYWx89aQEftXlI41vd603Op7+jf/QOaESiV5RTWJVL0OtifT7Yu3D2GyeqjBQ==",
-      "path": "dapr.aspnetcore/1.11.0",
-      "hashPath": "dapr.aspnetcore.1.11.0.nupkg.sha512"
+      "sha512": "sha512-OZRVjXoZ3lBq+PDD9mGpuBjHEii8Q/JdiHXKMyqvm+NYX9PbyAfs0qzMKgb7x81soY5kA7iwPGw8/3H+EpCWqg==",
+      "path": "dapr.aspnetcore/1.12.0",
+      "hashPath": "dapr.aspnetcore.1.12.0.nupkg.sha512"
     },
     "Dapr.Client/1.12.0": {
       "type": "package",

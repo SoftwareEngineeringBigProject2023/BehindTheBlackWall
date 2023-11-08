@@ -1,0 +1,23 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+option csharp_namespace = "SEServer.Statements.Domain.Shared";
+
+package test;
+
+service TestService {
+	rpc HelloWorld (google.protobuf.Empty) returns (HelloWorldResponse);
+	rpc HelloWorldServerStream (google.protobuf.Empty) returns (stream HelloWorldResponse);
+	rpc HelloWorldClientStream (stream HelloWorldRequest) returns (google.protobuf.Empty);
+	rpc HelloWorldBinaryStream (stream HelloWorldRequest) returns (stream HelloWorldResponse);
+}
+
+message HelloWorldRequest
+{
+	string Message = 1;
+}
+
+message HelloWorldResponse
+{
+	string Message = 1;
+}

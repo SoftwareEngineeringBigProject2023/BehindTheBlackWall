@@ -10,6 +10,7 @@ namespace ModuleDistributor.GrpcWebSocketBridge
         {
             context.App.UseWebSockets();
             context.App.UseGrpcWebSocketRequestRoutingEnabler();
+            context.App.UseRouting();
             context.App.UseGrpcWebSocketBridge();
         }
     }

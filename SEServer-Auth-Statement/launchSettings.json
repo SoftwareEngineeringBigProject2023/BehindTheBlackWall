@@ -6,12 +6,13 @@
       "serviceActions": {
         "seserver-auth": "StartDebugging",
         "seserver-auth-dapr": "StartWithoutDebugging",
+        "seserver-statements": "StartDebugging",
+        "seserver-statements-dapr": "StartWithoutDebugging",
+        "seserver-gateway": "StartDebugging",
         "redis": "StartWithoutDebugging",
         "sqlserver": "StartWithoutDebugging",
         "zipkin": "StartWithoutDebugging",
-        "elasticsearch": "StartWithoutDebugging",
-        "logstash": "StartWithoutDebugging",
-        "kibana": "StartWithoutDebugging"
+        "seq": "StartWithoutDebugging"
       }
     }
   }

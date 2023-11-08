@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.13" />
+    <PackageReference Include="Rougamo.Fody" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\modules\ModuleDistributor.DependencyInjection\ModuleDistributor.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\..\modules\ModuleDistributor.Logging\ModuleDistributor.Logging.csproj" />
+    <ProjectReference Include="..\SEServer.Statements.Applications.Abstracts\SEServer.Statements.Applications.Abstracts.csproj" />
+    <ProjectReference Include="..\SEServer.Statements.EntityFrameworkCore\SEServer.Statements.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

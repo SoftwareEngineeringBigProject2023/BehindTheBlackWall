@@ -11,15 +11,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.58.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
+    <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.13">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
-    <PackageReference Include="Rougamo.Fody" Version="1.4.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="Rougamo.Fody" Version="2.0.0" />
     <PackageReference Include="ZString" Version="2.5.1" />
   </ItemGroup>
 
@@ -27,9 +27,9 @@
     <ProjectReference Include="..\..\..\modules\ModuleDistributor.Dapr.Configuration\ModuleDistributor.Dapr.Configuration.csproj" />
     <ProjectReference Include="..\..\..\modules\ModuleDistributor.EntityFrameworkCore\ModuleDistributor.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\..\..\modules\ModuleDistributor.GrpcWebSocketBridge\ModuleDistributor.GrpcWebSocketBridge.csproj" />
-    <ProjectReference Include="..\..\..\modules\ModuleDistributor.HealthCheck.Dapr\ModuleDistributor.HealthCheck.Dapr.csproj" />
     <ProjectReference Include="..\..\..\modules\ModuleDistributor.Logging\ModuleDistributor.Logging.csproj" />
     <ProjectReference Include="..\..\..\modules\ModuleDistributor.Serilog\ModuleDistributor.Serilog.csproj" />
+    <ProjectReference Include="..\..\SEServer.Statements\SEServer.Statements.EntityFrameworkCore\SEServer.Statements.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\SEServer.Auth.Protos\SEServer.Auth.Protos.csproj" />
   </ItemGroup>
 </Project>

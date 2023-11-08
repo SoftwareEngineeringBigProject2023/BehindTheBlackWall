@@ -8,47 +8,23 @@
     ".NETCoreApp,Version=v7.0": {
       "SEServer.Auth/1.0.0": {
         "dependencies": {
-          "Grpc.AspNetCore": "2.58.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.12",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.12",
-          "Microsoft.EntityFrameworkCore.Tools": "7.0.12",
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.4",
+          "Grpc.AspNetCore": "2.40.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.13",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.13",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.5",
           "ModuleDistributor.Dapr.Configuration": "1.0.0",
           "ModuleDistributor.EntityFrameworkCore": "1.0.0",
           "ModuleDistributor.GrpcWebSocketBridge": "1.0.0",
-          "ModuleDistributor.HealthCheck.Dapr": "1.0.0",
           "ModuleDistributor.Logging": "1.0.0",
           "ModuleDistributor.Serilog": "1.0.0",
-          "Rougamo.Fody": "1.4.1",
+          "Rougamo.Fody": "2.0.0",
           "SEServer.Auth.Protos": "1.0.0",
+          "SEServer.Statements.EntityFrameworkCore": "1.0.0",
           "ZString": "2.5.1"
         },
         "runtime": {
           "SEServer.Auth.dll": {}
-        }
-      },
-      "AspNetCore.HealthChecks.UI.Client/7.1.0": {
-        "dependencies": {
-          "AspNetCore.HealthChecks.UI.Core": "7.0.0",
-          "Microsoft.Extensions.Diagnostics.HealthChecks": "7.0.9"
-        },
-        "runtime": {
-          "lib/net7.0/HealthChecks.UI.Client.dll": {
-            "assemblyVersion": "7.1.0.0",
-            "fileVersion": "7.1.0.0"
-          }
-        }
-      },
-      "AspNetCore.HealthChecks.UI.Core/7.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Diagnostics.HealthChecks": "7.0.9"
-        },
-        "runtime": {
-          "lib/net6.0/HealthChecks.UI.Core.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.0.0"
-          }
         }
       },
       "Azure.Core/1.25.0": {
@@ -85,23 +61,23 @@
           }
         }
       },
-      "Dapr.AspNetCore/1.11.0": {
+      "Dapr.AspNetCore/1.12.0": {
         "dependencies": {
           "Dapr.Client": "1.12.0",
           "System.IO.Pipelines": "4.7.2"
         },
         "runtime": {
-          "lib/netcoreapp3.1/Dapr.AspNetCore.dll": {
+          "lib/net6.0/Dapr.AspNetCore.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.11.0.0"
+            "fileVersion": "1.12.0.0"
           }
         }
       },
       "Dapr.Client/1.12.0": {
         "dependencies": {
           "Google.Api.CommonProtos": "2.2.0",
-          "Google.Protobuf": "3.24.4",
-          "Grpc.Net.Client": "2.58.0",
+          "Google.Protobuf": "3.18.0",
+          "Grpc.Net.Client": "2.52.0",
           "System.Net.Http.Json": "5.0.0"
         },
         "runtime": {
@@ -126,7 +102,7 @@
       "Fody/6.2.5": {},
       "Google.Api.CommonProtos/2.2.0": {
         "dependencies": {
-          "Google.Protobuf": "3.24.4"
+          "Google.Protobuf": "3.18.0"
         },
         "runtime": {
           "lib/netstandard2.0/Google.Api.CommonProtos.dll": {
@@ -135,88 +111,91 @@
           }
         }
       },
-      "Google.Protobuf/3.24.4": {
+      "Google.Protobuf/3.18.0": {
         "runtime": {
           "lib/net5.0/Google.Protobuf.dll": {
-            "assemblyVersion": "3.24.4.0",
-            "fileVersion": "3.24.4.0"
+            "assemblyVersion": "3.18.0.0",
+            "fileVersion": "3.18.0.0"
           }
         }
       },
-      "Grpc.AspNetCore/2.58.0": {
+      "Grpc.AspNetCore/2.40.0": {
         "dependencies": {
-          "Google.Protobuf": "3.24.4",
-          "Grpc.AspNetCore.Server.ClientFactory": "2.58.0",
-          "Grpc.Tools": "2.58.0"
+          "Google.Protobuf": "3.18.0",
+          "Grpc.AspNetCore.Server.ClientFactory": "2.40.0",
+          "Grpc.Tools": "2.40.0"
         }
       },
-      "Grpc.AspNetCore.Server/2.58.0": {
+      "Grpc.AspNetCore.Server/2.40.0": {
         "dependencies": {
-          "Grpc.Net.Common": "2.58.0"
+          "Grpc.Net.Common": "2.52.0"
         },
         "runtime": {
-          "lib/net7.0/Grpc.AspNetCore.Server.dll": {
+          "lib/net6.0/Grpc.AspNetCore.Server.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.40.0.0"
           }
         }
       },
-      "Grpc.AspNetCore.Server.ClientFactory/2.58.0": {
+      "Grpc.AspNetCore.Server.ClientFactory/2.40.0": {
         "dependencies": {
-          "Grpc.AspNetCore.Server": "2.58.0",
-          "Grpc.Net.ClientFactory": "2.58.0"
+          "Grpc.AspNetCore.Server": "2.40.0",
+          "Grpc.Net.ClientFactory": "2.40.0"
         },
         "runtime": {
-          "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
+          "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.40.0.0"
           }
         }
       },
-      "Grpc.Core.Api/2.58.0": {
+      "Grpc.Core.Api/2.52.0": {
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
         "runtime": {
           "lib/netstandard2.1/Grpc.Core.Api.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.52.0.0"
           }
         }
       },
-      "Grpc.Net.Client/2.58.0": {
+      "Grpc.Net.Client/2.52.0": {
         "dependencies": {
-          "Grpc.Net.Common": "2.58.0",
+          "Grpc.Net.Common": "2.52.0",
           "Microsoft.Extensions.Logging.Abstractions": "7.0.1"
         },
         "runtime": {
           "lib/net7.0/Grpc.Net.Client.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.52.0.0"
           }
         }
       },
-      "Grpc.Net.ClientFactory/2.58.0": {
+      "Grpc.Net.ClientFactory/2.40.0": {
         "dependencies": {
-          "Grpc.Net.Client": "2.58.0",
-          "Microsoft.Extensions.Http": "6.0.0"
+          "Grpc.Net.Client": "2.52.0",
+          "Microsoft.Extensions.Http": "3.0.3"
         },
         "runtime": {
-          "lib/net7.0/Grpc.Net.ClientFactory.dll": {
+          "lib/net6.0/Grpc.Net.ClientFactory.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.40.0.0"
           }
         }
       },
-      "Grpc.Net.Common/2.58.0": {
+      "Grpc.Net.Common/2.52.0": {
         "dependencies": {
-          "Grpc.Core.Api": "2.58.0"
+          "Grpc.Core.Api": "2.52.0"
         },
         "runtime": {
           "lib/net7.0/Grpc.Net.Common.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.52.0.0"
           }
         }
       },
-      "Grpc.Tools/2.58.0": {},
+      "Grpc.Tools/2.40.0": {},
       "GrpcWebSocketBridge.AspNetCore/1.2.2": {
         "runtime": {
           "lib/net7.0/GrpcWebSocketBridge.AspNetCore.dll": {
@@ -233,14 +212,14 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.12": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.13": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.24.0"
         },
         "runtime": {
           "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
-            "assemblyVersion": "7.0.12.0",
-            "fileVersion": "7.0.1223.47922"
+            "assemblyVersion": "7.0.13.0",
+            "fileVersion": "7.0.1323.52007"
           }
         }
       },
@@ -314,71 +293,71 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/7.0.12": {
+      "Microsoft.EntityFrameworkCore/7.0.13": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.12",
-          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.12",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.13",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.13",
           "Microsoft.Extensions.Caching.Memory": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
-            "assemblyVersion": "7.0.12.0",
-            "fileVersion": "7.0.1223.47811"
+            "assemblyVersion": "7.0.13.0",
+            "fileVersion": "7.0.1323.51806"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.13": {
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "assemblyVersion": "7.0.12.0",
-            "fileVersion": "7.0.1223.47811"
+            "assemblyVersion": "7.0.13.0",
+            "fileVersion": "7.0.1323.51806"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/7.0.12": {},
-      "Microsoft.EntityFrameworkCore.Design/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Analyzers/7.0.13": {},
+      "Microsoft.EntityFrameworkCore.Design/7.0.13": {
         "dependencies": {
           "Humanizer.Core": "2.14.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.12",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.13",
           "Microsoft.Extensions.DependencyModel": "7.0.0",
           "Mono.TextTemplating": "2.2.1"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "7.0.12.0",
-            "fileVersion": "7.0.1223.47811"
+            "assemblyVersion": "7.0.13.0",
+            "fileVersion": "7.0.1323.51806"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Relational/7.0.13": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.12",
+          "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "assemblyVersion": "7.0.12.0",
-            "fileVersion": "7.0.1223.47811"
+            "assemblyVersion": "7.0.13.0",
+            "fileVersion": "7.0.1323.51806"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/7.0.12": {
+      "Microsoft.EntityFrameworkCore.SqlServer/7.0.13": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.12"
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.13"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
-            "assemblyVersion": "7.0.12.0",
-            "fileVersion": "7.0.1223.47811"
+            "assemblyVersion": "7.0.13.0",
+            "fileVersion": "7.0.1323.51806"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Tools/7.0.13": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "7.0.12"
+          "Microsoft.EntityFrameworkCore.Design": "7.0.13"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
@@ -391,7 +370,7 @@
           "Microsoft.Extensions.Caching.Abstractions": "7.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
-          "Microsoft.Extensions.Options": "7.0.1",
+          "Microsoft.Extensions.Options": "7.0.0",
           "Microsoft.Extensions.Primitives": "7.0.0"
         }
       },
@@ -428,28 +407,6 @@
           }
         }
       },
-      "Microsoft.Extensions.Diagnostics.HealthChecks/7.0.9": {
-        "dependencies": {
-          "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "7.0.9",
-          "Microsoft.Extensions.Hosting.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
-          "Microsoft.Extensions.Options": "7.0.1"
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.923.32110"
-          }
-        }
-      },
-      "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/7.0.9": {
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.923.32110"
-          }
-        }
-      },
       "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "7.0.0"
@@ -462,12 +419,11 @@
           "Microsoft.Extensions.FileProviders.Abstractions": "7.0.0"
         }
       },
-      "Microsoft.Extensions.Http/6.0.0": {
+      "Microsoft.Extensions.Http/3.0.3": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
-          "Microsoft.Extensions.Options": "7.0.1"
+          "Microsoft.Extensions.Options": "7.0.0"
         }
       },
       "Microsoft.Extensions.Logging/7.0.0": {
@@ -475,7 +431,7 @@
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
-          "Microsoft.Extensions.Options": "7.0.1"
+          "Microsoft.Extensions.Options": "7.0.0"
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
@@ -486,16 +442,10 @@
           }
         }
       },
-      "Microsoft.Extensions.Options/7.0.1": {
+      "Microsoft.Extensions.Options/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.Primitives": "7.0.0"
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Options.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.323.6910"
-          }
         }
       },
       "Microsoft.Extensions.Primitives/7.0.0": {},
@@ -601,7 +551,7 @@
           }
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {},
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.5": {},
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "runtime": {
           "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
@@ -629,15 +579,15 @@
           }
         }
       },
-      "Rougamo.Fody/1.4.1": {
+      "Rougamo.Fody/2.0.0": {
         "dependencies": {
           "Fody": "6.2.5",
           "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "runtime": {
           "lib/netstandard2.0/Rougamo.dll": {
-            "assemblyVersion": "1.4.1.0",
-            "fileVersion": "1.4.1.0"
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
           }
         }
       },
@@ -1004,7 +954,7 @@
       },
       "ModuleDistributor.Dapr/1.0.0": {
         "dependencies": {
-          "Dapr.AspNetCore": "1.11.0",
+          "Dapr.AspNetCore": "1.12.0",
           "ModuleDistributor": "1.0.0"
         },
         "runtime": {
@@ -1022,7 +972,7 @@
       },
       "ModuleDistributor.EntityFrameworkCore/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.12",
+          "Microsoft.EntityFrameworkCore": "7.0.13",
           "ModuleDistributor": "1.0.0"
         },
         "runtime": {
@@ -1031,8 +981,7 @@
       },
       "ModuleDistributor.Grpc/1.0.0": {
         "dependencies": {
-          "Google.Protobuf": "3.24.4",
-          "Grpc.AspNetCore.Server": "2.58.0",
+          "Grpc.AspNetCore": "2.40.0",
           "ModuleDistributor": "1.0.0"
         },
         "runtime": {
@@ -1048,28 +997,10 @@
           "ModuleDistributor.GrpcWebSocketBridge.dll": {}
         }
       },
-      "ModuleDistributor.HealthCheck/1.0.0": {
-        "dependencies": {
-          "AspNetCore.HealthChecks.UI.Client": "7.1.0",
-          "ModuleDistributor": "1.0.0"
-        },
-        "runtime": {
-          "ModuleDistributor.HealthCheck.dll": {}
-        }
-      },
-      "ModuleDistributor.HealthCheck.Dapr/1.0.0": {
-        "dependencies": {
-          "ModuleDistributor.Dapr": "1.0.0",
-          "ModuleDistributor.HealthCheck": "1.0.0"
-        },
-        "runtime": {
-          "ModuleDistributor.HealthCheck.Dapr.dll": {}
-        }
-      },
       "ModuleDistributor.Logging/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
-          "Rougamo.Fody": "1.4.1"
+          "Rougamo.Fody": "2.0.0"
         },
         "runtime": {
           "ModuleDistributor.Logging.dll": {}
@@ -1078,7 +1009,7 @@
       "ModuleDistributor.Serilog/1.0.0": {
         "dependencies": {
           "ModuleDistributor": "1.0.0",
-          "Rougamo.Fody": "1.4.1",
+          "Rougamo.Fody": "2.0.0",
           "Serilog.AspNetCore": "7.0.0",
           "Serilog.Enrichers.Environment": "2.3.0",
           "Serilog.Extensions.Hosting": "7.0.0",
@@ -1093,10 +1024,37 @@
       },
       "SEServer.Auth.Protos/1.0.0": {
         "dependencies": {
-          "Grpc.AspNetCore": "2.58.0"
+          "Grpc.AspNetCore": "2.40.0"
         },
         "runtime": {
           "SEServer.Auth.Protos.dll": {}
+        }
+      },
+      "SEServer.Statements.Domain/1.0.0": {
+        "dependencies": {
+          "SEServer.Statements.Domain.Shared": "1.0.0"
+        },
+        "runtime": {
+          "SEServer.Statements.Domain.dll": {}
+        }
+      },
+      "SEServer.Statements.Domain.Shared/1.0.0": {
+        "dependencies": {
+          "Grpc.AspNetCore": "2.40.0"
+        },
+        "runtime": {
+          "SEServer.Statements.Domain.Shared.dll": {}
+        }
+      },
+      "SEServer.Statements.EntityFrameworkCore/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
+          "ModuleDistributor.EntityFrameworkCore": "1.0.0",
+          "SEServer.Statements.Domain": "1.0.0",
+          "SEServer.Statements.Domain.Shared": "1.0.0"
+        },
+        "runtime": {
+          "SEServer.Statements.EntityFrameworkCore.dll": {}
         }
       }
     }
@@ -1106,20 +1064,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "AspNetCore.HealthChecks.UI.Client/7.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-f7Z0Xw2C7mvL49/vtTpgn1ZLJPycBqpCPr7DVINaoeNdJ01aQ37JFfodxqA0KLxp+fGiIdLs9+ktbiSBfiMdRQ==",
-      "path": "aspnetcore.healthchecks.ui.client/7.1.0",
-      "hashPath": "aspnetcore.healthchecks.ui.client.7.1.0.nupkg.sha512"
-    },
-    "AspNetCore.HealthChecks.UI.Core/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-nOBktEQ/PjCqJIqLlFlLXKdDyJ42OsgDpd4WaD9iZH1GQD+LlBW36xObn9LUFj3lNOAULfobAt/l2n/9X0oiIA==",
-      "path": "aspnetcore.healthchecks.ui.core/7.0.0",
-      "hashPath": "aspnetcore.healthchecks.ui.core.7.0.0.nupkg.sha512"
     },
     "Azure.Core/1.25.0": {
       "type": "package",
@@ -1135,12 +1079,12 @@
       "path": "azure.identity/1.7.0",
       "hashPath": "azure.identity.1.7.0.nupkg.sha512"
     },
-    "Dapr.AspNetCore/1.11.0": {
+    "Dapr.AspNetCore/1.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3afB7TjSGuG/fehzQ2TjbziWOTYWx89aQEftXlI41vd603Op7+jf/QOaESiV5RTWJVL0OtifT7Yu3D2GyeqjBQ==",
-      "path": "dapr.aspnetcore/1.11.0",
-      "hashPath": "dapr.aspnetcore.1.11.0.nupkg.sha512"
+      "sha512": "sha512-OZRVjXoZ3lBq+PDD9mGpuBjHEii8Q/JdiHXKMyqvm+NYX9PbyAfs0qzMKgb7x81soY5kA7iwPGw8/3H+EpCWqg==",
+      "path": "dapr.aspnetcore/1.12.0",
+      "hashPath": "dapr.aspnetcore.1.12.0.nupkg.sha512"
     },
     "Dapr.Client/1.12.0": {
       "type": "package",
@@ -1170,68 +1114,68 @@
       "path": "google.api.commonprotos/2.2.0",
       "hashPath": "google.api.commonprotos.2.2.0.nupkg.sha512"
     },
-    "Google.Protobuf/3.24.4": {
+    "Google.Protobuf/3.18.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TmUI4ndd3x5HePyLmqAmGT6oVvoRCu+bMmrJmOpAFtCPEB+oUMWF8dyVY1zxXry/8cqsTHWszYRIAwpuUNpUyA==",
-      "path": "google.protobuf/3.24.4",
-      "hashPath": "google.protobuf.3.24.4.nupkg.sha512"
+      "sha512": "sha512-Jm6+nppUm9LD+XVsLFkf1YyVlAKsG5gq+Hc/Rn3Zi2pDObBI6PCH/eHBFUJdARl40DpczEdHlV3+WTPOGIXetg==",
+      "path": "google.protobuf/3.18.0",
+      "hashPath": "google.protobuf.3.18.0.nupkg.sha512"
     },
-    "Grpc.AspNetCore/2.58.0": {
+    "Grpc.AspNetCore/2.40.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-T47mP1QL0hsG5cryIbnZaT4FGpkJ0GyBAQHDVbgiYn7430WwfcXOTB4dHsV+7LQSySBAARW/RUxFUvyVq2hAQA==",
-      "path": "grpc.aspnetcore/2.58.0",
-      "hashPath": "grpc.aspnetcore.2.58.0.nupkg.sha512"
+      "sha512": "sha512-UdyFzZZbzugtoGfjGAY9bVq/1l7m3SvGGXd5VCqw7xr4QA4BVEozr1Vr6FFxUOPVvg91g5dwssbsM/Xl1MpecQ==",
+      "path": "grpc.aspnetcore/2.40.0",
+      "hashPath": "grpc.aspnetcore.2.40.0.nupkg.sha512"
     },
-    "Grpc.AspNetCore.Server/2.58.0": {
+    "Grpc.AspNetCore.Server/2.40.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eatJHc0uQR2E3PirM6E4E1Yxfx2Wo9TjRfHk/7oXxJJnmdG9eMR25nyADwAB7L7yOEaEQjZQdYg9238lNFefOQ==",
-      "path": "grpc.aspnetcore.server/2.58.0",
-      "hashPath": "grpc.aspnetcore.server.2.58.0.nupkg.sha512"
+      "sha512": "sha512-cBSpT42syKkVnTBEehk+Sc2dX5sDO2lP+5o4ylFnup+JHPntbewTx5QHHizWPRTKTwWDe4EXR4rR1ilgf6eTnQ==",
+      "path": "grpc.aspnetcore.server/2.40.0",
+      "hashPath": "grpc.aspnetcore.server.2.40.0.nupkg.sha512"
     },
-    "Grpc.AspNetCore.Server.ClientFactory/2.58.0": {
+    "Grpc.AspNetCore.Server.ClientFactory/2.40.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9qVPaLiaBEyJ9g3TX7u46x7HZtsQjVIzCb8z1kb0QtYnlYxtTgrEjP/5WBjt+UKZ3FU8qhg2iHmhov3iDls6yg==",
-      "path": "grpc.aspnetcore.server.clientfactory/2.58.0",
-      "hashPath": "grpc.aspnetcore.server.clientfactory.2.58.0.nupkg.sha512"
+      "sha512": "sha512-U+Cp5Mt7/xjFRIJhChjLXn0oUDisaBg3XzFkAUZE32dAa/dQN2gs9Qd9Gl51deStbci3J+W7CcfHgZ0y2Fwblw==",
+      "path": "grpc.aspnetcore.server.clientfactory/2.40.0",
+      "hashPath": "grpc.aspnetcore.server.clientfactory.2.40.0.nupkg.sha512"
     },
-    "Grpc.Core.Api/2.58.0": {
+    "Grpc.Core.Api/2.52.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-OhYRghAdlxCc0YKRzqvlbDo1sJq1urHDw8T1OClbKbMbnN/zPzITni4Mzcm3HjSaCjKDgssGE1PuOCHZ6G3G0w==",
-      "path": "grpc.core.api/2.58.0",
-      "hashPath": "grpc.core.api.2.58.0.nupkg.sha512"
+      "sha512": "sha512-SQiPyBczG4vKPmI6Fd+O58GcxxDSFr6nfRAJuBDUNj+PgdokhjWJvZE/La1c09AkL2FVm/jrDloG89nkzmVF7A==",
+      "path": "grpc.core.api/2.52.0",
+      "hashPath": "grpc.core.api.2.52.0.nupkg.sha512"
     },
-    "Grpc.Net.Client/2.58.0": {
+    "Grpc.Net.Client/2.52.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nSbBT9X6+eHEivqbkSOuexNeDO7oNzBMCC/kjj3Ah8Tlqd/EmG8K1A4+ZMqz9O8eHjYlPaOZflnWZfRuK5ECdg==",
-      "path": "grpc.net.client/2.58.0",
-      "hashPath": "grpc.net.client.2.58.0.nupkg.sha512"
+      "sha512": "sha512-hWVH9g/Nnjz40ni//2S8UIOyEmhueQREoZIkD0zKHEPqLxXcNlbp4eebXIOicZtkwDSx0TFz9NpkbecEDn6rBw==",
+      "path": "grpc.net.client/2.52.0",
+      "hashPath": "grpc.net.client.2.52.0.nupkg.sha512"
     },
-    "Grpc.Net.ClientFactory/2.58.0": {
+    "Grpc.Net.ClientFactory/2.40.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-d/s3GRlc0AKYg2oojKDZYiJq7mKMbJo3SFgy+tXZiXZLtAT07U/OPjAEO9/gJ8zLUxopauoByu4o3BejLlwOrQ==",
-      "path": "grpc.net.clientfactory/2.58.0",
-      "hashPath": "grpc.net.clientfactory.2.58.0.nupkg.sha512"
+      "sha512": "sha512-B2ZzZpkaSH7AvTeu3jF3PAbumWEtHvB9qHX/ULU4AuN4lZwXiQF+G6jatZerXpVqTb4mzQ2wFhKkThYyVMN4uw==",
+      "path": "grpc.net.clientfactory/2.40.0",
+      "hashPath": "grpc.net.clientfactory.2.40.0.nupkg.sha512"
     },
-    "Grpc.Net.Common/2.58.0": {
+    "Grpc.Net.Common/2.52.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-l+mQbPjRSB3nVjppKCULWnG/3Uj/GYDvhDo4yUTwz3v22zaKz8cGpQu6Svu2+DkCpdX5gemBK9HY6bksyNbZLQ==",
-      "path": "grpc.net.common/2.58.0",
-      "hashPath": "grpc.net.common.2.58.0.nupkg.sha512"
+      "sha512": "sha512-di9qzpdx525IxumZdYmu6sG2y/gXJyYeZ1ruFUzB9BJ1nj4kU1/dTAioNCMt1VLRvNVDqh8S8B1oBdKhHJ4xRg==",
+      "path": "grpc.net.common/2.52.0",
+      "hashPath": "grpc.net.common.2.52.0.nupkg.sha512"
     },
-    "Grpc.Tools/2.58.0": {
+    "Grpc.Tools/2.40.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jWGgCVsBiBozXqKNyGXXumqDrJiu7PLShPul0UGq6II6DV1fvcCLXtQpL/N/7UJ8cyyZLqru1/DRPe/NCkw5NQ==",
-      "path": "grpc.tools/2.58.0",
-      "hashPath": "grpc.tools.2.58.0.nupkg.sha512"
+      "sha512": "sha512-yOAhijs6POv7oISBV9Rdx5YCSdo/+6zCJTB/ULum3GA4RunxVFI0rPnpJM1+YM9yMf+H1/D001ignsepnygPJw==",
+      "path": "grpc.tools/2.40.0",
+      "hashPath": "grpc.tools.2.40.0.nupkg.sha512"
     },
     "GrpcWebSocketBridge.AspNetCore/1.2.2": {
       "type": "package",
@@ -1247,12 +1191,12 @@
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.12": {
+    "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KlSupL6h5oUwjMAoNJO2vp0MrqGYeO6nfdGjAEriK8xUccQndmQW9zQwF7d1R80abrZD/T9b01hmhk3v3LX05g==",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.12",
-      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.7.0.12.nupkg.sha512"
+      "sha512": "sha512-h1B5heq5d7vRC/0CuXlcvNpKzIgZi11b9iURRBDAOSigWXTZlq62Tzix+zyIvOx5xeydE/tniTNSaqeJBQNB3Q==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.13",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.7.0.13.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
@@ -1282,54 +1226,54 @@
       "path": "microsoft.data.sqlclient.sni.runtime/5.1.0",
       "hashPath": "microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore/7.0.12": {
+    "Microsoft.EntityFrameworkCore/7.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HRge/bJ5SKMNeqybC4NnRwWZn69QBjVVoVmwhmJ8xgQ50Ye+jTOOf2mef/y4Lrq1HUeMg8cu+3JeFdnp+Y8skA==",
-      "path": "microsoft.entityframeworkcore/7.0.12",
-      "hashPath": "microsoft.entityframeworkcore.7.0.12.nupkg.sha512"
+      "sha512": "sha512-fACONzJtzLJQ29soFqBr0OzgmIYMHV7y9AEZ18hqGx2K0FMJNqezAcfzovc4WI+kT9IvOFQKhDNTl5DMimgkMA==",
+      "path": "microsoft.entityframeworkcore/7.0.13",
+      "hashPath": "microsoft.entityframeworkcore.7.0.13.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.12": {
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GDlY3DzUbpagqb0683NUM2RK9eJFjTfmlLJd5YtvzBf8T4dwanIOSjd2vN7dXJihyZ0JlYaCetyHgxzbrxiUOw==",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.12",
-      "hashPath": "microsoft.entityframeworkcore.abstractions.7.0.12.nupkg.sha512"
+      "sha512": "sha512-VxChscv7EsedfuhMAqJ82IxWBYyScCnMwMb1j4+264rIZteeWhj0CJX+u139JCCE9TcvoT97IsCmbb5Jcav5tg==",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.13",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.7.0.13.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/7.0.12": {
+    "Microsoft.EntityFrameworkCore.Analyzers/7.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-feFe61uKUNoHJfo9tnO65BTzcpWEYIr34xWikhYgZl5c9RiiUJLuCoTqoGc9fuuKy+xk9aUa1NwgDGMC4KmBig==",
-      "path": "microsoft.entityframeworkcore.analyzers/7.0.12",
-      "hashPath": "microsoft.entityframeworkcore.analyzers.7.0.12.nupkg.sha512"
+      "sha512": "sha512-3GiAd0b30L+31/86mtpLDf0Hf4Fnze4yx7hVXaW4wBd6KomIqacGaf+s9rMYNdJZEyKvUJPaBsghY+FgKOoAHg==",
+      "path": "microsoft.entityframeworkcore.analyzers/7.0.13",
+      "hashPath": "microsoft.entityframeworkcore.analyzers.7.0.13.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Design/7.0.12": {
+    "Microsoft.EntityFrameworkCore.Design/7.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5UoOLj+qJGkEoL379wi1cSq1bBCCZQZRO5w/wE89ZakQT6qx8juAlJLg4fFwfrg0tYWP12iUAholwcuDM38s7g==",
-      "path": "microsoft.entityframeworkcore.design/7.0.12",
-      "hashPath": "microsoft.entityframeworkcore.design.7.0.12.nupkg.sha512"
+      "sha512": "sha512-3DlpSAxQhuxlhblySbM5ujxHALRi5m25ORPGnKKW4LCY1CPleCStdMSRnUB53vnhWDJUX12eIIvprajN++c2Ag==",
+      "path": "microsoft.entityframeworkcore.design/7.0.13",
+      "hashPath": "microsoft.entityframeworkcore.design.7.0.13.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Relational/7.0.12": {
+    "Microsoft.EntityFrameworkCore.Relational/7.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-apLzFyjM3s/voBiaMCJPwIOk5SxA1N6GmSbhqthfbUDn8mX+kxZl4RXNdaoBLzPKfUg4EoqCtt0YON/g9YXruQ==",
-      "path": "microsoft.entityframeworkcore.relational/7.0.12",
-      "hashPath": "microsoft.entityframeworkcore.relational.7.0.12.nupkg.sha512"
+      "sha512": "sha512-lIms3oaIW7XiQy3bLUB2+hcSZ4ISmdh3HKKuNSnewS3wurYaopqBEhYaQdhZeW6itl3skWyqybPGGxIlJrKqFA==",
+      "path": "microsoft.entityframeworkcore.relational/7.0.13",
+      "hashPath": "microsoft.entityframeworkcore.relational.7.0.13.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/7.0.12": {
+    "Microsoft.EntityFrameworkCore.SqlServer/7.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jwh9C/RzCZPTYNL5YOvxUJDfzRtrpbWl5qLWYRBxeYTKDRRH9n2vWCV+s2URGfOKCufZEx1wrlFSEZ2TJPb4Gw==",
-      "path": "microsoft.entityframeworkcore.sqlserver/7.0.12",
-      "hashPath": "microsoft.entityframeworkcore.sqlserver.7.0.12.nupkg.sha512"
+      "sha512": "sha512-86lPGt6HpkUgL+FHnu1nPmBmwvuBRqtYZPgj+sIhsF2OqRWOeQiXUjy3pspNgl1CK5goK5icjBAIlrl3LkMFuw==",
+      "path": "microsoft.entityframeworkcore.sqlserver/7.0.13",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.7.0.13.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Tools/7.0.12": {
+    "Microsoft.EntityFrameworkCore.Tools/7.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4ZW43BJzV5aY8rkrSxhej1xiiDr1dLfFl/MitpHn4a5QJpQqctJ0kl/MF1U3CAIKnkeC4RaC9ZjJjODDbHtdeQ==",
-      "path": "microsoft.entityframeworkcore.tools/7.0.12",
-      "hashPath": "microsoft.entityframeworkcore.tools.7.0.12.nupkg.sha512"
+      "sha512": "sha512-Z2edRVeoCqvWdNNHHoqbiNhRBetXfh/GBAga6bXM0mmRWzYZ0Y8F+jUFWF/8BUdnbv/8RAafIkWLVMT0jdxMLQ==",
+      "path": "microsoft.entityframeworkcore.tools/7.0.13",
+      "hashPath": "microsoft.entityframeworkcore.tools.7.0.13.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
       "type": "package",
@@ -1387,20 +1331,6 @@
       "path": "microsoft.extensions.dependencymodel/7.0.0",
       "hashPath": "microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Diagnostics.HealthChecks/7.0.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ubVLIa7GbGZrC7OWcMuFo/GJRYdVvqyMj7M4JFgWobXgh4QT2km40T46zLlXJfQWH68mh+g4iBJeg7VN3pldJA==",
-      "path": "microsoft.extensions.diagnostics.healthchecks/7.0.9",
-      "hashPath": "microsoft.extensions.diagnostics.healthchecks.7.0.9.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/7.0.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-myuiz5s14NEWffeiRH94GM1W9PkPyU/TLWCPjEIJ+Tck6QwRV89KHNwlJ+ZebRMlMTd64hwECybjLp1vIS4gTA==",
-      "path": "microsoft.extensions.diagnostics.healthchecks.abstractions/7.0.9",
-      "hashPath": "microsoft.extensions.diagnostics.healthchecks.abstractions.7.0.9.nupkg.sha512"
-    },
     "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1415,12 +1345,12 @@
       "path": "microsoft.extensions.hosting.abstractions/7.0.0",
       "hashPath": "microsoft.extensions.hosting.abstractions.7.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Http/6.0.0": {
+    "Microsoft.Extensions.Http/3.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-15+pa2G0bAMHbHewaQIdr/y6ag2H3yh4rd9hTXavtWDzQBkvpe2RMqFg8BxDpcQWssmjmBApGPcw93QRz6YcMg==",
-      "path": "microsoft.extensions.http/6.0.0",
-      "hashPath": "microsoft.extensions.http.6.0.0.nupkg.sha512"
+      "sha512": "sha512-dcyB8szIcSynjVZRuFgqkZpPgTc5zeRSj1HMXSmNqWbHYKiPYJl8ZQgBHz6wmZNSUUNGpCs5uxUg8DZHHDC1Ew==",
+      "path": "microsoft.extensions.http/3.0.3",
+      "hashPath": "microsoft.extensions.http.3.0.3.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/7.0.0": {
       "type": "package",
@@ -1436,12 +1366,12 @@
       "path": "microsoft.extensions.logging.abstractions/7.0.1",
       "hashPath": "microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512"
     },
-    "Microsoft.Extensions.Options/7.0.1": {
+    "Microsoft.Extensions.Options/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pZRDYdN1FpepOIfHU62QoBQ6zdAoTvnjxFfqAzEd9Jhb2dfhA5i6jeTdgGgcgTWFRC7oT0+3XrbQu4LjvgX1Nw==",
-      "path": "microsoft.extensions.options/7.0.1",
-      "hashPath": "microsoft.extensions.options.7.0.1.nupkg.sha512"
+      "sha512": "sha512-lP1yBnTTU42cKpMozuafbvNtQ7QcBjr/CcK3bYOGEMH55Fjt+iecXjT6chR7vbgCMqy3PG3aNQSZgo/EuY/9qQ==",
+      "path": "microsoft.extensions.options/7.0.0",
+      "hashPath": "microsoft.extensions.options.7.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/7.0.0": {
       "type": "package",
@@ -1527,12 +1457,12 @@
       "path": "microsoft.sqlserver.server/1.0.0",
       "hashPath": "microsoft.sqlserver.server.1.0.0.nupkg.sha512"
     },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-aKxpRAUIxDrnSnyr7xJWGixOBgsB7Z4oHpWRkpRzzq04kfze4mN7944gRc4X9H2U5KG3A/btF74kavkO8KXqCg==",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.4",
-      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
+      "sha512": "sha512-Kaa1rBZdJFq5A0qgAcl6Bmk/UqLXTq9acEqxUlPEBA8oscmakLfkvuSXfG7Wa9t1/keaT85EuuDNgOo+Z9VYOQ==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.5",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512"
     },
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "type": "package",
@@ -1548,12 +1478,12 @@
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
     },
-    "Rougamo.Fody/1.4.1": {
+    "Rougamo.Fody/2.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tnt0FfWKsEB4UveC1c31v7Do5kOqCq4hez0yz1q2cMPSbXP294gr44ljflaSZp4SBcpWDcNW43/gf/lW8ePL0w==",
-      "path": "rougamo.fody/1.4.1",
-      "hashPath": "rougamo.fody.1.4.1.nupkg.sha512"
+      "sha512": "sha512-b8DovgTK0YlY/QqLk1OEymU7oxKQZfePFNG9K/lVczFtTO5ADF3vhTBXJ07fMp0N7euagf6yzIRBSd3bmg4ArQ==",
+      "path": "rougamo.fody/2.0.0",
+      "hashPath": "rougamo.fody.2.0.0.nupkg.sha512"
     },
     "Serilog/2.12.0": {
       "type": "package",
@@ -1865,16 +1795,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ModuleDistributor.HealthCheck/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ModuleDistributor.HealthCheck.Dapr/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "ModuleDistributor.Logging/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1886,6 +1806,21 @@
       "sha512": ""
     },
     "SEServer.Auth.Protos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SEServer.Statements.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SEServer.Statements.Domain.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SEServer.Statements.EntityFrameworkCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
