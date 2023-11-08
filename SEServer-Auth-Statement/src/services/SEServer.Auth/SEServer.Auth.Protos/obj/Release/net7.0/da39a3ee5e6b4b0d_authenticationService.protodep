@@ -1,0 +1,2 @@
+obj\Release\net7.0/AuthenticationService.cs \
+obj\Release\net7.0/AuthenticationServiceGrpc.cs: authenticationService.proto

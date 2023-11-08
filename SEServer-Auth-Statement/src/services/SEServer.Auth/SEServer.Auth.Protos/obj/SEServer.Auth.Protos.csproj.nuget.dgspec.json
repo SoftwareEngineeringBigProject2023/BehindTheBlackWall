@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj": {}
+    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj": {}
   },
   "projects": {
-    "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj": {
+    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj",
         "projectName": "SEServer.Auth.Protos",
-        "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj",
-        "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\obj\\",
+        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj",
+        "packagesPath": "D:\\NuGet\\packages",
+        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -49,13 +47,7 @@
           "dependencies": {
             "Grpc.AspNetCore": {
               "target": "Package",
-              "version": "[2.58.0, )"
-            },
-            "Grpc.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.59.0, )"
+              "version": "[2.40.0, )"
             }
           },
           "imports": [
@@ -74,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

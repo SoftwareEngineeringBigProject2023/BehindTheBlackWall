@@ -1,0 +1,82 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+option csharp_namespace = "SEServer.Statements.Domain.Shared";
+
+package player;
+
+service PlayerService {
+	rpc EnterGame (google.protobuf.Empty) returns (EnterGameResponse);
+	rpc EnterRoom (EnterRoomRequest) returns (google.protobuf.Empty);
+	rpc ExitRoom (google.protobuf.Empty) returns (ExitRoomResponse);
+	rpc Death (google.protobuf.Empty) returns (DeathResponse);
+	rpc CheckGlobalWeaponModule (google.protobuf.Empty) returns (stream GlobalWeaponModuleResponse);
+	rpc CheckRoomWeaponModule (google.protobuf.Empty) returns (stream RoomWeaponModuleResponse);
+	rpc CheckGlobalRank (google.protobuf.Empty) returns (GlobalRankResponse);
+	rpc CheckRoomRank (google.protobuf.Empty) returns (RoomRankResponse);
+	rpc UpdateRoomWeaponModule (stream UpdateRoomWeaponModuleRequest) returns (google.protobuf.Empty);
+	rpc UpdateRoomRank (UpdateRoomRankRequest) returns (google.protobuf.Empty);
+}
+
+message EnterGameResponse
+{
+	string UserName = 1;
+	string ImagePath = 2;
+	int64 TotalScore = 3;
+	int64 TotalKDA = 4;
+}
+
+message EnterRoomRequest
+{
+	string AttackModule = 1;
+	string DefendModule = 2;
+	string RecoverModule = 3;
+}
+
+message ExitRoomResponse
+{
+	int64 Score = 1;
+	int64 KDA = 2;
+}
+
+message DeathResponse
+{
+	int64 Score = 1;
+	int64 KDA = 2;
+}
+
+message GlobalWeaponModuleResponse
+{
+	string WeaponModuleName = 1;
+	string WeaponModuleType = 2;
+}
+
+message RoomWeaponModuleResponse
+{
+	string WeaponModuleName = 1;
+	string WeaponModuleType = 2;
+}
+
+message GlobalRankResponse
+{
+	int64 TotalScore = 1;
+	int64 TotalKDA = 2;
+}
+
+message RoomRankResponse
+{
+	int64 Score = 1;
+	int64 KDA = 2;
+}
+
+message UpdateRoomWeaponModuleRequest
+{
+	string WeaponModuleName = 1;
+	string WeaponModuleType = 2;
+}
+
+message UpdateRoomRankRequest
+{
+	int64 Score = 1;
+	int64 KDA = 2;
+}

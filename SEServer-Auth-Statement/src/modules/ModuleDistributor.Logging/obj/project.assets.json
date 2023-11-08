@@ -8,7 +8,7 @@
           "build/Fody.targets": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
+      "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
         "type": "package",
         "compile": {
           "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
@@ -24,7 +24,7 @@
           "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-      "Rougamo.Fody/1.4.1": {
+      "Rougamo.Fody/2.0.0": {
         "type": "package",
         "dependencies": {
           "Fody": "6.2.5",
@@ -89,10 +89,10 @@
         "netstandardtask/Mono.Cecil.pdb"
       ]
     },
-    "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
-      "sha512": "kmn78+LPVMOWeITUjIlfxUPDsI0R6G0RkeAMBmQxAJ7vBJn4q2dTva7pWi65ceN5vPGjJ9q/Uae2WKgvfktJAw==",
+    "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
+      "sha512": "pkeBFx0vqMW/A3aUVHh7MPu3WkBhaVlezhSZeb1c9XD0vUReYH1TLFSy5MxJgZfmz5LZzYoErMorlYZiwpOoNA==",
       "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/7.0.0",
+      "path": "microsoft.extensions.logging.abstractions/7.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -154,15 +154,15 @@
         "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
         "microsoft.extensions.logging.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Rougamo.Fody/1.4.1": {
-      "sha512": "tnt0FfWKsEB4UveC1c31v7Do5kOqCq4hez0yz1q2cMPSbXP294gr44ljflaSZp4SBcpWDcNW43/gf/lW8ePL0w==",
+    "Rougamo.Fody/2.0.0": {
+      "sha512": "b8DovgTK0YlY/QqLk1OEymU7oxKQZfePFNG9K/lVczFtTO5ADF3vhTBXJ07fMp0N7euagf6yzIRBSd3bmg4ArQ==",
       "type": "package",
-      "path": "rougamo.fody/1.4.1",
+      "path": "rougamo.fody/2.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -172,7 +172,7 @@
         "build/Rougamo.Fody.props",
         "lib/netstandard2.0/Rougamo.dll",
         "lib/netstandard2.0/Rougamo.xml",
-        "rougamo.fody.1.4.1.nupkg.sha512",
+        "rougamo.fody.2.0.0.nupkg.sha512",
         "rougamo.fody.nuspec",
         "weaver/Rougamo.Fody.dll"
       ]
@@ -217,31 +217,28 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Microsoft.Extensions.Logging.Abstractions >= 7.0.0",
-      "Rougamo.Fody >= 1.4.1"
+      "Microsoft.Extensions.Logging.Abstractions >= 7.0.1",
+      "Rougamo.Fody >= 2.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Windows11\\.nuget\\packages\\": {},
-    "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
+    "D:\\NuGet\\packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
+      "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
       "projectName": "ModuleDistributor.Logging",
-      "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
-      "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\obj\\",
+      "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
+      "packagesPath": "D:\\NuGet\\packages",
+      "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+        "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -271,11 +268,11 @@
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": {
             "target": "Package",
-            "version": "[7.0.0, )"
+            "version": "[7.0.1, )"
           },
           "Rougamo.Fody": {
             "target": "Package",
-            "version": "[1.4.1, )"
+            "version": "[2.0.0, )"
           }
         },
         "imports": [
@@ -294,7 +291,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

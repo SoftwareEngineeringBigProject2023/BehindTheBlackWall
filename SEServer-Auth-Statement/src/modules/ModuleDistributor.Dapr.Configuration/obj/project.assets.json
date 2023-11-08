@@ -2,19 +2,19 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "Dapr.AspNetCore/1.11.0": {
+      "Dapr.AspNetCore/1.12.0": {
         "type": "package",
         "dependencies": {
-          "Dapr.Client": "1.11.0",
+          "Dapr.Client": "1.12.0",
           "System.IO.Pipelines": "4.7.2"
         },
         "compile": {
-          "lib/netcoreapp3.1/Dapr.AspNetCore.dll": {
+          "lib/net6.0/Dapr.AspNetCore.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/Dapr.AspNetCore.dll": {
+          "lib/net6.0/Dapr.AspNetCore.dll": {
             "related": ".xml"
           }
         },
@@ -263,7 +263,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Dapr.AspNetCore": "1.11.0",
+          "Dapr.AspNetCore": "1.12.0",
           "ModuleDistributor": "1.0.0"
         },
         "compile": {
@@ -276,18 +276,18 @@
     }
   },
   "libraries": {
-    "Dapr.AspNetCore/1.11.0": {
-      "sha512": "3afB7TjSGuG/fehzQ2TjbziWOTYWx89aQEftXlI41vd603Op7+jf/QOaESiV5RTWJVL0OtifT7Yu3D2GyeqjBQ==",
+    "Dapr.AspNetCore/1.12.0": {
+      "sha512": "OZRVjXoZ3lBq+PDD9mGpuBjHEii8Q/JdiHXKMyqvm+NYX9PbyAfs0qzMKgb7x81soY5kA7iwPGw8/3H+EpCWqg==",
       "type": "package",
-      "path": "dapr.aspnetcore/1.11.0",
+      "path": "dapr.aspnetcore/1.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "dapr.aspnetcore.1.11.0.nupkg.sha512",
+        "dapr.aspnetcore.1.12.0.nupkg.sha512",
         "dapr.aspnetcore.nuspec",
         "images/logo-transparent.png",
-        "lib/netcoreapp3.1/Dapr.AspNetCore.dll",
-        "lib/netcoreapp3.1/Dapr.AspNetCore.xml"
+        "lib/net6.0/Dapr.AspNetCore.dll",
+        "lib/net6.0/Dapr.AspNetCore.xml"
       ]
     },
     "Dapr.Client/1.12.0": {
@@ -613,26 +613,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Windows11\\.nuget\\packages\\": {},
-    "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
+    "D:\\NuGet\\packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj",
+      "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj",
       "projectName": "ModuleDistributor.Dapr.Configuration",
-      "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj",
-      "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\obj\\",
+      "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj",
+      "packagesPath": "D:\\NuGet\\packages",
+      "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+        "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -648,8 +645,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
-              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
+            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
             }
           }
         }
@@ -685,7 +682,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

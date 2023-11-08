@@ -26,6 +26,11 @@ services:
     environment:
       - ACCEPT_EULA=Y
 
+  dapr-placement:
+    command: ["./placement", "-port", "50000", "-log-level", "debug"]
+    ports:
+      - "50000:50000"
+
   seserver-auth:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -48,6 +53,43 @@ services:
       - "./dapr/components/:/components"
       - "./dapr/configuration/:/configuration"
       
+  seserver-statements:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5102:80"
+      - "50002:50001"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  seserver-statements-dapr:
+    command: ["./daprd",
+      "-app-id", "seserver-statements",
+      "-app-port", "80",     
+      "-placement-host-address", "placement:50000",
+      "-components-path", "/components",
+      "-config", "/configuration/seserver-config.yaml"
+      ]
+    volumes:
+      - "./dapr/components/:/components"
+      - "./dapr/configuration/:/configuration"   
+
+  seserver-gateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5104:80"
+      - "50004:50001"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
 volumes:
   seserver-sqlserver:
-    external: false    
+    external: false
+
+
+

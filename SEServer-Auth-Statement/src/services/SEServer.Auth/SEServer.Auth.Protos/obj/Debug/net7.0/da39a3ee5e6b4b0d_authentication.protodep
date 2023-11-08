@@ -1,2 +1,0 @@
-obj\Debug\net7.0/Authentication.cs \
-obj\Debug\net7.0/AuthenticationGrpc.cs: authentication.proto

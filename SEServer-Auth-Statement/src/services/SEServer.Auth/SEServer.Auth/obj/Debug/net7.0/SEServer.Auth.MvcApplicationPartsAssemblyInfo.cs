@@ -14,7 +14,6 @@ using System.Reflection;
 [assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("Dapr.AspNetCore")]
 [assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("ModuleDistributor.Dapr.Configuration")]
 [assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("ModuleDistributor.Dapr")]
-[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("ModuleDistributor.HealthCheck.Dapr")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
 

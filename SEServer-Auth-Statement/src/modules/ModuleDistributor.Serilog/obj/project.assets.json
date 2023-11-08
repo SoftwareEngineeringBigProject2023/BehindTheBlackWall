@@ -215,7 +215,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Rougamo.Fody/1.4.1": {
+      "Rougamo.Fody/2.0.0": {
         "type": "package",
         "dependencies": {
           "Fody": "6.2.5",
@@ -924,10 +924,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Rougamo.Fody/1.4.1": {
-      "sha512": "tnt0FfWKsEB4UveC1c31v7Do5kOqCq4hez0yz1q2cMPSbXP294gr44ljflaSZp4SBcpWDcNW43/gf/lW8ePL0w==",
+    "Rougamo.Fody/2.0.0": {
+      "sha512": "b8DovgTK0YlY/QqLk1OEymU7oxKQZfePFNG9K/lVczFtTO5ADF3vhTBXJ07fMp0N7euagf6yzIRBSd3bmg4ArQ==",
       "type": "package",
-      "path": "rougamo.fody/1.4.1",
+      "path": "rougamo.fody/2.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -937,7 +937,7 @@
         "build/Rougamo.Fody.props",
         "lib/netstandard2.0/Rougamo.dll",
         "lib/netstandard2.0/Rougamo.xml",
-        "rougamo.fody.1.4.1.nupkg.sha512",
+        "rougamo.fody.2.0.0.nupkg.sha512",
         "rougamo.fody.nuspec",
         "weaver/Rougamo.Fody.dll"
       ]
@@ -1395,7 +1395,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "ModuleDistributor >= 1.0.0",
-      "Rougamo.Fody >= 1.4.1",
+      "Rougamo.Fody >= 2.0.0",
       "Serilog.AspNetCore >= 7.0.0",
       "Serilog.Enrichers.Environment >= 2.3.0",
       "Serilog.Extensions.Hosting >= 7.0.0",
@@ -1406,26 +1406,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Windows11\\.nuget\\packages\\": {},
-    "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
+    "D:\\NuGet\\packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj",
+      "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj",
       "projectName": "ModuleDistributor.Serilog",
-      "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj",
-      "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\obj\\",
+      "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj",
+      "packagesPath": "D:\\NuGet\\packages",
+      "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+        "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1441,8 +1438,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
-              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
+            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
             }
           }
         }
@@ -1459,7 +1456,7 @@
         "dependencies": {
           "Rougamo.Fody": {
             "target": "Package",
-            "version": "[1.4.1, )"
+            "version": "[2.0.0, )"
           },
           "Serilog.AspNetCore": {
             "target": "Package",
@@ -1506,7 +1503,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

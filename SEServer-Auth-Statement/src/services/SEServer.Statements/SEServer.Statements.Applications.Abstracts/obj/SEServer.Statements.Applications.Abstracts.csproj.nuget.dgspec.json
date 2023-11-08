@@ -1,0 +1,408 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj": {}
+  },
+  "projects": {
+    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
+        "projectName": "ModuleDistributor.Dapr.Actors",
+        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
+        "packagesPath": "D:\\NuGet\\packages",
+        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapr.Actors.AspNetCore": {
+              "target": "Package",
+              "version": "[1.12.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
+        "projectName": "ModuleDistributor.Dapr",
+        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
+        "packagesPath": "D:\\NuGet\\packages",
+        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapr.AspNetCore": {
+              "target": "Package",
+              "version": "[1.12.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
+        "projectName": "ModuleDistributor",
+        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
+        "packagesPath": "D:\\NuGet\\packages",
+        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj",
+        "projectName": "SEServer.Statements.Applications.Abstracts",
+        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj",
+        "packagesPath": "D:\\NuGet\\packages",
+        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj"
+              },
+              "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj",
+        "projectName": "SEServer.Statements.Domain.Shared",
+        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj",
+        "packagesPath": "D:\\NuGet\\packages",
+        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.40.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj",
+        "projectName": "SEServer.Statements.Domain",
+        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj",
+        "packagesPath": "D:\\NuGet\\packages",
+        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

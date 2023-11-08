@@ -1,27 +1,21 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ModuleDistributor;
-using ModuleDistributor.Dapr;
 using ModuleDistributor.Dapr.Configuration;
-using ModuleDistributor.EntityFrameworkCore;
 using ModuleDistributor.Grpc;
 using ModuleDistributor.GrpcWebSocketBridge;
-using ModuleDistributor.HealthCheck.Dapr;
 using ModuleDistributor.Serilog;
-using SEServer.Auth.EntityFrameworkCore;
-using SEServer.Auth.Options;
+using SEServer.Statements.Domain.Shared;
+using SEServer.Statements.EntityFrameworkCore;
 using System.Text;
 
 namespace SEServer.Auth
 {
-    [DependsOn(typeof(DaprHealthCheckModule),
-        typeof(DaprSecretStoreModule),
+    [DependsOn(typeof(DaprSecretStoreModule),
         typeof(SerilogModule),
         typeof(GrpcWebSocketBrigdeModule),
         typeof(GrpcServiceModule<SEServerAuthModule>),
-        typeof(EntityFrameworkCoreModule<ApplicationDbContext, ApplicationDbContextOptionsWrapper>))]
+        typeof(SEServerStatementsEntityFrameworkCoreModule))]
     public class SEServerAuthModule : CustomModule
     {
         public override void ConfigureServices(ServiceContext context)
@@ -36,7 +30,7 @@ namespace SEServer.Auth
                 .AddJwtBearer(options =>
                 {
                     options.SaveToken = true;
-                    options.RequireHttpsMetadata = true;
+                    options.RequireHttpsMetadata = false;
                     options.TokenValidationParameters = new()
                     {
                         ValidateIssuer = false,
@@ -48,14 +42,37 @@ namespace SEServer.Auth
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenOptions.Key!))
                     };
                 });
+            context.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    policy.AllowAnyMethod();
+                    policy.AllowAnyOrigin();
+                    policy.AllowAnyHeader();
+                    policy.WithExposedHeaders("grpc-status", "grpc-message");
+                });
+            });
         }
 
-        public override async ValueTask OnApplicationInitializationAsync(ApplicationContext context)
+        public override void OnApplicationInitialization(ApplicationContext context)
         {
             context.App.UseAuthentication();
             context.App.UseAuthorization();
-            using (var scope = context.App.ApplicationServices.CreateScope())
-                await scope.ServiceProvider.GetRequiredService<ApplicationDbContext>().Database.MigrateAsync();
+            context.App.UseCors();
+            context.App.UseStaticFiles(new StaticFileOptions()
+            {
+                ServeUnknownFileTypes = true,
+                DefaultContentType = "application/octet-stream",
+                OnPrepareResponse = (ctx) =>
+                {
+                    if (ctx.File.Name.EndsWith(".br"))
+                    {
+                        ctx.Context.Response.Headers.ContentEncoding = "br";
+                    }
+                    if (ctx.File.Name.Contains(".wasm")) ctx.Context.Response.Headers.ContentType = "application/wasm";
+                    if (ctx.File.Name.Contains(".js")) ctx.Context.Response.Headers.ContentType = "application/javascript";
+                }
+            });
         }
     }
 }

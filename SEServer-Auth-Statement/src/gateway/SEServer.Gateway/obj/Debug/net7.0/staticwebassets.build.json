@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "m/dZErEqIAD+0Fr/JLrnHxbPQtOpke9RCsdRS3Lh0ug=",
+  "Source": "SEServer.Gateway",
+  "BasePath": "_content/SEServer.Gateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

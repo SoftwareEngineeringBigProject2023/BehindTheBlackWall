@@ -1,21 +1,70 @@
 name: dockercompose37235877509304208
 services:
-  seserver.auth:
+  dapr-placement:
+    command:
+      - ./placement
+      - -port
+      - "50000"
+      - -log-level
+      - debug
+    container_name: dapr-placement
+    image: daprio/dapr:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 50000
+        published: "50000"
+        protocol: tcp
+  redis:
+    container_name: redis
+    image: redis:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 6379
+        published: "5379"
+        protocol: tcp
+  seq:
+    container_name: seq
+    environment:
+      ACCEPT_EULA: "Y"
+    image: datalust/seq:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5341"
+        protocol: tcp
+    restart: unless-stopped
+  seserver-auth:
     build:
       context: D:\aspdotnet\SEServer
       dockerfile: src/services/SEServer.Auth/SEServer.Auth/Dockerfile
+    container_name: seserver-auth
+    depends_on:
+      seq:
+        condition: service_started
+        required: true
+      sqlserver:
+        condition: service_started
+        required: true
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: https://+:443;http://+:80
+      ASPNETCORE_URLS: http://0.0.0.0:80
     image: seserverauth
     networks:
       default: null
     ports:
       - mode: ingress
         target: 80
+        published: "5101"
         protocol: tcp
       - mode: ingress
-        target: 443
+        target: 50001
+        published: "50001"
         protocol: tcp
     volumes:
       - type: bind
@@ -30,6 +79,177 @@ services:
         read_only: true
         bind:
           create_host_path: true
+  seserver-auth-dapr:
+    command:
+      - ./daprd
+      - -app-id
+      - seserver-auth
+      - -app-port
+      - "80"
+      - -components-path
+      - /components
+      - -config
+      - /configuration/seserver-config.yaml
+    container_name: seserver-auth-dapr
+    depends_on:
+      seserver-auth:
+        condition: service_started
+        required: true
+    image: daprio/daprd:latest
+    network_mode: service:seserver-auth
+    volumes:
+      - type: bind
+        source: D:\aspdotnet\SEServer\dapr\components
+        target: /components
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\aspdotnet\SEServer\dapr\configuration
+        target: /configuration
+        bind:
+          create_host_path: true
+  seserver-gateway:
+    build:
+      context: D:\aspdotnet\SEServer
+      dockerfile: src/gateway/SEServer.Gateway/Dockerfile
+    container_name: seserver-gateway
+    depends_on:
+      seserver-auth:
+        condition: service_started
+        required: true
+      seserver-statements:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://0.0.0.0:80
+    image: seservergateway
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5104"
+        protocol: tcp
+      - mode: ingress
+        target: 50001
+        published: "50004"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\0\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\0\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  seserver-statements:
+    build:
+      context: D:\aspdotnet\SEServer
+      dockerfile: src/services/SEServer.Statements/SEServer.Statements/Dockerfile
+    container_name: seserver-statements
+    depends_on:
+      seq:
+        condition: service_started
+        required: true
+      sqlserver:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://0.0.0.0:80
+    image: seserverstatements
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5102"
+        protocol: tcp
+      - mode: ingress
+        target: 50001
+        published: "50002"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\0\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\0\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  seserver-statements-dapr:
+    command:
+      - ./daprd
+      - -app-id
+      - seserver-statements
+      - -app-port
+      - "80"
+      - -placement-host-address
+      - placement:50000
+      - -components-path
+      - /components
+      - -config
+      - /configuration/seserver-config.yaml
+    container_name: seserver-statements-dapr
+    depends_on:
+      seserver-statements:
+        condition: service_started
+        required: true
+    image: daprio/daprd:latest
+    network_mode: service:seserver-statements
+    volumes:
+      - type: bind
+        source: D:\aspdotnet\SEServer\dapr\components
+        target: /components
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\aspdotnet\SEServer\dapr\configuration
+        target: /configuration
+        bind:
+          create_host_path: true
+  sqlserver:
+    container_name: sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: JWmTjvNnRfKcjvLo0r
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1433"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: seserver-sqlserver
+        target: /var/opt/mssql
+        volume: {}
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin-slim:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 9411
+        published: "5411"
+        protocol: tcp
 networks:
   default:
     name: dockercompose37235877509304208_default
+volumes:
+  seserver-sqlserver:
+    name: dockercompose37235877509304208_seserver-sqlserver

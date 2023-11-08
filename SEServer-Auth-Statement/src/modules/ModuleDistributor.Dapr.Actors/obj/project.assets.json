@@ -2,36 +2,36 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "Dapr.Actors/1.11.0": {
+      "Dapr.Actors/1.12.0": {
         "type": "package",
         "dependencies": {
-          "Dapr.Client": "1.11.0",
+          "Dapr.Client": "1.12.0",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/Dapr.Actors.dll": {
+          "lib/net6.0/Dapr.Actors.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/Dapr.Actors.dll": {
+          "lib/net6.0/Dapr.Actors.dll": {
             "related": ".xml"
           }
         }
       },
-      "Dapr.Actors.AspNetCore/1.11.0": {
+      "Dapr.Actors.AspNetCore/1.12.0": {
         "type": "package",
         "dependencies": {
-          "Dapr.Actors": "1.11.0",
+          "Dapr.Actors": "1.12.0",
           "System.IO.Pipelines": "4.7.2"
         },
         "compile": {
-          "lib/netcoreapp3.1/Dapr.Actors.AspNetCore.dll": {
+          "lib/net6.0/Dapr.Actors.AspNetCore.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/Dapr.Actors.AspNetCore.dll": {
+          "lib/net6.0/Dapr.Actors.AspNetCore.dll": {
             "related": ".xml"
           }
         },
@@ -39,19 +39,19 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Dapr.AspNetCore/1.11.0": {
+      "Dapr.AspNetCore/1.12.0": {
         "type": "package",
         "dependencies": {
-          "Dapr.Client": "1.11.0",
+          "Dapr.Client": "1.12.0",
           "System.IO.Pipelines": "4.7.2"
         },
         "compile": {
-          "lib/netcoreapp3.1/Dapr.AspNetCore.dll": {
+          "lib/net6.0/Dapr.AspNetCore.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/Dapr.AspNetCore.dll": {
+          "lib/net6.0/Dapr.AspNetCore.dll": {
             "related": ".xml"
           }
         },
@@ -59,21 +59,21 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Dapr.Client/1.11.0": {
+      "Dapr.Client/1.12.0": {
         "type": "package",
         "dependencies": {
           "Google.Api.CommonProtos": "2.2.0",
           "Google.Protobuf": "3.15.0",
-          "Grpc.Net.Client": "2.47.0",
+          "Grpc.Net.Client": "2.52.0",
           "System.Net.Http.Json": "5.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/Dapr.Client.dll": {
+          "lib/net6.0/Dapr.Client.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/Dapr.Client.dll": {
+          "lib/net6.0/Dapr.Client.dll": {
             "related": ".xml"
           }
         }
@@ -111,7 +111,7 @@
           }
         }
       },
-      "Grpc.Core.Api/2.47.0": {
+      "Grpc.Core.Api/2.52.0": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -127,35 +127,35 @@
           }
         }
       },
-      "Grpc.Net.Client/2.47.0": {
+      "Grpc.Net.Client/2.52.0": {
         "type": "package",
         "dependencies": {
-          "Grpc.Net.Common": "2.47.0",
+          "Grpc.Net.Common": "2.52.0",
           "Microsoft.Extensions.Logging.Abstractions": "3.0.3"
         },
         "compile": {
-          "lib/net6.0/Grpc.Net.Client.dll": {
+          "lib/net7.0/Grpc.Net.Client.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Grpc.Net.Client.dll": {
+          "lib/net7.0/Grpc.Net.Client.dll": {
             "related": ".pdb;.xml"
           }
         }
       },
-      "Grpc.Net.Common/2.47.0": {
+      "Grpc.Net.Common/2.52.0": {
         "type": "package",
         "dependencies": {
-          "Grpc.Core.Api": "2.47.0"
+          "Grpc.Core.Api": "2.52.0"
         },
         "compile": {
-          "lib/net6.0/Grpc.Net.Common.dll": {
+          "lib/net7.0/Grpc.Net.Common.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Grpc.Net.Common.dll": {
+          "lib/net7.0/Grpc.Net.Common.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -238,7 +238,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Dapr.AspNetCore": "1.11.0",
+          "Dapr.AspNetCore": "1.12.0",
           "ModuleDistributor": "1.0.0"
         },
         "compile": {
@@ -251,60 +251,60 @@
     }
   },
   "libraries": {
-    "Dapr.Actors/1.11.0": {
-      "sha512": "ShJBoRXcVV8XgsZWUk8oEblEDBALE2p+4brTOgh9r1+Qf1GnMt8SKpMTJo9xTBuK3jhZXMHmkJ/p6nZuCsnUwA==",
+    "Dapr.Actors/1.12.0": {
+      "sha512": "vsQxKJ1uMHFAu7CPrPf+AVDezMVVEN1lx5UlMwp6nVy/JYFQfdpDhpVAgnFLMfw5Q5CUrHq2KqZQgXQcHymRiw==",
       "type": "package",
-      "path": "dapr.actors/1.11.0",
+      "path": "dapr.actors/1.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "dapr.actors.1.11.0.nupkg.sha512",
+        "dapr.actors.1.12.0.nupkg.sha512",
         "dapr.actors.nuspec",
         "images/logo-transparent.png",
-        "lib/netcoreapp3.1/Dapr.Actors.dll",
-        "lib/netcoreapp3.1/Dapr.Actors.xml"
+        "lib/net6.0/Dapr.Actors.dll",
+        "lib/net6.0/Dapr.Actors.xml"
       ]
     },
-    "Dapr.Actors.AspNetCore/1.11.0": {
-      "sha512": "xTIqOLjlJ8pVSkGpUUs76VbpRZwEZYYq1BpyaEWl+VN0gQVZtE1azDHhwE90QKBWI0RN0fJ9KOQeAlSCBm93wg==",
+    "Dapr.Actors.AspNetCore/1.12.0": {
+      "sha512": "PrJkyGD2qrfOjtKO9oB1EVi9Og3lrcq9mpNb2VixvPVknSsdaGFvoK4SXqI0O0wbFowgZO5whO6uZkiV4bH5yw==",
       "type": "package",
-      "path": "dapr.actors.aspnetcore/1.11.0",
+      "path": "dapr.actors.aspnetcore/1.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "dapr.actors.aspnetcore.1.11.0.nupkg.sha512",
+        "dapr.actors.aspnetcore.1.12.0.nupkg.sha512",
         "dapr.actors.aspnetcore.nuspec",
         "images/logo-transparent.png",
-        "lib/netcoreapp3.1/Dapr.Actors.AspNetCore.dll",
-        "lib/netcoreapp3.1/Dapr.Actors.AspNetCore.xml"
+        "lib/net6.0/Dapr.Actors.AspNetCore.dll",
+        "lib/net6.0/Dapr.Actors.AspNetCore.xml"
       ]
     },
-    "Dapr.AspNetCore/1.11.0": {
-      "sha512": "3afB7TjSGuG/fehzQ2TjbziWOTYWx89aQEftXlI41vd603Op7+jf/QOaESiV5RTWJVL0OtifT7Yu3D2GyeqjBQ==",
+    "Dapr.AspNetCore/1.12.0": {
+      "sha512": "OZRVjXoZ3lBq+PDD9mGpuBjHEii8Q/JdiHXKMyqvm+NYX9PbyAfs0qzMKgb7x81soY5kA7iwPGw8/3H+EpCWqg==",
       "type": "package",
-      "path": "dapr.aspnetcore/1.11.0",
+      "path": "dapr.aspnetcore/1.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "dapr.aspnetcore.1.11.0.nupkg.sha512",
+        "dapr.aspnetcore.1.12.0.nupkg.sha512",
         "dapr.aspnetcore.nuspec",
         "images/logo-transparent.png",
-        "lib/netcoreapp3.1/Dapr.AspNetCore.dll",
-        "lib/netcoreapp3.1/Dapr.AspNetCore.xml"
+        "lib/net6.0/Dapr.AspNetCore.dll",
+        "lib/net6.0/Dapr.AspNetCore.xml"
       ]
     },
-    "Dapr.Client/1.11.0": {
-      "sha512": "kDkDvJ+wLGpVmKoBpLKmfUzqRnZKHyM/2uv4523FeG9OmbmmGi6un3heWkcJz/K5eAhw0vasTjjJWTwj/QgkKg==",
+    "Dapr.Client/1.12.0": {
+      "sha512": "GyEiu3a7Y6g+YMtKlF1kptGVplOYuD3dxJNLNLCiq2TlLAGqPEBS6KFnfdhmrwQQrzozrPvFwu53W525ZVIUEQ==",
       "type": "package",
-      "path": "dapr.client/1.11.0",
+      "path": "dapr.client/1.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "dapr.client.1.11.0.nupkg.sha512",
+        "dapr.client.1.12.0.nupkg.sha512",
         "dapr.client.nuspec",
         "images/logo-transparent.png",
-        "lib/netcoreapp3.1/Dapr.Client.dll",
-        "lib/netcoreapp3.1/Dapr.Client.xml"
+        "lib/net6.0/Dapr.Client.dll",
+        "lib/net6.0/Dapr.Client.xml"
       ]
     },
     "Google.Api.CommonProtos/2.2.0": {
@@ -346,15 +346,15 @@
         "lib/netstandard2.0/Google.Protobuf.xml"
       ]
     },
-    "Grpc.Core.Api/2.47.0": {
-      "sha512": "oZXapxH/2WHAVALghNauo+r/bp6zjgQ6r0v8FizLLQg0/j/FkK2u3WZ7cLOL9Y5H4oLg+wLclO8FSvNTQpNR5Q==",
+    "Grpc.Core.Api/2.52.0": {
+      "sha512": "SQiPyBczG4vKPmI6Fd+O58GcxxDSFr6nfRAJuBDUNj+PgdokhjWJvZE/La1c09AkL2FVm/jrDloG89nkzmVF7A==",
       "type": "package",
-      "path": "grpc.core.api/2.47.0",
+      "path": "grpc.core.api/2.52.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "grpc.core.api.2.47.0.nupkg.sha512",
+        "grpc.core.api.2.52.0.nupkg.sha512",
         "grpc.core.api.nuspec",
         "lib/net462/Grpc.Core.Api.dll",
         "lib/net462/Grpc.Core.Api.pdb",
@@ -371,15 +371,15 @@
         "packageIcon.png"
       ]
     },
-    "Grpc.Net.Client/2.47.0": {
-      "sha512": "DLbUC3T8dMmhA2iqpaJo0X4g7fAi3FyVbDd0/jBXrlqc/bcyA1wPBzLx6mWOWoGUb5S89xL2svnsM8SfzzNa2Q==",
+    "Grpc.Net.Client/2.52.0": {
+      "sha512": "hWVH9g/Nnjz40ni//2S8UIOyEmhueQREoZIkD0zKHEPqLxXcNlbp4eebXIOicZtkwDSx0TFz9NpkbecEDn6rBw==",
       "type": "package",
-      "path": "grpc.net.client/2.47.0",
+      "path": "grpc.net.client/2.52.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "grpc.net.client.2.47.0.nupkg.sha512",
+        "grpc.net.client.2.52.0.nupkg.sha512",
         "grpc.net.client.nuspec",
         "lib/net5.0/Grpc.Net.Client.dll",
         "lib/net5.0/Grpc.Net.Client.pdb",
@@ -387,6 +387,9 @@
         "lib/net6.0/Grpc.Net.Client.dll",
         "lib/net6.0/Grpc.Net.Client.pdb",
         "lib/net6.0/Grpc.Net.Client.xml",
+        "lib/net7.0/Grpc.Net.Client.dll",
+        "lib/net7.0/Grpc.Net.Client.pdb",
+        "lib/net7.0/Grpc.Net.Client.xml",
         "lib/netstandard2.0/Grpc.Net.Client.dll",
         "lib/netstandard2.0/Grpc.Net.Client.pdb",
         "lib/netstandard2.0/Grpc.Net.Client.xml",
@@ -396,14 +399,14 @@
         "packageIcon.png"
       ]
     },
-    "Grpc.Net.Common/2.47.0": {
-      "sha512": "Cv76h7noEN2s9cwIdEspOeDjeqcU6Nm34OmjSbRhD/FDBXFmG7rmSfJTPCEB1LYjZWfmf7uUH+nYcHR1I7oQqw==",
+    "Grpc.Net.Common/2.52.0": {
+      "sha512": "di9qzpdx525IxumZdYmu6sG2y/gXJyYeZ1ruFUzB9BJ1nj4kU1/dTAioNCMt1VLRvNVDqh8S8B1oBdKhHJ4xRg==",
       "type": "package",
-      "path": "grpc.net.common/2.47.0",
+      "path": "grpc.net.common/2.52.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "grpc.net.common.2.47.0.nupkg.sha512",
+        "grpc.net.common.2.52.0.nupkg.sha512",
         "grpc.net.common.nuspec",
         "lib/net5.0/Grpc.Net.Common.dll",
         "lib/net5.0/Grpc.Net.Common.pdb",
@@ -411,6 +414,9 @@
         "lib/net6.0/Grpc.Net.Common.dll",
         "lib/net6.0/Grpc.Net.Common.pdb",
         "lib/net6.0/Grpc.Net.Common.xml",
+        "lib/net7.0/Grpc.Net.Common.dll",
+        "lib/net7.0/Grpc.Net.Common.pdb",
+        "lib/net7.0/Grpc.Net.Common.xml",
         "lib/netstandard2.0/Grpc.Net.Common.dll",
         "lib/netstandard2.0/Grpc.Net.Common.pdb",
         "lib/netstandard2.0/Grpc.Net.Common.xml",
@@ -543,31 +549,28 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Dapr.Actors.AspNetCore >= 1.11.0",
+      "Dapr.Actors.AspNetCore >= 1.12.0",
       "ModuleDistributor.Dapr >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Windows11\\.nuget\\packages\\": {},
-    "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
+    "D:\\NuGet\\packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
+      "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
       "projectName": "ModuleDistributor.Dapr.Actors",
-      "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
-      "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\obj\\",
+      "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
+      "packagesPath": "D:\\NuGet\\packages",
+      "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+        "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -583,8 +586,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
-              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
+            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
             }
           }
         }
@@ -601,7 +604,7 @@
         "dependencies": {
           "Dapr.Actors.AspNetCore": {
             "target": "Package",
-            "version": "[1.11.0, )"
+            "version": "[1.12.0, )"
           }
         },
         "imports": [
@@ -620,7 +623,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

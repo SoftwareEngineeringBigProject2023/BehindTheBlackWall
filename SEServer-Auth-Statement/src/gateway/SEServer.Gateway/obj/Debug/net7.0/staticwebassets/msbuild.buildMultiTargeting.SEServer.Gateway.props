@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SEServer.Gateway.props" />
+</Project>

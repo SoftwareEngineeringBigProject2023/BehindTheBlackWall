@@ -2,43 +2,6 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "AspNetCore.HealthChecks.UI.Client/7.1.0": {
-        "type": "package",
-        "dependencies": {
-          "AspNetCore.HealthChecks.UI.Core": "7.0.0",
-          "Microsoft.Extensions.Diagnostics.HealthChecks": "7.0.9"
-        },
-        "compile": {
-          "lib/net7.0/HealthChecks.UI.Client.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/HealthChecks.UI.Client.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "AspNetCore.HealthChecks.UI.Core/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Diagnostics.HealthChecks": "7.0.9"
-        },
-        "compile": {
-          "lib/net6.0/HealthChecks.UI.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/HealthChecks.UI.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Azure.Core/1.25.0": {
         "type": "package",
         "dependencies": {
@@ -83,19 +46,19 @@
           }
         }
       },
-      "Dapr.AspNetCore/1.11.0": {
+      "Dapr.AspNetCore/1.12.0": {
         "type": "package",
         "dependencies": {
-          "Dapr.Client": "1.11.0",
+          "Dapr.Client": "1.12.0",
           "System.IO.Pipelines": "4.7.2"
         },
         "compile": {
-          "lib/netcoreapp3.1/Dapr.AspNetCore.dll": {
+          "lib/net6.0/Dapr.AspNetCore.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/Dapr.AspNetCore.dll": {
+          "lib/net6.0/Dapr.AspNetCore.dll": {
             "related": ".xml"
           }
         },
@@ -161,7 +124,7 @@
           }
         }
       },
-      "Google.Protobuf/3.24.4": {
+      "Google.Protobuf/3.18.0": {
         "type": "package",
         "compile": {
           "lib/net5.0/Google.Protobuf.dll": {
@@ -174,32 +137,32 @@
           }
         }
       },
-      "Grpc.AspNetCore/2.58.0": {
+      "Grpc.AspNetCore/2.40.0": {
         "type": "package",
         "dependencies": {
-          "Google.Protobuf": "3.23.1",
-          "Grpc.AspNetCore.Server.ClientFactory": "2.58.0",
-          "Grpc.Tools": "2.58.0"
+          "Google.Protobuf": "3.18.0",
+          "Grpc.AspNetCore.Server.ClientFactory": "2.40.0",
+          "Grpc.Tools": "2.40.0"
         },
         "compile": {
-          "lib/net7.0/_._": {}
+          "lib/net6.0/_._": {}
         },
         "runtime": {
-          "lib/net7.0/_._": {}
+          "lib/net6.0/_._": {}
         }
       },
-      "Grpc.AspNetCore.Server/2.58.0": {
+      "Grpc.AspNetCore.Server/2.40.0": {
         "type": "package",
         "dependencies": {
-          "Grpc.Net.Common": "2.58.0"
+          "Grpc.Net.Common": "2.40.0"
         },
         "compile": {
-          "lib/net7.0/Grpc.AspNetCore.Server.dll": {
+          "lib/net6.0/Grpc.AspNetCore.Server.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Grpc.AspNetCore.Server.dll": {
+          "lib/net6.0/Grpc.AspNetCore.Server.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -207,19 +170,19 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Grpc.AspNetCore.Server.ClientFactory/2.58.0": {
+      "Grpc.AspNetCore.Server.ClientFactory/2.40.0": {
         "type": "package",
         "dependencies": {
-          "Grpc.AspNetCore.Server": "2.58.0",
-          "Grpc.Net.ClientFactory": "2.58.0"
+          "Grpc.AspNetCore.Server": "2.40.0",
+          "Grpc.Net.ClientFactory": "2.40.0"
         },
         "compile": {
-          "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
+          "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
+          "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -227,8 +190,11 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Grpc.Core.Api/2.58.0": {
+      "Grpc.Core.Api/2.52.0": {
         "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
         "compile": {
           "lib/netstandard2.1/Grpc.Core.Api.dll": {
             "related": ".pdb;.xml"
@@ -240,11 +206,11 @@
           }
         }
       },
-      "Grpc.Net.Client/2.58.0": {
+      "Grpc.Net.Client/2.52.0": {
         "type": "package",
         "dependencies": {
-          "Grpc.Net.Common": "2.58.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
+          "Grpc.Net.Common": "2.52.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.3"
         },
         "compile": {
           "lib/net7.0/Grpc.Net.Client.dll": {
@@ -257,27 +223,27 @@
           }
         }
       },
-      "Grpc.Net.ClientFactory/2.58.0": {
+      "Grpc.Net.ClientFactory/2.40.0": {
         "type": "package",
         "dependencies": {
-          "Grpc.Net.Client": "2.58.0",
-          "Microsoft.Extensions.Http": "6.0.0"
+          "Grpc.Net.Client": "2.40.0",
+          "Microsoft.Extensions.Http": "3.0.3"
         },
         "compile": {
-          "lib/net7.0/Grpc.Net.ClientFactory.dll": {
+          "lib/net6.0/Grpc.Net.ClientFactory.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Grpc.Net.ClientFactory.dll": {
+          "lib/net6.0/Grpc.Net.ClientFactory.dll": {
             "related": ".pdb;.xml"
           }
         }
       },
-      "Grpc.Net.Common/2.58.0": {
+      "Grpc.Net.Common/2.52.0": {
         "type": "package",
         "dependencies": {
-          "Grpc.Core.Api": "2.58.0"
+          "Grpc.Core.Api": "2.52.0"
         },
         "compile": {
           "lib/net7.0/Grpc.Net.Common.dll": {
@@ -290,7 +256,7 @@
           }
         }
       },
-      "Grpc.Tools/2.58.0": {
+      "Grpc.Tools/2.40.0": {
         "type": "package",
         "build": {
           "build/Grpc.Tools.props": {},
@@ -322,7 +288,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.12": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.15.1"
@@ -420,11 +386,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/7.0.12": {
+      "Microsoft.EntityFrameworkCore/7.0.13": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.12",
-          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.12",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.13",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.13",
           "Microsoft.Extensions.Caching.Memory": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0"
@@ -443,7 +409,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.13": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -456,7 +422,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Analyzers/7.0.13": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -465,11 +431,11 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Design/7.0.13": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.14.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.12",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.13",
           "Microsoft.Extensions.DependencyModel": "7.0.0",
           "Mono.TextTemplating": "2.2.1"
         },
@@ -487,10 +453,10 @@
           "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Relational/7.0.13": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.12",
+          "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "compile": {
@@ -504,11 +470,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/7.0.12": {
+      "Microsoft.EntityFrameworkCore.SqlServer/7.0.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.12"
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.13"
         },
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
@@ -521,10 +487,10 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Tools/7.0.13": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "7.0.12"
+          "Microsoft.EntityFrameworkCore.Design": "7.0.13"
         },
         "compile": {
           "lib/net6.0/_._": {}
@@ -684,38 +650,6 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Diagnostics.HealthChecks/7.0.9": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "7.0.9",
-          "Microsoft.Extensions.Hosting.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
-          "Microsoft.Extensions.Options": "7.0.1"
-        },
-        "compile": {
-          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/7.0.9": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -756,21 +690,20 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Http/6.0.0": {
+      "Microsoft.Extensions.Http/3.0.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Logging": "6.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Options": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.3",
+          "Microsoft.Extensions.Logging": "3.0.3",
+          "Microsoft.Extensions.Options": "3.0.3"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Http.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Http.dll": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Http.dll": {
             "related": ".xml"
           }
         }
@@ -813,7 +746,7 @@
           "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-      "Microsoft.Extensions.Options/7.0.1": {
+      "Microsoft.Extensions.Options/7.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
@@ -1012,7 +945,7 @@
           }
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.5": {
         "type": "package",
         "build": {
           "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props": {},
@@ -1053,7 +986,7 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
         }
       },
-      "Rougamo.Fody/1.4.1": {
+      "Rougamo.Fody/2.0.0": {
         "type": "package",
         "dependencies": {
           "Fody": "6.2.5",
@@ -1784,7 +1717,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Dapr.AspNetCore": "1.11.0",
+          "Dapr.AspNetCore": "1.12.0",
           "ModuleDistributor": "1.0.0"
         },
         "compile": {
@@ -1812,7 +1745,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.10",
+          "Microsoft.EntityFrameworkCore": "7.0.13",
           "ModuleDistributor": "1.0.0"
         },
         "compile": {
@@ -1826,8 +1759,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Google.Protobuf": "3.24.4",
-          "Grpc.AspNetCore.Server": "2.58.0",
+          "Grpc.AspNetCore": "2.40.0",
           "ModuleDistributor": "1.0.0"
         },
         "compile": {
@@ -1851,40 +1783,12 @@
           "bin/placeholder/ModuleDistributor.GrpcWebSocketBridge.dll": {}
         }
       },
-      "ModuleDistributor.HealthCheck/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "AspNetCore.HealthChecks.UI.Client": "7.1.0",
-          "ModuleDistributor": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/ModuleDistributor.HealthCheck.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ModuleDistributor.HealthCheck.dll": {}
-        }
-      },
-      "ModuleDistributor.HealthCheck.Dapr/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "ModuleDistributor.Dapr": "1.0.0",
-          "ModuleDistributor.HealthCheck": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/ModuleDistributor.HealthCheck.Dapr.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ModuleDistributor.HealthCheck.Dapr.dll": {}
-        }
-      },
       "ModuleDistributor.Logging/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
-          "Rougamo.Fody": "1.4.1"
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
+          "Rougamo.Fody": "2.0.0"
         },
         "compile": {
           "bin/placeholder/ModuleDistributor.Logging.dll": {}
@@ -1898,7 +1802,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "ModuleDistributor": "1.0.0",
-          "Rougamo.Fody": "1.4.1",
+          "Rougamo.Fody": "2.0.0",
           "Serilog.AspNetCore": "7.0.0",
           "Serilog.Enrichers.Environment": "2.3.0",
           "Serilog.Extensions.Hosting": "7.0.0",
@@ -1918,7 +1822,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Grpc.AspNetCore": "2.58.0"
+          "Grpc.AspNetCore": "2.40.0"
         },
         "compile": {
           "bin/placeholder/SEServer.Auth.Protos.dll": {}
@@ -1926,40 +1830,52 @@
         "runtime": {
           "bin/placeholder/SEServer.Auth.Protos.dll": {}
         }
+      },
+      "SEServer.Statements.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "SEServer.Statements.Domain.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SEServer.Statements.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SEServer.Statements.Domain.dll": {}
+        }
+      },
+      "SEServer.Statements.Domain.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Grpc.AspNetCore": "2.40.0"
+        },
+        "compile": {
+          "bin/placeholder/SEServer.Statements.Domain.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SEServer.Statements.Domain.Shared.dll": {}
+        }
+      },
+      "SEServer.Statements.EntityFrameworkCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
+          "ModuleDistributor.EntityFrameworkCore": "1.0.0",
+          "SEServer.Statements.Domain": "1.0.0",
+          "SEServer.Statements.Domain.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SEServer.Statements.EntityFrameworkCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SEServer.Statements.EntityFrameworkCore.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "AspNetCore.HealthChecks.UI.Client/7.1.0": {
-      "sha512": "f7Z0Xw2C7mvL49/vtTpgn1ZLJPycBqpCPr7DVINaoeNdJ01aQ37JFfodxqA0KLxp+fGiIdLs9+ktbiSBfiMdRQ==",
-      "type": "package",
-      "path": "aspnetcore.healthchecks.ui.client/7.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "aspnetcore.healthchecks.ui.client.7.1.0.nupkg.sha512",
-        "aspnetcore.healthchecks.ui.client.nuspec",
-        "icon.png",
-        "lib/net6.0/HealthChecks.UI.Client.dll",
-        "lib/net6.0/HealthChecks.UI.Client.xml",
-        "lib/net7.0/HealthChecks.UI.Client.dll",
-        "lib/net7.0/HealthChecks.UI.Client.xml"
-      ]
-    },
-    "AspNetCore.HealthChecks.UI.Core/7.0.0": {
-      "sha512": "nOBktEQ/PjCqJIqLlFlLXKdDyJ42OsgDpd4WaD9iZH1GQD+LlBW36xObn9LUFj3lNOAULfobAt/l2n/9X0oiIA==",
-      "type": "package",
-      "path": "aspnetcore.healthchecks.ui.core/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "aspnetcore.healthchecks.ui.core.7.0.0.nupkg.sha512",
-        "aspnetcore.healthchecks.ui.core.nuspec",
-        "icon.png",
-        "lib/net6.0/HealthChecks.UI.Core.dll",
-        "lib/net6.0/HealthChecks.UI.Core.xml"
-      ]
-    },
     "Azure.Core/1.25.0": {
       "sha512": "X8Dd4sAggS84KScWIjEbFAdt2U1KDolQopTPoHVubG2y3CM54f9l6asVrP5Uy384NWXjsspPYaJgz5xHc+KvTA==",
       "type": "package",
@@ -1998,18 +1914,18 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
-    "Dapr.AspNetCore/1.11.0": {
-      "sha512": "3afB7TjSGuG/fehzQ2TjbziWOTYWx89aQEftXlI41vd603Op7+jf/QOaESiV5RTWJVL0OtifT7Yu3D2GyeqjBQ==",
+    "Dapr.AspNetCore/1.12.0": {
+      "sha512": "OZRVjXoZ3lBq+PDD9mGpuBjHEii8Q/JdiHXKMyqvm+NYX9PbyAfs0qzMKgb7x81soY5kA7iwPGw8/3H+EpCWqg==",
       "type": "package",
-      "path": "dapr.aspnetcore/1.11.0",
+      "path": "dapr.aspnetcore/1.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "dapr.aspnetcore.1.11.0.nupkg.sha512",
+        "dapr.aspnetcore.1.12.0.nupkg.sha512",
         "dapr.aspnetcore.nuspec",
         "images/logo-transparent.png",
-        "lib/netcoreapp3.1/Dapr.AspNetCore.dll",
-        "lib/netcoreapp3.1/Dapr.AspNetCore.xml"
+        "lib/net6.0/Dapr.AspNetCore.dll",
+        "lib/net6.0/Dapr.AspNetCore.xml"
       ]
     },
     "Dapr.Client/1.12.0": {
@@ -2092,14 +2008,14 @@
         "lib/netstandard2.0/Google.Api.CommonProtos.xml"
       ]
     },
-    "Google.Protobuf/3.24.4": {
-      "sha512": "TmUI4ndd3x5HePyLmqAmGT6oVvoRCu+bMmrJmOpAFtCPEB+oUMWF8dyVY1zxXry/8cqsTHWszYRIAwpuUNpUyA==",
+    "Google.Protobuf/3.18.0": {
+      "sha512": "Jm6+nppUm9LD+XVsLFkf1YyVlAKsG5gq+Hc/Rn3Zi2pDObBI6PCH/eHBFUJdARl40DpczEdHlV3+WTPOGIXetg==",
       "type": "package",
-      "path": "google.protobuf/3.24.4",
+      "path": "google.protobuf/3.18.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "google.protobuf.3.24.4.nupkg.sha512",
+        "google.protobuf.3.18.0.nupkg.sha512",
         "google.protobuf.nuspec",
         "lib/net45/Google.Protobuf.dll",
         "lib/net45/Google.Protobuf.pdb",
@@ -2115,78 +2031,79 @@
         "lib/netstandard2.0/Google.Protobuf.xml"
       ]
     },
-    "Grpc.AspNetCore/2.58.0": {
-      "sha512": "T47mP1QL0hsG5cryIbnZaT4FGpkJ0GyBAQHDVbgiYn7430WwfcXOTB4dHsV+7LQSySBAARW/RUxFUvyVq2hAQA==",
+    "Grpc.AspNetCore/2.40.0": {
+      "sha512": "UdyFzZZbzugtoGfjGAY9bVq/1l7m3SvGGXd5VCqw7xr4QA4BVEozr1Vr6FFxUOPVvg91g5dwssbsM/Xl1MpecQ==",
       "type": "package",
-      "path": "grpc.aspnetcore/2.58.0",
+      "path": "grpc.aspnetcore/2.40.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "README.md",
-        "grpc.aspnetcore.2.58.0.nupkg.sha512",
+        "grpc.aspnetcore.2.40.0.nupkg.sha512",
         "grpc.aspnetcore.nuspec",
+        "lib/net5.0/_._",
         "lib/net6.0/_._",
-        "lib/net7.0/_._",
-        "lib/net8.0/_._",
+        "lib/netcoreapp3.0/_._",
         "packageIcon.png"
       ]
     },
-    "Grpc.AspNetCore.Server/2.58.0": {
-      "sha512": "eatJHc0uQR2E3PirM6E4E1Yxfx2Wo9TjRfHk/7oXxJJnmdG9eMR25nyADwAB7L7yOEaEQjZQdYg9238lNFefOQ==",
+    "Grpc.AspNetCore.Server/2.40.0": {
+      "sha512": "cBSpT42syKkVnTBEehk+Sc2dX5sDO2lP+5o4ylFnup+JHPntbewTx5QHHizWPRTKTwWDe4EXR4rR1ilgf6eTnQ==",
       "type": "package",
-      "path": "grpc.aspnetcore.server/2.58.0",
+      "path": "grpc.aspnetcore.server/2.40.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "README.md",
-        "grpc.aspnetcore.server.2.58.0.nupkg.sha512",
+        "grpc.aspnetcore.server.2.40.0.nupkg.sha512",
         "grpc.aspnetcore.server.nuspec",
+        "lib/net5.0/Grpc.AspNetCore.Server.dll",
+        "lib/net5.0/Grpc.AspNetCore.Server.pdb",
+        "lib/net5.0/Grpc.AspNetCore.Server.xml",
         "lib/net6.0/Grpc.AspNetCore.Server.dll",
         "lib/net6.0/Grpc.AspNetCore.Server.pdb",
         "lib/net6.0/Grpc.AspNetCore.Server.xml",
-        "lib/net7.0/Grpc.AspNetCore.Server.dll",
-        "lib/net7.0/Grpc.AspNetCore.Server.pdb",
-        "lib/net7.0/Grpc.AspNetCore.Server.xml",
-        "lib/net8.0/Grpc.AspNetCore.Server.dll",
-        "lib/net8.0/Grpc.AspNetCore.Server.pdb",
-        "lib/net8.0/Grpc.AspNetCore.Server.xml",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.dll",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.pdb",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.xml",
         "packageIcon.png"
       ]
     },
-    "Grpc.AspNetCore.Server.ClientFactory/2.58.0": {
-      "sha512": "9qVPaLiaBEyJ9g3TX7u46x7HZtsQjVIzCb8z1kb0QtYnlYxtTgrEjP/5WBjt+UKZ3FU8qhg2iHmhov3iDls6yg==",
+    "Grpc.AspNetCore.Server.ClientFactory/2.40.0": {
+      "sha512": "U+Cp5Mt7/xjFRIJhChjLXn0oUDisaBg3XzFkAUZE32dAa/dQN2gs9Qd9Gl51deStbci3J+W7CcfHgZ0y2Fwblw==",
       "type": "package",
-      "path": "grpc.aspnetcore.server.clientfactory/2.58.0",
+      "path": "grpc.aspnetcore.server.clientfactory/2.40.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "grpc.aspnetcore.server.clientfactory.2.58.0.nupkg.sha512",
+        "grpc.aspnetcore.server.clientfactory.2.40.0.nupkg.sha512",
         "grpc.aspnetcore.server.clientfactory.nuspec",
+        "lib/net5.0/Grpc.AspNetCore.Server.ClientFactory.dll",
+        "lib/net5.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
+        "lib/net5.0/Grpc.AspNetCore.Server.ClientFactory.xml",
         "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.dll",
         "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
         "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.xml",
-        "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.dll",
-        "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
-        "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.xml",
-        "lib/net8.0/Grpc.AspNetCore.Server.ClientFactory.dll",
-        "lib/net8.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
-        "lib/net8.0/Grpc.AspNetCore.Server.ClientFactory.xml",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.ClientFactory.dll",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.ClientFactory.xml",
         "packageIcon.png"
       ]
     },
-    "Grpc.Core.Api/2.58.0": {
-      "sha512": "OhYRghAdlxCc0YKRzqvlbDo1sJq1urHDw8T1OClbKbMbnN/zPzITni4Mzcm3HjSaCjKDgssGE1PuOCHZ6G3G0w==",
+    "Grpc.Core.Api/2.52.0": {
+      "sha512": "SQiPyBczG4vKPmI6Fd+O58GcxxDSFr6nfRAJuBDUNj+PgdokhjWJvZE/La1c09AkL2FVm/jrDloG89nkzmVF7A==",
       "type": "package",
-      "path": "grpc.core.api/2.58.0",
+      "path": "grpc.core.api/2.52.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "grpc.core.api.2.58.0.nupkg.sha512",
+        "grpc.core.api.2.52.0.nupkg.sha512",
         "grpc.core.api.nuspec",
         "lib/net462/Grpc.Core.Api.dll",
         "lib/net462/Grpc.Core.Api.pdb",
         "lib/net462/Grpc.Core.Api.xml",
+        "lib/netstandard1.5/Grpc.Core.Api.dll",
+        "lib/netstandard1.5/Grpc.Core.Api.pdb",
+        "lib/netstandard1.5/Grpc.Core.Api.xml",
         "lib/netstandard2.0/Grpc.Core.Api.dll",
         "lib/netstandard2.0/Grpc.Core.Api.pdb",
         "lib/netstandard2.0/Grpc.Core.Api.xml",
@@ -2196,28 +2113,25 @@
         "packageIcon.png"
       ]
     },
-    "Grpc.Net.Client/2.58.0": {
-      "sha512": "nSbBT9X6+eHEivqbkSOuexNeDO7oNzBMCC/kjj3Ah8Tlqd/EmG8K1A4+ZMqz9O8eHjYlPaOZflnWZfRuK5ECdg==",
+    "Grpc.Net.Client/2.52.0": {
+      "sha512": "hWVH9g/Nnjz40ni//2S8UIOyEmhueQREoZIkD0zKHEPqLxXcNlbp4eebXIOicZtkwDSx0TFz9NpkbecEDn6rBw==",
       "type": "package",
-      "path": "grpc.net.client/2.58.0",
+      "path": "grpc.net.client/2.52.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "grpc.net.client.2.58.0.nupkg.sha512",
+        "grpc.net.client.2.52.0.nupkg.sha512",
         "grpc.net.client.nuspec",
-        "lib/net462/Grpc.Net.Client.dll",
-        "lib/net462/Grpc.Net.Client.pdb",
-        "lib/net462/Grpc.Net.Client.xml",
+        "lib/net5.0/Grpc.Net.Client.dll",
+        "lib/net5.0/Grpc.Net.Client.pdb",
+        "lib/net5.0/Grpc.Net.Client.xml",
         "lib/net6.0/Grpc.Net.Client.dll",
         "lib/net6.0/Grpc.Net.Client.pdb",
         "lib/net6.0/Grpc.Net.Client.xml",
         "lib/net7.0/Grpc.Net.Client.dll",
         "lib/net7.0/Grpc.Net.Client.pdb",
         "lib/net7.0/Grpc.Net.Client.xml",
-        "lib/net8.0/Grpc.Net.Client.dll",
-        "lib/net8.0/Grpc.Net.Client.pdb",
-        "lib/net8.0/Grpc.Net.Client.xml",
         "lib/netstandard2.0/Grpc.Net.Client.dll",
         "lib/netstandard2.0/Grpc.Net.Client.pdb",
         "lib/netstandard2.0/Grpc.Net.Client.xml",
@@ -2227,25 +2141,21 @@
         "packageIcon.png"
       ]
     },
-    "Grpc.Net.ClientFactory/2.58.0": {
-      "sha512": "d/s3GRlc0AKYg2oojKDZYiJq7mKMbJo3SFgy+tXZiXZLtAT07U/OPjAEO9/gJ8zLUxopauoByu4o3BejLlwOrQ==",
+    "Grpc.Net.ClientFactory/2.40.0": {
+      "sha512": "B2ZzZpkaSH7AvTeu3jF3PAbumWEtHvB9qHX/ULU4AuN4lZwXiQF+G6jatZerXpVqTb4mzQ2wFhKkThYyVMN4uw==",
       "type": "package",
-      "path": "grpc.net.clientfactory/2.58.0",
+      "path": "grpc.net.clientfactory/2.40.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "README.md",
-        "grpc.net.clientfactory.2.58.0.nupkg.sha512",
+        "grpc.net.clientfactory.2.40.0.nupkg.sha512",
         "grpc.net.clientfactory.nuspec",
+        "lib/net5.0/Grpc.Net.ClientFactory.dll",
+        "lib/net5.0/Grpc.Net.ClientFactory.pdb",
+        "lib/net5.0/Grpc.Net.ClientFactory.xml",
         "lib/net6.0/Grpc.Net.ClientFactory.dll",
         "lib/net6.0/Grpc.Net.ClientFactory.pdb",
         "lib/net6.0/Grpc.Net.ClientFactory.xml",
-        "lib/net7.0/Grpc.Net.ClientFactory.dll",
-        "lib/net7.0/Grpc.Net.ClientFactory.pdb",
-        "lib/net7.0/Grpc.Net.ClientFactory.xml",
-        "lib/net8.0/Grpc.Net.ClientFactory.dll",
-        "lib/net8.0/Grpc.Net.ClientFactory.pdb",
-        "lib/net8.0/Grpc.Net.ClientFactory.xml",
         "lib/netstandard2.0/Grpc.Net.ClientFactory.dll",
         "lib/netstandard2.0/Grpc.Net.ClientFactory.pdb",
         "lib/netstandard2.0/Grpc.Net.ClientFactory.xml",
@@ -2255,24 +2165,24 @@
         "packageIcon.png"
       ]
     },
-    "Grpc.Net.Common/2.58.0": {
-      "sha512": "l+mQbPjRSB3nVjppKCULWnG/3Uj/GYDvhDo4yUTwz3v22zaKz8cGpQu6Svu2+DkCpdX5gemBK9HY6bksyNbZLQ==",
+    "Grpc.Net.Common/2.52.0": {
+      "sha512": "di9qzpdx525IxumZdYmu6sG2y/gXJyYeZ1ruFUzB9BJ1nj4kU1/dTAioNCMt1VLRvNVDqh8S8B1oBdKhHJ4xRg==",
       "type": "package",
-      "path": "grpc.net.common/2.58.0",
+      "path": "grpc.net.common/2.52.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "grpc.net.common.2.58.0.nupkg.sha512",
+        "grpc.net.common.2.52.0.nupkg.sha512",
         "grpc.net.common.nuspec",
+        "lib/net5.0/Grpc.Net.Common.dll",
+        "lib/net5.0/Grpc.Net.Common.pdb",
+        "lib/net5.0/Grpc.Net.Common.xml",
         "lib/net6.0/Grpc.Net.Common.dll",
         "lib/net6.0/Grpc.Net.Common.pdb",
         "lib/net6.0/Grpc.Net.Common.xml",
         "lib/net7.0/Grpc.Net.Common.dll",
         "lib/net7.0/Grpc.Net.Common.pdb",
         "lib/net7.0/Grpc.Net.Common.xml",
-        "lib/net8.0/Grpc.Net.Common.dll",
-        "lib/net8.0/Grpc.Net.Common.pdb",
-        "lib/net8.0/Grpc.Net.Common.xml",
         "lib/netstandard2.0/Grpc.Net.Common.dll",
         "lib/netstandard2.0/Grpc.Net.Common.pdb",
         "lib/netstandard2.0/Grpc.Net.Common.xml",
@@ -2282,15 +2192,14 @@
         "packageIcon.png"
       ]
     },
-    "Grpc.Tools/2.58.0": {
-      "sha512": "jWGgCVsBiBozXqKNyGXXumqDrJiu7PLShPul0UGq6II6DV1fvcCLXtQpL/N/7UJ8cyyZLqru1/DRPe/NCkw5NQ==",
+    "Grpc.Tools/2.40.0": {
+      "sha512": "yOAhijs6POv7oISBV9Rdx5YCSdo/+6zCJTB/ULum3GA4RunxVFI0rPnpJM1+YM9yMf+H1/D001ignsepnygPJw==",
       "type": "package",
-      "path": "grpc.tools/2.58.0",
+      "path": "grpc.tools/2.40.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "README.md",
         "build/Grpc.Tools.props",
         "build/Grpc.Tools.targets",
         "build/_grpc/Grpc.CSharp.xml",
@@ -2303,6 +2212,7 @@
         "build/_protobuf/net45/Protobuf.MSBuild.pdb",
         "build/_protobuf/netstandard1.3/Protobuf.MSBuild.dll",
         "build/_protobuf/netstandard1.3/Protobuf.MSBuild.pdb",
+        "build/native/Grpc.Tools.props",
         "build/native/include/google/protobuf/any.proto",
         "build/native/include/google/protobuf/api.proto",
         "build/native/include/google/protobuf/descriptor.proto",
@@ -2314,9 +2224,8 @@
         "build/native/include/google/protobuf/timestamp.proto",
         "build/native/include/google/protobuf/type.proto",
         "build/native/include/google/protobuf/wrappers.proto",
-        "grpc.tools.2.58.0.nupkg.sha512",
+        "grpc.tools.2.40.0.nupkg.sha512",
         "grpc.tools.nuspec",
-        "packageIcon.png",
         "tools/linux_arm64/grpc_csharp_plugin",
         "tools/linux_arm64/protoc",
         "tools/linux_x64/grpc_csharp_plugin",
@@ -2363,10 +2272,10 @@
         "logo.png"
       ]
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.12": {
-      "sha512": "KlSupL6h5oUwjMAoNJO2vp0MrqGYeO6nfdGjAEriK8xUccQndmQW9zQwF7d1R80abrZD/T9b01hmhk3v3LX05g==",
+    "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.13": {
+      "sha512": "h1B5heq5d7vRC/0CuXlcvNpKzIgZi11b9iURRBDAOSigWXTZlq62Tzix+zyIvOx5xeydE/tniTNSaqeJBQNB3Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.12",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2374,7 +2283,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
         "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
-        "microsoft.aspnetcore.authentication.jwtbearer.7.0.12.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.7.0.13.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
@@ -2548,10 +2457,10 @@
         "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll"
       ]
     },
-    "Microsoft.EntityFrameworkCore/7.0.12": {
-      "sha512": "HRge/bJ5SKMNeqybC4NnRwWZn69QBjVVoVmwhmJ8xgQ50Ye+jTOOf2mef/y4Lrq1HUeMg8cu+3JeFdnp+Y8skA==",
+    "Microsoft.EntityFrameworkCore/7.0.13": {
+      "sha512": "fACONzJtzLJQ29soFqBr0OzgmIYMHV7y9AEZ18hqGx2K0FMJNqezAcfzovc4WI+kT9IvOFQKhDNTl5DMimgkMA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/7.0.12",
+      "path": "microsoft.entityframeworkcore/7.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2559,42 +2468,42 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.7.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.12": {
-      "sha512": "GDlY3DzUbpagqb0683NUM2RK9eJFjTfmlLJd5YtvzBf8T4dwanIOSjd2vN7dXJihyZ0JlYaCetyHgxzbrxiUOw==",
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.13": {
+      "sha512": "VxChscv7EsedfuhMAqJ82IxWBYyScCnMwMb1j4+264rIZteeWhj0CJX+u139JCCE9TcvoT97IsCmbb5Jcav5tg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.12",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.7.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/7.0.12": {
-      "sha512": "feFe61uKUNoHJfo9tnO65BTzcpWEYIr34xWikhYgZl5c9RiiUJLuCoTqoGc9fuuKy+xk9aUa1NwgDGMC4KmBig==",
+    "Microsoft.EntityFrameworkCore.Analyzers/7.0.13": {
+      "sha512": "3GiAd0b30L+31/86mtpLDf0Hf4Fnze4yx7hVXaW4wBd6KomIqacGaf+s9rMYNdJZEyKvUJPaBsghY+FgKOoAHg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/7.0.12",
+      "path": "microsoft.entityframeworkcore.analyzers/7.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.7.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/7.0.12": {
-      "sha512": "5UoOLj+qJGkEoL379wi1cSq1bBCCZQZRO5w/wE89ZakQT6qx8juAlJLg4fFwfrg0tYWP12iUAholwcuDM38s7g==",
+    "Microsoft.EntityFrameworkCore.Design/7.0.13": {
+      "sha512": "3DlpSAxQhuxlhblySbM5ujxHALRi5m25ORPGnKKW4LCY1CPleCStdMSRnUB53vnhWDJUX12eIIvprajN++c2Ag==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/7.0.12",
+      "path": "microsoft.entityframeworkcore.design/7.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2602,49 +2511,49 @@
         "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.7.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/7.0.12": {
-      "sha512": "apLzFyjM3s/voBiaMCJPwIOk5SxA1N6GmSbhqthfbUDn8mX+kxZl4RXNdaoBLzPKfUg4EoqCtt0YON/g9YXruQ==",
+    "Microsoft.EntityFrameworkCore.Relational/7.0.13": {
+      "sha512": "lIms3oaIW7XiQy3bLUB2+hcSZ4ISmdh3HKKuNSnewS3wurYaopqBEhYaQdhZeW6itl3skWyqybPGGxIlJrKqFA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/7.0.12",
+      "path": "microsoft.entityframeworkcore.relational/7.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.7.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/7.0.12": {
-      "sha512": "jwh9C/RzCZPTYNL5YOvxUJDfzRtrpbWl5qLWYRBxeYTKDRRH9n2vWCV+s2URGfOKCufZEx1wrlFSEZ2TJPb4Gw==",
+    "Microsoft.EntityFrameworkCore.SqlServer/7.0.13": {
+      "sha512": "86lPGt6HpkUgL+FHnu1nPmBmwvuBRqtYZPgj+sIhsF2OqRWOeQiXUjy3pspNgl1CK5goK5icjBAIlrl3LkMFuw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/7.0.12",
+      "path": "microsoft.entityframeworkcore.sqlserver/7.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.7.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Tools/7.0.12": {
-      "sha512": "4ZW43BJzV5aY8rkrSxhej1xiiDr1dLfFl/MitpHn4a5QJpQqctJ0kl/MF1U3CAIKnkeC4RaC9ZjJjODDbHtdeQ==",
+    "Microsoft.EntityFrameworkCore.Tools/7.0.13": {
+      "sha512": "Z2edRVeoCqvWdNNHHoqbiNhRBetXfh/GBAga6bXM0mmRWzYZ0Y8F+jUFWF/8BUdnbv/8RAafIkWLVMT0jdxMLQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.tools/7.0.12",
+      "path": "microsoft.entityframeworkcore.tools/7.0.13",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/_._",
-        "microsoft.entityframeworkcore.tools.7.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.tools.nuspec",
         "tools/EntityFrameworkCore.PS2.psd1",
         "tools/EntityFrameworkCore.PS2.psm1",
@@ -2869,44 +2778,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Diagnostics.HealthChecks/7.0.9": {
-      "sha512": "ubVLIa7GbGZrC7OWcMuFo/GJRYdVvqyMj7M4JFgWobXgh4QT2km40T46zLlXJfQWH68mh+g4iBJeg7VN3pldJA==",
-      "type": "package",
-      "path": "microsoft.extensions.diagnostics.healthchecks/7.0.9",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net462/Microsoft.Extensions.Diagnostics.HealthChecks.dll",
-        "lib/net462/Microsoft.Extensions.Diagnostics.HealthChecks.xml",
-        "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll",
-        "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.xml",
-        "microsoft.extensions.diagnostics.healthchecks.7.0.9.nupkg.sha512",
-        "microsoft.extensions.diagnostics.healthchecks.nuspec"
-      ]
-    },
-    "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/7.0.9": {
-      "sha512": "myuiz5s14NEWffeiRH94GM1W9PkPyU/TLWCPjEIJ+Tck6QwRV89KHNwlJ+ZebRMlMTd64hwECybjLp1vIS4gTA==",
-      "type": "package",
-      "path": "microsoft.extensions.diagnostics.healthchecks.abstractions/7.0.9",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net462/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll",
-        "lib/net462/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.xml",
-        "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll",
-        "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.xml",
-        "microsoft.extensions.diagnostics.healthchecks.abstractions.7.0.9.nupkg.sha512",
-        "microsoft.extensions.diagnostics.healthchecks.abstractions.nuspec"
-      ]
-    },
     "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
       "sha512": "NyawiW9ZT/liQb34k9YqBSNPLuuPkrjMgQZ24Y/xXX1RoiBkLUdPMaQTmxhZ5TYu8ZKZ9qayzil75JX95vGQUg==",
       "type": "package",
@@ -2963,23 +2834,20 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Http/6.0.0": {
-      "sha512": "15+pa2G0bAMHbHewaQIdr/y6ag2H3yh4rd9hTXavtWDzQBkvpe2RMqFg8BxDpcQWssmjmBApGPcw93QRz6YcMg==",
+    "Microsoft.Extensions.Http/3.0.3": {
+      "sha512": "dcyB8szIcSynjVZRuFgqkZpPgTc5zeRSj1HMXSmNqWbHYKiPYJl8ZQgBHz6wmZNSUUNGpCs5uxUg8DZHHDC1Ew==",
       "type": "package",
-      "path": "microsoft.extensions.http/6.0.0",
+      "path": "microsoft.extensions.http/3.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/Microsoft.Extensions.Http.dll",
-        "lib/net461/Microsoft.Extensions.Http.xml",
+        "lib/netcoreapp3.0/Microsoft.Extensions.Http.dll",
+        "lib/netcoreapp3.0/Microsoft.Extensions.Http.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
-        "microsoft.extensions.http.6.0.0.nupkg.sha512",
-        "microsoft.extensions.http.nuspec",
-        "useSharedDesignerContext.txt"
+        "microsoft.extensions.http.3.0.3.nupkg.sha512",
+        "microsoft.extensions.http.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging/7.0.0": {
@@ -3081,10 +2949,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Options/7.0.1": {
-      "sha512": "pZRDYdN1FpepOIfHU62QoBQ6zdAoTvnjxFfqAzEd9Jhb2dfhA5i6jeTdgGgcgTWFRC7oT0+3XrbQu4LjvgX1Nw==",
+    "Microsoft.Extensions.Options/7.0.0": {
+      "sha512": "lP1yBnTTU42cKpMozuafbvNtQ7QcBjr/CcK3bYOGEMH55Fjt+iecXjT6chR7vbgCMqy3PG3aNQSZgo/EuY/9qQ==",
       "type": "package",
-      "path": "microsoft.extensions.options/7.0.1",
+      "path": "microsoft.extensions.options/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3105,7 +2973,7 @@
         "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
         "lib/netstandard2.1/Microsoft.Extensions.Options.dll",
         "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
-        "microsoft.extensions.options.7.0.1.nupkg.sha512",
+        "microsoft.extensions.options.7.0.0.nupkg.sha512",
         "microsoft.extensions.options.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -3364,10 +3232,10 @@
         "microsoft.sqlserver.server.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {
-      "sha512": "aKxpRAUIxDrnSnyr7xJWGixOBgsB7Z4oHpWRkpRzzq04kfze4mN7944gRc4X9H2U5KG3A/btF74kavkO8KXqCg==",
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.5": {
+      "sha512": "Kaa1rBZdJFq5A0qgAcl6Bmk/UqLXTq9acEqxUlPEBA8oscmakLfkvuSXfG7Wa9t1/keaT85EuuDNgOo+Z9VYOQ==",
       "type": "package",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.4",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.5",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -3396,7 +3264,7 @@
         "build/ToolsTarget.props",
         "build/ToolsTarget.targets",
         "icon.png",
-        "microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
+        "microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
         "microsoft.visualstudio.azure.containers.tools.targets.nuspec",
         "tools/Microsoft.VisualStudio.Containers.Tools.Common.dll",
         "tools/Microsoft.VisualStudio.Containers.Tools.Shared.dll",
@@ -3487,10 +3355,10 @@
         "mono.texttemplating.nuspec"
       ]
     },
-    "Rougamo.Fody/1.4.1": {
-      "sha512": "tnt0FfWKsEB4UveC1c31v7Do5kOqCq4hez0yz1q2cMPSbXP294gr44ljflaSZp4SBcpWDcNW43/gf/lW8ePL0w==",
+    "Rougamo.Fody/2.0.0": {
+      "sha512": "b8DovgTK0YlY/QqLk1OEymU7oxKQZfePFNG9K/lVczFtTO5ADF3vhTBXJ07fMp0N7euagf6yzIRBSd3bmg4ArQ==",
       "type": "package",
-      "path": "rougamo.fody/1.4.1",
+      "path": "rougamo.fody/2.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3500,7 +3368,7 @@
         "build/Rougamo.Fody.props",
         "lib/netstandard2.0/Rougamo.dll",
         "lib/netstandard2.0/Rougamo.xml",
-        "rougamo.fody.1.4.1.nupkg.sha512",
+        "rougamo.fody.2.0.0.nupkg.sha512",
         "rougamo.fody.nuspec",
         "weaver/Rougamo.Fody.dll"
       ]
@@ -4801,16 +4669,6 @@
       "path": "../../../modules/ModuleDistributor.GrpcWebSocketBridge/ModuleDistributor.GrpcWebSocketBridge.csproj",
       "msbuildProject": "../../../modules/ModuleDistributor.GrpcWebSocketBridge/ModuleDistributor.GrpcWebSocketBridge.csproj"
     },
-    "ModuleDistributor.HealthCheck/1.0.0": {
-      "type": "project",
-      "path": "../../../modules/ModuleDistributor.HealthCheck/ModuleDistributor.HealthCheck.csproj",
-      "msbuildProject": "../../../modules/ModuleDistributor.HealthCheck/ModuleDistributor.HealthCheck.csproj"
-    },
-    "ModuleDistributor.HealthCheck.Dapr/1.0.0": {
-      "type": "project",
-      "path": "../../../modules/ModuleDistributor.HealthCheck.Dapr/ModuleDistributor.HealthCheck.Dapr.csproj",
-      "msbuildProject": "../../../modules/ModuleDistributor.HealthCheck.Dapr/ModuleDistributor.HealthCheck.Dapr.csproj"
-    },
     "ModuleDistributor.Logging/1.0.0": {
       "type": "project",
       "path": "../../../modules/ModuleDistributor.Logging/ModuleDistributor.Logging.csproj",
@@ -4825,47 +4683,59 @@
       "type": "project",
       "path": "../SEServer.Auth.Protos/SEServer.Auth.Protos.csproj",
       "msbuildProject": "../SEServer.Auth.Protos/SEServer.Auth.Protos.csproj"
+    },
+    "SEServer.Statements.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../SEServer.Statements/SEServer.Statements.Domain/SEServer.Statements.Domain.csproj",
+      "msbuildProject": "../../SEServer.Statements/SEServer.Statements.Domain/SEServer.Statements.Domain.csproj"
+    },
+    "SEServer.Statements.Domain.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../SEServer.Statements/SEServer.Statements.Domain.Shared/SEServer.Statements.Domain.Shared.csproj",
+      "msbuildProject": "../../SEServer.Statements/SEServer.Statements.Domain.Shared/SEServer.Statements.Domain.Shared.csproj"
+    },
+    "SEServer.Statements.EntityFrameworkCore/1.0.0": {
+      "type": "project",
+      "path": "../../SEServer.Statements/SEServer.Statements.EntityFrameworkCore/SEServer.Statements.EntityFrameworkCore.csproj",
+      "msbuildProject": "../../SEServer.Statements/SEServer.Statements.EntityFrameworkCore/SEServer.Statements.EntityFrameworkCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Grpc.AspNetCore >= 2.58.0",
-      "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.12",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.12",
-      "Microsoft.EntityFrameworkCore.Tools >= 7.0.12",
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.4",
+      "Grpc.AspNetCore >= 2.40.0",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.13",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.13",
+      "Microsoft.EntityFrameworkCore.Tools >= 7.0.13",
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.5",
       "ModuleDistributor.Dapr.Configuration >= 1.0.0",
       "ModuleDistributor.EntityFrameworkCore >= 1.0.0",
       "ModuleDistributor.GrpcWebSocketBridge >= 1.0.0",
-      "ModuleDistributor.HealthCheck.Dapr >= 1.0.0",
       "ModuleDistributor.Logging >= 1.0.0",
       "ModuleDistributor.Serilog >= 1.0.0",
-      "Rougamo.Fody >= 1.4.1",
+      "Rougamo.Fody >= 2.0.0",
       "SEServer.Auth.Protos >= 1.0.0",
+      "SEServer.Statements.EntityFrameworkCore >= 1.0.0",
       "ZString >= 2.5.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Windows11\\.nuget\\packages\\": {},
-    "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
+    "D:\\NuGet\\packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth\\SEServer.Auth.csproj",
+      "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth\\SEServer.Auth.csproj",
       "projectName": "SEServer.Auth",
-      "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth\\SEServer.Auth.csproj",
-      "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth\\obj\\",
+      "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth\\SEServer.Auth.csproj",
+      "packagesPath": "D:\\NuGet\\packages",
+      "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+        "C:\\Users\\0\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4881,26 +4751,26 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj": {
-              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj"
+            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj"
             },
-            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj": {
-              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj"
+            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj"
             },
-            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj": {
-              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj"
+            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj"
             },
-            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.HealthCheck.Dapr\\ModuleDistributor.HealthCheck.Dapr.csproj": {
-              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.HealthCheck.Dapr\\ModuleDistributor.HealthCheck.Dapr.csproj"
+            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
             },
-            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
-              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
+            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj"
             },
-            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj": {
-              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj"
+            "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj"
             },
-            "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj": {
-              "projectPath": "D:\\Project\\BehindTheBlackWall\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj"
+            "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj"
             }
           }
         }
@@ -4917,29 +4787,29 @@
         "dependencies": {
           "Grpc.AspNetCore": {
             "target": "Package",
-            "version": "[2.58.0, )"
+            "version": "[2.40.0, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
-            "version": "[7.0.12, )"
+            "version": "[7.0.13, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "[7.0.12, )"
+            "version": "[7.0.13, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[7.0.12, )"
+            "version": "[7.0.13, )"
           },
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",
-            "version": "[1.19.4, )"
+            "version": "[1.19.5, )"
           },
           "Rougamo.Fody": {
             "target": "Package",
-            "version": "[1.4.1, )"
+            "version": "[2.0.0, )"
           },
           "ZString": {
             "target": "Package",
@@ -4965,7 +4835,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

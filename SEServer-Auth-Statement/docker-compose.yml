@@ -18,6 +18,10 @@ services:
     image: datalust/seq:latest
     container_name: seq
 
+  dapr-placement:
+    image: daprio/dapr:latest
+    container_name: dapr-placement
+
   seserver-auth:
     image: ${DOCKER_REGISTRY-}seserverauth
     container_name: seserver-auth
@@ -29,8 +33,35 @@ services:
       - seq
 
   seserver-auth-dapr:
-    image: "daprio/daprd:latest"
+    image: daprio/daprd:latest
     container_name: seserver-auth-dapr
     network_mode: "service:seserver-auth"
     depends_on:
+      - seserver-auth
+
+  seserver-statements:
+    image: ${DOCKER_REGISTRY-}seserverstatements
+    container_name: seserver-statements
+    build:
+      context: .
+      dockerfile: src/services/SEServer.Statements/SEServer.Statements/Dockerfile
+    depends_on:
+      - sqlserver
+      - seq
+
+  seserver-statements-dapr:
+    image: daprio/daprd:latest
+    container_name: seserver-statements-dapr
+    network_mode: "service:seserver-statements"
+    depends_on:
+      - seserver-statements
+
+  seserver-gateway:
+    image: ${DOCKER_REGISTRY-}seservergateway
+    container_name: seserver-gateway
+    build:
+      context: .
+      dockerfile: src/gateway/SEServer.Gateway/Dockerfile
+    depends_on:
+      - seserver-statements
       - seserver-auth

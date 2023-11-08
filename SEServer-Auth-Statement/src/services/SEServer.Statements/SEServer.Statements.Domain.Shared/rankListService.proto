@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option csharp_namespace = "SEServer.Statements.Domain.Shared";
+
+package rankList;
+
+service RankListService {
+	rpc GetRankListByKDA (GetRankListByKDARequest) returns (stream GetRankListByKDAResponse);
+	rpc GetRankListByScore (GetRankListByScoreRequest) returns (stream GetRankListByScoreResponse);
+}
+
+message GetRankListByKDARequest
+{
+	int32 Skip = 1;
+	int32 Take = 2;
+	string SearchName = 3;
+}
+
+message GetRankListByKDAResponse
+{
+	string UserName = 1;
+	string ImagePath = 2;
+	int64 TotalScore = 3;
+	int64 TotalKDA = 4;
+}
+
+message GetRankListByScoreRequest
+{
+	int32 Skip = 1;
+	int32 Take = 2;
+	string SearchName = 3;
+
+}
+
+message GetRankListByScoreResponse
+{
+	string UserName = 1;
+	string ImagePath = 2;
+	int64 TotalScore = 3;
+	int64 TotalKDA = 4;
+}
