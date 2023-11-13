@@ -1,4 +1,5 @@
-﻿using SEServer.Data;
+﻿using Game.Framework;
+using SEServer.Data;
 using UnityEngine;
 using ILogger = SEServer.Data.Interface.ILogger;
 
@@ -6,6 +7,8 @@ namespace Game
 {
     public class SimpleLogger : ILogger
     {
+        private SLogger _logger = new SLogger("Client");
+        
         public void Init()
         {
             
@@ -24,17 +27,17 @@ namespace Game
         public ServerContainer ServerContainer { get; set; }
         public void LogInfo(object msg)
         {
-            Debug.Log(msg);
+            _logger.LogInfo(msg);
         }
 
         public void LogWarning(object msg)
         {
-            Debug.LogWarning(msg);
+            _logger.LogWarning(msg);
         }
 
         public void LogError(object msg)
         {
-            Debug.LogError(msg);
+            _logger.LogError(msg);
         }
     }
 }

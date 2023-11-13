@@ -16,7 +16,7 @@ namespace Game
         public static ClientBehaviour Instance { get; private set; }
         public ClientInstance ClientInstance { get; set; }
         public EntityMapperManager EntityMapper { get; set; }
-        public List<IClientAttachBehaviour> attachBehaviours = new();
+        
         /// <summary>
         /// 客户端网络实例帧率
         /// </summary>
@@ -32,8 +32,7 @@ namespace Game
             }
             
             Instance = this;
-            CheckBehaviours();
-            
+
             var systemProvider = new SystemProvider();
             systemProvider.AddSystem(new InputSystem());
             
@@ -49,21 +48,9 @@ namespace Game
             EntityMapper.Init(ClientInstance.World);
         }
 
-        private void CheckBehaviours()
-        {
-            var allBehaviours = GetComponentsInChildren<IClientAttachBehaviour>();
-            foreach (var attachBehaviour in allBehaviours)
-            {
-                attachBehaviour.ClientBehaviour = this;
-                attachBehaviours.Add(attachBehaviour);
-            }
-        }
-
         private void Update()
         {
             UpdateClient();
-            UpdateBehaviours();
-            EntityMapper.UpdateEntities();
         }
 
         /// <summary>
@@ -75,15 +62,8 @@ namespace Game
             if (_deltaTime > 1.0f / MAX_FRAME_RATE && ClientInstance.IsConnected)
             {
                 ClientInstance.Update(_deltaTime);
+                EntityMapper.UpdateEntities();
                 _deltaTime = 0;
-            }
-        }
-        
-        private void UpdateBehaviours()
-        {
-            foreach (var behaviour in attachBehaviours)
-            {
-                behaviour.UpdateBehaviour();
             }
         }
 
