@@ -14,4 +14,23 @@ public static class PhysicsExtension
     {
         return new nkast.Aether.Physics2D.Common.Vector2(sVector2.X, sVector2.Y);
     }
+    
+    public static PhysicsData? GetPhysicsData(this PhysicsSingletonComponent physicsSingletonComponent, EId entityId)
+    {
+        if (physicsSingletonComponent.PhysicsDataDic.TryGetValue(entityId, out var physicsData))
+        {
+            return physicsData;
+        }
+        
+        return null;
+    }
+    
+    public static void AddForce(this PhysicsSingletonComponent physicsSingletonComponent, EId entityId, SVector2 force)
+    {
+        physicsSingletonComponent.Forces.Add(new ForceData()
+        {
+            TargetId = entityId,
+            Force = force
+        });
+    }
 }

@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\SEServer.Data\SEServer.Data.csproj" />
+      <ProjectReference Include="..\SEServer.GameData\SEServer.GameData.csproj" />
     </ItemGroup>
 
     <ItemGroup>

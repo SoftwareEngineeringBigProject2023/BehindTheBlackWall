@@ -35,6 +35,8 @@ public class ClientConnect
     /// </summary>
     public User User { get; set; }
 
+    public bool IsConnected => WebSocket.State == WebSocketState.Open;
+
     private async UniTask ProcessWebSocketRequest()
     {
         HttpListenerWebSocketContext webSocketContext = await Context.AcceptWebSocketAsync(subProtocol: null);

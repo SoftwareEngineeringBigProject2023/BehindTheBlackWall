@@ -3,6 +3,7 @@ using SEServer.Core;
 using SEServer.Data;
 using SEServer.Data.Interface;
 using SEServer.Game;
+using SEServer.Game.System;
 
 
 var serverInstance = new ServerInstance();
@@ -14,9 +15,11 @@ serverInstance.ServerContainer.Add<IDataSerializer>(new SimpleSerializer());
 serverInstance.ServerContainer.Add<IServerStatistics>(new ServerStatistics());
 
 var systemProvider = new SystemProvider();
-systemProvider.AddSystem(new MoveSystem());
+systemProvider.AddSystem(new UnitMoveSystem());
 systemProvider.AddSystem(new PlayerSystem());
 systemProvider.AddSystem(new PhysicsSystem());
+systemProvider.AddSystem(new ShootSystem());
+systemProvider.AddSystem(new BulletSystem());
 serverInstance.ServerContainer.Add<ISystemProvider>(systemProvider);
 
 var config = new ServerWorldConfig();

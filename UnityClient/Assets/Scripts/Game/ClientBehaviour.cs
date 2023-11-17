@@ -1,41 +1,36 @@
 ﻿using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using Game.Controller;
+using Game.Framework;
 using Game.GameSystem;
 using SEServer.Client;
 using SEServer.Data;
 using SEServer.Data.Interface;
 using SEServer.Data.Message;
 using SEServer.GameData;
+using SEServer.GameData.Component;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using ILogger = SEServer.Data.Interface.ILogger;
 
 namespace Game
 {
-    public class ClientBehaviour : MonoBehaviour
+    public class ClientBehaviour : SceneSingleton<ClientBehaviour>
     {
-        public static ClientBehaviour Instance { get; private set; }
         public ClientInstance ClientInstance { get; set; }
         public EntityMapperManager EntityMapper { get; set; }
-        public List<IClientAttachBehaviour> attachBehaviours = new();
+        
         /// <summary>
         /// 客户端网络实例帧率
         /// </summary>
         public int MAX_FRAME_RATE { get; set; } = 30;
         private float _deltaTime;
         
-        public void Start()
+        public void Init()
         {
-            if (Instance != null)
-            {
-                Destroy(this);
-                return;
-            }
-            
-            Instance = this;
-            CheckBehaviours();
-            
             var systemProvider = new SystemProvider();
-            systemProvider.AddSystem(new InputSystem());
+            systemProvider.AddSystem(new HandleMoveInputSystem());
+            systemProvider.AddSystem(new HandleShootInputSystem());
             
             ClientInstance = new ClientInstance();
             ClientInstance.ServerContainer.Add<ILogger>( new SimpleLogger());
@@ -44,26 +39,33 @@ namespace Game
             ClientInstance.ServerContainer.Add<IComponentSerializer>( new ComponentSerializer());
             ClientInstance.ServerContainer.Add<ISystemProvider>(systemProvider);
             ClientInstance.Start();
-            
+
             EntityMapper = new EntityMapperManager();
             EntityMapper.Init(ClientInstance.World);
+            
+            EntityMapper.RegisterControllerBuilder(new TransformControllerBuilder());
+            EntityMapper.RegisterControllerBuilder(new GraphControllerBuilder());
+            EntityMapper.RegisterControllerBuilder(new UnitGraphControllerBuilder());
+            EntityMapper.AddSingletonController(new PlayerSingletonController());
         }
 
-        private void CheckBehaviours()
+        public async UniTask Connect()
         {
-            var allBehaviours = GetComponentsInChildren<IClientAttachBehaviour>();
-            foreach (var attachBehaviour in allBehaviours)
-            {
-                attachBehaviour.ClientBehaviour = this;
-                attachBehaviours.Add(attachBehaviour);
-            }
+            var networkService = ClientInstance.ServerContainer.Get<IClientNetworkService>() as ClientNetworkService;
+            Debug.Assert(networkService != null, nameof(networkService) + " != null");
+            if(networkService.IsConnected)
+                return;
+            
+            await networkService.StartConnection();
+            Debug.Log("连接成功");
         }
 
         private void Update()
         {
-            UpdateClient();
-            UpdateBehaviours();
-            EntityMapper.UpdateEntities();
+            if (ClientInstance.IsConnected)
+            {
+                UpdateClient();
+            }
         }
 
         /// <summary>
@@ -72,28 +74,25 @@ namespace Game
         private void UpdateClient()
         {
             _deltaTime += Time.deltaTime;
-            if (_deltaTime > 1.0f / MAX_FRAME_RATE && ClientInstance.IsConnected)
+            if (_deltaTime > 1.0f / MAX_FRAME_RATE)
             {
+                // 更新客户端
                 ClientInstance.Update(_deltaTime);
+                // 更新实体映射
+                EntityMapper.UpdateEntities();
                 _deltaTime = 0;
             }
-        }
-        
-        private void UpdateBehaviours()
-        {
-            foreach (var behaviour in attachBehaviours)
-            {
-                behaviour.UpdateBehaviour();
-            }
+            
+            EntityMapper.UpdateControllers();
         }
 
         [Button]
         public void TestAddPlayer()
         {
-            var clientPlayer = ClientInstance.World.EntityManager.GetSingleton<PlayerMessageComponent>();
+            var clientPlayer = ClientInstance.World.EntityManager.GetSingleton<PlayerSubmitGlobalComponent>();
             var message = new SubmitData()
             {
-                Type = PlayerSubmitMessageType.CREATE_PLAYER,
+                Type = PlayerSubmitGlobalMessageType.CREATE_PLAYER,
                 Arg0 = ClientInstance.World.PlayerId.Id
             };
 

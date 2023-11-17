@@ -33,4 +33,9 @@ public struct PlayerId
     {
         return !(left == right);
     }
+    
+    public override string ToString()
+    {
+        return $"PlayerId: {Id}";
+    }
 }
