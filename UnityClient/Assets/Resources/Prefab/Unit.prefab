@@ -142,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 3140044098141251231}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2073, y: 0.0729, z: 0}
+  m_LocalPosition: {x: 0.25, y: -0.002, z: 0}
   m_LocalScale: {x: 0.58459914, y: 0.08176286, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 4138540735558109840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0405, y: -0.0073, z: 0}
+  m_LocalPosition: {x: 0.0022000521, y: -0.08219999, z: 0}
   m_LocalScale: {x: 0.08907478, y: 0.24206996, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -397,3 +397,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphRoot: {fileID: 4495974747332016572}
   weaponRotateRoot: {fileID: 4266073524494453296}
+  weaponScaleRoot: {fileID: 4578739759444781657}

@@ -79,19 +79,29 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         EntityToComponents.Add(component.EntityId, component.Id);
     }
 
+    private List<int> _toDeleteIndex = new();
     /// <summary>
     /// 将标记的实体从组件列表中移除
     /// </summary>
     public void RemoveMarkComponents()
     {
+        _toDeleteIndex.Clear();
         foreach (var eId in DeleteEntities)
         {
-            if (EntityToComponents.TryGetValue(eId, out var cId))
-            {
-                var index = ComponentToIndex[cId];
-                Components.RemoveAt(index);
-            }
+            if(!EntityToComponents.TryGetValue(eId, out var cId))
+                continue;
+            
+            var index = ComponentToIndex[cId];
+            _toDeleteIndex.Add(index);
         }
+
+        _toDeleteIndex.Sort();
+        for (int i = _toDeleteIndex.Count - 1; i >= 0; i--)
+        {
+            var index = _toDeleteIndex[i];
+            Components.RemoveAt(index);
+        }
+        
         // 重建索引
         RebuildIndex();
 

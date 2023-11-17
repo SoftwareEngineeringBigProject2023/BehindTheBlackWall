@@ -58,6 +58,7 @@ public class EntityManager
         if (Components.GetOrAddComponent<T>(entity.Id, out var component))
         {
             MarkAsDirty(entity);
+            MarkAsChanged(component);
         }
 
         return component;

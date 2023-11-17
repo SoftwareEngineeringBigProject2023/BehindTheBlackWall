@@ -7,6 +7,10 @@ using SEServer.GameData.Data;
 
 namespace SEServer.Game.System;
 
+/// <summary>
+/// 射击系统
+/// </summary>
+[Priority(30)]
 public class ShootSystem : ISystem
 {
     public World World { get; set; }
@@ -46,14 +50,17 @@ public class ShootSystem : ISystem
         var bulletEntity = World.EntityManager.CreateEntity();
         var bulletComponent = World.EntityManager.GetOrAddComponent<BulletComponent>(bulletEntity);
         bulletComponent.Damage = 5;
+        bulletComponent.CreatorId = propertyComponent.EntityId.Id;
         
         var bulletLineMoveComponent = World.EntityManager.GetOrAddComponent<BulletLineMoveComponent>(bulletEntity);
         bulletLineMoveComponent.Speed = 30;
-        bulletLineMoveComponent.Direction = SVector2.FromAngle(propertyComponent.TargetAimRotation);
+        var direction = SVector2.FromAngle(propertyComponent.TargetAimRotation);
+        bulletLineMoveComponent.Direction = direction;
         bulletLineMoveComponent.MaxDistance = 60;
         
         var transformComponent = World.EntityManager.GetOrAddComponent<TransformComponent>(bulletEntity);
-        transformComponent.Position = initPos;
+        transformComponent.Position = initPos + direction * 1f;
+        transformComponent.Rotation = propertyComponent.TargetAimRotation;
 
         var rigidbodyComponent = World.EntityManager.GetOrAddComponent<RigidbodyComponent>(bulletEntity);
         rigidbodyComponent.BodyType = PhysicsBodyType.Dynamic;
@@ -62,7 +69,7 @@ public class ShootSystem : ISystem
         rigidbodyComponent.SetRotation = propertyComponent.TargetAimRotation;
         
         var shapeComponent = World.EntityManager.GetOrAddComponent<ShapeComponent>(bulletEntity);
-        shapeComponent.Shapes.Add(new CircleShapeData(1f));
+        shapeComponent.Shapes.Add(new CircleShapeData(0.1f));
         
         var graphComponent = World.EntityManager.GetOrAddComponent<GraphComponent>(bulletEntity);
         graphComponent.Type = GraphType.Bullet;

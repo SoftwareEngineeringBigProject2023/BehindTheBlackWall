@@ -6,5 +6,6 @@ namespace Game.Binding
     {
         public Transform graphRoot;
         public Transform weaponRotateRoot;
+        public Transform weaponScaleRoot;
     }
 }

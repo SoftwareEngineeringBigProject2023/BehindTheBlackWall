@@ -24,4 +24,13 @@ public static class PhysicsExtension
         
         return null;
     }
+    
+    public static void AddForce(this PhysicsSingletonComponent physicsSingletonComponent, EId entityId, SVector2 force)
+    {
+        physicsSingletonComponent.Forces.Add(new ForceData()
+        {
+            TargetId = entityId,
+            Force = force
+        });
+    }
 }

@@ -21,6 +21,43 @@ public struct SVector2
     public static SVector2 Left => new(-1, 0);
     public static SVector2 Right => new(1, 0);
     public static SVector2 Invalid => new(float.NaN, float.NaN);
+    [IgnoreMember]
+    public float magnitude => Length();
+    [IgnoreMember]
+    public SVector2 normalized => Normalize(this);
+    
+    public static SVector2 Normalize(SVector2 vector2)
+    {
+        var length = vector2.Length();
+        if (length == 0)
+        {
+            return Zero;
+        }
+        else
+        {
+            return new SVector2(vector2.X / length, vector2.Y / length);
+        }
+    }
+
+    public static float Distance(SVector2 a, SVector2 b)
+    {
+        return (a - b).Length();
+    }
+
+    public float Length()
+    {
+        return (float)Math.Sqrt(X * X + Y * Y);
+    }
+
+    public float LengthSquared()
+    {
+        return X * X + Y * Y;
+    }
+
+    public float Angle()
+    {
+        return (float)Math.Atan2(Y, X);
+    }
 
     public SVector2(float vector2X, float vector2Y)
     {

@@ -67,7 +67,8 @@ public class ServerInstance
             if (Time.CurFrame % (Time.MaxFps * 5) == 0)
             {
                 var uploadBandwidth = ServerContainer.Get<IServerStatistics>().GetUploadBandwidthAndReset();
-                ServerContainer.Get<ILogger>().LogInfo($"服务器信息： Fps: {Time.Fps:D2} \t负载：{Time.LoadPercentage * 100:F}%" +
+                ServerContainer.Get<ILogger>().LogInfo($"服务器信息： Fps: {Time.Fps:D2} " +
+                                                       $"\t负载：{Time.LoadPercentage * 100:F}%" +
                                                        $" \t上传带宽：{uploadBandwidth / 1024f / 5:F}KB/s");
             }
             

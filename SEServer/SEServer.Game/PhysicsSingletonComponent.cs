@@ -14,4 +14,5 @@ public class PhysicsSingletonComponent : IComponent
     
     public Dictionary<EId, PhysicsData> PhysicsDataDic { get; set; } = new();
     public ContactListener ContactListener { get; set; }
+    public List<ForceData> Forces { get; set; } = new();
 }

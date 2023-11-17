@@ -54,7 +54,16 @@ public class BulletSystem : ISystem
                 World.EntityManager.Entities.MarkAsToBeDelete(bullet.EntityId);
                 property.Hp -= bullet.Damage;
                 World.EntityManager.MarkAsDirty(property);
-                World.ServerContainer.Get<ILogger>().LogInfo($"BulletSystem: {bullet.EntityId} hit {property.EntityId}");
+                
+                var tagRigidbody = World.EntityManager.GetComponent<RigidbodyComponent>(otherPhyData.BindEntityId);
+                var curTransform = World.EntityManager.GetComponent<TransformComponent>(bullet.EntityId);
+                if (tagRigidbody == null || curTransform == null)
+                {
+                    continue;
+                }
+
+                var direction = SVector2.FromAngle(curTransform.Rotation);
+                physicsSingleton.AddForce(tagRigidbody.EntityId, direction.normalized * 200f);
             }
         }
     }
@@ -82,5 +91,6 @@ public class BulletSystem : ISystem
         }
         
         rigidbodyComponent.SetVelocity = moveVector * bulletLineMoveComponent.Speed;
+        World.EntityManager.MarkAsChanged(rigidbodyComponent);
     }
 }

@@ -40,23 +40,19 @@ namespace Game.Controller
             if (rotateRoot != null)
             {
                 var unitWeaponTransform = UnitBinding.weaponRotateRoot.transform;
+                var unitWeaponScaleTransform = UnitBinding.weaponScaleRoot.transform;
+                TryLerpToTargetRotation(unitWeaponTransform, rotateAngle);
                 if (rotateAngle < 90f || rotateAngle > 270f)
                 {
-                    unitWeaponTransform.localScale = new Vector3(1, 1, 1);
-                    if(rotateAngle > 270f)
-                        rotateAngle -= 360f;
-                    TryLerpToTargetRotation(unitWeaponTransform, rotateAngle);
+                    unitWeaponScaleTransform.localScale = new Vector3(1, 1, 1);
                 }
                 else
                 {
-                    unitWeaponTransform.localScale = new Vector3(-1, 1, 1);
-                    TryLerpToTargetRotation(unitWeaponTransform, rotateAngle - 180, -1);
+                    unitWeaponScaleTransform.localScale = new Vector3(1, -1, 1);
                 }
             }
 
         }
-
-        private int lastScale = 1;
 
         /// <summary>
         /// 平滑旋转到目标角度
@@ -64,19 +60,19 @@ namespace Game.Controller
         /// <param name="unitWeaponTransform"></param>
         /// <param name="rotateAngle"></param>
         /// <param name="scale"></param>
-        private void TryLerpToTargetRotation(Transform unitWeaponTransform, float rotateAngle, int scale = 1)
+        private void TryLerpToTargetRotation(Transform unitWeaponTransform, float rotateAngle)
         {
             //Debug.Log(rotateAngle);
-            if (lastScale != scale)
-            {
-                var curRotateAngle = unitWeaponTransform.rotation.eulerAngles.z;
-                unitWeaponTransform.rotation = Quaternion.Euler(0, 0, -curRotateAngle);
-                lastScale = scale;
-            }
+            // if (lastScale != scale)
+            // {
+            //     var curRotateAngle = unitWeaponTransform.rotation.eulerAngles.z;
+            //     unitWeaponTransform.rotation = Quaternion.Euler(0, 0, -curRotateAngle);
+            //     lastScale = scale;
+            // }
             
             // 使用线性插值
             var targetRotation = Quaternion.Euler(0, 0, rotateAngle);
-            unitWeaponTransform.rotation = Quaternion.Lerp(unitWeaponTransform.rotation, targetRotation, Time.deltaTime * 10);
+            unitWeaponTransform.rotation = Quaternion.Lerp(unitWeaponTransform.rotation, targetRotation, Time.deltaTime * 20);
         }
     }
 

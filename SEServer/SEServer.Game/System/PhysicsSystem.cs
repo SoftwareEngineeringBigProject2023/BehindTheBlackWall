@@ -16,7 +16,7 @@ namespace SEServer.Game.System;
 /// <summary>
 /// 物理运算系统
 /// </summary>
-[Priority(10)]
+[Priority(-10)]
 public class PhysicsSystem : ISystem
 {
     public World World { get; set; } = null!;
@@ -82,6 +82,7 @@ public class PhysicsSystem : ISystem
                 physicsData.InitBody(rigidbodyComponent);
                 physicsData.SetPosition(transformComponent.Position);
                 UpdatePhysicsBindShape(physicsData);
+                physicsData.SetIsSensor(rigidbodyComponent.IsTrigger);
                 physicsDataDic.Add(entityId, physicsData);
             }
         }
@@ -97,12 +98,24 @@ public class PhysicsSystem : ISystem
     
     private void StepWorld(PhysicsSingletonComponent physicsSingle)
     {
+        // 世界设置
         var config = (ServerWorldConfig)World.ServerContainer.Get<IWorldConfig>();
         var iterations = physicsSingle.iterations;
         iterations.PositionIterations = config.PositionIterations;
         iterations.VelocityIterations = config.VelocityIterations;
         physicsSingle.iterations = iterations;
 
+        // 添加力结算
+        foreach (var forceData in physicsSingle.Forces)
+        {
+            var physicsData = physicsSingle.GetPhysicsData(forceData.TargetId);
+            if (physicsData != null)
+            {
+                physicsData.BindBody.ApplyForce(forceData.Force.ToPhysicsVector2());
+            }
+        }
+        physicsSingle.Forces.Clear();
+        
         var timeInStep = 1f / config.FramePerSecond;
         
         physicsSingle.Phy2DWorld.Step(timeInStep, ref iterations);

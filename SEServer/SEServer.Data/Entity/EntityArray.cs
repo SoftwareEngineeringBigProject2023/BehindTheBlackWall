@@ -63,16 +63,28 @@ public class EntityArray
         DeleteEntities.Add(eId);
     }
     
+    private List<int> _toDeleteIndex = new List<int>();
+    /// <summary>
+    /// 将标记为删除的实体从数组中移除
+    /// </summary>
     public void RemoveMarkEntities()
     {
+        _toDeleteIndex.Clear();
         foreach (var eId in DeleteEntities)
         {
-            if (EntityToIndex.TryGetValue(eId, out var index))
-            {
-                EntityToIndex.Remove(eId);
-                Entities.RemoveAt(index);
-            }
+            if (!EntityToIndex.TryGetValue(eId, out var index))
+                continue;
+            
+            _toDeleteIndex.Add(index);
         }
+
+        _toDeleteIndex.Sort();
+        for (int i = _toDeleteIndex.Count - 1; i >= 0; i--)
+        {
+            var index = _toDeleteIndex[i];
+            Entities.RemoveAt(index);
+        }
+
         // 重建索引
         RebuildIndex();
     }

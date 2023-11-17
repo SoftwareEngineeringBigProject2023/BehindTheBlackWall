@@ -31,13 +31,6 @@ public class PhysicsData
         BindBody.AngularDamping = rigidbodyComponent.AngularDamping;
         BindBody.FixedRotation = rigidbodyComponent.IsFixedRotation;
         BindBody.IsBullet = rigidbodyComponent.IsBullet;
-        foreach (var fixture in BindBody.FixtureList)
-        {
-            if (fixture != null)
-            {
-                fixture.IsSensor = rigidbodyComponent.IsTrigger;
-            }
-        }
         BindBody.BodyType = rigidbodyComponent.BodyType switch
         {
             PhysicsBodyType.Static => BodyType.Static,
@@ -47,6 +40,17 @@ public class PhysicsData
         };
         
         UpdateBody(rigidbodyComponent);
+    }
+    
+    public void SetIsSensor(bool isSensor)
+    {
+        foreach (var fixture in BindBody.FixtureList)
+        {
+            if (fixture != null)
+            {
+                fixture.IsSensor = isSensor;
+            }
+        }
     }
     
     /// <summary>
