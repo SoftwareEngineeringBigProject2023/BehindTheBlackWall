@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using Game.Controller;
 using SEServer.Data;
 using SEServer.Data.Interface;
 using SEServer.GameData;
@@ -8,60 +10,64 @@ using Object = UnityEngine.Object;
 
 namespace Game
 {
+    public class EntityMapper
+    {
+        public EId EntityId { get; set; }
+        public List<ControllerMapper> Controllers { get; set; } = new();
+        public HashSet<Type> HavingComponent { get; set; } = new();
+    }
+        
+    public class ControllerMapper
+    {
+        public EntityMapper EntityMapper { get; set; } = null!;
+        public CId ComponentId { get; set; }
+        public BaseController Controller { get; set; }
+        public Type ControllerType { get; set; }
+    }
+    
     public class EntityMapperManager
     {
         public Transform EntityRoot { get; set; }
         public ClientWorld World { get; set; } = null!;
         
-        public struct EntityMapper
-        {
-            public EId Entity { get; set; }
-            public GameObject GameObject { get; set; }
-        }
-        
-        public struct ComponentMapper
-        {
-            public CId Component { get; set; }
-            public EId Entity { get; set; }
-            public MonoBehaviour Controller { get; set; }
-        }
-        
-        public Dictionary<Type ,BaseControllerBuilder> ControllerBuilders { get; set; } = new();
-        
+        public Dictionary<Type , List<BaseControllerBuilder>> ControllerBuilders { get; set; } = new();
+        /// <summary>
+        /// 实体控制器映射
+        /// </summary>
         public List<EntityMapper> EntityMappers { get; set; } = new();
-        public Dictionary<Type, List<ComponentMapper>> ComponentMappers { get; set; } = new();
+        /// <summary>
+        /// 单例控制器
+        /// </summary>
+        public List<BaseSingletonController> SingletonControllers { get; set; } = new();
 
         public void Init(ClientWorld world)
         {
             World = world;
             EntityRoot = new GameObject("EntityRoot").transform;
-            
-            RegisterControllerBuilder(new TransformControllerBuilder());
-            RegisterControllerBuilder(new GraphControllerBuilder());
-
-            foreach (var controllerBuilder in ControllerBuilders)
-            {
-                ComponentMappers.Add(controllerBuilder.Key, new List<ComponentMapper>());
-            }
         }
         
-        private void RegisterControllerBuilder(BaseControllerBuilder builder)
+        public void RegisterControllerBuilder(BaseControllerBuilder builder)
         {
-            ControllerBuilders.Add(builder.BindType, builder);
+            if (!ControllerBuilders.TryGetValue(builder.BindType, out var builders))
+            {
+                builders = new List<BaseControllerBuilder>();
+                ControllerBuilders.Add(builder.BindType, builders);
+            }
+            builders.Add(builder);
         }
 
         private HashSet<EId> DeleteEntities { get; } = new();
-        private HashSet<EId> CreateEntities { get; } = new();
-        private HashSet<CId> DeleteComponents { get; } = new();
-        
+        private HashSet<ControllerMapper> DeleteComponents { get; } = new();
+
         public void UpdateEntities()
         {
             DeleteEntities.Clear();
-            CreateEntities.Clear();
+
+            var entityManager = World.EntityManager;
 
             for (var index = 0; index < EntityMappers.Count; index++)
             {
-                DeleteEntities.Add(EntityMappers[index].Entity);
+                DeleteEntities.Add(EntityMappers[index].EntityId);
             }
             
             foreach (var entity in World.EntityManager.Entities.Entities)
@@ -74,83 +80,106 @@ namespace Game
                 else
                 {
                     // 如果不存在，则创建
-                    var mapper = CreateEntityToGameObject(World ,entity);
+                    var mapper = CreateEntityMapper(entity);
                     EntityMappers.Add(mapper);
-                    CreateEntities.Add(entity.Id);
-                }
-            }
-            
-            // 组件的更新
-            foreach (var pair in ComponentMappers)
-            {
-                DeleteComponents.Clear();
-                foreach (var mapper in pair.Value)
-                {
-                    if (DeleteEntities.Contains(mapper.Entity))
-                    {
-                        // 避免重复删除开销
-                        continue;
-                    }
-                    if (CreateEntities.Contains(mapper.Entity))
-                    {
-                        // 防止删除新创建的组件
-                        continue;
-                    }
-                    
-                    DeleteComponents.Add(mapper.Component);
-                }
-
-                var array = World.EntityManager.Components.GetComponentArray(pair.Key);
-                foreach (var component in array.GetAllComponents())
-                {
-                    DeleteComponents.Remove(component.Id);
-                }
-                
-                foreach (var componentId in DeleteComponents)
-                {
-                    var index = pair.Value.FindIndex(mapper => mapper.Component == componentId);
-                    if (index != -1)
-                    {
-                        var mapper = pair.Value[index];
-                        pair.Value.RemoveAt(index);
-                        Object.Destroy(mapper.Controller);
-                    }
                 }
             }
             
             // 删除实体
             foreach (var entityId in DeleteEntities)
             {
-                var index = EntityMappers.FindIndex(mapper => mapper.Entity == entityId);
+                var index = EntityMappers.FindIndex(mapper => mapper.EntityId == entityId);
                 if (index != -1)
                 {
-                    var mapper = EntityMappers[index];
+                    var entityMapper = EntityMappers[index];
+                    foreach (var controller in entityMapper.Controllers)
+                    {
+                        controller.Controller.Destroy();
+                    }
                     EntityMappers.RemoveAt(index);
-                    Object.Destroy(mapper.GameObject);
+                }
+            }
+            
+            // 组件的更新
+            foreach (var entityMapper in EntityMappers)
+            {
+                var entityId = entityMapper.EntityId;
+                
+                DeleteComponents.Clear();
+                foreach (var pair in ControllerBuilders)
+                {
+                    var componentType = pair.Key;
+                    var mapperList = entityMapper.Controllers.Where(mapper => mapper.ControllerType == componentType);
+                    var component = entityManager.Components.GetComponent(entityId, componentType);
+                    if (component == null)
+                    {
+                        foreach (var componentMapper in mapperList)
+                        {
+                            DeleteComponents.Add(componentMapper);
+                        }
+                    }
+                    else
+                    {
+                        if (entityMapper.HavingComponent.Contains(componentType))
+                            continue;
+                        
+                        if (TryCreateControllerForComponent(entityMapper, component, out var componentMapper))
+                        {
+                            entityMapper.Controllers.AddRange(componentMapper);
+                            entityMapper.HavingComponent.Add(componentType);
+                        }
+                    }
+                }
+
+                // 删除组件
+                foreach (var componentMapper in DeleteComponents)
+                {
+                    try
+                    {
+                        componentMapper.Controller.Destroy();
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError(e);
+                    }
+                    entityMapper.Controllers.Remove(componentMapper);
+                    entityMapper.HavingComponent.Remove(componentMapper.ControllerType);
+                }
+            }
+        }
+        
+        public void UpdateControllers()
+        {
+            foreach (var controller in SingletonControllers)
+            {
+                controller.Update();
+            }
+            
+            foreach (var entityMapper in EntityMappers)
+            {
+                foreach (var componentMapper in entityMapper.Controllers)
+                {
+                    componentMapper.Controller.Update();
                 }
             }
         }
 
-        private EntityMapper CreateEntityToGameObject(World world,Entity entity)
+        private EntityMapper CreateEntityMapper(Entity entity)
         {
             Debug.Log($"Create Entity {entity.Id.Id}");
-            
-            var go = new GameObject();
-            go.transform.SetParent(EntityRoot);
-            go.name = $"Entity_{entity.Id.Id}";
             var mapper = new EntityMapper()
             {
-                Entity = entity.Id,
-                GameObject = go
+                EntityId = entity.Id,
             };
 
             foreach (var pair in ControllerBuilders)
             {
-                if(world.EntityManager.TryGetComponent(entity, pair.Key, out var component))
+                if(World.EntityManager.TryGetComponent(entity, pair.Key, out var component))
                 {
-                    if (TryCreateComponentToController(go, component, out var componentMapper))
+                    if (TryCreateControllerForComponent(mapper, component, out var componentMapper))
                     {
-                        ComponentMappers[pair.Key].Add(componentMapper);
+                        mapper.Controllers.AddRange(componentMapper);
+                        mapper.HavingComponent.Add(pair.Key);
                     }
                 }
             }
@@ -158,31 +187,68 @@ namespace Game
             return mapper;
         }
 
-        private bool TryCreateComponentToController(GameObject go, IComponent component, out ComponentMapper mapper)
+        private bool TryCreateControllerForComponent(EntityMapper entityMapper, IComponent component, out ControllerMapper[] mappers)
         {
             Debug.Log($"Create Component {component.Id.Id}");
             
-            if (ControllerBuilders.TryGetValue(component.GetType(), out var builder))
+            if (ControllerBuilders.TryGetValue(component.GetType(), out var builders))
             {
-                var mono = builder.BuildController(go, component);
-                mapper = new ComponentMapper()
+                var hasController = false;
+                mappers = new ControllerMapper[builders.Count];
+
+                for (var index = 0; index < builders.Count; index++)
                 {
-                    Component = component.Id,
-                    Entity = component.EntityId,
-                    Controller = mono
-                };
-                mono.ComponentMapper = mapper;
-                mono.MapperManager = this;
-                return true;
+                    var builder = builders[index];
+                    var controller = builder.BuildController();
+                    var mapper = new ControllerMapper()
+                    {
+                        EntityMapper = entityMapper,
+                        ComponentId = component.Id,
+                        Controller = controller,
+                        ControllerType = builder.BindType
+                    };
+                    controller.ControllerMapper = mapper;
+                    controller.MapperManager = this;
+                    
+                    controller.Init();
+
+                    hasController = true;
+                    
+                    mappers[index] = mapper;
+                }
+
+                return hasController;
             }
             
-            mapper = default;
+            mappers = default;
             return false;
         }
 
-        public T GetEComponent<T>(ComponentMapper componentMapper) where T : IComponent, new()
+        public T GetEComponent<T>(ControllerMapper controllerMapper) where T : IComponent, new()
         {
-            return World.EntityManager.Components.GetComponent<T>(componentMapper.Entity);
+            return World.EntityManager.Components.GetComponent<T>(controllerMapper.EntityMapper.EntityId);
+        }
+        
+        public T GetEController<T>(ControllerMapper controllerMapper) where T : BaseController
+        {
+            var mapper = EntityMappers.FirstOrDefault(mapper => mapper.EntityId == controllerMapper.EntityMapper.EntityId);
+            if (mapper != null)
+            {
+                foreach (var otherComponentMapper in mapper.Controllers)
+                {
+                    if (otherComponentMapper.Controller is T controller)
+                    {
+                        return controller;
+                    }
+                }
+            }
+
+            return default;
+        }
+
+        public void AddSingletonController(BaseSingletonController singletonController)
+        {
+            SingletonControllers.Add(singletonController);
         }
     }
 }

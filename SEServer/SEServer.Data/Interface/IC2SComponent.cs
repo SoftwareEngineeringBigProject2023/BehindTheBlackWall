@@ -3,7 +3,7 @@
 /// <summary>
 /// 由客户端发送到服务器的组件
 /// </summary>
-public interface IC2SComponent : INetComponent
+public interface IC2SComponent : INetComponent, IClientOwnerComponent
 {
-    PlayerId Owner { get; set; }
+    
 }

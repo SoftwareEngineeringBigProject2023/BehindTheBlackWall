@@ -13,4 +13,6 @@ public class User
     /// 新客户端连接标记 - 用于重新发送快照信息
     /// </summary>
     public bool NewClientConnect { get; set; }
+    public bool IsConnected => ClientConnect?.IsConnected ?? false;
+    public float Timeout { get; set; } = 0f;
 }

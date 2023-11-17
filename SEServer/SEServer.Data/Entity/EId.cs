@@ -33,4 +33,9 @@ public struct EId
     {
         return !(left == right);
     }
+
+    public override string ToString()
+    {
+        return $"EntityId: {Id}";
+    }
 }

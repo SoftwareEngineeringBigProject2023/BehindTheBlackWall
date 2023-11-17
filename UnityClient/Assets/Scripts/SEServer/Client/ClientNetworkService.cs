@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using MessagePack;
 using SEServer.Data;
@@ -17,7 +18,7 @@ namespace SEServer.Client
     {
         public ServerContainer ServerContainer { get; set; }
         public Queue<IMessage> MessageQueue { get; } = new Queue<IMessage>();
-        public bool IsConnected => WebSocket.State == WebSocketState.Open;
+        public bool IsConnected => WebSocket is { State: WebSocketState.Open };
         public WebSocket WebSocket { get; set; }
         private byte[] ReceiveBuffer { get; set; } = new byte[MessageHeader.BUFFER_SIZE];
         private int ReceiveBufferSize { get; set; } = 0;
@@ -25,7 +26,7 @@ namespace SEServer.Client
         /// 未合并的消息分片
         /// </summary>
         private List<byte[]> UncombinedMessage { get; } = new List<byte[]>();
-        
+
         public void Init()
         {
             
@@ -33,7 +34,7 @@ namespace SEServer.Client
 
         public void Start()
         {
-            StartConnection();
+            
         }
         
         public void Stop()
@@ -41,7 +42,7 @@ namespace SEServer.Client
             
         }
         
-        private async void StartConnection()
+        public async UniTask StartConnection()
         {
             const int port = 8080;
             WebSocket = new WebSocket($"ws://localhost:{port}/Game/");
@@ -54,7 +55,9 @@ namespace SEServer.Client
 
             WebSocket.OnMessage += OnMessage;
             
-            await WebSocket.Connect();
+            UniTask.FromResult(WebSocket.Connect()).Forget();
+            
+            await UniTask.WaitUntil(() => WebSocket.State is WebSocketState.Open or WebSocketState.Closed);
         }
 
 
@@ -99,7 +102,7 @@ namespace SEServer.Client
 
         private void OnMessage(byte[] data)
         {
-            ServerContainer.Get<ILogger>().LogInfo($"Message received: {data.Length} size");
+            //ServerContainer.Get<ILogger>().LogInfo($"Message received: {data.Length} size");
             
             var receiveSize = data.Length;
             if (receiveSize + ReceiveBufferSize > MessageHeader.BUFFER_SIZE)
@@ -188,9 +191,6 @@ namespace SEServer.Client
         public void SendMessage<T>(T message) where T : IMessage
         {
             var bytes = ServerContainer.Get<IDataSerializer>().Serialize(message);
-            // LogToJson
-            ServerContainer.Get<ILogger>().LogInfo($"Send message: {message.GetType().Name} {MessagePackSerializer.ConvertToJson(bytes)}");
-
             if(bytes.Length > MessageHeader.MAX_MESSAGE_SIZE)
             {
                 // 消息过大，分片发送
