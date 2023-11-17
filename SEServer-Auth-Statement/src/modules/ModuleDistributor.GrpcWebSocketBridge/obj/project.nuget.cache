@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xpR8ylHDa9WHHCcfLmE1zpOChs1eDORJWcYtCJZIFO/x4n6d49O6uBWgMsdnvn/BA4Y3DG4DhYwGdb+BD6aGUA==",
+  "dgSpecHash": "+cI3na4ao2uzfKyBkfmrhVTz2ebjOkMF1mYu4LvOEkKGccs7nJWYkVZVt/0emsMxqXEn/QnJt01DGYr45veDCw==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj",
   "expectedPackageFiles": [
     "D:\\NuGet\\packages\\google.protobuf\\3.18.0\\google.protobuf.3.18.0.nupkg.sha512",
     "D:\\NuGet\\packages\\grpc.aspnetcore\\2.40.0\\grpc.aspnetcore.2.40.0.nupkg.sha512",

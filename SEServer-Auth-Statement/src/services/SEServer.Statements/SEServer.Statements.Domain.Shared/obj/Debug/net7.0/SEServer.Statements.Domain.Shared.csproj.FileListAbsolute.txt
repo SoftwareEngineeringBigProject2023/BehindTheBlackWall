@@ -10,3 +10,15 @@ D:\aspdotnet\SEServer\src\services\SEServer.Statements\SEServer.Statements.Domai
 D:\aspdotnet\SEServer\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\refint\SEServer.Statements.Domain.Shared.dll
 D:\aspdotnet\SEServer\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\SEServer.Statements.Domain.Shared.pdb
 D:\aspdotnet\SEServer\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\ref\SEServer.Statements.Domain.Shared.dll
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\bin\Debug\net7.0\SEServer.Statements.Domain.Shared.deps.json
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\bin\Debug\net7.0\SEServer.Statements.Domain.Shared.dll
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\bin\Debug\net7.0\SEServer.Statements.Domain.Shared.pdb
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\SEServer.Statements.Domain.Shared.csproj.AssemblyReference.cache
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\SEServer.Statements.Domain.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\SEServer.Statements.Domain.Shared.AssemblyInfoInputs.cache
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\SEServer.Statements.Domain.Shared.AssemblyInfo.cs
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\SEServer.Statements.Domain.Shared.csproj.CoreCompileInputs.cache
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\SEServer.Statements.Domain.Shared.dll
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\refint\SEServer.Statements.Domain.Shared.dll
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\SEServer.Statements.Domain.Shared.pdb
+D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements.Domain.Shared\obj\Debug\net7.0\ref\SEServer.Statements.Domain.Shared.dll

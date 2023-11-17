@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pg4+SftnAtrVukehyBnjOktOTcUGj1/7RWCTpI4Qpy9y9pMM4eaYpJ3GWDCe+cy05arEJ6h87ud1fRkePdUvmg==",
+  "dgSpecHash": "TqtsV0phCOvr/PaH2RkVqytxvl58HZFi9CNmeQ+DACHQ0iOjCAFl9o1pOFDyeSD0i4GzWnhox3xNPk+fiiYmFQ==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj",
   "expectedPackageFiles": [
     "D:\\NuGet\\packages\\google.protobuf\\3.18.0\\google.protobuf.3.18.0.nupkg.sha512",
     "D:\\NuGet\\packages\\grpc.aspnetcore\\2.40.0\\grpc.aspnetcore.2.40.0.nupkg.sha512",

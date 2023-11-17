@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rduJ/DlWjKYaTidRwcw1j0pTAQpb9LuBVdW+1slXSWjlm4Or+ymJN+bXF50Tyq8yRYIbV1q/+TmWPW4Kmy509w==",
+  "dgSpecHash": "gZn2Duylp877/++py9yPvd3O0Wg60eguKZdBLk9Fl5bgfPwNqfnGdvI68e/o2EhI0eVBqTyvIy/KEHoW4/mmNw==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj",
   "expectedPackageFiles": [
     "D:\\NuGet\\packages\\dapr.actors\\1.12.0\\dapr.actors.1.12.0.nupkg.sha512",
     "D:\\NuGet\\packages\\dapr.actors.aspnetcore\\1.12.0\\dapr.actors.aspnetcore.1.12.0.nupkg.sha512",

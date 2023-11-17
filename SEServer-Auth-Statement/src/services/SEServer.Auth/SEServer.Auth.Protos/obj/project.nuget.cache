@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p6HXtS/KeIHAbnNfwbONUDgmHYJpqE8M7zuo8BovrtomoA2APbE7Ph+KQNgdjobaYG5mcj52r9OaW90w+s/sRg==",
+  "dgSpecHash": "8L8WQZizc4dWrd91LBkAXfQ7fqQsJesexp1BgJKrlbE4j55H5JrCO9fQftSS1c1labpLE7Jy9/qJ6fugtTxy6A==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Auth\\SEServer.Auth.Protos\\SEServer.Auth.Protos.csproj",
   "expectedPackageFiles": [
     "D:\\NuGet\\packages\\google.protobuf\\3.18.0\\google.protobuf.3.18.0.nupkg.sha512",
     "D:\\NuGet\\packages\\grpc.aspnetcore\\2.40.0\\grpc.aspnetcore.2.40.0.nupkg.sha512",

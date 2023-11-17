@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2M2s4yXfUrQVpBDTUr3miLsyjzRuzXb+nWuEL9OIajPqwK9Cieg8gcNl6d2lPkbzgCNw+Gs/h953X9oh+uLxLA==",
+  "dgSpecHash": "zbBm1KWy5q1IAZ2UWiL0ASuON0EVhCksyMlUVC6Q2G779SfZBFAG846lIO68ygqyiQv3wAyNaaXloerz7KNppA==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\gateway\\SEServer.Gateway\\SEServer.Gateway.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\gateway\\SEServer.Gateway\\SEServer.Gateway.csproj",
   "expectedPackageFiles": [
     "D:\\NuGet\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
     "D:\\NuGet\\packages\\system.io.hashing\\7.0.0\\system.io.hashing.7.0.0.nupkg.sha512",

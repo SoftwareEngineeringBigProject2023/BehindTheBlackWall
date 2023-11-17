@@ -11,8 +11,6 @@ COPY ["src/services/SEServer.Statements/SEServer.Statements/SEServer.Statements.
 COPY ["src/modules/ModuleDistributor.Dapr.Configuration/ModuleDistributor.Dapr.Configuration.csproj", "src/modules/ModuleDistributor.Dapr.Configuration/"]
 COPY ["src/modules/ModuleDistributor.Dapr/ModuleDistributor.Dapr.csproj", "src/modules/ModuleDistributor.Dapr/"]
 COPY ["src/modules/ModuleDistributor/ModuleDistributor.csproj", "src/modules/ModuleDistributor/"]
-COPY ["src/modules/ModuleDistributor.HealthCheck.Dapr/ModuleDistributor.HealthCheck.Dapr.csproj", "src/modules/ModuleDistributor.HealthCheck.Dapr/"]
-COPY ["src/modules/ModuleDistributor.HealthCheck/ModuleDistributor.HealthCheck.csproj", "src/modules/ModuleDistributor.HealthCheck/"]
 COPY ["src/modules/ModuleDistributor.Logging/ModuleDistributor.Logging.csproj", "src/modules/ModuleDistributor.Logging/"]
 COPY ["src/modules/ModuleDistributor.Serilog/ModuleDistributor.Serilog.csproj", "src/modules/ModuleDistributor.Serilog/"]
 COPY ["src/services/SEServer.Statements/SEServer.Statements.GrpcServices/SEServer.Statements.GrpcServices.csproj", "src/services/SEServer.Statements/SEServer.Statements.GrpcServices/"]
