@@ -13,4 +13,5 @@ public class PhysicsSingletonComponent : IComponent
     public SolverIterations iterations { get; set; }
     
     public Dictionary<EId, PhysicsData> PhysicsDataDic { get; set; } = new();
+    public ContactListener ContactListener { get; set; }
 }

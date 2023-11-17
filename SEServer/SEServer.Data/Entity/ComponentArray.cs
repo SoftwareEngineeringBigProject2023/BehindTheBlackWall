@@ -86,9 +86,11 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
     {
         foreach (var eId in DeleteEntities)
         {
-            var cId = EntityToComponents[eId];
-            var index = ComponentToIndex[cId];
-            Components.RemoveAt(index);
+            if (EntityToComponents.TryGetValue(eId, out var cId))
+            {
+                var index = ComponentToIndex[cId];
+                Components.RemoveAt(index);
+            }
         }
         // 重建索引
         RebuildIndex();
@@ -135,6 +137,12 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
     /// <param name="eId"></param>
     public void MarkAsToBeDelete(EId eId)
     {
+        if (DeleteEntities.Contains(eId))
+            return;
+        
+        if (!EntityToComponents.ContainsKey(eId))
+            return;
+        
         DeleteEntities.Add(eId);
     }
 
@@ -252,14 +260,14 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
             var component = components[index];
             
             // 如果拥有者不是自己或全体玩家，则不添加
-            if (component is IC2SComponent c2SComponent && World is ClientWorld clientWorld)
+            if (component is IClientOwnerComponent ownerComponent && World is ClientWorld clientWorld)
             {
-                if(c2SComponent.Owner != PlayerId.Invalid && c2SComponent.Owner != clientWorld.PlayerId)
+                if(ownerComponent.Owner != PlayerId.Invalid && ownerComponent.Owner != clientWorld.PlayerId)
                 {
                     continue;
                 }
             }
-            
+
             var hasComponent = ComponentToIndex.ContainsKey(component.Id);
             if (hasComponent)
             {

@@ -32,7 +32,8 @@ namespace Game.Framework
 
         private void BuildUIRoot()
         {
-            UIRoot = new GameObject("UIRoot").transform;
+            var goRoot = new GameObject("UIRoot").transform;
+            UIRoot = goRoot.gameObject.AddComponent<RectTransform>();
             UIRoot.SetParent(transform);
             var canvas = UIRoot.gameObject.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;

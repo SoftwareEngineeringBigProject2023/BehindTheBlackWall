@@ -2,6 +2,7 @@
 using SEServer.Data;
 using SEServer.Data.Interface;
 using SEServer.Data.Message;
+using SEServer.GameData;
 
 namespace SEServer.Core;
 
@@ -10,6 +11,7 @@ public class ServerInstance
     private bool _endFlog = false;
     public ServerContainer ServerContainer { get; set; } = new ServerContainer();
     public UserManager UserManager { get; } = new UserManager();
+    public ServerWorldConfig ServerWorldConfig { get; set; } = new ServerWorldConfig();
     public List<ServerWorld> Worlds { get; } = new List<ServerWorld>();
     public Time Time { get; } = new Time();
     
@@ -21,6 +23,8 @@ public class ServerInstance
         ServerContainer.Start();
         
         Time.MaxFps = ServerContainer.Get<IWorldConfig>().FramePerSecond;
+
+        ServerWorldConfig = (ServerWorldConfig)ServerContainer.Get<IWorldConfig>();
         
         // TODO: 测试性添加一个世界，后续修改
         var serverWorld = new ServerWorld();
@@ -171,54 +175,95 @@ public class ServerInstance
         for (var index = 0; index < UserManager.Users.Count; index++)
         {
             var user = UserManager.Users[index];
-            
-            ServerWorld? bindWorld = null;
-            if (user is { NewClientConnect: true, ClientConnect: {State: ClientConnectState.Authorized} })
+
+            HandleNewUserEnterWorld(user);
+            if (HandleUserDisconnect(user))
             {
-                // 新连接
-                user.NewClientConnect = false;
+                UserManager.Users.RemoveAt(index);
+                index--;
+                continue;
+            }
+        }
+    }
+    
+    private void HandleNewUserEnterWorld(User user)
+    {
+        ServerWorld? bindWorld = null;
+        if (user is { NewClientConnect: true, ClientConnect: { State: ClientConnectState.Authorized } })
+        {
+            // 新连接
+            user.NewClientConnect = false;
 
-                bindWorld = null;
-                if (user.BindWorld != WId.Invalid)
-                {
-                    bindWorld = Worlds.FirstOrDefault(world => world.Id == user.BindWorld);
-                }
+            bindWorld = null;
+            if (user.BindWorld != WId.Invalid)
+            {
+                bindWorld = Worlds.FirstOrDefault(world => world.Id == user.BindWorld);
+            }
 
-                if (bindWorld == null)
+            if (bindWorld == null)
+            {
+                // TODO: 临时绑定第一个世界，后续再改进为动态绑定
+                bindWorld = Worlds[0];
+                // 绑定世界
+                user.BindWorld = bindWorld.Id;
+                var player = bindWorld.PlayerManager.CreatePlayer();
+                user.BindPlayer = player.Id;
+            }
+
+            // 发送快照信息
+            var sendSnapshotMessage = new SnapshotMessage()
+            {
+                Snapshot = bindWorld.NearestSnapshot,
+                PlayerId = user.BindPlayer
+            };
+            user.ClientConnect.SendMessage(sendSnapshotMessage);
+
+            // 发送补偿信息
+            foreach (var worldMessage in bindWorld.IncrementalStateInfo)
+            {
+                switch (worldMessage)
                 {
-                    // TODO: 临时绑定第一个世界，后续再改进为动态绑定
-                    bindWorld = Worlds[0];
-                    // 绑定世界
-                    user.BindWorld = bindWorld.Id;
-                    var player = bindWorld.PlayerManager.CreatePlayer();
-                    user.BindPlayer = player.Id;
-                }
-                
-                // 发送快照信息
-                var sendSnapshotMessage = new SnapshotMessage()
-                {
-                    Snapshot = bindWorld.NearestSnapshot,
-                    PlayerId = user.BindPlayer
-                };
-                user.ClientConnect.SendMessage(sendSnapshotMessage);
-                
-                // 发送补偿信息
-                foreach (var worldMessage in bindWorld.IncrementalStateInfo)
-                {
-                    switch (worldMessage)
-                    {
-                        case SubmitEntityMessage submitMessage:
-                            user.ClientConnect.SendMessage(submitMessage);
-                            break;
-                        default:
-                            ServerContainer.Get<ILogger>().LogError($"不支持的消息类型，Id = {user.Id} Type = {worldMessage.GetType()}");
-                            break;
-                    }
+                    case SyncEntityMessage syncEntityMessage:
+                        user.ClientConnect.SendMessage(syncEntityMessage);
+                        break;
+                    case SubmitEntityMessage submitMessage:
+                        user.ClientConnect.SendMessage(submitMessage);
+                        break;
+                    default:
+                        ServerContainer.Get<ILogger>().LogError($"不支持的消息类型，Id = {user.Id} Type = {worldMessage.GetType()}");
+                        break;
                 }
             }
         }
     }
     
+    private bool HandleUserDisconnect(User user)
+    {
+        if (!user.IsConnected)
+        {
+            user.Timeout += Time.DeltaTime;
+            if (user.Timeout > ServerWorldConfig.TimeoutLimit)
+            {
+                // 超时断开连接
+                var world = Worlds.FirstOrDefault(world => world.Id == user.BindWorld);
+                world.SendPlayerMessage(new SubmitData()
+                {
+                    Type = PlayerSubmitGlobalMessageType.PLAYER_EXIT,
+                    Arg0 = user.BindPlayer.Id
+                });
+                ServerContainer.Get<ILogger>().LogInfo($"用户超时断开连接，Id = {user.Id} PlayerId = {user.BindPlayer}");
+                return true;
+            }
+
+            return false;
+        }
+        else
+        {
+            user.Timeout = 0;
+            return false;
+        }
+    }
+
     /// <summary>
     /// 接收用户提交的实体信息
     /// </summary>

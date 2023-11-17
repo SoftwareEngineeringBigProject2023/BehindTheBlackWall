@@ -1,4 +1,6 @@
-﻿using MessagePack;
+﻿using System;
+using MessagePack;
+using System.Numerics;
 // ReSharper disable CompareOfFloatsByEqualityOperator
 
 namespace SEServer.Data;
@@ -6,11 +8,18 @@ namespace SEServer.Data;
 [MessagePackObject()]
 public struct SVector2
 {
-    [Key(0)] public float X;
-    [Key(1)] public float Y;
+    [Key(0)] 
+    public float X;
+    
+    [Key(1)] 
+    public float Y;
     
     public static SVector2 Zero => new(0, 0);
     public static SVector2 One => new(1, 1);
+    public static SVector2 Up => new(0, 1);
+    public static SVector2 Down => new(0, -1);
+    public static SVector2 Left => new(-1, 0);
+    public static SVector2 Right => new(1, 0);
     public static SVector2 Invalid => new(float.NaN, float.NaN);
 
     public SVector2(float vector2X, float vector2Y)
@@ -63,21 +72,29 @@ public struct SVector2
     
     public static SVector2 operator +(SVector2 left, SVector2 right)
     {
-        return new(left.X + right.X, left.Y + right.Y);
+        return new SVector2(left.X + right.X, left.Y + right.Y);
     }
     
     public static SVector2 operator -(SVector2 left, SVector2 right)
     {
-        return new(left.X - right.X, left.Y - right.Y);
+        return new SVector2(left.X - right.X, left.Y - right.Y);
     }
     
     public static SVector2 operator *(SVector2 left, float right)
     {
-        return new(left.X * right, left.Y * right);
+        return new SVector2(left.X * right, left.Y * right);
     }
     
     public static SVector2 operator *(float left, SVector2 right)
     {
-        return new(left * right.X, left * right.Y);
+        return new SVector2(left * right.X, left * right.Y);
+    }
+
+    public static SVector2 FromAngle(float angle)
+    {
+        var rad = angle * (float)Math.PI / 180f;
+        
+        // 右为0度，逆时针为正
+        return new SVector2((float)Math.Cos(rad), (float)Math.Sin(rad));
     }
 }

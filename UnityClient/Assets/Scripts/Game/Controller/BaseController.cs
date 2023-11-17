@@ -3,14 +3,42 @@ using UnityEngine;
 
 namespace Game.Controller
 {
-    public abstract class BaseController : MonoBehaviour
+    public abstract class BaseController
     {
-        public EntityMapperManager MapperManager { get; set; } = null!;
-        public EntityMapperManager.ComponentMapper ComponentMapper { get; set; }
+        public bool IsDestroy { get; private set; } = false;
         
-        public T GetEComponent<T>() where T : IComponent, new()
+        public EntityMapperManager MapperManager { get; set; } = null!;
+        
+
+        public void Init()
         {
-            return MapperManager.GetEComponent<T>(ComponentMapper);
+            OnInit();
+        }
+        
+        protected virtual void OnInit()
+        {
+            
+        }
+
+        public void Destroy()
+        {
+            IsDestroy = true;
+            OnDestroy();
+        }
+        
+        protected virtual void OnDestroy()
+        {
+            
+        }
+
+        public void Update()
+        {
+            OnUpdate();
+        }
+
+        protected virtual void OnUpdate()
+        {
+            
         }
     }
 }

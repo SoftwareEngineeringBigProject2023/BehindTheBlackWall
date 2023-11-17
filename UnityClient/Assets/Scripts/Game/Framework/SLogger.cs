@@ -28,7 +28,7 @@ namespace Game.Framework
         
         private string GetLogString(object message)
         {
-            return $"[{DateTime.Now : HH:mm:ss}] [{LoggerName}] {message}";
+            return $" [{LoggerName}] {message}";
         }
     }
 }

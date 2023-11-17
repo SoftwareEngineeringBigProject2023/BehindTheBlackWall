@@ -68,6 +68,11 @@ public class EntityManager
         return Components.GetComponent<T>(entity.Id);
     }
     
+    public T? GetComponent<T>(EId eId) where T :IComponent, new()
+    {
+        return Components.GetComponent<T>(eId);
+    }
+    
     public IComponent? GetComponent(Entity entity, Type type)
     {
         return Components.GetComponent(entity.Id, type);
@@ -264,11 +269,22 @@ public class EntityManager
         Components.MarkAsChanged(component);
     }
     
+    /// <summary>
+    /// 标记为更改
+    /// 仅用于本地组件
+    /// </summary>
+    /// <param name="component"></param>
     public void MarkAsChanged(IComponent component)
     {
         Components.MarkAsChanged(component);
     }
 
+    /// <summary>
+    /// 标记为脏
+    /// 用于网络传输
+    /// </summary>
+    /// <param name="component"></param>
+    /// <returns></returns>
     public bool IsChanged(IComponent component)
     {
         return Components.IsChanged(component);

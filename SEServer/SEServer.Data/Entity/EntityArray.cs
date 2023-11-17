@@ -57,6 +57,9 @@ public class EntityArray
 
     public void MarkAsToBeDelete(EId eId)
     {
+        if (!EntityToIndex.ContainsKey(eId))
+            return;
+        
         DeleteEntities.Add(eId);
     }
     
@@ -64,9 +67,11 @@ public class EntityArray
     {
         foreach (var eId in DeleteEntities)
         {
-            var index = EntityToIndex[eId];
-            EntityToIndex.Remove(eId);
-            Entities.RemoveAt(index);
+            if (EntityToIndex.TryGetValue(eId, out var index))
+            {
+                EntityToIndex.Remove(eId);
+                Entities.RemoveAt(index);
+            }
         }
         // 重建索引
         RebuildIndex();
