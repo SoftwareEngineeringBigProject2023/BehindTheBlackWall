@@ -128,6 +128,7 @@ namespace SEServer.Statements.Applications
                                    WeaponModuleType = item.ModuleType
                                });
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Task UpdateRoomRankAsync(long score, long kda)
         {
             _roomPackage.Score = score;
@@ -135,9 +136,10 @@ namespace SEServer.Statements.Applications
             return Task.CompletedTask;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Task UpdateRoomWeaponModuleAsync(List<WeaponModule> modules)
         {
-            _roomPackage.Modules!.AddRange(modules);
+            _roomPackage.Modules = modules;
             return Task.CompletedTask;
         }
     }
