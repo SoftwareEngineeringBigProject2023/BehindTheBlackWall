@@ -23,6 +23,7 @@ namespace Game.SceneScript
             ClientBehaviour.I.Init();
             await ClientBehaviour.I.Connect();
             await UniTask.WaitUntil(() => ClientBehaviour.I.ClientInstance.UserId != -1);
+            await UniTask.DelayFrame(20);
             ClientBehaviour.I.TestAddPlayer();
         }
     }
