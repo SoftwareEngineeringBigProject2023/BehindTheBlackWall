@@ -44,8 +44,9 @@ namespace SEServer.Client
         
         public async UniTask StartConnection()
         {
-            const int port = 8080;
-            WebSocket = new WebSocket($"ws://localhost:{port}/Game/");
+            const int port = 33700;
+            //WebSocket = new WebSocket($"ws://localhost:{port}/Game/");
+            WebSocket = new WebSocket($"ws://175.178.23.165:{port}/Game/");
 
             WebSocket.OnOpen += OnOpen;
 

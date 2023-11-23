@@ -10,9 +10,18 @@ var serverInstance = new ServerInstance();
 
 serverInstance.ServerContainer.Add<ILogger>(new SimpleLogger());
 serverInstance.ServerContainer.Add<IComponentSerializer>(new ComponentSerializer());
-serverInstance.ServerContainer.Add<IServerNetworkService>(new ServerNetworkService());
+serverInstance.ServerContainer.Add<IServerNetworkService>(new HttpServerNetworkService());
 serverInstance.ServerContainer.Add<IDataSerializer>(new SimpleSerializer());
 serverInstance.ServerContainer.Add<IServerStatistics>(new ServerStatistics());
+
+var netConfig = new NetConfig();
+netConfig.ListenUrls = new string[]
+{
+    "http://127.0.0.1:33700/Game/",
+    "http://*:33700/Game/",
+};
+
+serverInstance.ServerContainer.Add<INetConfig>(netConfig);
 
 var systemProvider = new SystemProvider();
 systemProvider.AddSystem(new UnitMoveSystem());

@@ -7,7 +7,7 @@ using SEServer.Data.Interface;
 
 namespace SEServer.Core;
 
-public class ServerNetworkService : IServerNetworkService
+public class HttpServerNetworkService : IServerNetworkService
 {
     public ServerContainer ServerContainer { get; set; }
     public List<ClientConnect> ClientConnects { get; } = new();
@@ -41,9 +41,11 @@ public class ServerNetworkService : IServerNetworkService
     
     private async void RunServer()
     {
-        const int port = 8080;
         var listener = new HttpListener();
-        listener.Prefixes.Add($"http://localhost:{port}/Game/");
+        foreach (var listenUrl in ServerContainer.Get<INetConfig>().ListenUrls)
+        {
+            listener.Prefixes.Add(listenUrl);
+        }
         listener.Start();
         
         while (true)

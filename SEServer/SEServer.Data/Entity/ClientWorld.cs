@@ -41,7 +41,14 @@ public class ClientWorld : World
         
         // 更新System
         Systems.UpdateAll();
-            
+        
+        // 移除所有标记的组件
+        Components.MarkAsToBeDeleteAll(Entities.DeleteEntities);
+        Components.RemoveMarkComponents();
+        
+        // 移除所有标记的实体
+        Entities.RemoveMarkEntities();
+        
         // 收集所有变动的实体信息，传入消息队列
         CollectChangedInfo();
             
@@ -129,9 +136,7 @@ public class ClientWorld : World
         {
             EntityManager.RemoveEntity(entityId);
         }
-        
-        EntityManager.Entities.RemoveMarkEntities();
-        
+
         // 更新组件
         var serializer = ServerContainer.Get<IComponentSerializer>();
         foreach (var arrayDataPack in syncEntityMessage.ComponentArrayDataPacks)
