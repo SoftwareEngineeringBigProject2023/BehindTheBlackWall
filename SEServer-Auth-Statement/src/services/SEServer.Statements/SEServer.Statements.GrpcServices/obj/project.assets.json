@@ -3659,11 +3659,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj",
+      "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj",
       "projectName": "SEServer.Statements.GrpcServices",
-      "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj",
+      "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj",
       "packagesPath": "D:\\NuGet\\packages",
-      "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\obj\\",
+      "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3685,14 +3685,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj"
+            "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
+            "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj"
+            "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj"
             }
           }
         }
@@ -3728,7 +3728,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

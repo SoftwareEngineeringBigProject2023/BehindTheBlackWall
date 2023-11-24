@@ -14,10 +14,7 @@ COPY ["src/modules/ModuleDistributor/ModuleDistributor.csproj", "src/modules/Mod
 COPY ["src/modules/ModuleDistributor.EntityFrameworkCore/ModuleDistributor.EntityFrameworkCore.csproj", "src/modules/ModuleDistributor.EntityFrameworkCore/"]
 COPY ["src/modules/ModuleDistributor.GrpcWebSocketBridge/ModuleDistributor.GrpcWebSocketBridge.csproj", "src/modules/ModuleDistributor.GrpcWebSocketBridge/"]
 COPY ["src/modules/ModuleDistributor.Grpc/ModuleDistributor.Grpc.csproj", "src/modules/ModuleDistributor.Grpc/"]
-COPY ["src/modules/ModuleDistributor.HealthCheck.Dapr/ModuleDistributor.HealthCheck.Dapr.csproj", "src/modules/ModuleDistributor.HealthCheck.Dapr/"]
-COPY ["src/modules/ModuleDistributor.HealthCheck/ModuleDistributor.HealthCheck.csproj", "src/modules/ModuleDistributor.HealthCheck/"]
 COPY ["src/modules/ModuleDistributor.Logging/ModuleDistributor.Logging.csproj", "src/modules/ModuleDistributor.Logging/"]
-COPY ["src/modules/ModuleDistributor.SerilogELK/ModuleDistributor.SerilogELK.csproj", "src/modules/ModuleDistributor.SerilogELK/"]
 COPY ["src/modules/ModuleDistributor.Serilog/ModuleDistributor.Serilog.csproj", "src/modules/ModuleDistributor.Serilog/"]
 COPY ["src/services/SEServer.Auth/SEServer.Auth.Protos/SEServer.Auth.Protos.csproj", "src/services/SEServer.Auth/SEServer.Auth.Protos/"]
 RUN dotnet restore "src/services/SEServer.Auth/SEServer.Auth/SEServer.Auth.csproj"

@@ -4,6 +4,8 @@ services:
   seserver-auth:
     image: seserverauth:dev
     build:
+      args:
+        BUILD_CONFIGURATION: Debug
       target: base
       labels:
         com.microsoft.created-by: "visual-studio"
@@ -13,8 +15,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages
     volumes:
-      - D:\aspdotnet\SEServer\src\services\SEServer.Auth\SEServer.Auth:/app
-      - D:\aspdotnet\SEServer:/src
+      - D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Auth\SEServer.Auth:/app
+      - D:\aspdotnet\SEServer-Auth-Statement:/src
       - C:\Users\0\vsdbg\vs2017u5:/remote_debugger:rw
       - D:\NuGet\packages:/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/.nuget/fallbackpackages:ro
@@ -22,9 +24,9 @@ services:
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - D:\Microsoft Visual Studio\vs\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net7.0:/TokenService.Proxy:ro
-      - D:\Microsoft Visual Studio\vs\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net7.0:/HotReloadProxy:ro
-      - D:\Microsoft Visual Studio\vs\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net7.0:/TokenService.Proxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net7.0:/HotReloadProxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
 
     entrypoint: tail -f /dev/null
     labels:
@@ -36,6 +38,8 @@ services:
   seserver-gateway:
     image: seservergateway:dev
     build:
+      args:
+        BUILD_CONFIGURATION: Debug
       target: base
       labels:
         com.microsoft.created-by: "visual-studio"
@@ -45,8 +49,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages
     volumes:
-      - D:\aspdotnet\SEServer\src\gateway\SEServer.Gateway:/app
-      - D:\aspdotnet\SEServer:/src
+      - D:\aspdotnet\SEServer-Auth-Statement\src\gateway\SEServer.Gateway:/app
+      - D:\aspdotnet\SEServer-Auth-Statement:/src
       - C:\Users\0\vsdbg\vs2017u5:/remote_debugger:rw
       - D:\NuGet\packages:/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/.nuget/fallbackpackages:ro
@@ -54,9 +58,9 @@ services:
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - D:\Microsoft Visual Studio\vs\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net7.0:/TokenService.Proxy:ro
-      - D:\Microsoft Visual Studio\vs\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net7.0:/HotReloadProxy:ro
-      - D:\Microsoft Visual Studio\vs\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net7.0:/TokenService.Proxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net7.0:/HotReloadProxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
 
     entrypoint: tail -f /dev/null
     labels:
@@ -69,6 +73,8 @@ services:
   seserver-statements:
     image: seserverstatements:dev
     build:
+      args:
+        BUILD_CONFIGURATION: Debug
       target: base
       labels:
         com.microsoft.created-by: "visual-studio"
@@ -78,8 +84,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages
     volumes:
-      - D:\aspdotnet\SEServer\src\services\SEServer.Statements\SEServer.Statements:/app
-      - D:\aspdotnet\SEServer:/src
+      - D:\aspdotnet\SEServer-Auth-Statement\src\services\SEServer.Statements\SEServer.Statements:/app
+      - D:\aspdotnet\SEServer-Auth-Statement:/src
       - C:\Users\0\vsdbg\vs2017u5:/remote_debugger:rw
       - D:\NuGet\packages:/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/.nuget/fallbackpackages:ro
@@ -87,9 +93,9 @@ services:
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - D:\Microsoft Visual Studio\vs\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net7.0:/TokenService.Proxy:ro
-      - D:\Microsoft Visual Studio\vs\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net7.0:/HotReloadProxy:ro
-      - D:\Microsoft Visual Studio\vs\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net7.0:/TokenService.Proxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\linux-x64\net7.0:/HotReloadProxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
 
     entrypoint: tail -f /dev/null
     labels:

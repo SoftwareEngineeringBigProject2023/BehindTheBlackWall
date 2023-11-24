@@ -4,9 +4,6 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>ee58038a-6bea-442d-8212-0b671042b04c</ProjectGuid>
-    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>seserver.gateway</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include=".env" />

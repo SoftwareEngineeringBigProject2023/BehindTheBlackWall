@@ -3574,11 +3574,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj",
+      "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj",
       "projectName": "SEServer.Statements.Applications",
-      "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj",
+      "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj",
       "packagesPath": "D:\\NuGet\\packages",
-      "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\obj\\",
+      "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3600,17 +3600,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj"
+            "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
+            "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj"
+            "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj"
+            "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj"
             }
           }
         }
@@ -3650,7 +3650,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
