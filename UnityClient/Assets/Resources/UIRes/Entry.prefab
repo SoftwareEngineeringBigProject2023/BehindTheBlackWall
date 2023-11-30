@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 6283088577324570024}
   - component: {fileID: 4925255346722663973}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: "\u80CC\u5305"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 5587829203718096335}
   - component: {fileID: 2500806244158951691}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: "\u610F\u89C1\u53CD\u9988"
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 8556030943771812979}
   - component: {fileID: 3409125835568244723}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: "\u6392\u884C\u699C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 6299122110733416868}
   - component: {fileID: 3698657643674273615}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: "\u8FDB\u5165\u6E38\u620F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1424,8 +1424,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4674088662313435243}
+  - component: {fileID: 170485471554021842}
   m_Layer: 5
-  m_Name: "\u8FDB\u5165"
+  m_Name: Entry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1453,6 +1454,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &170485471554021842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8167877266310695502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f52049939f258f4dab467fc42f1dd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: {fileID: 313301565593934805}
+  jifen: {fileID: 1041675392824682253}
+  enter: {fileID: 3698657643674273615}
+  bag: {fileID: 4925255346722663973}
+  board: {fileID: 3409125835568244723}
+  feedback: {fileID: 2500806244158951691}
 --- !u!1 &8422625080540131214
 GameObject:
   m_ObjectHideFlags: 0
