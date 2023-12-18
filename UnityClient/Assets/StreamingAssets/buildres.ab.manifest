@@ -1,0 +1,252 @@
+ManifestFileVersion: 0
+CRC: 136712598
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 70660f1c85d6b8898eb2f27dc1a00603
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7e3f6cb5895874806f14f4cd3405aa6b
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 70660f1c85d6b8898eb2f27dc1a00603
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 745624edf4044483960895953f574080, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 39b8a8e998694c2ca2f65596939d1996, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e5cbf2575975402aaea730690ab681a5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7e223ed9165049028ca8dd2013141b83, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 38ab3cdc3b49a6e428853efe80194005, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 85086604970c468cb4ddb3678ee17db9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 210
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.CollisionSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.ColorByNumberSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.CombinationMethod
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.CombinationSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.DestructionSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.DigitSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.DistanceScalingSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.FollowSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.LerpSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.PushSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.ScaleByNumberSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.ShakeSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.TextSettings
+- AssemblyName: DamageNumbersPro
+  ClassName: DamageNumbersPro.VelocitySettings
+- AssemblyName: MoreMountains.Feedbacks.MMTools
+  ClassName: MoreMountains.Feedbacks.MMF_MMSoundManagerSound
+- AssemblyName: MoreMountains.Feedbacks
+  ClassName: MoreMountains.Feedbacks.MMF_Animation
+- AssemblyName: MoreMountains.Feedbacks
+  ClassName: MoreMountains.Feedbacks.MMFeedbacksEvents
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FaceInfo_Legacy
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FontAssetCreationSettings
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.KerningTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_Character
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontFeatureTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontWeightPair
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphPairAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphValueRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_InputField/OnChangeEvent
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_InputField/SelectionEvent
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_InputField/SubmitEvent
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_InputField/TextSelectionEvent
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_InputField/TouchScreenKeyboardEvent
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.VertexGradient
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.RectOffset
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.FaceInfo
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.Glyph
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphMetrics
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphRect
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.AnimationTriggers
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Button/ButtonClickedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.ColorBlock
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Navigation
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.ScrollRect/ScrollRectEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Slider/SliderEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.SpriteState
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Toggle/ToggleEvent
+Assets:
+- Assets/BuildRes/Prefab/Bullet_1.prefab
+- Assets/BuildRes/UIRes/StartGamePanel.prefab
+- "Assets/BuildRes/Background/\u5730\u56FE1\u5B8C\u6574.png"
+- Assets/BuildRes/Prefab/HpBar.prefab
+- Assets/BuildRes/HeadIcon/6.png
+- Assets/BuildRes/Maps/SimpleMap.json
+- Assets/BuildRes/Prefab/Flame_1.prefab
+- Assets/BuildRes/HeadIcon/2.png
+- Assets/BuildRes/HeadIcon/3.png
+- Assets/BuildRes/Font/Alibaba-PuHuiTi-Medium SDF.asset
+- Assets/BuildRes/Prefab/Bullet_3.prefab
+- Assets/BuildRes/Prefab/Hit_2.prefab
+- Assets/BuildRes/CTData/BulletCTData.json
+- Assets/BuildRes/UIRes/EndGamePanel.prefab
+- Assets/BuildRes/Prefab/Hit_1_green.prefab
+- Assets/BuildRes/UIRes/Panel.prefab
+- Assets/BuildRes/Prefab/WeaponRoot.controller
+- Assets/BuildRes/HeadIcon/1.png
+- Assets/BuildRes/Prefab/PopScore.prefab
+- "Assets/BuildRes/UIRes/\u80CC\u5305.prefab"
+- Assets/BuildRes/HeadIcon/7.png
+- Assets/BuildRes/HeadIcon/5.png
+- Assets/BuildRes/HeadIcon/4.png
+- Assets/BuildRes/Prefab/GameMap.prefab
+- Assets/BuildRes/Prefab/PopDamage.prefab
+- "Assets/BuildRes/UIRes/\u8D26\u53F7.prefab"
+- "Assets/BuildRes/UIRes/\u8FDB\u5165.prefab"
+- Assets/BuildRes/Prefab/Hit_1.prefab
+- Assets/BuildRes/CTData/WeaponCTData.json
+- Assets/BuildRes/HeadIcon/8.png
+- Assets/BuildRes/Prefab/Flame_2.prefab
+- Assets/BuildRes/Prefab/Unit.prefab
+- "Assets/BuildRes/UIRes/\u6392\u884C\u699C.prefab"
+- Assets/BuildRes/Prefab/PickData.prefab
+- Assets/BuildRes/HeadIcon/10.png
+- Assets/BuildRes/Prefab/Bullet_2.prefab
+- Assets/BuildRes/UIRes/ScorePanel.prefab
+- Assets/BuildRes/Prefab/Hit_3.prefab
+- Assets/BuildRes/UIRes/LoginPanel.prefab
+- Assets/BuildRes/Prefab/Bullet.prefab
+- Assets/BuildRes/HeadIcon/11.png
+- Assets/BuildRes/Prefab/Flame_3.prefab
+- Assets/BuildRes/Font/Alibaba-PuHuiTi-Medium.ttf
+- Assets/BuildRes/HeadIcon/12.png
+- Assets/BuildRes/Prefab/UnitGunFire.anim
+- Assets/BuildRes/UIRes/Canvas.prefab
+- "Assets/BuildRes/UIRes/\u5934\u50CF.prefab"
+- Assets/BuildRes/Decoration/blank.png
+- Assets/BuildRes/HeadIcon/9.png
+Dependencies: []

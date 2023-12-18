@@ -21,4 +21,21 @@
       <ProjectReference Include="..\SEServer.Game\SEServer.Game.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="CTData\" />
+      <Folder Include="Maps\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="Maps\**">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="CTData\**">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
 </Project>

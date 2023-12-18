@@ -77,6 +77,7 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
         ComponentToIndex.Add(component.Id, Components.Count - 1);
         ComponentToEntity.Add(component.Id, component.EntityId);
         EntityToComponents.Add(component.EntityId, component.Id);
+        MarkAsChanged(component);
     }
 
     private List<int> _toDeleteIndex = new();
@@ -159,6 +160,7 @@ public class ComponentArray<T> : IComponentArray where T : IComponent, new()
     public void MarkAsDirty(INetComponent component)
     {
         DirtyComponents.Add(component.Id);
+        ChangedComponents.Add(component.Id);
     }
 
     public bool IsDirty(INetComponent component)

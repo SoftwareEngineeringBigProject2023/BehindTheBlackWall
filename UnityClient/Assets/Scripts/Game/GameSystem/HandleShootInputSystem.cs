@@ -34,6 +34,23 @@ namespace Game.GameSystem
                     GameManager.Input.ClearShootButtonDown();
                 }
             }
+            
+            var interactCollection = World.EntityManager.GetComponentDataCollection<InteractInputComponent>();
+            foreach (var interactInputComponent in interactCollection)
+            {
+                if (interactInputComponent.Owner != clientPlayerId)
+                {
+                    continue;
+                }
+
+                var oldIndex = interactInputComponent.SelectedWeaponIndex;
+                var index = GameManager.Input.GetSelectedWeaponIndex();
+                if (oldIndex != index)
+                {
+                    interactInputComponent.SelectedWeaponIndex = index;
+                    World.MarkAsDirty(interactInputComponent);
+                }
+            }
         }
     }
 }

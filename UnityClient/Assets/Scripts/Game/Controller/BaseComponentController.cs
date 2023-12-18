@@ -6,7 +6,7 @@ namespace Game.Controller
     {
         public ControllerMapper ControllerMapper { get; set; }
         
-        public T GetEComponent<T>() where T : IComponent, new()
+        public T GetEComponent<T>() where T : INetComponent, new()
         {
             return MapperManager.GetEComponent<T>(ControllerMapper);
         }

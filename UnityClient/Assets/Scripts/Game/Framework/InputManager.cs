@@ -8,6 +8,8 @@ namespace Game.Framework
         private Vector2 _aimAxis = Vector2.zero;
         private bool _isShootButtonDown = false;
         
+        private int _selectedWeaponIndex = 0;
+        
         public Vector2 GetInputAxis()
         {
             return _inputAxis;
@@ -43,6 +45,16 @@ namespace Game.Framework
         public void ClearShootButtonDown()
         {
             _isShootButtonDown = false;
+        }
+
+        public int GetSelectedWeaponIndex()
+        {
+            return _selectedWeaponIndex;
+        }
+        
+        public void SetSelectedWeaponIndex(int index)
+        {
+            _selectedWeaponIndex = index;
         }
     }
 }

@@ -18,7 +18,7 @@ public class PhysicsData
     /// <summary>
     /// 当前连接的物理数据
     /// </summary>
-    public List<PhysicsData> Contacts { get; set; } = new();
+    public Dictionary<EId, ContactRecordData> Contacts { get; set; } = new();
 
     /// <summary>
     /// 初始化物理数据
@@ -59,11 +59,23 @@ public class PhysicsData
     /// <param name="rigidbodyComponent"></param>
     public void UpdateBody(RigidbodyComponent rigidbodyComponent)
     {
-        if (rigidbodyComponent.SetVelocity != SVector2.Invalid)
-            BindBody.LinearVelocity = rigidbodyComponent.SetVelocity.ToPhysicsVector2();
+        if (rigidbodyComponent.SetPosition != null)
+        {
+            BindBody.Position = rigidbodyComponent.SetPosition.Value.ToPhysicsVector2();
+            rigidbodyComponent.SetPosition = null;
+        }
+        
+        if (rigidbodyComponent.SetVelocity != null)
+        {
+            BindBody.LinearVelocity = rigidbodyComponent.SetVelocity.Value.ToPhysicsVector2();
+            rigidbodyComponent.SetVelocity = null;
+        }
         
         if (rigidbodyComponent.SetRotation != null)
+        {
             BindBody.Rotation = rigidbodyComponent.SetRotation.Value;
+            rigidbodyComponent.SetRotation = null;
+        }
     }
 
     public void UpdateInfo(World world, RigidbodyComponent rigidbodyComponent, TransformComponent transformComponent)

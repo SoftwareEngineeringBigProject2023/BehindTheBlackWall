@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using SEServer.Data;
+using SEServer.Game.Component;
 
 namespace SEServer.Game;
 

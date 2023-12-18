@@ -1,5 +1,6 @@
 ﻿using System;
 using Game.Framework;
+using Game.Utils;
 using SEServer.Data;
 using SEServer.Data.Interface;
 using SEServer.GameData;
@@ -35,11 +36,13 @@ namespace Game.GameSystem
                     component.Input = input.ToSVector2();
                     World.MarkAsDirty(component);
 
-                    // 提前模拟移动
-                    var entity = World.EntityManager.GetEntity(component.EntityId);
-                    var transform = ClientWorld.EntityManager.GetComponent<TransformComponent>(entity);
-                    var property = ClientWorld.EntityManager.GetComponent<PropertyComponent>(entity);
-                    transform.Position += input.ToSVector2() * (property.Speed / 30f);
+                    // 提前模拟移动，最多1帧
+                    // if (ClientBehaviour.I.RecentReceiveData)
+                    // {   
+                    //     var entity = World.EntityManager.GetEntity(component.EntityId);
+                    //     var transform = ClientWorld.EntityManager.GetComponent<TransformComponent>(entity);
+                    //     transform.Position += input.ToSVector2() * 1;
+                    // }
                 }
 
                 var oldAim = component.TargetRotation;

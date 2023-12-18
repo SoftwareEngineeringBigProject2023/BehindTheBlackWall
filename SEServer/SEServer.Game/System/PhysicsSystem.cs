@@ -5,6 +5,7 @@ using nkast.Aether.Physics2D.Dynamics.Contacts;
 using SEServer.Core;
 using SEServer.Data;
 using SEServer.Data.Interface;
+using SEServer.Game.Component;
 using SEServer.GameData;
 using SEServer.GameData.Component;
 using SEServer.GameData.Data;
@@ -193,13 +194,30 @@ public class PhysicsSystem : ISystem
         switch (shape)
         {
             case CircleShapeData circle:
-                fixture = body.CreateFixture(new CircleShape(circle.Radius, 1f));
+                var circleShape = new CircleShape(circle.Radius, 1f);
+                circleShape.Position = circle.Position.ToPhysicsVector2();
+                fixture = body.CreateFixture(circleShape);
+                break;
+            case RectangleShapeData rectangle:
+                var polygonShape = new PolygonShape(PolygonTools.CreateRectangle(rectangle.Width / 2, rectangle.Height / 2, 
+                    rectangle.Position.ToPhysicsVector2(), rectangle.Rotation), 1f);
+                fixture = body.CreateFixture(polygonShape);
+                break;
+            case ChainShapeData chain:
+                var chainShape = new ChainShape();
+                chainShape.Vertices = new Vertices(chain.Lines.Count);
+                foreach (var sVector2 in chain.Lines)
+                {
+                    var point = sVector2.ToPhysicsVector2() + chain.Position.ToPhysicsVector2();
+                    chainShape.Vertices.Add(point);
+                }
+                fixture = body.CreateFixture(chainShape);
                 break;
             default:
                 World.ServerContainer.Get<ILogger>().LogError($"未知的Shape类型:{shape.GetType()}");
                 throw new Exception($"未知的Shape类型:{shape.GetType()}");
         }
-        
+
         return fixture;
     }
 

@@ -4,23 +4,26 @@ using SEServer.Data.Interface;
 
 namespace SEServer.GameData.Component;
 
-[MessagePackObject]
-public class PropertyComponent : IS2CComponent
+public class PropertyComponent : IComponent
 {
-    [Key(0)]
     public CId Id { get; set; }
-    [Key(1)]
     public EId EntityId { get; set; }
-    [Key(2)]
+    public string Name { get; set; } = "";
     public float Speed { get; set; } = 5f;
     /// <summary>
     /// 瞄准角度
     /// </summary>
-    [Key(3)]
     public float TargetAimRotation { get; set; }
+    /// <summary>
+    /// 最大生命值
+    /// </summary>
+    public float HpMax { get; set; } = 100f;
     /// <summary>
     /// 当前生命值
     /// </summary>
-    [Key(4)]
     public float Hp { get; set; } = 100f;
+    /// <summary>
+    /// 受伤时间统计，5秒没受伤则恢复
+    /// </summary>
+    public double HeartTimer { get; set; }
 }

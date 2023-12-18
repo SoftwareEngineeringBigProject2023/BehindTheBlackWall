@@ -20,6 +20,7 @@ namespace SEServer.Client
         public Queue<IMessage> MessageQueue { get; } = new Queue<IMessage>();
         public bool IsConnected => WebSocket is { State: WebSocketState.Open };
         public WebSocket WebSocket { get; set; }
+        public Action OnReceiveDataCallback { get; set; }
         private byte[] ReceiveBuffer { get; set; } = new byte[MessageHeader.BUFFER_SIZE];
         private int ReceiveBufferSize { get; set; } = 0;
         /// <summary>
@@ -45,8 +46,13 @@ namespace SEServer.Client
         public async UniTask StartConnection()
         {
             const int port = 33700;
-            //WebSocket = new WebSocket($"ws://localhost:{port}/Game/");
+            
+#if UNITY_EDITOR
+            WebSocket = new WebSocket($"ws://localhost:{port}/Game/");
+#else
             WebSocket = new WebSocket($"ws://175.178.23.165:{port}/Game/");
+#endif
+            //WebSocket = new WebSocket($"ws://localhost:{port}/Game/");
 
             WebSocket.OnOpen += OnOpen;
 
@@ -104,6 +110,7 @@ namespace SEServer.Client
         private void OnMessage(byte[] data)
         {
             //ServerContainer.Get<ILogger>().LogInfo($"Message received: {data.Length} size");
+            OnReceiveDataCallback?.Invoke();
             
             var receiveSize = data.Length;
             if (receiveSize + ReceiveBufferSize > MessageHeader.BUFFER_SIZE)

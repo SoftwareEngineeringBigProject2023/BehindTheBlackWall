@@ -10,6 +10,7 @@ public abstract class World
     public EntityManager EntityManager { get; }
     public TimeManager Time { get; } = new TimeManager();
     public ServerContainer ServerContainer { get; set; } = null!;
+    public WorldSetting WorldSetting { get; set; } = new WorldSetting();
     
     public World()
     {

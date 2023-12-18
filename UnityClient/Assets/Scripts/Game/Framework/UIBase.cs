@@ -68,7 +68,7 @@ namespace Game.Framework
             DestroyUI();
         }
         
-        public T Get<T>(string key) where T : Component
+        public T Get<T>(string key) where T : UnityEngine.Component
         {
             if (_bindGameObjects.TryGetValue(key, out var gameObject))
             {
@@ -80,6 +80,11 @@ namespace Game.Framework
 
         private void DestroyUI()
         {
+            if (BindGameObject == null)
+            {
+                return;
+            }
+            
             UIManager.Instance.UnregisterUI(this);
             Object.Destroy(BindGameObject);
         }

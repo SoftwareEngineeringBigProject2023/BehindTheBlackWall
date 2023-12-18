@@ -1,0 +1,38 @@
+[
+    {
+        "PrimaryKey":"Bullet_1",
+        "DisplayName":"测试子弹1",
+        "Type" :0,
+        "GraphId":1,
+        "Properties" : {
+
+        }
+    },
+    {
+        "PrimaryKey":"Bullet_2",
+        "DisplayName":"反弹子弹",
+        "Type" :0,
+        "GraphId":1,
+        "Properties":{
+            "Bounce": 4
+        }
+    },
+    {
+        "PrimaryKey":"Bullet_GUN_2_1",
+        "DisplayName":"测试子弹1",
+        "Type" :0,
+        "GraphId":2,
+        "Properties" : {
+
+        }
+    },
+    {
+        "PrimaryKey":"Bullet_GUN_3_1",
+        "DisplayName":"测试子弹1",
+        "Type" :0,
+        "GraphId":3,
+        "Properties" : {
+
+        }
+    }
+]

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using Game.Utils;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Game.Framework
@@ -44,45 +46,63 @@ namespace Game.Framework
             raycaster.ignoreReversedGraphics = true;
             raycaster.blockingObjects = GraphicRaycaster.BlockingObjects.None;
 
-            UILayerBottom = new GameObject("UILayerBottom").transform;
-            UILayerBottom.SetParent(UIRoot);
+            UILayerBottom = CreateLayer(UILayer.Bottom);
+            UILayerWindow = CreateLayer(UILayer.Window);
+            UILayerModal = CreateLayer(UILayer.Modal);
             
-            UILayerWindow = new GameObject("UILayerWindow").transform;
-            UILayerWindow.SetParent(UIRoot);
-            
-            UILayerModal = new GameObject("UILayerModal").transform;
-            UILayerModal.SetParent(UIRoot);
+            var eventSystem = new GameObject("EventSystem");
+            eventSystem.transform.SetParent(UIRoot);
+            eventSystem.AddComponent<EventSystem>();
+            eventSystem.AddComponent<StandaloneInputModule>();
+        }
+        
+        private Transform CreateLayer(UILayer layer)
+        {
+            var go = new GameObject($"UILayer{layer}");
+            var rectTransform = go.AddComponent<RectTransform>();
+            rectTransform.SetParent(UIRoot);
+            rectTransform.anchorMin = Vector2.zero;
+            rectTransform.anchorMax = Vector2.one;
+            rectTransform.offsetMin = Vector2.zero;
+            rectTransform.offsetMax = Vector2.zero;
+            rectTransform.localScale = Vector3.one;
+            rectTransform.localPosition = Vector3.zero;
+            return rectTransform;
         }
         
         public void RegisterUI<T>(T ui) where T : UIBase
         {
             var list = GetListByLayer(ui.Layer);
             list.Add(ui);
+            
+            ui.BindGameObject.transform.SetParent(GetLayerTransform(ui.Layer), false);
         }
         
         public void UnregisterUI<T>(T ui) where T : UIBase
         {
             var list = GetListByLayer(ui.Layer);
             list.Remove(ui);
+            
+            ui.BindGameObject.transform.SetParent(null);
         }
         
         public void RemoveAllUI()
         {
             foreach (var ui in _bottomUIs.ToArray())
             {
-                ui.Hide();
+                ui?.Hide();
             }
             _bottomUIs.Clear();
             
             foreach (var ui in _windowUIs.ToArray())
             {
-                ui.Hide();
+                ui?.Hide();
             }
             _windowUIs.Clear();
             
             foreach (var ui in _modalUIs.ToArray())
             {
-                ui.Hide();
+                ui?.Hide();
             }
             _modalUIs.Clear();
         }

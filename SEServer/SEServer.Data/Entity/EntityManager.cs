@@ -114,13 +114,14 @@ public class EntityManager
     public T GetSingleton<T>() where T :IComponent, new()
     {
         var entity = Entities.GetSingletonEntity();
-        var component = GetComponent<T>(entity);
-        if (component == null)
-        {
-            component = GetOrAddComponent<T>(entity);
-        }
-        
+        var component = GetOrAddComponent<T>(entity);
         return component;
+    }
+    
+    public T? GetSingletonIfExists<T>() where T :IComponent, new()
+    {
+        var entity = Entities.GetSingletonEntity();
+        return GetComponent<T>(entity);
     }
 
     public Snapshot GetSnapshot()

@@ -150,6 +150,9 @@ namespace Game
         
         public void UpdateControllers()
         {
+            if(World == null)
+                return;
+            
             foreach (var controller in SingletonControllers)
             {
                 controller.Update();
@@ -189,7 +192,7 @@ namespace Game
 
         private bool TryCreateControllerForComponent(EntityMapper entityMapper, IComponent component, out ControllerMapper[] mappers)
         {
-            Debug.Log($"Create Component {component.Id.Id}");
+            Debug.Log($"Create Component Type {component.GetType().Name} {component.Id.Id}");
             
             if (ControllerBuilders.TryGetValue(component.GetType(), out var builders))
             {
@@ -245,9 +248,27 @@ namespace Game
 
             return default;
         }
+        
+        public T GetEController<T>(EId eId) where T : BaseController
+        {
+            var mapper = EntityMappers.FirstOrDefault(mapper => mapper.EntityId == eId);
+            if (mapper != null)
+            {
+                foreach (var otherComponentMapper in mapper.Controllers)
+                {
+                    if (otherComponentMapper.Controller is T controller)
+                    {
+                        return controller;
+                    }
+                }
+            }
+
+            return default;
+        }
 
         public void AddSingletonController(BaseSingletonController singletonController)
         {
+            singletonController.MapperManager = this;
             SingletonControllers.Add(singletonController);
         }
     }

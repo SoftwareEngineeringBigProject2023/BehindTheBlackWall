@@ -186,4 +186,10 @@ public class ComponentCollection
         var componentArray = GetComponentArray(component.GetType());
         return componentArray.IsChanged(component);
     }
+    
+    public bool IsDirty(INetComponent component)
+    {
+        var componentArray = GetComponentArray(component.GetType());
+        return componentArray.IsDirty(component);
+    }
 }

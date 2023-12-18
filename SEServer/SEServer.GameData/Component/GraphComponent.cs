@@ -13,4 +13,6 @@ public class GraphComponent : IS2CComponent
     public EId EntityId { get; set; }
     [Key(2)]
     public GraphType Type { get; set; }
+    [Key(3)]
+    public int Res { get; set; }
 }

@@ -1,0 +1,4 @@
+<linker>
+    <assembly fullname="SEServer.Data.dll" preserve="all" />
+    <assembly fullname="SEServer.GameData.dll" preserve="all" />
+</linker>

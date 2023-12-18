@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 3095491034
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: buildres.ab
+      Dependencies: {}

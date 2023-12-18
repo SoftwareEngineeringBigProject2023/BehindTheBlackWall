@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 
 namespace Game.Framework
 {
@@ -16,7 +17,7 @@ namespace Game.Framework
         public InputManager InputManager { get; set; }
         public bool IsInit => _isInit;
         
-        public void Init()
+        public async UniTask Init()
         {
             if(_isInit)
                 return;
@@ -28,7 +29,7 @@ namespace Game.Framework
             AudioManager = AudioManager.Instance;
             InputManager = InputManager.Instance;
             
-            ResManager.Init();
+            await ResManager.Init();
             UIManager.Init();
         }
 

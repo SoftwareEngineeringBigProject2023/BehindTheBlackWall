@@ -20,6 +20,7 @@ public partial class PlayerSystem : ISystem
     public void Init()
     {
         ServerWorld.EntityManager.GetSingleton<PlayerSubmitGlobalComponent>();
+        ServerWorld.EntityManager.GetSingleton<PlayerNotifyGlobalComponent>();
     }
 
     public void Update()
@@ -56,5 +57,7 @@ public partial class PlayerSystem : ISystem
                 }
             }
         }
+        
+        CheckPlayersState();
     }
 }
