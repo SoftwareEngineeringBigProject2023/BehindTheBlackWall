@@ -10,7 +10,8 @@ public static class MessagePackTools
     [MenuItem("工具/复制数据DLL")]
     public static void CopyDllFile()
     {
-        var dllDirPath = Path.GetFullPath(Path.Combine(Application.dataPath, "../../SEServer/SEServer.GameData/bin/Debug/net48"));
+        var dllDirPath = Path.GetFullPath(Path.Combine(Application.dataPath, 
+            "../../SEServer/SEServer.GameData/bin/Deploy/net48"));
         var copyFiles = new List<string>()
         {
             Path.Combine(dllDirPath, "SEServer.GameData.dll"),
@@ -19,7 +20,7 @@ public static class MessagePackTools
             Path.Combine(dllDirPath, "SEServer.Data.pdb"),
         };
         
-        var destDirPath = Path.GetFullPath(Path.Combine(Application.dataPath, "SEServerDll/"));
+        var destDirPath = Path.GetFullPath(Path.Combine(Application.dataPath, "Plugins/SEServerClient"));
         if (!Directory.Exists(destDirPath))
             Directory.CreateDirectory(destDirPath);
 

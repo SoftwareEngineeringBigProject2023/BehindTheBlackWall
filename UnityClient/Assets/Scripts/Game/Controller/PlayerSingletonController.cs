@@ -1,5 +1,9 @@
 ﻿using System.Linq;
+using Cinemachine;
+using Game.Binding;
+using Game.Component;
 using Game.Framework;
+using Game.Utils;
 using SEServer.GameData.Component;
 using UnityEngine;
 
@@ -7,6 +11,19 @@ namespace Game.Controller
 {
     public class PlayerSingletonController : BaseSingletonController
     {
+        
+        private LocalPlayerInfoSingletonComponent _localPlayerInfo;
+        public LocalPlayerInfoSingletonComponent LocalPlayerInfo
+        {
+            get
+            {
+                if(_localPlayerInfo == null)
+                    _localPlayerInfo = EntityManager.GetSingleton<LocalPlayerInfoSingletonComponent>();
+                
+                return _localPlayerInfo;
+            }
+        }
+
         protected override void OnUpdate()
         {
             // 移动输入
@@ -17,8 +34,30 @@ namespace Game.Controller
             
             // 射击输入
             ShootInput();
+            
+            // 交互输入
+            InteractInput();
+            
+            // 摄像头跟随
+            CameraFollow();
         }
-        
+
+        private void InteractInput()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                GameManager.Input.SetSelectedWeaponIndex(0);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                GameManager.Input.SetSelectedWeaponIndex(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                GameManager.Input.SetSelectedWeaponIndex(2);
+            }
+        }
+
         private void MoveInput()
         {
             var x = Input.GetAxis("Horizontal");
@@ -29,10 +68,9 @@ namespace Game.Controller
         private void AimInput()
         {
             var mousePosition = Input.mousePosition;
-            var entityManager = ClientBehaviour.I.ClientInstance.World.EntityManager;
-            
-            var playerComponent = entityManager.GetComponentDataCollection<PlayerComponent>()
-                .FirstOrDefault(player => player.PlayerId == ClientBehaviour.I.ClientInstance.World.PlayerId.Id);
+            var entityManager = EntityManager;
+
+            var playerComponent = entityManager.GetComponent<PlayerComponent>(LocalPlayerInfo.PlayerEntityId);
             if(playerComponent == null)
                 return;
             
@@ -55,6 +93,25 @@ namespace Game.Controller
             {
                 GameManager.Input.TriggerShootButtonDown();
             }
+        }
+        
+        private void CameraFollow()
+        {
+            var virtualCamera = CameraStaticBinding.GetVirtualCamera();
+            if(virtualCamera == null)
+                return;
+            
+            var entityManager = EntityManager;
+            
+            var playerComponent = entityManager.GetComponent<PlayerComponent>(LocalPlayerInfo.PlayerEntityId);
+            if (playerComponent == null)
+                return;
+
+            if (virtualCamera.Follow != null)
+                return;
+            
+            virtualCamera.Follow = ClientBehaviour.I.EntityMapper
+                .GetEController<GraphController>(playerComponent.EntityId).GraphObject.transform;
         }
     }
 }

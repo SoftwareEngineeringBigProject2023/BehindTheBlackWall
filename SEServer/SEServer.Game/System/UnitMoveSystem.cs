@@ -34,7 +34,7 @@ public class UnitMoveSystem : ISystem
             {
                 var rotation = moveInput.TargetRotation;
                 property.TargetAimRotation = rotation;
-                World.EntityManager.MarkAsDirty(property);
+                World.EntityManager.MarkAsChanged(property);
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Game.Binding;
+using Game.Framework;
 using SEServer.GameData.Component;
 using UnityEngine;
 
@@ -13,8 +14,9 @@ namespace Game.Controller
         }
 
         public LazyControllerGetter<GraphController> GraphController { get; set; }
-        public PropertyComponent PropertyComponent => GetEComponent<PropertyComponent>();
+        public UnitAimViewComponent UnitAimViewComponent => GetEComponent<UnitAimViewComponent>();
         public UnitBinding UnitBinding { get; set; }
+        public WeaponBinding WeaponBinding { get; set; }
 
         protected override void OnUpdate()
         {
@@ -25,7 +27,11 @@ namespace Game.Controller
             if (UnitBinding == null)
                 UnitBinding = graphController.GraphObject.GetComponent<UnitBinding>();
 
-            var propertyComponent = PropertyComponent;
+            var iconId = graphController.GraphComponent.Res;
+            var icon = GameManager.Res.LoadAsset<Sprite>($"Assets/BuildRes/HeadIcon/{iconId}.png");
+            UnitBinding.headIcon.sprite = icon;
+
+            var propertyComponent = UnitAimViewComponent;
             if (propertyComponent == null)
                 return;
 
@@ -39,6 +45,7 @@ namespace Game.Controller
             var rotateRoot = UnitBinding.weaponRotateRoot;
             if (rotateRoot != null)
             {
+                WeaponBinding = UnitBinding.GetComponentInChildren<WeaponBinding>();
                 var unitWeaponTransform = UnitBinding.weaponRotateRoot.transform;
                 var unitWeaponScaleTransform = UnitBinding.weaponScaleRoot.transform;
                 TryLerpToTargetRotation(unitWeaponTransform, rotateAngle);
@@ -52,6 +59,24 @@ namespace Game.Controller
                 }
             }
 
+        }
+
+        public Vector3 GetMuzzlePos()
+        {
+            if (WeaponBinding == null)
+                return UnitBinding.transform.position;
+
+            return WeaponBinding.muzzlePos.position;
+        }
+        
+        public Vector3 GetUnitHeadPos()
+        {
+            return UnitBinding.transform.position + new Vector3(0, 1f, 0);
+        }
+
+        public float GetGunRotate()
+        {
+            return UnitAimViewComponent?.TargetAimRotation ?? 0;
         }
 
         /// <summary>
@@ -78,7 +103,7 @@ namespace Game.Controller
 
     public class UnitGraphControllerBuilder : BaseControllerBuilder
     {
-        public override Type BindType { get; } = typeof(PropertyComponent);
+        public override Type BindType { get; } = typeof(PlayerComponent);
 
         public override BaseComponentController BuildController()
         {

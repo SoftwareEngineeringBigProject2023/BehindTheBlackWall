@@ -1,7 +1,9 @@
 ﻿using System;
+using Game.Utils;
 using SEServer.Data.Interface;
 using SEServer.GameData;
 using SEServer.GameData.Component;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Controller
@@ -15,7 +17,8 @@ namespace Game.Controller
         
         public LazyControllerGetter<GraphController> GraphController { get; }
         public TransformComponent TransformComponent => GetEComponent<TransformComponent>();
-        
+        public GraphComponent GraphComponent => GetEComponent<GraphComponent>();
+
         protected override void OnUpdate()
         {
             var graphController = GraphController.Value;
@@ -24,31 +27,59 @@ namespace Game.Controller
 
             var transformComponent = TransformComponent;
             var transform = graphController.GraphObject.transform;
-            
+
             var realPosition = transformComponent.Position.ToUVector2();
             
-            if (Vector3.Distance(transform.position, realPosition) < 10f)
+            var graphComponent = GraphComponent;
+
+            if (graphComponent != null)
             {
-                // 如果变化小，则缓动过去
-                transform.position = Vector3.Lerp(transform.position, realPosition, Time.deltaTime * 10);
-            }
-            else
-            {
-                // 如果变化大，则直接过去
-                transform.position = realPosition;
+                switch (graphComponent.Type)
+                {
+                    case GraphType.Bullet:
+                        if (Vector3.Distance(transform.position, realPosition) < 10f)
+                        {
+                            // 如果变化小，则缓动过去
+                            transform.position = Vector3.Lerp(transform.position, realPosition, Time.deltaTime * 30);
+                        }
+                        else
+                        {
+                            // 如果变化大，则直接过去
+                            transform.position = realPosition;
+                        }
+                        break;
+                    case GraphType.None:
+                    case GraphType.Unit:
+                    default:
+                        if (Vector3.Distance(transform.position, realPosition) < 10f)
+                        {
+                            // 如果变化小，则缓动过去
+                            transform.position = Vector3.Lerp(transform.position, realPosition, Time.deltaTime * 10);
+                        }
+                        else
+                        {
+                            // 如果变化大，则直接过去
+                            transform.position = realPosition;
+                        }
+                        break;
+                }
             }
             
+            
+            
             var realRotation = transformComponent.Rotation;
-            if (Math.Abs(transform.eulerAngles.z - realRotation) < 10f)
-            {
-                // 如果变化小，则缓动过去
-                transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, 0, realRotation), Time.deltaTime * 10);
-            }
-            else
-            {
-                // 如果变化大，则直接过去
-                transform.eulerAngles = new Vector3(0, 0, realRotation);
-            }
+            transform.eulerAngles = new Vector3(0, 0, realRotation);
+            // var realRotation = transformComponent.Rotation;
+            // if (Math.Abs(transform.eulerAngles.z - realRotation) < 10f)
+            // {
+            //     // 如果变化小，则缓动过去
+            //     transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, 0, realRotation), Time.deltaTime * 10);
+            // }
+            // else
+            // {
+            //     // 如果变化大，则直接过去
+            //     transform.eulerAngles = new Vector3(0, 0, realRotation);
+            // }
         }
     }
     

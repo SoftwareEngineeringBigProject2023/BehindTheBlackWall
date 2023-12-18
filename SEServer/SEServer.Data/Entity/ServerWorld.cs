@@ -160,4 +160,12 @@ public class ServerWorld : World
             componentArray.ReadChangedFromSubmitDataPack(serializer, submitDataPack);
         }
     }
+
+    public void LoadSettings(Dictionary<string,string> settings)
+    {
+        foreach (var pair in settings)
+        {
+            WorldSetting[pair.Key] = pair.Value;
+        }
+    }
 }

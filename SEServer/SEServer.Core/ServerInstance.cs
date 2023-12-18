@@ -28,6 +28,7 @@ public class ServerInstance
         
         // TODO: 测试性添加一个世界，后续修改
         var serverWorld = new ServerWorld();
+        serverWorld.LoadSettings(ServerWorldConfig.DefaultSettings);
         SetupWorld(serverWorld);
 
         MainLoop();

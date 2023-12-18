@@ -1,5 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Networking;
+using Object = UnityEngine.Object;
 
 namespace Game.Framework
 {
@@ -12,11 +16,18 @@ namespace Game.Framework
         {
             ABPath = abPath;
         }
-    
-        public void LoadAssetBundle()
+        
+        public async UniTask LoadAssetBundleAsync()
         {
             UnloadAssetBundle();
-            RefAssetBundle = AssetBundle.LoadFromFile(ABPath);
+            var request = await UnityWebRequestAssetBundle.GetAssetBundle(ABPath).SendWebRequest();
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"Load AssetBundle {ABPath} error: {request.error}");
+                return;
+            }
+            
+            RefAssetBundle = DownloadHandlerAssetBundle.GetContent(request);
         }
     
         public void UnloadAssetBundle()
@@ -33,15 +44,15 @@ namespace Game.Framework
             return RefAssetBundle.Contains(resPath);
         }
 
-        public Object Load(string resPath)
+        public Object Load(string resPath, Type loadType)
         {
-            var asset = RefAssetBundle.LoadAsset(resPath);
+            var asset = RefAssetBundle.LoadAsset(resPath, loadType);
             return asset;
         }
 
-        public async UniTask<Object> LoadAsync(string resPath)
+        public async UniTask<Object> LoadAsync(string resPath, Type loadType)
         {
-            var request = RefAssetBundle.LoadAssetAsync(resPath);
+            var request = RefAssetBundle.LoadAssetAsync(resPath, loadType);
             await request;
             return request.asset;
         }

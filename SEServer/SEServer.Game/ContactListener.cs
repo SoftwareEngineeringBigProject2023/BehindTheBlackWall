@@ -1,6 +1,7 @@
 ﻿using nkast.Aether.Physics2D.Collision;
 using nkast.Aether.Physics2D.Dynamics;
 using nkast.Aether.Physics2D.Dynamics.Contacts;
+using SEServer.Game.Component;
 using Phy2DWorld = nkast.Aether.Physics2D.Dynamics.World;
 
 namespace SEServer.Game;
@@ -41,8 +42,8 @@ public class ContactListener : IDisposable
         
         if(bodyA.Tag is PhysicsData physicsDataA && bodyB.Tag is PhysicsData physicsDataB)
         {
-            physicsDataA.Contacts.Add(physicsDataB);
-            physicsDataB.Contacts.Add(physicsDataA);
+            AddContact(physicsDataA, physicsDataB, contact);
+            AddContact(physicsDataB, physicsDataA, contact, true);
         }
         
         return true;
@@ -57,9 +58,30 @@ public class ContactListener : IDisposable
         
         if(bodyA.Tag is PhysicsData physicsDataA && bodyB.Tag is PhysicsData physicsDataB)
         {
-            physicsDataA.Contacts.Remove(physicsDataB);
-            physicsDataB.Contacts.Remove(physicsDataA);
+            RemoveContact(physicsDataA, physicsDataB);
+            RemoveContact(physicsDataB, physicsDataA);
         }
+    }
+    
+    private void AddContact(PhysicsData physicsSource, PhysicsData physicsTarget, Contact contact, bool revertNormal = false)
+    {
+        contact.GetWorldManifold(out var normal, out var points);
+        if (revertNormal)
+        {
+            normal = -normal;
+        }
+        var contactRecordData = new ContactRecordData()
+        {
+            OtherPhysicsData = physicsTarget,
+            Normal = normal.ToSVector2(),
+            ContactPoint = points[0].ToSVector2()
+        };
+        physicsSource.Contacts[physicsTarget.BindEntityId] = contactRecordData;
+    }
+    
+    private void RemoveContact(PhysicsData physicsSource, PhysicsData physicsTarget)
+    {
+        physicsSource.Contacts.Remove(physicsTarget.BindEntityId);
     }
 
     private void PreSolve(Contact contact, ref Manifold oldmanifold)

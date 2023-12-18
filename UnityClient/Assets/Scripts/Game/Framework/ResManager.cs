@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
@@ -10,9 +11,6 @@ namespace Game.Framework
 {
     public class ResManager : MonoSingleton<ResManager>
     {
-        public Dictionary<string, ResMapper> resMappers =
-            new Dictionary<string, ResMapper>(StringComparer.OrdinalIgnoreCase);
-
 #if UNITY_EDITOR
         public ADBResLoader ADBResLoader { get; } = new ADBResLoader();
 #endif
@@ -22,7 +20,7 @@ namespace Game.Framework
         {
             get
             {
-#if UNITY_EDITOR
+#if UNITY_EDITOR && !AB_LOAD_TEST
                 yield return ADBResLoader;
 #else
                 yield return ABResLoader;
@@ -32,9 +30,43 @@ namespace Game.Framework
         
         private SLogger _logger = new SLogger("ResManager");
 
-        public void Init()
+#pragma warning disable CS1998
+        public async UniTask Init()
+#pragma warning restore CS1998
         {
             Reset();
+
+#if !UNITY_EDITOR || AB_LOAD_TEST
+            await LoadStreamingAssetsBundle();
+#endif
+        }
+
+        private async UniTask LoadStreamingAssetsBundle()
+        {
+            var streamingAssetsPath = Application.streamingAssetsPath;
+            var abBundleListPath = Path.Combine(streamingAssetsPath, "AssetBundleList.txt");
+            
+            var abBundleList = await UnityWebRequest.Get(abBundleListPath).SendWebRequest();
+            if (abBundleList.result != UnityWebRequest.Result.Success)
+            {
+                _logger.LogError($"Load AssetBundleList.txt error: {abBundleList.error}");
+                return;
+            }
+            
+            var abBundleListText = abBundleList.downloadHandler.text;
+            var abBundleNames = abBundleListText.Split('\n');
+            foreach (var abBundleName in abBundleNames)
+            {
+                var fileName = abBundleName.Trim();
+                if (string.IsNullOrEmpty(fileName))
+                {
+                    continue;
+                }
+                
+                var abRefAsset = new ABRefAsset(Path.Combine(streamingAssetsPath, fileName));
+                await abRefAsset.LoadAssetBundleAsync();
+                ABResLoader.AddABAsset(abRefAsset);
+            }
         }
 
         public void Reset()
@@ -48,40 +80,21 @@ namespace Game.Framework
             Resources.UnloadUnusedAssets();
         }
 
-        public void CacheAssetBundleDir(string rootPath)
-        {
-            if (!Directory.Exists(rootPath))
-            {
-                return;
-            }
-
-            var abPaths = Directory.GetFiles(rootPath, "*.ab", SearchOption.AllDirectories);
-            foreach (var abPath in abPaths)
-            {
-                AddABAsset(abPath);
-            }
-        }
-
         #region 资源加载接口
 
         /// <summary>
         /// 异步加载资源
         /// </summary>
         /// <param name="path"></param>
+        /// <param name="loadType"></param>
         /// <returns></returns>
-        public async UniTask<Object> LoadAssetAsync(string path)
+        public async UniTask<Object> LoadAssetAsync(string path, Type loadType)
         {
-            if (resMappers.TryGetValue(path, out var resMapper))
+            foreach (var resLoader in ResLoaders)
             {
-                return await resMapper.LoadAsync();
-            }
-
-            foreach (var pair in resMappers)
-            {
-                if (pair.Key.Contains(path))
+                if (resLoader.HasAsset(path))
                 {
-                    AddResMapper(path, new ResMapper(path, pair.Value.resLoader));
-                    return await pair.Value.LoadAsync();
+                    return await resLoader.LoadAsync(path, loadType);
                 }
             }
 
@@ -96,27 +109,23 @@ namespace Game.Framework
         /// <returns></returns>
         public async UniTask<T> LoadAssetAsync<T>(string path) where T : Object
         {
-            return await LoadAssetAsync(path) as T;
+            return await LoadAssetAsync(path, typeof(T)) as T;
         }
 
         /// <summary>
         /// 同步加载资源，返回值表示资源是否存在且加载完毕
         /// </summary>
         /// <param name="path"></param>
+        /// <param name="loadType"></param>
         /// <returns></returns>
-        public Object LoadAsset(string path)
+        public Object LoadAsset(string path, Type loadType)
         {
-            if (resMappers.TryGetValue(path, out var resMapper))
+            foreach (var resLoader in ResLoaders)
             {
-                return resMapper.Load();
-            }
-            
-            foreach (var pair in resMappers)
-            {
-                if (pair.Key.Contains(path))
+                if (resLoader.HasAsset(path))
                 {
-                    AddResMapper(path, new ResMapper(path, pair.Value.resLoader));
-                    return pair.Value.Load();
+                    var asset = resLoader.Load(path, loadType);
+                    return asset;
                 }
             }
 
@@ -131,22 +140,16 @@ namespace Game.Framework
         /// <returns></returns>
         public T LoadAsset<T>(string path) where T : Object
         {
-            return LoadAsset(path) as T;
+            return LoadAsset(path, typeof(T)) as T;
         }
 
         public byte[] LoadBytes(string path)
         {
-            if (resMappers.TryGetValue(path, out var resMapper))
+            foreach (var resLoader in ResLoaders)
             {
-                return resMapper.LoadBytes();
-            }
-            
-            foreach (var pair in resMappers)
-            {
-                if (pair.Key.Contains(path))
+                if (resLoader.HasAsset(path))
                 {
-                    AddResMapper(path, new ResMapper(path, pair.Value.resLoader));
-                    return pair.Value.LoadBytes();
+                    return resLoader.LoadBytes(path);
                 }
             }
 
@@ -155,9 +158,12 @@ namespace Game.Framework
 
         public async UniTask<byte[]> LoadBytesAsync(string path)
         {
-            if (resMappers.TryGetValue(path, out var resMapper))
+            foreach (var resLoader in ResLoaders)
             {
-                return await resMapper.LoadBytesAsync();
+                if (resLoader.HasAsset(path))
+                {
+                    return await resLoader.LoadBytesAsync(path);
+                }
             }
 
             return null;
@@ -186,31 +192,97 @@ namespace Game.Framework
         /// <returns></returns>
         public bool HaveAsset(string path)
         {
-            return resMappers.ContainsKey(path);
-        }
-
-        public void AddABAsset(string path)
-        {
-            var abAsset = new ABRefAsset(path);
-            abAsset.LoadAssetBundle();
-
-            var allAssetsName = abAsset.RefAssetBundle.GetAllAssetNames();
-            foreach (var resPath in allAssetsName)
+            foreach (var resLoader in ResLoaders)
             {
-                if (!resPath.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
-                    continue;
-
-                AddResMapper(resPath, new ResMapper(resPath, ABResLoader));
+                if (resLoader.HasAsset(path))
+                {
+                    return true;
+                }
             }
 
-            ABResLoader.AddABAssetToFirst(abAsset);
+            return false;
         }
 
-        public void AddResMapper(string path, ResMapper resMapper)
-        {
-            resMappers[path] = resMapper;
-        }
 
         #endregion
+        
+        public GameObject Spawn(string assetPath)
+        {
+            var prefab = LoadAsset<GameObject>(assetPath);
+            if (prefab == null)
+            {
+                _logger.LogError($"SpawnPrefab failed, assetPath: {assetPath}");
+                return null;
+            }
+            
+            var go = Instantiate(prefab);
+            go.name = prefab.name;
+            return go;
+        }
+
+        public GameObject Spawn(string assetPath, Transform goRoot)
+        {
+            var prefab = LoadAsset<GameObject>(assetPath);
+            if (prefab == null)
+            {
+                _logger.LogError($"SpawnPrefab failed, assetPath: {assetPath}");
+                return null;
+            }
+            
+            var go = Instantiate(prefab, goRoot);
+            go.name = prefab.name;
+            return go;
+        }
+        
+        public async UniTask<GameObject> SpawnAsync(string assetPath)
+        {
+            var prefab = await LoadAssetAsync<GameObject>(assetPath);
+            if (prefab == null)
+            {
+                _logger.LogError($"SpawnPrefab failed, assetPath: {assetPath}");
+                return null;
+            }
+            
+            var go = Instantiate(prefab);
+            go.name = prefab.name;
+            return go;
+        }
+        
+        public async UniTask<GameObject> SpawnAsync(string assetPath, Transform goRoot)
+        {
+            var prefab = await LoadAssetAsync<GameObject>(assetPath);
+            if (prefab == null)
+            {
+                _logger.LogError($"SpawnPrefab failed, assetPath: {assetPath}");
+                return null;
+            }
+            
+            var go = Instantiate(prefab, goRoot);
+            go.name = prefab.name;
+            return go;
+        }
+
+        public IEnumerable<string> LoadAllAssetsName(string path, string extension, bool includeSubFolders)
+        {
+            foreach (var resLoader in ResLoaders)
+            {
+                foreach (var assetName in resLoader.LoadAllAssetsName(path, extension, includeSubFolders))
+                {
+                    yield return assetName;
+                }
+            }
+        }
+        
+        public IEnumerable<T> LoadAllAssets<T>(string path, string extension, bool includeSubFolders) where T : Object
+        {
+            foreach (var assetPath in LoadAllAssetsName(path, extension, includeSubFolders))
+            {
+                var asset = LoadAsset<T>(assetPath);
+                if (asset != null)
+                {
+                    yield return asset;
+                }
+            }
+        }
     }
 }

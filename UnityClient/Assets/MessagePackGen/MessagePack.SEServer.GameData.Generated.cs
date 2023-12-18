@@ -47,27 +47,35 @@ namespace MessagePack.SEServer.GameData.Resolvers
 
         static GeneratedGameDataResolverGetFormatterHelper()
         {
-            lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(19)
+            lookup = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(27)
             {
-                { typeof(global::System.Collections.Generic.Queue<global::SEServer.Data.Message.NotifyData>), 0 },
-                { typeof(global::System.Collections.Generic.Queue<global::SEServer.Data.Message.SubmitData>), 1 },
-                { typeof(global::SEServer.GameData.GraphType), 2 },
-                { typeof(global::SEServer.Data.CId), 3 },
-                { typeof(global::SEServer.Data.EId), 4 },
-                { typeof(global::SEServer.Data.Message.NotifyData), 5 },
-                { typeof(global::SEServer.Data.Message.SubmitData), 6 },
-                { typeof(global::SEServer.Data.PlayerId), 7 },
-                { typeof(global::SEServer.Data.SVector2), 8 },
-                { typeof(global::SEServer.GameData.Component.GraphComponent), 9 },
-                { typeof(global::SEServer.GameData.Component.MoveInputComponent), 10 },
-                { typeof(global::SEServer.GameData.Component.PlayerComponent), 11 },
-                { typeof(global::SEServer.GameData.Component.PlayerNotifyComponent), 12 },
-                { typeof(global::SEServer.GameData.Component.PlayerNotifyGlobalComponent), 13 },
-                { typeof(global::SEServer.GameData.Component.PlayerSubmitComponent), 14 },
-                { typeof(global::SEServer.GameData.Component.PlayerSubmitGlobalComponent), 15 },
-                { typeof(global::SEServer.GameData.Component.PropertyComponent), 16 },
-                { typeof(global::SEServer.GameData.Component.ShootInputComponent), 17 },
-                { typeof(global::SEServer.GameData.Component.TransformComponent), 18 },
+                { typeof(global::System.Collections.Generic.List<global::SEServer.GameData.Component.ScoreData>), 0 },
+                { typeof(global::System.Collections.Generic.Queue<global::SEServer.Data.Message.NotifyData>), 1 },
+                { typeof(global::System.Collections.Generic.Queue<global::SEServer.Data.Message.SubmitData>), 2 },
+                { typeof(global::SEServer.GameData.GraphType), 3 },
+                { typeof(global::SEServer.Data.CId), 4 },
+                { typeof(global::SEServer.Data.EId), 5 },
+                { typeof(global::SEServer.Data.Message.NotifyData), 6 },
+                { typeof(global::SEServer.Data.Message.SubmitData), 7 },
+                { typeof(global::SEServer.Data.PlayerId), 8 },
+                { typeof(global::SEServer.Data.SVector2), 9 },
+                { typeof(global::SEServer.GameData.Component.GraphComponent), 10 },
+                { typeof(global::SEServer.GameData.Component.InteractInputComponent), 11 },
+                { typeof(global::SEServer.GameData.Component.MapInfoGlobalComponent), 12 },
+                { typeof(global::SEServer.GameData.Component.MoveInputComponent), 13 },
+                { typeof(global::SEServer.GameData.Component.PlayerComponent), 14 },
+                { typeof(global::SEServer.GameData.Component.PlayerNotifyComponent), 15 },
+                { typeof(global::SEServer.GameData.Component.PlayerNotifyGlobalComponent), 16 },
+                { typeof(global::SEServer.GameData.Component.PlayerSubmitComponent), 17 },
+                { typeof(global::SEServer.GameData.Component.PlayerSubmitGlobalComponent), 18 },
+                { typeof(global::SEServer.GameData.Component.ScoreBoardGlobalDataComponent), 19 },
+                { typeof(global::SEServer.GameData.Component.ScoreBoardGlobalViewComponent), 20 },
+                { typeof(global::SEServer.GameData.Component.ScoreData), 21 },
+                { typeof(global::SEServer.GameData.Component.ScoreViewComponent), 22 },
+                { typeof(global::SEServer.GameData.Component.ShootInputComponent), 23 },
+                { typeof(global::SEServer.GameData.Component.TransformComponent), 24 },
+                { typeof(global::SEServer.GameData.Component.UnitAimViewComponent), 25 },
+                { typeof(global::SEServer.GameData.Component.UnitHealthViewComponent), 26 },
             };
         }
 
@@ -81,25 +89,33 @@ namespace MessagePack.SEServer.GameData.Resolvers
 
             switch (key)
             {
-                case 0: return new global::MessagePack.Formatters.QueueFormatter<global::SEServer.Data.Message.NotifyData>();
-                case 1: return new global::MessagePack.Formatters.QueueFormatter<global::SEServer.Data.Message.SubmitData>();
-                case 2: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.GraphTypeFormatter();
-                case 3: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.CIdFormatter();
-                case 4: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.EIdFormatter();
-                case 5: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.Message.NotifyDataFormatter();
-                case 6: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.Message.SubmitDataFormatter();
-                case 7: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.PlayerIdFormatter();
-                case 8: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.SVector2Formatter();
-                case 9: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.GraphComponentFormatter();
-                case 10: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.MoveInputComponentFormatter();
-                case 11: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PlayerComponentFormatter();
-                case 12: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PlayerNotifyComponentFormatter();
-                case 13: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PlayerNotifyGlobalComponentFormatter();
-                case 14: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PlayerSubmitComponentFormatter();
-                case 15: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PlayerSubmitGlobalComponentFormatter();
-                case 16: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PropertyComponentFormatter();
-                case 17: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.ShootInputComponentFormatter();
-                case 18: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.TransformComponentFormatter();
+                case 0: return new global::MessagePack.Formatters.ListFormatter<global::SEServer.GameData.Component.ScoreData>();
+                case 1: return new global::MessagePack.Formatters.QueueFormatter<global::SEServer.Data.Message.NotifyData>();
+                case 2: return new global::MessagePack.Formatters.QueueFormatter<global::SEServer.Data.Message.SubmitData>();
+                case 3: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.GraphTypeFormatter();
+                case 4: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.CIdFormatter();
+                case 5: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.EIdFormatter();
+                case 6: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.Message.NotifyDataFormatter();
+                case 7: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.Message.SubmitDataFormatter();
+                case 8: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.PlayerIdFormatter();
+                case 9: return new MessagePack.SEServer.GameData.Formatters.SEServer.Data.SVector2Formatter();
+                case 10: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.GraphComponentFormatter();
+                case 11: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.InteractInputComponentFormatter();
+                case 12: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.MapInfoGlobalComponentFormatter();
+                case 13: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.MoveInputComponentFormatter();
+                case 14: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PlayerComponentFormatter();
+                case 15: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PlayerNotifyComponentFormatter();
+                case 16: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PlayerNotifyGlobalComponentFormatter();
+                case 17: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PlayerSubmitComponentFormatter();
+                case 18: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.PlayerSubmitGlobalComponentFormatter();
+                case 19: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.ScoreBoardGlobalDataComponentFormatter();
+                case 20: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.ScoreBoardGlobalViewComponentFormatter();
+                case 21: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.ScoreDataFormatter();
+                case 22: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.ScoreViewComponentFormatter();
+                case 23: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.ShootInputComponentFormatter();
+                case 24: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.TransformComponentFormatter();
+                case 25: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.UnitAimViewComponentFormatter();
+                case 26: return new MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component.UnitHealthViewComponentFormatter();
                 default: return null;
             }
         }
@@ -545,10 +561,11 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component
             }
 
             global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(3);
+            writer.WriteArrayHeader(4);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Serialize(ref writer, value.Id, options);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Serialize(ref writer, value.EntityId, options);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.GameData.GraphType>(formatterResolver).Serialize(ref writer, value.Type, options);
+            writer.Write(value.Res);
         }
 
         public global::SEServer.GameData.Component.GraphComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
@@ -575,6 +592,121 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component
                         break;
                     case 2:
                         ____result.Type = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.GameData.GraphType>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 3:
+                        ____result.Res = reader.ReadInt32();
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class InteractInputComponentFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.GameData.Component.InteractInputComponent>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.GameData.Component.InteractInputComponent value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(4);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Serialize(ref writer, value.Id, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Serialize(ref writer, value.EntityId, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.PlayerId>(formatterResolver).Serialize(ref writer, value.Owner, options);
+            writer.Write(value.SelectedWeaponIndex);
+        }
+
+        public global::SEServer.GameData.Component.InteractInputComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.GameData.Component.InteractInputComponent();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.Id = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 1:
+                        ____result.EntityId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 2:
+                        ____result.Owner = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.PlayerId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 3:
+                        ____result.SelectedWeaponIndex = reader.ReadInt32();
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class MapInfoGlobalComponentFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.GameData.Component.MapInfoGlobalComponent>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.GameData.Component.MapInfoGlobalComponent value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(3);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Serialize(ref writer, value.Id, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Serialize(ref writer, value.EntityId, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.MapId, options);
+        }
+
+        public global::SEServer.GameData.Component.MapInfoGlobalComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.GameData.Component.MapInfoGlobalComponent();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.Id = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 1:
+                        ____result.EntityId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 2:
+                        ____result.MapId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Deserialize(ref reader, options);
                         break;
                     default:
                         reader.Skip();
@@ -937,10 +1069,10 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component
         }
     }
 
-    public sealed class PropertyComponentFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.GameData.Component.PropertyComponent>
+    public sealed class ScoreBoardGlobalDataComponentFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.GameData.Component.ScoreBoardGlobalDataComponent>
     {
 
-        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.GameData.Component.PropertyComponent value, global::MessagePack.MessagePackSerializerOptions options)
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.GameData.Component.ScoreBoardGlobalDataComponent value, global::MessagePack.MessagePackSerializerOptions options)
         {
             if (value == null)
             {
@@ -949,15 +1081,13 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component
             }
 
             global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(5);
+            writer.WriteArrayHeader(3);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Serialize(ref writer, value.Id, options);
             global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Serialize(ref writer, value.EntityId, options);
-            writer.Write(value.Speed);
-            writer.Write(value.TargetAimRotation);
-            writer.Write(value.Hp);
+            writer.Write(value.PlayerIdHash);
         }
 
-        public global::SEServer.GameData.Component.PropertyComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        public global::SEServer.GameData.Component.ScoreBoardGlobalDataComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
         {
             if (reader.TryReadNil())
             {
@@ -967,7 +1097,7 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component
             options.Security.DepthStep(ref reader);
             global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
             var length = reader.ReadArrayHeader();
-            var ____result = new global::SEServer.GameData.Component.PropertyComponent();
+            var ____result = new global::SEServer.GameData.Component.ScoreBoardGlobalDataComponent();
 
             for (int i = 0; i < length; i++)
             {
@@ -980,13 +1110,165 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component
                         ____result.EntityId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Deserialize(ref reader, options);
                         break;
                     case 2:
-                        ____result.Speed = reader.ReadSingle();
+                        ____result.PlayerIdHash = reader.ReadInt32();
                         break;
-                    case 3:
-                        ____result.TargetAimRotation = reader.ReadSingle();
+                    default:
+                        reader.Skip();
                         break;
-                    case 4:
-                        ____result.Hp = reader.ReadSingle();
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class ScoreBoardGlobalViewComponentFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.GameData.Component.ScoreBoardGlobalViewComponent>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.GameData.Component.ScoreBoardGlobalViewComponent value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(3);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Serialize(ref writer, value.Id, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Serialize(ref writer, value.EntityId, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.GameData.Component.ScoreData>>(formatterResolver).Serialize(ref writer, value.ScoreData, options);
+        }
+
+        public global::SEServer.GameData.Component.ScoreBoardGlobalViewComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.GameData.Component.ScoreBoardGlobalViewComponent();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.Id = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 1:
+                        ____result.EntityId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 2:
+                        ____result.ScoreData = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::System.Collections.Generic.List<global::SEServer.GameData.Component.ScoreData>>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class ScoreDataFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.GameData.Component.ScoreData>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.GameData.Component.ScoreData value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(2);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Serialize(ref writer, value.Name, options);
+            writer.Write(value.Score);
+        }
+
+        public global::SEServer.GameData.Component.ScoreData Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.GameData.Component.ScoreData();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.Name = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<string>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 1:
+                        ____result.Score = reader.ReadInt32();
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class ScoreViewComponentFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.GameData.Component.ScoreViewComponent>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.GameData.Component.ScoreViewComponent value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(3);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Serialize(ref writer, value.Id, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Serialize(ref writer, value.EntityId, options);
+            writer.Write(value.Score);
+        }
+
+        public global::SEServer.GameData.Component.ScoreViewComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.GameData.Component.ScoreViewComponent();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.Id = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 1:
+                        ____result.EntityId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 2:
+                        ____result.Score = reader.ReadInt32();
                         break;
                     default:
                         reader.Skip();
@@ -1103,6 +1385,118 @@ namespace MessagePack.SEServer.GameData.Formatters.SEServer.GameData.Component
                         break;
                     case 3:
                         ____result.Rotation = reader.ReadSingle();
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class UnitAimViewComponentFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.GameData.Component.UnitAimViewComponent>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.GameData.Component.UnitAimViewComponent value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(3);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Serialize(ref writer, value.Id, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Serialize(ref writer, value.EntityId, options);
+            writer.Write(value.TargetAimRotation);
+        }
+
+        public global::SEServer.GameData.Component.UnitAimViewComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.GameData.Component.UnitAimViewComponent();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.Id = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 1:
+                        ____result.EntityId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 2:
+                        ____result.TargetAimRotation = reader.ReadSingle();
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            reader.Depth--;
+            return ____result;
+        }
+    }
+
+    public sealed class UnitHealthViewComponentFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::SEServer.GameData.Component.UnitHealthViewComponent>
+    {
+
+        public void Serialize(ref global::MessagePack.MessagePackWriter writer, global::SEServer.GameData.Component.UnitHealthViewComponent value, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (value == null)
+            {
+                writer.WriteNil();
+                return;
+            }
+
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            writer.WriteArrayHeader(4);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Serialize(ref writer, value.Id, options);
+            global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Serialize(ref writer, value.EntityId, options);
+            writer.Write(value.HpMax);
+            writer.Write(value.Hp);
+        }
+
+        public global::SEServer.GameData.Component.UnitHealthViewComponent Deserialize(ref global::MessagePack.MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        {
+            if (reader.TryReadNil())
+            {
+                return null;
+            }
+
+            options.Security.DepthStep(ref reader);
+            global::MessagePack.IFormatterResolver formatterResolver = options.Resolver;
+            var length = reader.ReadArrayHeader();
+            var ____result = new global::SEServer.GameData.Component.UnitHealthViewComponent();
+
+            for (int i = 0; i < length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        ____result.Id = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.CId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 1:
+                        ____result.EntityId = global::MessagePack.FormatterResolverExtensions.GetFormatterWithVerify<global::SEServer.Data.EId>(formatterResolver).Deserialize(ref reader, options);
+                        break;
+                    case 2:
+                        ____result.HpMax = reader.ReadSingle();
+                        break;
+                    case 3:
+                        ____result.Hp = reader.ReadSingle();
                         break;
                     default:
                         reader.Skip();

@@ -4,7 +4,14 @@ namespace SEServer.GameData.Builder;
 
 public class PlayerInitNotifyGlobalMessageBuilder
 {
+    private int _playerId;
     private int _playerEntityId;
+    
+    public PlayerInitNotifyGlobalMessageBuilder SetPlayerId(int playerId)
+    {
+        _playerId = playerId;
+        return this;
+    }
     
     public PlayerInitNotifyGlobalMessageBuilder SetPlayerEntity(int entityId)
     {
@@ -17,7 +24,8 @@ public class PlayerInitNotifyGlobalMessageBuilder
         return new NotifyData()
         {
             Type = PlayerNotifyGlobalMessageType.PLAYER_INIT,
-            Arg0 = _playerEntityId
+            Arg0 = _playerId,
+            Arg1 = _playerEntityId
         };
     }
 }

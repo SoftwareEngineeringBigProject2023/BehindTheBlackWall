@@ -32,6 +32,11 @@ namespace SEServer.Client
             // 发送消息给服务器
             HandleSendClientMessage();
         }
+        
+        public void Stop()
+        {
+            ServerContainer.Get<IClientNetworkService>().Stop();
+        }
 
         private void HandleReceiveServerMessage()
         {

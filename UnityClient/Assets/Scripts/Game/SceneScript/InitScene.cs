@@ -6,10 +6,10 @@ namespace Game.SceneScript
 {
     public class InitScene : MonoBehaviour
     {
-        private void Start()
+        private async void Start()
         {
             var gameManager = GameManager.Instance;
-            gameManager.Init();
+            await gameManager.Init();
 
             gameManager.SwitchToScene("GameTest");
         }

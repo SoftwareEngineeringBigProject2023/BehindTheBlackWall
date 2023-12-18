@@ -1,0 +1,82 @@
+[
+    {
+        "PrimaryKey": "Gun_1",
+        "DisplayName": "测试武器1",
+        "Description": "",
+        "ShootInterval": 0.5,
+        "BulletCapacity": 10,
+        "ReloadTime": 2.5,
+        "BaseDamage": 5.0,
+        "BulletSpeed": 30.0,
+        "Range": 80.0,
+        "StartFlame":1,
+        "ShootSound": 1,
+        "ShootBullets": [
+            {
+                "BulletId": "Bullet_2",
+                "Angle": 0.0,
+                "Position": "(0.0, 0.0)"
+            }
+        ]
+    },
+    {
+        "PrimaryKey": "Gun_2",
+        "DisplayName": "测试武器2",
+        "Description": "",
+        "ShootInterval": 1.5,
+        "BulletCapacity": 10,
+        "ReloadTime": 2.5,
+        "BaseDamage": 2.0,
+        "BulletSpeed": 30.0,
+        "Range": 30.0,
+        "StartFlame": 2,
+        "ShootSound": 2,
+        "ShootBullets": [
+            {
+                "BulletId": "Bullet_GUN_2_1",
+                "Angle": -20,
+                "Position": "(0.0, 0.0)"
+            },
+            {
+                "BulletId": "Bullet_GUN_2_1",
+                "Angle": -10,
+                "Position": "(0.0, 0.0)"
+            },
+            {
+                "BulletId": "Bullet_GUN_2_1",
+                "Angle": 0,
+                "Position": "(0.0, 0.0)"
+            },
+            {
+                "BulletId": "Bullet_GUN_2_1",
+                "Angle": 10,
+                "Position": "(0.0, 0.0)"
+            },
+            {
+                "BulletId": "Bullet_GUN_2_1",
+                "Angle": 20,
+                "Position": "(0.0, 0.0)"
+            }
+        ]
+    },
+    {
+        "PrimaryKey": "Gun_3",
+        "DisplayName": "测试武器3",
+        "Description": "",
+        "ShootInterval": 0.15,
+        "BulletCapacity": 10,
+        "ReloadTime": 2.5,
+        "BaseDamage": 1.0,
+        "BulletSpeed": 30.0,
+        "Range": 50.0,
+        "StartFlame": 3,
+        "ShootSound": 3,
+        "ShootBullets": [
+            {
+                "BulletId": "Bullet_GUN_3_1",
+                "Angle": 0.0,
+                "Position": "(0.0, 0.0)"
+            }
+        ]
+    }
+]

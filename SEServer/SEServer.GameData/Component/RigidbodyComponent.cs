@@ -46,9 +46,11 @@ public class RigidbodyComponent : IComponent
     /// <summary>
     /// 当前设置的速度
     /// </summary>
-    public SVector2 SetVelocity { get; set; } = SVector2.Invalid;
+    public SVector2? SetVelocity { get; set; } = null;
     /// <summary>
     /// 当前设置的旋转角度
     /// </summary>
     public float? SetRotation { get; set; } = 0;
+    public string Tag { get; set; } = "";
+    public SVector2? SetPosition { get; set; } = null;
 }
