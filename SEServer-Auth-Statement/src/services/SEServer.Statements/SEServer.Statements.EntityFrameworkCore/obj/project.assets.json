@@ -3358,11 +3358,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj",
+      "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj",
       "projectName": "SEServer.Statements.EntityFrameworkCore",
-      "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj",
+      "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj",
       "packagesPath": "D:\\NuGet\\packages",
-      "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\obj\\",
+      "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3384,14 +3384,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj"
+            "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj"
+            "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj"
             },
-            "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj": {
-              "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj"
+            "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj": {
+              "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj"
             }
           }
         }
@@ -3433,7 +3433,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

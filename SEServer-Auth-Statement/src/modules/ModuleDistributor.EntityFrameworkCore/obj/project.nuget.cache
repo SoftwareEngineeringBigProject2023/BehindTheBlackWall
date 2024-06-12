@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uVnncz/TCIwAGqBWgGmg6YhU1OrUuQB6d4JgrxQXpeIT2lnnlXmlUH5wd7AIMYHQlg+EC9fZE9o//HrVs6yn7A==",
+  "dgSpecHash": "WmYKR6Annus/6x7qJ13rZIJ0aw3/yOYDh++SOE0Z6zl2gqCEAhd77hNGdbRY37xxyqnkrVO9czavnVHrNPNF2g==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj",
   "expectedPackageFiles": [
     "D:\\NuGet\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
     "D:\\NuGet\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.13\\microsoft.entityframeworkcore.abstractions.7.0.13.nupkg.sha512",

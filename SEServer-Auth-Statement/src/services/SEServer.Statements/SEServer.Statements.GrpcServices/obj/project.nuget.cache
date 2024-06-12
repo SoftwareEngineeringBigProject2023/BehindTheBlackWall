@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eEl4O70OBbNA7+MuAdI9fMUJvV/LgiXaSV09KASZ3Hy+ln8LBbPnwyOWAcxhBJS0arqtaWRbvbYIJ2ZIcUfrpg==",
+  "dgSpecHash": "7bY06xQ6g1KOnjCP5zM7q4UE9PSlYdeWPEVhmwWUAQ/GvAPh1Wpl7PFz3+GMZnZgcY0Z8K6IYM6FeVSCz/ovSg==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj",
   "expectedPackageFiles": [
     "D:\\NuGet\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "D:\\NuGet\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

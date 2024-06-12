@@ -37,3 +37,16 @@ D:\aspdotnet\SEServer\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\Mod
 D:\aspdotnet\SEServer\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\refint\ModuleDistributor.Logging.dll
 D:\aspdotnet\SEServer\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ModuleDistributor.Logging.pdb
 D:\aspdotnet\SEServer\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ref\ModuleDistributor.Logging.dll
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\bin\Debug\net7.0\ModuleDistributor.Logging.deps.json
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\bin\Debug\net7.0\ModuleDistributor.Logging.dll
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\bin\Debug\net7.0\ModuleDistributor.Logging.pdb
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ModuleDistributor.Logging.csproj.AssemblyReference.cache
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ModuleDistributor.Logging.GeneratedMSBuildEditorConfig.editorconfig
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ModuleDistributor.Logging.AssemblyInfoInputs.cache
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ModuleDistributor.Logging.AssemblyInfo.cs
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ModuleDistributor.Logging.csproj.CoreCompileInputs.cache
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ModuleDistributor.Logging.csproj.Fody.CopyLocal.cache
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ModuleDistributor.Logging.dll
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\refint\ModuleDistributor.Logging.dll
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ModuleDistributor.Logging.pdb
+D:\aspdotnet\SEServer-Auth-Statement\src\modules\ModuleDistributor.Logging\obj\Debug\net7.0\ref\ModuleDistributor.Logging.dll

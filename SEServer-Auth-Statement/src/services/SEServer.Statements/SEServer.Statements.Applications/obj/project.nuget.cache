@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RmACOhl2+vRpXLbrnTheXYfG3LL75X13eh4H0rIWmLJbcGdrStjKJN2G7eOuQDEfTfi3jvqXEWNaanX8SW3Pmg==",
+  "dgSpecHash": "5uo8ksY0WzS6wCbBbomSeZ7INI2PGuENc3msXkP9Kg6tb+eXAC9LxXImC0sesT+OYWQlfgJu8PlDqY6yZKRgtA==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj",
   "expectedPackageFiles": [
     "D:\\NuGet\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "D:\\NuGet\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

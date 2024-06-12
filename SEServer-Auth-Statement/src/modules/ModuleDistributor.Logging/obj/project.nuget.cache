@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JXY4NKxOnIkL6sGsWC4Gq6Hxk9V8uqUynx4TiCtrqTwzKNihXyc+iSbt7H76uKGX952ytMgyvJZpsO4vomEc+w==",
+  "dgSpecHash": "KmTFElQ6meDBUy17VSqtpwtDY1ZscpreyY9rHcRyM0CkurOc1pjRxvw9cWuOqTUXXPVBAB+2izuRpWEcn6+KOg==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
   "expectedPackageFiles": [
     "D:\\NuGet\\packages\\fody\\6.2.5\\fody.6.2.5.nupkg.sha512",
     "D:\\NuGet\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",

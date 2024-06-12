@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements\\SEServer.Statements.csproj": {}
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements\\SEServer.Statements.csproj": {}
   },
   "projects": {
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
         "projectName": "ModuleDistributor.Dapr.Actors",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
               }
             }
           }
@@ -70,18 +70,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj",
         "projectName": "ModuleDistributor.Dapr.Configuration",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -103,8 +103,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj"
               }
             }
           }
@@ -140,18 +140,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
         "projectName": "ModuleDistributor.Dapr",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -173,8 +173,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
               }
             }
           }
@@ -210,18 +210,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj",
         "projectName": "ModuleDistributor.DependencyInjection",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.DependencyInjection\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.DependencyInjection\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -243,8 +243,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
               }
             }
           }
@@ -274,18 +274,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj",
         "projectName": "ModuleDistributor.EntityFrameworkCore",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -307,8 +307,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
               }
             }
           }
@@ -344,18 +344,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj",
         "projectName": "ModuleDistributor.GrpcWebSocketBridge",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -377,8 +377,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj"
               }
             }
           }
@@ -414,18 +414,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj",
         "projectName": "ModuleDistributor.Grpc",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Grpc\\ModuleDistributor.Grpc.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Grpc\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Grpc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -447,8 +447,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
               }
             }
           }
@@ -484,18 +484,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
         "projectName": "ModuleDistributor.Logging",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -554,18 +554,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj",
         "projectName": "ModuleDistributor.Serilog",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -587,8 +587,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj"
               }
             }
           }
@@ -652,18 +652,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
         "projectName": "ModuleDistributor",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -715,18 +715,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj",
         "projectName": "SEServer.Statements.Applications.Abstracts",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -748,11 +748,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Actors\\ModuleDistributor.Dapr.Actors.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj"
               }
             }
           }
@@ -782,18 +782,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj",
         "projectName": "SEServer.Statements.Applications",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -815,17 +815,17 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.DependencyInjection\\ModuleDistributor.DependencyInjection.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications.Abstracts\\SEServer.Statements.Applications.Abstracts.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj"
               }
             }
           }
@@ -865,18 +865,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj",
         "projectName": "SEServer.Statements.Domain.Shared",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -931,18 +931,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj",
         "projectName": "SEServer.Statements.Domain",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -964,8 +964,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj"
               }
             }
           }
@@ -995,18 +995,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj",
         "projectName": "SEServer.Statements.EntityFrameworkCore",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\SEServer.Statements.EntityFrameworkCore.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.EntityFrameworkCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1028,14 +1028,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.EntityFrameworkCore\\ModuleDistributor.EntityFrameworkCore.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain.Shared\\SEServer.Statements.Domain.Shared.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Domain\\SEServer.Statements.Domain.csproj"
               }
             }
           }
@@ -1077,18 +1077,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj",
         "projectName": "SEServer.Statements.GrpcServices",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1110,14 +1110,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.GrpcWebSocketBridge\\ModuleDistributor.GrpcWebSocketBridge.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.Applications\\SEServer.Statements.Applications.csproj"
               }
             }
           }
@@ -1153,18 +1153,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements\\SEServer.Statements.csproj": {
+    "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements\\SEServer.Statements.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements\\SEServer.Statements.csproj",
+        "projectUniqueName": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements\\SEServer.Statements.csproj",
         "projectName": "SEServer.Statements",
-        "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements\\SEServer.Statements.csproj",
+        "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements\\SEServer.Statements.csproj",
         "packagesPath": "D:\\NuGet\\packages",
-        "outputPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements\\obj\\",
+        "outputPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1186,17 +1186,17 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr.Configuration\\ModuleDistributor.Dapr.Configuration.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Logging\\ModuleDistributor.Logging.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Serilog\\ModuleDistributor.Serilog.csproj"
               },
-              "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj": {
-                "projectPath": "D:\\aspdotnet\\SEServer\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj"
+              "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj": {
+                "projectPath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\services\\SEServer.Statements\\SEServer.Statements.GrpcServices\\SEServer.Statements.GrpcServices.csproj"
               }
             }
           }
@@ -1243,7 +1243,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

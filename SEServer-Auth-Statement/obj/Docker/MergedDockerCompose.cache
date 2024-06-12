@@ -1,4 +1,4 @@
-name: dockercompose37235877509304208
+name: dockercompose3793359312407329459
 services:
   dapr-placement:
     command:
@@ -41,7 +41,7 @@ services:
     restart: unless-stopped
   seserver-auth:
     build:
-      context: D:\aspdotnet\SEServer
+      context: D:\aspdotnet\SEServer-Auth-Statement
       dockerfile: src/services/SEServer.Auth/SEServer.Auth/Dockerfile
     container_name: seserver-auth
     depends_on:
@@ -99,18 +99,18 @@ services:
     network_mode: service:seserver-auth
     volumes:
       - type: bind
-        source: D:\aspdotnet\SEServer\dapr\components
+        source: D:\aspdotnet\SEServer-Auth-Statement\dapr\components
         target: /components
         bind:
           create_host_path: true
       - type: bind
-        source: D:\aspdotnet\SEServer\dapr\configuration
+        source: D:\aspdotnet\SEServer-Auth-Statement\dapr\configuration
         target: /configuration
         bind:
           create_host_path: true
   seserver-gateway:
     build:
-      context: D:\aspdotnet\SEServer
+      context: D:\aspdotnet\SEServer-Auth-Statement
       dockerfile: src/gateway/SEServer.Gateway/Dockerfile
     container_name: seserver-gateway
     depends_on:
@@ -150,7 +150,7 @@ services:
           create_host_path: true
   seserver-statements:
     build:
-      context: D:\aspdotnet\SEServer
+      context: D:\aspdotnet\SEServer-Auth-Statement
       dockerfile: src/services/SEServer.Statements/SEServer.Statements/Dockerfile
     container_name: seserver-statements
     depends_on:
@@ -210,12 +210,12 @@ services:
     network_mode: service:seserver-statements
     volumes:
       - type: bind
-        source: D:\aspdotnet\SEServer\dapr\components
+        source: D:\aspdotnet\SEServer-Auth-Statement\dapr\components
         target: /components
         bind:
           create_host_path: true
       - type: bind
-        source: D:\aspdotnet\SEServer\dapr\configuration
+        source: D:\aspdotnet\SEServer-Auth-Statement\dapr\configuration
         target: /configuration
         bind:
           create_host_path: true
@@ -249,7 +249,7 @@ services:
         protocol: tcp
 networks:
   default:
-    name: dockercompose37235877509304208_default
+    name: dockercompose3793359312407329459_default
 volumes:
   seserver-sqlserver:
-    name: dockercompose37235877509304208_seserver-sqlserver
+    name: dockercompose3793359312407329459_seserver-sqlserver

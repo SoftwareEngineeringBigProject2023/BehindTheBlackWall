@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A/RcXUkLec+LMGZV5cKTc3yjhR1EZZxNOtfoGSn8CqV8QIsNuxLWJ8ReZbAqq76rhfPmSiQMvSY4Jcp30dQxoQ==",
+  "dgSpecHash": "xMuQUc7oTXhxKa/hguhs2oa98LN+BvUTr2xJA6JHP4wN8Dbfro2TasxTZUdHkanGwKDJUsR5mgwhi1OMT1hZig==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor.Dapr\\ModuleDistributor.Dapr.csproj",
   "expectedPackageFiles": [
     "D:\\NuGet\\packages\\dapr.aspnetcore\\1.12.0\\dapr.aspnetcore.1.12.0.nupkg.sha512",
     "D:\\NuGet\\packages\\dapr.client\\1.12.0\\dapr.client.1.12.0.nupkg.sha512",

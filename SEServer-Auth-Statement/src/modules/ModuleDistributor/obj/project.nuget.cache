@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7G+DnvHsGGE6v1z7gAj2xVuA0MebcHAnmWj6DlsLFE+W2LesyQFZccJJ51+oJMysGE4G5oaYDRIzznxe6+IDXw==",
+  "dgSpecHash": "MbVMcUapZxaTqO7dfa0bBba7/c3bGzQ8PA2S34sr5vmRLa1mu+B1o2Av9oqdHfaLfhsliFhZWfCaOXll48/ODw==",
   "success": true,
-  "projectFilePath": "D:\\aspdotnet\\SEServer\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
+  "projectFilePath": "D:\\aspdotnet\\SEServer-Auth-Statement\\src\\modules\\ModuleDistributor\\ModuleDistributor.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
